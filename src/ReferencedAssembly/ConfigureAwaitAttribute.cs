@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 
-namespace ConfigureAwait
+namespace Fody
 {
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method)]
+    [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method)]
     public class ConfigureAwaitAttribute : Attribute
     {
         public ConfigureAwaitAttribute(bool continueOnCapturedContext)

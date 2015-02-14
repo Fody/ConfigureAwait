@@ -31,19 +31,21 @@ namespace ConfigureAwait
 
             typeFinder = new TypeFinder(AssemblyResolver, ModuleDefinition);
 
+            var configureAwaitValue = (bool?)ModuleDefinition.Assembly.GetConfigureAwaitAttribute()?.ConstructorArguments[0].Value;
+
             var types = ModuleDefinition.GetTypes()
                 .ToList();
 
             foreach (var type in types)
             {
-                ProcessType(type);
+                ProcessType(configureAwaitValue, type);
             }
 
             RemoveAttributes(types);
             RemoveReference();
         }
 
-        private void ProcessType(TypeDefinition type)
+        private void ProcessType(bool? assemblyConfigureAwaitValue, TypeDefinition type)
         {
             if (type.IsCompilerGenerated() && type.IsIAsyncStateMachine())
             {
@@ -51,6 +53,7 @@ namespace ConfigureAwait
             }
 
             var configureAwaitValue = (bool?)type.GetConfigureAwaitAttribute()?.ConstructorArguments[0].Value;
+            configureAwaitValue = configureAwaitValue ?? assemblyConfigureAwaitValue;
 
             foreach (var method in type.Methods)
             {

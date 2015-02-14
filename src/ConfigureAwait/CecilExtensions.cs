@@ -91,14 +91,14 @@ namespace ConfigureAwait
 
         public static CustomAttribute GetConfigureAwaitAttribute(this ICustomAttributeProvider value)
         {
-            return value.CustomAttributes.FirstOrDefault(a => a.AttributeType.FullName == "ConfigureAwait.ConfigureAwaitAttribute");
+            return value.CustomAttributes.FirstOrDefault(a => a.AttributeType.FullName == "Fody.ConfigureAwaitAttribute");
         }
 
         public static void RemoveAllCustomAttributes(this ICustomAttributeProvider definition)
         {
             var customAttributes = definition.CustomAttributes;
 
-            var attributes = customAttributes.Where(x => x.AttributeType.Namespace == "ConfigureAwait").ToArray();
+            var attributes = customAttributes.Where(x => x.AttributeType.Namespace == "Fody").ToArray();
 
             foreach (var attribute in attributes)
             {
