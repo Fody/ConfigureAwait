@@ -8,7 +8,7 @@
     .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
     .field public int32 '<>1__state'
     .field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
-    .field public valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__$awaiter0'
+    .field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
     .method private hidebysig newslot virtual final 
             instance void  MoveNext() cil managed
     {
@@ -48,7 +48,7 @@
         IL_002c:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod>d__1'::'<>1__state'
         IL_0031:  ldarg.0
         IL_0032:  ldloc.1
-        IL_0033:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod>d__1'::'<>u__$awaiter0'
+        IL_0033:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod>d__1'::'<>u__1'
         IL_0038:  ldarg.0
         IL_0039:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod>d__1'::'<>t__builder'
         IL_003e:  ldloca.s   V_1
@@ -57,10 +57,10 @@
                                                                                                                                                                                                                                                                                                !!1&)
         IL_0046:  leave.s    IL_009f
         IL_0048:  ldarg.0
-        IL_0049:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod>d__1'::'<>u__$awaiter0'
+        IL_0049:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod>d__1'::'<>u__1'
         IL_004e:  stloc.1
         IL_004f:  ldarg.0
-        IL_0050:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod>d__1'::'<>u__$awaiter0'
+        IL_0050:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod>d__1'::'<>u__1'
         IL_0055:  initobj    [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
         IL_005b:  ldarg.0
         IL_005c:  ldc.i4.m1
@@ -117,7 +117,7 @@
     .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
     .field public int32 '<>1__state'
     .field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> '<>t__builder'
-    .field public valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__$awaiter1'
+    .field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
     .method private hidebysig newslot virtual final 
             instance void  MoveNext() cil managed
     {
@@ -157,7 +157,7 @@
         IL_002d:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethodWithReturn>d__1'::'<>1__state'
         IL_0032:  ldarg.0
         IL_0033:  ldloc.2
-        IL_0034:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethodWithReturn>d__1'::'<>u__$awaiter1'
+        IL_0034:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethodWithReturn>d__1'::'<>u__1'
         IL_0039:  ldarg.0
         IL_003a:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethodWithReturn>d__1'::'<>t__builder'
         IL_003f:  ldloca.s   V_2
@@ -166,10 +166,10 @@
                                                                                                                                                                                                                                                                                                                             !!1&)
         IL_0047:  leave.s    IL_00a4
         IL_0049:  ldarg.0
-        IL_004a:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethodWithReturn>d__1'::'<>u__$awaiter1'
+        IL_004a:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethodWithReturn>d__1'::'<>u__1'
         IL_004f:  stloc.2
         IL_0050:  ldarg.0
-        IL_0051:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethodWithReturn>d__1'::'<>u__$awaiter1'
+        IL_0051:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethodWithReturn>d__1'::'<>u__1'
         IL_0056:  initobj    [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
         IL_005c:  ldarg.0
         IL_005d:  ldc.i4.m1
@@ -230,7 +230,7 @@
     .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
     .field public int32 '<>1__state'
     .field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
-    .field public valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> '<>u__$awaiter2'
+    .field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> '<>u__1'
     .method private hidebysig newslot virtual final 
             instance void  MoveNext() cil managed
     {
@@ -269,7 +269,7 @@
         IL_002c:  stfld      int32 AssemblyToProcess.Example/'<AsyncGenericMethod>d__1'::'<>1__state'
         IL_0031:  ldarg.0
         IL_0032:  ldloc.1
-        IL_0033:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethod>d__1'::'<>u__$awaiter2'
+        IL_0033:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethod>d__1'::'<>u__1'
         IL_0038:  ldarg.0
         IL_0039:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncGenericMethod>d__1'::'<>t__builder'
         IL_003e:  ldloca.s   V_1
@@ -278,10 +278,10 @@
                                                                                                                                                                                                                                                                                                                !!1&)
         IL_0046:  leave.s    IL_00a0
         IL_0048:  ldarg.0
-        IL_0049:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethod>d__1'::'<>u__$awaiter2'
+        IL_0049:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethod>d__1'::'<>u__1'
         IL_004e:  stloc.1
         IL_004f:  ldarg.0
-        IL_0050:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethod>d__1'::'<>u__$awaiter2'
+        IL_0050:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethod>d__1'::'<>u__1'
         IL_0055:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>
         IL_005b:  ldarg.0
         IL_005c:  ldc.i4.m1
@@ -339,7 +339,7 @@
     .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
     .field public int32 '<>1__state'
     .field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> '<>t__builder'
-    .field public valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> '<>u__$awaiter3'
+    .field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> '<>u__1'
     .method private hidebysig newslot virtual final 
             instance void  MoveNext() cil managed
     {
@@ -379,7 +379,7 @@
         IL_002e:  stfld      int32 AssemblyToProcess.Example/'<AsyncGenericMethodWithReturn>d__1'::'<>1__state'
         IL_0033:  ldarg.0
         IL_0034:  ldloc.2
-        IL_0035:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethodWithReturn>d__1'::'<>u__$awaiter3'
+        IL_0035:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethodWithReturn>d__1'::'<>u__1'
         IL_003a:  ldarg.0
         IL_003b:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncGenericMethodWithReturn>d__1'::'<>t__builder'
         IL_0040:  ldloca.s   V_2
@@ -388,10 +388,10 @@
                                                                                                                                                                                                                                                                                                                                             !!1&)
         IL_0048:  leave.s    IL_00a3
         IL_004a:  ldarg.0
-        IL_004b:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethodWithReturn>d__1'::'<>u__$awaiter3'
+        IL_004b:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethodWithReturn>d__1'::'<>u__1'
         IL_0050:  stloc.2
         IL_0051:  ldarg.0
-        IL_0052:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethodWithReturn>d__1'::'<>u__$awaiter3'
+        IL_0052:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncGenericMethodWithReturn>d__1'::'<>u__1'
         IL_0057:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>
         IL_005d:  ldarg.0
         IL_005e:  ldc.i4.m1
@@ -449,7 +449,6 @@
     .custom instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 2B 41 73 73 65 6D 62 6C 79 54 6F 50 72 6F   // ..+AssemblyToPro
                                                                                                                                        63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
                                                                                                                                        79 6E 63 4D 65 74 68 6F 64 3E 64 5F 5F 31 00 00 ) // yncMethod>d__1..
-    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
     // Code size       49 (0x31)
     .maxstack  2
     .locals init (valuetype AssemblyToProcess.Example/'<AsyncMethod>d__1' V_0,
@@ -478,7 +477,6 @@
                                                                                                                                        63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
                                                                                                                                        79 6E 63 4D 65 74 68 6F 64 57 69 74 68 52 65 74   // yncMethodWithRet
                                                                                                                                        75 72 6E 3E 64 5F 5F 31 00 00 )                   // urn>d__1..
-    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
     // Code size       49 (0x31)
     .maxstack  2
     .locals init (valuetype AssemblyToProcess.Example/'<AsyncMethodWithReturn>d__1' V_0,
@@ -503,7 +501,6 @@
   .method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task 
           AsyncGenericMethod() cil managed
   {
-    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
     .custom instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 32 41 73 73 65 6D 62 6C 79 54 6F 50 72 6F   // ..2AssemblyToPro
                                                                                                                                        63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
                                                                                                                                        79 6E 63 47 65 6E 65 72 69 63 4D 65 74 68 6F 64   // yncGenericMethod
@@ -532,7 +529,6 @@
   .method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<int32> 
           AsyncGenericMethodWithReturn() cil managed
   {
-    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
     .custom instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 3C 41 73 73 65 6D 62 6C 79 54 6F 50 72 6F   // ..<AssemblyToPro
                                                                                                                                        63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
                                                                                                                                        79 6E 63 47 65 6E 65 72 69 63 4D 65 74 68 6F 64   // yncGenericMethod
