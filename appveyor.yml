@@ -5,3 +5,6 @@ os: Visual Studio 2015 Preview
 before_build:
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
   - nuget restore src\ConfigureAwait.sln
+
+artifacts:
+  - path: src\ConfigureAwait\bin\Release\*.nupkg

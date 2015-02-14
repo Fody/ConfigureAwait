@@ -11,7 +11,7 @@
     <AssemblyName>ConfigureAwait.Fody</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>75fba91d</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>1751d25a</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,6 +64,9 @@
     <Compile Include="TypeFinder.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="nuget\ConfigureAwait.Fody.nuspec" />
+    <None Include="nuget\content\FodyWeavers.xml.install.xdt" />
+    <None Include="nuget\content\FodyWeavers.xml.uninstall.xdt" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -83,8 +86,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Fody.1.27.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.27.0\build\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\GitVersionTask.2.0.1\Build\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitVersionTask.2.0.1\Build\GitVersionTask.targets'))" />
+    <Error Condition="!Exists('..\packages\NuCake.1.3.1\build\NuCake.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuCake.1.3.1\build\NuCake.targets'))" />
   </Target>
   <Import Project="..\packages\GitVersionTask.2.0.1\Build\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.2.0.1\Build\GitVersionTask.targets')" />
+  <Import Project="..\packages\NuCake.1.3.1\build\NuCake.targets" Condition="Exists('..\packages\NuCake.1.3.1\build\NuCake.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -92,4 +97,13 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="CreateNuGetPackage" AfterTargets="AfterBuild">
+    <NuCake.CreatePackage SourceFiles="@(Compile)" ReferenceLibrary="$(MSBuildProjectDirectory)\$(OutputPath)$(AssemblyName).dll" ReferenceDirectory="$(MSBuildProjectDirectory)\$(OutputPath)nuget" DestinationFolder="$(MSBuildProjectDirectory)\$(OutputPath)" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y $(TargetPath) $(TargetDir)nuget\
+xcopy /y $(TargetDir)ConfigureAwait.dll $(TargetDir)nuget\lib\
+xcopy /y /s $(ProjectDir)nuget $(TargetDir)nuget
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

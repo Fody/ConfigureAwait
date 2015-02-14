@@ -2,3 +2,4 @@
 
 [assembly: AssemblyTitle("ConfigureAwait.Fody")]
 [assembly: AssemblyProduct("ConfigureAwait.Fody")]
+[assembly: AssemblyCompany("Cameron MacFarland")]
