@@ -24,13 +24,12 @@ namespace Tests.Helpers
                 CreateNoWindow = true
             }))
             {
-                var projectFolder = Path.GetFullPath(Path.GetDirectoryName(assemblyPath) + "\\..\\..\\..").Replace("\\", "\\\\");
-                projectFolder = String.Format("{0}{1}\\\\", Char.ToLower(projectFolder[0]), projectFolder.Substring(1));
+                var projectFolder = Path.GetFullPath(Path.GetDirectoryName(assemblyPath) + "\\..\\..\\..\\..").Replace("\\", "\\\\") + "\\\\";
 
                 process.WaitForExit(10000);
 
                 return string.Join(Environment.NewLine, Regex.Split(process.StandardOutput.ReadToEnd(), Environment.NewLine)
-                        .Where(l => !l.StartsWith("// ") && !string.IsNullOrEmpty(l))
+                        .Where(l => !l.StartsWith("// ") && !string.IsNullOrEmpty(l)) // Ignore comments and blank lines
                         .Select(l => l.Replace(projectFolder, ""))
                         .ToList());
             }
