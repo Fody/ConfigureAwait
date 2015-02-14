@@ -11,7 +11,7 @@
     <iconUrl>https://raw.github.com/distantcam/ConfigureAwait/master/img/project_icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <developmentDependency>true</developmentDependency>
-    <description>ConfigureAwait.Fody</description>
+    <description>Automatically adds ConfigureAwait to async calls.</description>
     <language>en-AU</language>
     <tags>Async, ILWeaving, Fody, Cecil</tags>
     <dependencies>

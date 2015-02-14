@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassWithAttributeTests.cs" />
+    <Compile Include="DoNotWeaveTests.cs" />
     <Compile Include="MethodWithAttributeTests.cs" />
     <Compile Include="VerifyTest.cs" />
     <Compile Include="LoggingTests.cs" />
