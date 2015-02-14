@@ -1,10 +1,12 @@
 configuration: Release
 
-os: Visual Studio 2015 Preview
+os: Visual Studio 2015 CTP
 
-before_build:
+install:
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
-  - nuget restore src\ConfigureAwait.sln
+
+build:
+  parallel: true
 
 artifacts:
   - path: src\ConfigureAwait\bin\Release\*.nupkg

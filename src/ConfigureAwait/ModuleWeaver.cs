@@ -70,7 +70,7 @@ namespace ConfigureAwait
                 }
                 else if (localConfigWasSet)
                 {
-                    LogWarning("ConfigureAwaitAttribue applied to non-async method '\{method.FullName}'.");
+                    LogWarning($"ConfigureAwaitAttribue applied to non-async method '{method.FullName}'.");
                     continue;
                 }
             }
