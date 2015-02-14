@@ -1,1 +1,1 @@
-﻿Info is empty
+﻿Info[0] = 	Removing reference to 'ConfigureAwait.dll'.

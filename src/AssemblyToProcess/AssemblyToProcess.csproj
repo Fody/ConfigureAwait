@@ -39,10 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttributeAppliedToNormalMethod.cs" />
+    <Compile Include="ClassWithAttribute.cs" />
     <Compile Include="Example.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
+    <Compile Include="MethodWithAttribute.cs" />
+    <Compile Include="FlagSyncronizationContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReferencedAssembly\ReferencedAssembly.csproj">

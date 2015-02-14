@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
@@ -103,6 +104,16 @@ namespace ConfigureAwait
             {
                 customAttributes.Remove(attribute);
             }
+        }
+
+        public static GenericInstanceType MakeGenericInstanceType(this TypeReference self, IEnumerable<TypeReference> arguments)
+        {
+            GenericInstanceType instance = new GenericInstanceType(self);
+            foreach (var arg in arguments)
+            {
+                instance.GenericArguments.Add(arg);
+            }
+            return instance;
         }
     }
 }

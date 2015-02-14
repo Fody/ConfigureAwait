@@ -8,40 +8,25 @@ namespace AssemblyToProcess
     [ConfigureAwait(false)]
     public class Example
     {
-        public async Task WithoutConfigureAwait()
-        {
-            await Task.Delay(10);
-        }
-
-        public async Task WithConfigureAwait()
-        {
-            await Task.Delay(10).ConfigureAwait(false);
-        }
-    }
-
-    [ConfigureAwait(false)]
-    public class ClassWithAttribute
-    {
         public async Task AsyncMethod()
         {
-            await Task.Delay(10);
+            await Task.Delay(0);
         }
-    }
 
-    public class MethodWithAttribute
-    {
-        [ConfigureAwait(false)]
-        public async Task AsyncMethod()
+        public async Task<int> AsyncMethodWithReturn()
         {
-            await Task.Delay(10);
+            await Task.Delay(0);
+            return 10;
         }
-    }
 
-    public class AttributeAppliedToNormalMethod
-    {
-        [ConfigureAwait(false)]
-        public void NormalMethod()
+        public async Task AsyncGenericMethod()
         {
+            await Task.FromResult(0);
+        }
+
+        public async Task<int> AsyncGenericMethodWithReturn()
+        {
+            return await Task.FromResult(10);
         }
     }
 }
