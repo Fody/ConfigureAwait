@@ -1,16 +1,16 @@
-<?xml version="1.0"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-  <metadata>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata minClientVersion="2.8">
     <id>ConfigureAwait.Fody</id>
     <version>0.0</version>
     <title>ConfigureAwait.Fody</title>
     <authors>Cameron MacFarland</authors>
     <owners>Cameron MacFarland</owners>
-    <minClientVersion>2.8</minClientVersion>
-    <developmentDependency>true</developmentDependency>
-    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
-    <projectUrl>http://github.com/Fody/ConfigureAwait</projectUrl>
+    <licenseUrl>https://github.com/distantcam/ConfigureAwait/blob/master/license.txt</licenseUrl>
+    <projectUrl>http://github.com/distantcam/ConfigureAwait</projectUrl>
+    <iconUrl>https://raw.github.com/distantcam/ConfigureAwait/master/img/project_icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <developmentDependency>true</developmentDependency>
     <description>ConfigureAwait.Fody</description>
     <language>en-AU</language>
     <tags>Async, ILWeaving, Fody, Cecil</tags>
