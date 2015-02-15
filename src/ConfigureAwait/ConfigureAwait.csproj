@@ -12,8 +12,6 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>dcc9f953</NuGetPackageImportStamp>
-    <NuCakeReferenceFolder>$(MSBuildProjectDirectory)\$(OutputPath)nuget</NuCakeReferenceFolder>
-    <NuCakeVersionFieldCount>3</NuCakeVersionFieldCount>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +29,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuCakeReferenceFolder>$(MSBuildProjectDirectory)\$(OutputPath)nuget</NuCakeReferenceFolder>
+    <NuCakeVersionFieldCount>3</NuCakeVersionFieldCount>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Anotar.Custom">
