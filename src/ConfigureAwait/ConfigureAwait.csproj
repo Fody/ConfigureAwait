@@ -67,6 +67,7 @@
     <None Include="nuget\ConfigureAwait.Fody.nuspec" />
     <None Include="nuget\content\FodyWeavers.xml.install.xdt" />
     <None Include="nuget\content\FodyWeavers.xml.uninstall.xdt" />
+    <None Include="nuget\tools\install.ps1" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,7 +102,7 @@
     <NuCake.CreatePackage SourceFiles="@(Compile)" ReferenceLibrary="$(MSBuildProjectDirectory)\$(OutputPath)$(AssemblyName).dll" ReferenceDirectory="$(MSBuildProjectDirectory)\$(OutputPath)nuget" DestinationFolder="$(MSBuildProjectDirectory)\$(OutputPath)" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y $(TargetPath) $(TargetDir)nuget\
+    <PostBuildEvent>xcopy /y $(TargetDir)$(TargetName).* $(TargetDir)nuget\
 xcopy /y $(TargetDir)ConfigureAwait.dll $(TargetDir)nuget\lib\
 xcopy /y /s $(ProjectDir)nuget $(TargetDir)nuget
 </PostBuildEvent>

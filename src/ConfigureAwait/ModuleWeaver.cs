@@ -236,7 +236,7 @@ namespace ConfigureAwait
                     }
 
                     // Change TaskAwaiter`1 to ConfiguredTaskAwaiter`1
-                    if (typeRef.Resolve().FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
+                    if (typeRef.Resolve()?.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                     {
                         instruction.Operand = ModuleDefinition.Import(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericArguments));
                     }
