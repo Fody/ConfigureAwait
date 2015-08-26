@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using ApprovalTests;
 using ApprovalTests.Namers;
 using ApprovalTests.Reporters;
@@ -35,6 +33,13 @@ namespace Tests
         public void DecompileExample()
         {
             Approvals.Verify(Decompiler.Decompile(AssemblyWeaver.AfterAssemblyPath, "AssemblyToProcess.Example"));
+        }
+
+        [Test]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public void DecompileIssue1()
+        {
+            Approvals.Verify(Decompiler.Decompile(AssemblyWeaver.AfterAssemblyPath, "AssemblyToProcess.Issue1"));
         }
     }
 }

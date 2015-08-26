@@ -22,12 +22,15 @@ namespace ConfigureAwait
         public string[] DefineConstants { get; set; }
 
         private TypeFinder typeFinder;
+        private bool isDebug;
 
         public void Execute()
         {
             LoggerFactory.LogInfo = LogInfo;
             LoggerFactory.LogWarn = LogWarning;
             LoggerFactory.LogError = LogError;
+
+            isDebug = DefineConstants.Contains("DEBUG");
 
             typeFinder = new TypeFinder(AssemblyResolver, ModuleDefinition);
 
@@ -80,13 +83,11 @@ namespace ConfigureAwait
         {
             var configuredTaskAwaitableTypeDef = typeFinder.GetMSCorLibTypeDefinition("System.Runtime.CompilerServices.ConfiguredTaskAwaitable");
             var configuredTaskAwaiterTypeDef = configuredTaskAwaitableTypeDef.NestedTypes[0];
-            var configuredTaskAwaitableTypeRef = ModuleDefinition.Import(configuredTaskAwaitableTypeDef);
-            var configuredTaskAwaiterTypeRef = ModuleDefinition.Import(configuredTaskAwaiterTypeDef);
+            var configuredTaskAwaitableTypeRef = ModuleDefinition.ImportReference(configuredTaskAwaitableTypeDef);
+            var configuredTaskAwaiterTypeRef = ModuleDefinition.ImportReference(configuredTaskAwaiterTypeDef);
 
             var gConfiguredTaskAwaitableTypeDef = typeFinder.GetMSCorLibTypeDefinition("System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1");
             var gConfiguredTaskAwaiterTypeDef = gConfiguredTaskAwaitableTypeDef.NestedTypes[0];
-
-            IEnumerable<TypeReference> genericArguments = null;
 
             foreach (var field in type.Fields)
             {
@@ -99,8 +100,8 @@ namespace ConfigureAwait
                     var fieldtype = field.FieldType.Resolve();
                     if (fieldtype.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                     {
-                        genericArguments = genericFieldType.GenericArguments;
-                        field.FieldType = ModuleDefinition.Import(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericArguments));
+                        var genericArguments = genericFieldType.GenericArguments;
+                        field.FieldType = ModuleDefinition.ImportReference(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericArguments));
                     }
                 }
             }
@@ -110,52 +111,61 @@ namespace ConfigureAwait
             method.Body.SimplifyMacros();
             var ilProcessor = method.Body.GetILProcessor();
 
-            foreach (var v in method.Body.Variables)
+            var awaitAwaiterPair = new Dictionary<VariableDefinition, VariableDefinition>();
+            var configureAwaitMethods = new Dictionary<VariableDefinition, MethodReference>();
+            var i = 0;
+
+            foreach (var v in method.Body.Variables.ToArray())
             {
+                VariableDefinition awaitableVar = null;
+                MethodReference configureAwaitMethod = null;
                 // Change variable type
                 if (v.VariableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter")
+                {
                     v.VariableType = configuredTaskAwaiterTypeRef;
+                    awaitableVar = new VariableDefinition(configuredTaskAwaitableTypeRef);
+                    method.Body.Variables.Insert(i + 1, awaitableVar);
+
+                    var configureAwaitMethodDef = typeFinder.GetMSCorLibTypeDefinition("System.Threading.Tasks.Task").Methods.First(m => m.Name == "ConfigureAwait");
+                    configureAwaitMethod = ModuleDefinition.ImportReference(configureAwaitMethodDef);
+                }
                 if (v.VariableType.IsGenericInstance)
                 {
                     var genericVariableType = (GenericInstanceType)v.VariableType;
                     var variableType = v.VariableType.Resolve();
                     if (variableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
-                        v.VariableType = ModuleDefinition.Import(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericVariableType.GenericArguments));
+                        v.VariableType = ModuleDefinition.ImportReference(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericVariableType.GenericArguments));
+                    awaitableVar = new VariableDefinition(ModuleDefinition.ImportReference(gConfiguredTaskAwaitableTypeDef.MakeGenericInstanceType(genericVariableType.GenericArguments)));
+                    method.Body.Variables.Insert(i + (isDebug ? 3 : 2), awaitableVar);
+
+                    var configureAwaitMethodDef = typeFinder.GetMSCorLibTypeDefinition("System.Threading.Tasks.Task`1").Methods.First(m => m.Name == "ConfigureAwait");
+                    configureAwaitMethod = ModuleDefinition.ImportReference(configureAwaitMethodDef);
+                    configureAwaitMethod.DeclaringType = ModuleDefinition.ImportReference(typeFinder.GetMSCorLibTypeDefinition("System.Threading.Tasks.Task`1").MakeGenericInstanceType(genericVariableType.GenericArguments));
                 }
-            }
-
-            // Define Awaitable temp variable
-            var configAwaitableVar = new Lazy<VariableDefinition>(() =>
-            {
-                var variable = genericArguments == null ?
-                    new VariableDefinition(configuredTaskAwaitableTypeRef) :
-                    new VariableDefinition(ModuleDefinition.Import(gConfiguredTaskAwaitableTypeDef.MakeGenericInstanceType(genericArguments)));
-                method.Body.Variables.Add(variable);
-                return variable;
-            });
-
-            // Find the ConfigureAwait method
-            var configureAwaitMethodDef = genericArguments == null ?
-                typeFinder.GetMSCorLibTypeDefinition("System.Threading.Tasks.Task").Methods.First(m => m.Name == "ConfigureAwait") :
-                typeFinder.GetMSCorLibTypeDefinition("System.Threading.Tasks.Task`1").Methods.First(m => m.Name == "ConfigureAwait");
-            var configureAwaitMethodRef = ModuleDefinition.Import(configureAwaitMethodDef);
-            if (genericArguments != null)
-            {
-                configureAwaitMethodRef.DeclaringType = ModuleDefinition.Import(typeFinder.GetMSCorLibTypeDefinition("System.Threading.Tasks.Task`1").MakeGenericInstanceType(genericArguments));
+                if (awaitableVar != null)
+                {
+                    awaitAwaiterPair.Add(v, awaitableVar);
+                    configureAwaitMethods.Add(v, configureAwaitMethod);
+                }
+                i++;
             }
 
             // Insert ConfigureAwait call just before GetAwaiter call.
             foreach (var instruction in method.Body.Instructions.Where(GetAwaiterSearch).ToList())
             {
+                var variable = (VariableDefinition)instruction.Next.Operand;
+                var awaitableVar = awaitAwaiterPair[variable];
+                var configureAwait = configureAwaitMethods[variable];
+
                 ilProcessor.InsertBefore(instruction,
                     Instruction.Create(value ? OpCodes.Ldc_I4_1 : OpCodes.Ldc_I4_0), // true or false
-                    Instruction.Create(OpCodes.Callvirt, configureAwaitMethodRef), // Call ConfigureAwait
-                    Instruction.Create(OpCodes.Stloc, configAwaitableVar.Value), // Store in variable
-                    Instruction.Create(OpCodes.Ldloca, configAwaitableVar.Value) // Load variable
+                    Instruction.Create(OpCodes.Callvirt, configureAwait), // Call ConfigureAwait
+                    Instruction.Create(OpCodes.Stloc, awaitableVar), // Store in variable
+                    Instruction.Create(OpCodes.Ldloca, awaitableVar) // Load variable
                 );
             }
 
-            for (int i = 0; i < method.Body.Instructions.Count; i++)
+            for (i = 0; i < method.Body.Instructions.Count; i++)
             {
                 var instruction = method.Body.Instructions[i];
 
@@ -168,7 +178,7 @@ namespace ConfigureAwait
                         var newOperand = configuredTaskAwaitableTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
                         if (newOperand != null)
                         {
-                            method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, ModuleDefinition.Import(newOperand));
+                            method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, ModuleDefinition.ImportReference(newOperand));
                         }
                     }
 
@@ -178,8 +188,10 @@ namespace ConfigureAwait
                         var newOperand = gConfiguredTaskAwaitableTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
                         if (newOperand != null)
                         {
-                            var newOperandRef = ModuleDefinition.Import(newOperand);
-                            newOperandRef.DeclaringType = ModuleDefinition.Import(gConfiguredTaskAwaitableTypeDef.MakeGenericInstanceType(genericArguments));
+                            var genericArguments = ((GenericInstanceType)methodRef.DeclaringType).GenericArguments;
+
+                            var newOperandRef = ModuleDefinition.ImportReference(newOperand);
+                            newOperandRef.DeclaringType = ModuleDefinition.ImportReference(gConfiguredTaskAwaitableTypeDef.MakeGenericInstanceType(genericArguments));
                             method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, newOperandRef);
                         }
                     }
@@ -190,7 +202,7 @@ namespace ConfigureAwait
                         var newOperand = configuredTaskAwaiterTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
                         if (newOperand != null)
                         {
-                            method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, ModuleDefinition.Import(newOperand));
+                            method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, ModuleDefinition.ImportReference(newOperand));
                         }
                     }
 
@@ -200,8 +212,10 @@ namespace ConfigureAwait
                         var newOperand = gConfiguredTaskAwaiterTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
                         if (newOperand != null)
                         {
-                            var newOperandRef = ModuleDefinition.Import(newOperand);
-                            newOperandRef.DeclaringType = ModuleDefinition.Import(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericArguments));
+                            var genericArguments = ((GenericInstanceType)methodRef.DeclaringType).GenericArguments;
+
+                            var newOperandRef = ModuleDefinition.ImportReference(newOperand);
+                            newOperandRef.DeclaringType = ModuleDefinition.ImportReference(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericArguments));
                             method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, newOperandRef);
                         }
                     }
@@ -218,9 +232,11 @@ namespace ConfigureAwait
                             {
                                 awaitUnsafeOnCompleted.GenericArguments[j] = configuredTaskAwaiterTypeRef;
                             }
-                            if (awaitUnsafeOnCompleted.GenericArguments[j].Resolve().FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
+                            var theArg = awaitUnsafeOnCompleted.GenericArguments[j].Resolve();
+                            if (theArg.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                             {
-                                awaitUnsafeOnCompleted.GenericArguments[j] = ModuleDefinition.Import(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericArguments));
+                                var genericArguments = ((GenericInstanceType)awaitUnsafeOnCompleted.GenericArguments[j]).GenericArguments;
+                                awaitUnsafeOnCompleted.GenericArguments[j] = ModuleDefinition.ImportReference(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericArguments));
                             }
                         }
                     }
@@ -234,11 +250,12 @@ namespace ConfigureAwait
                     {
                         instruction.Operand = configuredTaskAwaiterTypeRef;
                     }
-
                     // Change TaskAwaiter`1 to ConfiguredTaskAwaiter`1
-                    if (typeRef.Resolve()?.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
+                    var theType = typeRef.Resolve();
+                    if (theType?.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                     {
-                        instruction.Operand = ModuleDefinition.Import(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericArguments));
+                        var genericArguments = ((GenericInstanceType)typeRef).GenericArguments;
+                        instruction.Operand = ModuleDefinition.ImportReference(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericArguments));
                     }
                 }
             }
@@ -252,7 +269,7 @@ namespace ConfigureAwait
             {
                 if (newOperand != null)
                 {
-                    return Instruction.Create(opCode, ModuleDefinition.Import(newOperand));
+                    return Instruction.Create(opCode, ModuleDefinition.ImportReference(newOperand));
                 }
             }
 
