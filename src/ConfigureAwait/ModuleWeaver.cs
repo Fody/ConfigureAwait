@@ -22,15 +22,12 @@ namespace ConfigureAwait
         public string[] DefineConstants { get; set; }
 
         private TypeFinder typeFinder;
-        private bool isDebug;
 
         public void Execute()
         {
             LoggerFactory.LogInfo = LogInfo;
             LoggerFactory.LogWarn = LogWarning;
             LoggerFactory.LogError = LogError;
-
-            isDebug = DefineConstants.Contains("DEBUG");
 
             typeFinder = new TypeFinder(AssemblyResolver, ModuleDefinition);
 
@@ -136,7 +133,7 @@ namespace ConfigureAwait
                     if (variableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                         v.VariableType = ModuleDefinition.ImportReference(gConfiguredTaskAwaiterTypeDef.MakeGenericInstanceType(genericVariableType.GenericArguments));
                     awaitableVar = new VariableDefinition(ModuleDefinition.ImportReference(gConfiguredTaskAwaitableTypeDef.MakeGenericInstanceType(genericVariableType.GenericArguments)));
-                    method.Body.Variables.Insert(i + (isDebug ? 3 : 2), awaitableVar);
+                    method.Body.Variables.Insert(i + 1, awaitableVar);
 
                     var configureAwaitMethodDef = typeFinder.GetMSCorLibTypeDefinition("System.Threading.Tasks.Task`1").Methods.First(m => m.Name == "ConfigureAwait");
                     configureAwaitMethod = ModuleDefinition.ImportReference(configureAwaitMethodDef);

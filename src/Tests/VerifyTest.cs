@@ -7,7 +7,7 @@ using Tests.Helpers;
 
 namespace Tests
 {
-    [TestFixture]
+    [TestFixture, Category("ILSpecific")]
     [UseReporter(typeof(DiffReporter))]
     [UseApprovalSubdirectory("ApprovalFiles")]
     public class VerifyTest
