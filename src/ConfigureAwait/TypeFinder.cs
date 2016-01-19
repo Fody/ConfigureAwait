@@ -25,7 +25,23 @@ namespace ConfigureAwait
         public TypeReference GetMSCorLibTypeReference(string typeName)
         {
             var typeDefinition = GetMSCorLibTypeDefinition(typeName);
-            return moduleDefinition.Import(typeDefinition);
+            return moduleDefinition.ImportReference(typeDefinition);
+        }
+        public TypeDefinition GetMSCorLibTypeDefinition(Type type)
+        {
+            return GetMSCorLibTypeDefinition(type.FullName);
+        }
+        public TypeReference GetMSCorLibTypeReference(Type type)
+        {
+            return GetMSCorLibTypeReference(type.FullName);
+        }
+        public TypeDefinition GetMSCorLibTypeDefinition<T>()
+        {
+            return GetMSCorLibTypeDefinition(typeof(T).FullName);
+        }
+        public TypeReference GetMSCorLibTypeReference<T>()
+        {
+            return GetMSCorLibTypeReference(typeof(T).FullName);
         }
     }
 }

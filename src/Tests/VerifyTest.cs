@@ -41,5 +41,11 @@ namespace Tests
         {
             Approvals.Verify(Decompiler.Decompile(AssemblyWeaver.AfterAssemblyPath, "AssemblyToProcess.Issue1"));
         }
+        [Test]
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public void DecompileGenericIssue()
+        {
+            Approvals.Verify(Decompiler.Decompile(AssemblyWeaver.AfterAssemblyPath, "AssemblyToProcess.GenericIssue`2"));
+        }
     }
 }

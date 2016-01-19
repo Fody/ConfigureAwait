@@ -561,11 +561,11 @@
   .method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<int32> 
           AsyncMethodWithReturn() cil managed
   {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
     .custom instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 35 41 73 73 65 6D 62 6C 79 54 6F 50 72 6F   // ..5AssemblyToPro
                                                                                                                                        63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
                                                                                                                                        79 6E 63 4D 65 74 68 6F 64 57 69 74 68 52 65 74   // yncMethodWithRet
                                                                                                                                        75 72 6E 3E 64 5F 5F 31 00 00 )                   // urn>d__1..
-    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
     // Code size       59 (0x3b)
     .maxstack  2
     .locals init (class AssemblyToProcess.Example/'<AsyncMethodWithReturn>d__1' V_0,
@@ -629,12 +629,12 @@
   .method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<int32> 
           AsyncGenericMethodWithReturn() cil managed
   {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
     .custom instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 3C 41 73 73 65 6D 62 6C 79 54 6F 50 72 6F   // ..<AssemblyToPro
                                                                                                                                        63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
                                                                                                                                        79 6E 63 47 65 6E 65 72 69 63 4D 65 74 68 6F 64   // yncGenericMethod
                                                                                                                                        57 69 74 68 52 65 74 75 72 6E 3E 64 5F 5F 33 00   // WithReturn>d__3.
                                                                                                                                        00 ) 
-    .custom instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 ) 
     // Code size       59 (0x3b)
     .maxstack  2
     .locals init (class AssemblyToProcess.Example/'<AsyncGenericMethodWithReturn>d__3' V_0,

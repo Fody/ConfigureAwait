@@ -14,7 +14,7 @@ namespace ConfigureAwait
                 return false;
 
             return provider.CustomAttributes
-                .Any(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute");
+                .Any(a => a.AttributeType.FullName == typeof(System.Runtime.CompilerServices.AsyncStateMachineAttribute).FullName);
         }
 
         public static bool IsIAsyncStateMachine(this TypeDefinition typeDefinition)
@@ -23,7 +23,7 @@ namespace ConfigureAwait
                 return false;
 
             return typeDefinition.Interfaces
-                .Any(x => x.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
+                .Any(x => x.FullName == typeof(System.Runtime.CompilerServices.IAsyncStateMachine).FullName);
         }
 
         public static bool IsCompilerGenerated(this ICustomAttributeProvider provider)
@@ -32,7 +32,7 @@ namespace ConfigureAwait
                 return false;
 
             return provider.CustomAttributes
-                .Any(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.CompilerGeneratedAttribute");
+                .Any(a => a.AttributeType.FullName == typeof(System.Runtime.CompilerServices.CompilerGeneratedAttribute).FullName);
         }
 
         public static void InsertBefore(this ILProcessor processor, Instruction target, params Instruction[] instructions)
@@ -76,7 +76,7 @@ namespace ConfigureAwait
                 return null;
 
             return (TypeDefinition)provider.CustomAttributes
-                .FirstOrDefault(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute")?.ConstructorArguments[0].Value;
+                .FirstOrDefault(a => a.AttributeType.FullName == typeof(System.Runtime.CompilerServices.AsyncStateMachineAttribute).FullName)?.ConstructorArguments[0].Value;
         }
 
         public static Lazy<VariableDefinition> CreateVariable(this MethodBody body, TypeReference variableType)
@@ -114,6 +114,26 @@ namespace ConfigureAwait
                 instance.GenericArguments.Add(arg);
             }
             return instance;
+        }
+        public static bool IsType(this TypeReference source, Type type)
+        {
+            return source.FullName == type.FullName;
+        }
+        public static bool IsType<T>(this TypeReference source)
+        {
+            return source.IsType(typeof(T));
+        }
+
+        public static Instruction OnOperandType<T>(this Instruction instruction, Action<T> action)
+            where T : class
+        {
+            var operand = instruction.Operand as T;
+            if(operand != null)
+            {
+                action(operand);
+                return null;
+            }
+            return instruction;
         }
     }
 }
