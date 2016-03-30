@@ -1,32 +1,80 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Fody;
 
 namespace AssemblyToProcess
 {
-    [ConfigureAwait(false)]
     public class Example
     {
-        public async Task AsyncMethod()
+        public async Task AsyncMethod1()
         {
-            await Task.Delay(0);
+            await Task.Delay(1);
         }
 
-        public async Task<int> AsyncMethodWithReturn()
+        [ConfigureAwait(false)]
+        public async Task AsyncMethod2()
         {
-            await Task.Delay(0);
-            return 10;
+            await Task.Delay(1);
         }
 
-        public async Task AsyncGenericMethod()
+        public async Task AsyncMethod3()
         {
-            await Task.FromResult(0);
+            await Task.Delay(1).ConfigureAwait(false);
         }
 
-        public async Task<int> AsyncGenericMethodWithReturn()
+        public async Task<int> AsyncMethod4()
         {
-            return await Task.FromResult(10);
+            var result = await Task.FromResult(10);
+            return result;
+        }
+
+        [ConfigureAwait(false)]
+        public async Task<int> AsyncMethod5()
+        {
+            var result = await Task.FromResult(10);
+            return result;
+        }
+
+        public async Task<int> AsyncMethod6()
+        {
+            var result = await Task.FromResult(10).ConfigureAwait(false);
+            return result;
+        }
+
+        public async Task<int> AsyncMethod7()
+        {
+            var count = await Task.FromResult(10);
+            var sum = 0;
+            for (int i = 0; i < count; i++)
+            {
+                await Task.Delay(1);
+                sum += await Task.FromResult(i);
+            }
+            return sum;
+        }
+
+        [ConfigureAwait(false)]
+        public async Task<int> AsyncMethod8()
+        {
+            var count = await Task.FromResult(10);
+            var sum = 0;
+            for (int i = 0; i < count; i++)
+            {
+                await Task.Delay(1);
+                sum += await Task.FromResult(i);
+            }
+            return sum;
+        }
+
+        public async Task<int> AsyncMethod9()
+        {
+            var count = await Task.FromResult(10).ConfigureAwait(false);
+            var sum = 0;
+            for (int i = 0; i < count; i++)
+            {
+                await Task.Delay(1).ConfigureAwait(false);
+                sum += await Task.FromResult(i).ConfigureAwait(false);
+            }
+            return sum;
         }
     }
 }

@@ -41,7 +41,7 @@
                [7] string V_7,
                [8] class [mscorlib]System.Exception V_8)
       .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
-      .line 16707566,16707566 : 0,0 'src\\AssemblyToProcess\\Issue1.cs'
+      .line 16707566,16707566 : 0,0 'AssemblyToProcess\\Issue1.cs'
       IL_0000:  ldarg.0
       IL_0001:  ldfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'
       IL_0006:  stloc.0

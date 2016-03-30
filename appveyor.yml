@@ -2,6 +2,9 @@ configuration: Release
 
 os: Visual Studio 2015
 
+cache:
+  - packages -> **\packages.config
+
 before_build:
   - nuget restore src\ConfigureAwait.sln
 

@@ -1,39 +1,35 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq;
 using Mono.Cecil;
 
-namespace Tests.Helpers
+public class MockAssemblyResolver : IAssemblyResolver
 {
-    public class MockAssemblyResolver : IAssemblyResolver
+    public AssemblyDefinition Resolve(AssemblyNameReference name)
     {
-        public AssemblyDefinition Resolve(AssemblyNameReference name)
-        {
-            return AssemblyDefinition.ReadAssembly(name.Name + ".dll");
-        }
+        return AssemblyDefinition.ReadAssembly(name.Name + ".dll");
+    }
 
-        public AssemblyDefinition Resolve(AssemblyNameReference name, ReaderParameters parameters)
-        {
-            throw new NotImplementedException();
-        }
+    public AssemblyDefinition Resolve(AssemblyNameReference name, ReaderParameters parameters)
+    {
+        throw new NotImplementedException();
+    }
 
-        public AssemblyDefinition Resolve(string fullName)
+    public AssemblyDefinition Resolve(string fullName)
+    {
+        if (fullName == "System")
         {
-            if (fullName == "System")
-            {
-                var codeBase = typeof(Debug).Assembly.CodeBase.Replace("file:///", "");
-                return AssemblyDefinition.ReadAssembly(codeBase);
-            }
-            else
-            {
-                var codeBase = typeof(string).Assembly.CodeBase.Replace("file:///", "");
-                return AssemblyDefinition.ReadAssembly(codeBase);
-            }
+            var codeBase = typeof(Debug).Assembly.CodeBase.Replace("file:///", "");
+            return AssemblyDefinition.ReadAssembly(codeBase);
         }
+        else
+        {
+            var codeBase = typeof(string).Assembly.CodeBase.Replace("file:///", "");
+            return AssemblyDefinition.ReadAssembly(codeBase);
+        }
+    }
 
-        public AssemblyDefinition Resolve(string fullName, ReaderParameters parameters)
-        {
-            throw new NotImplementedException();
-        }
+    public AssemblyDefinition Resolve(string fullName, ReaderParameters parameters)
+    {
+        throw new NotImplementedException();
     }
 }
