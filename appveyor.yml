@@ -1,7 +1,9 @@
+skip_tags: true
+
 configuration: Release
 
 cache:
-  - packages -> **\packages.config
+  - src\packages -> **\packages.config
 
 before_build:
   - nuget restore src\ConfigureAwait.sln
