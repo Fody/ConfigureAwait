@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReferencedAssembly\ReferencedAssembly.csproj">
-      <Project>{d07132ed-7907-445c-83b1-1c129c85d508}</Project>
+      <Project>{3df7c842-3664-421d-b4b0-3c392bd82417}</Project>
       <Name>ReferencedAssembly</Name>
     </ProjectReference>
   </ItemGroup>

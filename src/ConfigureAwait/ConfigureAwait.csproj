@@ -73,37 +73,25 @@
     <Compile Include="TypeFinder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="nuget\ConfigureAwait.Fody.nuspec" />
-    <None Include="nuget\content\FodyWeavers.xml.install.xdt" />
-    <None Include="nuget\content\FodyWeavers.xml.uninstall.xdt" />
-    <None Include="nuget\tools\install.ps1" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ReferencedAssembly\ReferencedAssembly.csproj">
-      <Project>{d07132ed-7907-445c-83b1-1c129c85d508}</Project>
-      <Name>ReferencedAssembly</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y $(TargetDir)$(TargetName).* $(TargetDir)nuget\
-xcopy /y $(TargetDir)ConfigureAwait.dll $(TargetDir)nuget\lib\
-xcopy /y /s $(ProjectDir)nuget $(TargetDir)nuget
-</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\GitVersionTask.2.0.1\Build\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitVersionTask.2.0.1\Build\GitVersionTask.targets'))" />
-    <Error Condition="!Exists('..\packages\NuCake.1.4.0\build\NuCake.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NuCake.1.4.0\build\NuCake.targets'))" />
     <Error Condition="!Exists('..\packages\Fody.1.29.3\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.29.3\build\dotnet\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\GitVersionTask.3.4.1\build\dotnet\GitVersionTask.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitVersionTask.3.4.1\build\dotnet\GitVersionTask.targets'))" />
   </Target>
-  <Import Project="..\packages\GitVersionTask.2.0.1\Build\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.2.0.1\Build\GitVersionTask.targets')" />
-  <Import Project="..\packages\NuCake.1.4.0\build\NuCake.targets" Condition="Exists('..\packages\NuCake.1.4.0\build\NuCake.targets')" />
   <Import Project="..\packages\Fody.1.29.3\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.3\build\dotnet\Fody.targets')" />
+  <Import Project="..\packages\GitVersionTask.3.4.1\build\dotnet\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.3.4.1\build\dotnet\GitVersionTask.targets')" />
 </Project>

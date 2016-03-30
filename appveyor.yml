@@ -1,15 +1,21 @@
 configuration: Release
 
-os: Visual Studio 2015
-
 cache:
   - packages -> **\packages.config
 
 before_build:
   - nuget restore src\ConfigureAwait.sln
 
+after_build:
+  - src\BuildNuGetPackage\bin\Release\BuildNuGetPackage.exe artifacts
+
 build:
   parallel: true
+  project: src\ConfigureAwait.sln
+  verbosity: minimal
+
+test_script:
+  - nunit-console-x86 src\Tests\bin\Release\Tests.dll
 
 artifacts:
-  - path: src\ConfigureAwait\bin\Release\*.nupkg
+  - path: artifacts\*.nupkg
