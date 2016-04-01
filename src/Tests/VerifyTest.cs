@@ -15,7 +15,7 @@ public class VerifyTest
 #if DEBUG
         ApprovalTests.Namers.NamerFactory.AsEnvironmentSpecificTest(() => "Debug");
 #else
-            ApprovalTests.Namers.NamerFactory.AsEnvironmentSpecificTest(() => "Release");
+        ApprovalTests.Namers.NamerFactory.AsEnvironmentSpecificTest(() => "Release");
 #endif
     }
 
@@ -37,5 +37,19 @@ public class VerifyTest
     public void DecompileIssue1()
     {
         Approvals.Verify(Decompiler.Decompile(AssemblyWeaver.AfterAssemblyPath, "AssemblyToProcess.Issue1"));
+    }
+
+    [Test]
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    public void DecompileGenericClass()
+    {
+        Approvals.Verify(Decompiler.Decompile(AssemblyWeaver.AfterAssemblyPath, "AssemblyToProcess.GenericClass`1"));
+    }
+
+    [Test]
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    public void DecompileGenericMethod()
+    {
+        Approvals.Verify(Decompiler.Decompile(AssemblyWeaver.AfterAssemblyPath, "AssemblyToProcess.GenericMethod"));
     }
 }

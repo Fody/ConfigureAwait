@@ -76,5 +76,24 @@ namespace AssemblyToProcess
             }
             return sum;
         }
+
+        public async Task<Example> AsyncMethod10()
+        {
+            var result = await Task.FromResult(new Example());
+            return result;
+        }
+
+        [ConfigureAwait(false)]
+        public async Task<Example> AsyncMethod11()
+        {
+            var result = await Task.FromResult(new Example());
+            return result;
+        }
+
+        public async Task<Example> AsyncMethod12()
+        {
+            var result = await Task.FromResult(new Example()).ConfigureAwait(false);
+            return result;
+        }
     }
 }

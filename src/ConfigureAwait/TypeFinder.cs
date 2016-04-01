@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Mono.Cecil;
 
@@ -25,7 +24,7 @@ namespace ConfigureAwait
         public TypeReference GetMSCorLibTypeReference(string typeName)
         {
             var typeDefinition = GetMSCorLibTypeDefinition(typeName);
-            return moduleDefinition.Import(typeDefinition);
+            return moduleDefinition.ImportReference(typeDefinition);
         }
     }
 }
