@@ -4,13 +4,20 @@
 
 Allows you to set your async code's [`ConfigureAwait`](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.configureawait) at a global level.
 
-### Nuget package [![NuGet Status](http://img.shields.io/nuget/v/ConfigureAwait.Fody.svg?style=flat-square)](https://www.nuget.org/packages/ConfigureAwait.Fody/) [![Build Status](https://img.shields.io/appveyor/ci/distantcam/ConfigureAwait.svg?style=flat-square)](https://ci.appveyor.com/project/distantcam/configureawait) ![.NET 4.0](https://img.shields.io/badge/.NET-4.0-blue.svg?style=flat-square) ![.NET 4.5](https://img.shields.io/badge/.NET-4.5-blue.svg?style=flat-square)
+### Nuget package [![NuGet Status](http://img.shields.io/nuget/v/ConfigureAwait.Fody.svg?style=flat-square)](https://www.nuget.org/packages/ConfigureAwait.Fody/) [![Build Status](https://img.shields.io/appveyor/ci/distantcam/ConfigureAwait.svg?style=flat-square)](https://ci.appveyor.com/project/distantcam/configureawait)
 
 Available here http://nuget.org/packages/ConfigureAwait.Fody 
 
 To Install from the Nuget Package Manager Console 
     
     PM> Install-Package ConfigureAwait.Fody
+
+## How to use it
+
+By default, `ConfigureAwait.Fody` doesn't change any of your code. You have to explicitly set a configure await value at the assembly, class, or method level.
+
+- `[assembly: Fody.ConfigureAwait(false)]` - Assembly level
+- `[Fody.ConfigureAwait(false)]` - Class or method level
 
 ## Example
 
