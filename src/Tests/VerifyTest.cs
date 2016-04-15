@@ -52,4 +52,11 @@ public class VerifyTest
     {
         Approvals.Verify(Decompiler.Decompile(AssemblyWeaver.AfterAssemblyPath, "AssemblyToProcess.GenericMethod"));
     }
+
+    [Test]
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    public void DecompileCatchAndFinally()
+    {
+        Approvals.Verify(Decompiler.Decompile(AssemblyWeaver.AfterAssemblyPath, "AssemblyToProcess.CatchAndFinally"));
+    }
 }
