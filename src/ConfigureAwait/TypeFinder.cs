@@ -13,7 +13,7 @@ namespace ConfigureAwait
         {
             this.moduleDefinition = moduleDefinition;
             var msCoreLibDefinition = assemblyResolver.Resolve("mscorlib");
-            msCoreTypes = msCoreLibDefinition.MainModule.Types;
+            msCoreTypes = msCoreLibDefinition.MainModule.ExportedTypes.Select(s => s.Resolve()).Concat(msCoreLibDefinition.MainModule.Types);
         }
 
         public TypeDefinition GetMSCorLibTypeDefinition(string typeName)
