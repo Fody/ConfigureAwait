@@ -29,7 +29,7 @@ public class DoNotWeaveTests
     }
 
     [Test]
-    public async void AsyncMethodWithReturn()
+    public async Task AsyncMethodWithReturn()
     {
         var context = (dynamic)Activator.CreateInstance(contextType);
         var test = (dynamic)Activator.CreateInstance(classType);
@@ -43,7 +43,7 @@ public class DoNotWeaveTests
     }
 
     [Test]
-    public async void AsyncGenericMethod()
+    public async Task AsyncGenericMethod()
     {
         var context = (dynamic)Activator.CreateInstance(contextType);
         var test = (dynamic)Activator.CreateInstance(classType);
@@ -56,7 +56,7 @@ public class DoNotWeaveTests
     }
 
     [Test]
-    public async void AsyncGenericMethodWithReturn()
+    public async Task AsyncGenericMethodWithReturn()
     {
         var context = (dynamic)Activator.CreateInstance(contextType);
         var test = (dynamic)Activator.CreateInstance(classType);
