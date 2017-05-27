@@ -19,7 +19,7 @@
       .override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
       // Code size       317 (0x13d)
       .maxstack  3
-      .locals init ([0] int32 ,
+      .locals init ([0] int32 V_0,
                [1] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_1,
                [2] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_2,
                [3] string V_3,
@@ -188,8 +188,8 @@
                                                                                                                                        3E 64 5F 5F 30 00 00 )                            // >d__0..
     // Code size       65 (0x41)
     .maxstack  2
-    .locals init (valuetype AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0' V_0,
-             valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+    .locals init ([0] valuetype AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0' V_0,
+             [1] valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
     IL_0000:  ldloca.s   V_0
     IL_0002:  ldarg.1
     IL_0003:  stfld      class [mscorlib]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::writer

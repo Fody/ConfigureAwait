@@ -1,11 +1,9 @@
 ﻿using System.Runtime.CompilerServices;
 using ApprovalTests;
 using ApprovalTests.Namers;
-using ApprovalTests.Reporters;
 using NUnit.Framework;
 
 [TestFixture, Category("ILSpecific")]
-[UseReporter(typeof(DiffReporter))]
 [UseApprovalSubdirectory("ApprovalFiles")]
 public class VerifyTest
 {

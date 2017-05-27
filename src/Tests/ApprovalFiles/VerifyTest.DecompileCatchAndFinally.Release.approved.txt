@@ -15,7 +15,7 @@
       .override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
       // Code size       168 (0xa8)
       .maxstack  3
-      .locals init ([0] int32 ,
+      .locals init ([0] int32 V_0,
                [1] int32 V_1,
                [2] valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter V_2,
                [3] class [mscorlib]System.Exception V_3)
@@ -143,7 +143,7 @@
       .override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
       // Code size       179 (0xb3)
       .maxstack  3
-      .locals init ([0] int32 ,
+      .locals init ([0] int32 V_0,
                [1] int32 V_1,
                [2] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_2,
                [3] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_3,
@@ -275,7 +275,7 @@
       .override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
       // Code size       179 (0xb3)
       .maxstack  3
-      .locals init ([0] int32 ,
+      .locals init ([0] int32 V_0,
                [1] int32 V_1,
                [2] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_2,
                [3] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_3,
@@ -409,7 +409,7 @@
       .override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
       // Code size       219 (0xdb)
       .maxstack  3
-      .locals init ([0] int32 ,
+      .locals init ([0] int32 V_0,
                [1] object V_1,
                [2] valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter V_2,
                [3] class [mscorlib]System.Exception V_3)
@@ -555,7 +555,7 @@
       .override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
       // Code size       233 (0xe9)
       .maxstack  3
-      .locals init ([0] int32 ,
+      .locals init ([0] int32 V_0,
                [1] object V_1,
                [2] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_2,
                [3] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_3,
@@ -706,7 +706,7 @@
       .override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
       // Code size       230 (0xe6)
       .maxstack  3
-      .locals init ([0] int32 ,
+      .locals init ([0] int32 V_0,
                [1] object V_1,
                [2] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_2,
                [3] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_3,
@@ -850,8 +850,8 @@
                                                                                                                                        30 00 00 )                                        // 0..
     // Code size       49 (0x31)
     .maxstack  2
-    .locals init (valuetype AssemblyToProcess.CatchAndFinally/'<Catch1>d__0' V_0,
-             valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+    .locals init ([0] valuetype AssemblyToProcess.CatchAndFinally/'<Catch1>d__0' V_0,
+             [1] valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
     IL_0000:  ldloca.s   V_0
     IL_0002:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
     IL_0007:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>t__builder'
@@ -878,8 +878,8 @@
                                                                                                                                        31 00 00 )                                        // 1..
     // Code size       49 (0x31)
     .maxstack  2
-    .locals init (valuetype AssemblyToProcess.CatchAndFinally/'<Catch2>d__1' V_0,
-             valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+    .locals init ([0] valuetype AssemblyToProcess.CatchAndFinally/'<Catch2>d__1' V_0,
+             [1] valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
     IL_0000:  ldloca.s   V_0
     IL_0002:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
     IL_0007:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>t__builder'
@@ -906,8 +906,8 @@
                                                                                                                                        32 00 00 )                                        // 2..
     // Code size       49 (0x31)
     .maxstack  2
-    .locals init (valuetype AssemblyToProcess.CatchAndFinally/'<Catch3>d__2' V_0,
-             valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+    .locals init ([0] valuetype AssemblyToProcess.CatchAndFinally/'<Catch3>d__2' V_0,
+             [1] valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
     IL_0000:  ldloca.s   V_0
     IL_0002:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
     IL_0007:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>t__builder'
@@ -934,8 +934,8 @@
                                                                                                                                        5F 5F 33 00 00 )                                  // __3..
     // Code size       49 (0x31)
     .maxstack  2
-    .locals init (valuetype AssemblyToProcess.CatchAndFinally/'<Finally1>d__3' V_0,
-             valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+    .locals init ([0] valuetype AssemblyToProcess.CatchAndFinally/'<Finally1>d__3' V_0,
+             [1] valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
     IL_0000:  ldloca.s   V_0
     IL_0002:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
     IL_0007:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>t__builder'
@@ -962,8 +962,8 @@
                                                                                                                                        5F 5F 34 00 00 )                                  // __4..
     // Code size       49 (0x31)
     .maxstack  2
-    .locals init (valuetype AssemblyToProcess.CatchAndFinally/'<Finally2>d__4' V_0,
-             valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+    .locals init ([0] valuetype AssemblyToProcess.CatchAndFinally/'<Finally2>d__4' V_0,
+             [1] valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
     IL_0000:  ldloca.s   V_0
     IL_0002:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
     IL_0007:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>t__builder'
@@ -990,8 +990,8 @@
                                                                                                                                        5F 5F 35 00 00 )                                  // __5..
     // Code size       49 (0x31)
     .maxstack  2
-    .locals init (valuetype AssemblyToProcess.CatchAndFinally/'<Finally3>d__5' V_0,
-             valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+    .locals init ([0] valuetype AssemblyToProcess.CatchAndFinally/'<Finally3>d__5' V_0,
+             [1] valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
     IL_0000:  ldloca.s   V_0
     IL_0002:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
     IL_0007:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>t__builder'

@@ -25,7 +25,6 @@ public static class AssemblyWeaver
         if (File.Exists(beforePdbPath))
             File.Copy(beforePdbPath, afterPdbPath, true);
 
-        var assemblyResolver = new MockAssemblyResolver();
         var readerParameters = new ReaderParameters();
         var writerParameters = new WriterParameters();
 
@@ -35,20 +34,22 @@ public static class AssemblyWeaver
             writerParameters.WriteSymbols = true;
         }
 
-        var moduleDefinition = ModuleDefinition.ReadModule(AfterAssemblyPath, readerParameters);
-
-        var weavingTask = new ModuleWeaver
+        using (var moduleDefinition = ModuleDefinition.ReadModule(BeforeAssemblyPath, readerParameters))
+        using (var defaultAssemblyResolver = new DefaultAssemblyResolver())
         {
-            ModuleDefinition = moduleDefinition,
-            AssemblyResolver = assemblyResolver,
-            LogInfo = LogInfo,
-            LogWarning = LogWarning,
-            LogError = LogError,
-            DefineConstants = new[] { "DEBUG" } // Always testing the debug weaver
-        };
+            var weavingTask = new ModuleWeaver
+            {
+                ModuleDefinition = moduleDefinition,
+                AssemblyResolver = defaultAssemblyResolver,
+                LogInfo = LogInfo,
+                LogWarning = LogWarning,
+                LogError = LogError,
+                DefineConstants = new[] {"DEBUG"} // Always testing the debug weaver
+            };
 
-        weavingTask.Execute();
-        moduleDefinition.Write(AfterAssemblyPath, writerParameters);
+            weavingTask.Execute();
+            moduleDefinition.Write(AfterAssemblyPath, writerParameters);
+        }
 
         Assembly = Assembly.LoadFile(AfterAssemblyPath);
     }

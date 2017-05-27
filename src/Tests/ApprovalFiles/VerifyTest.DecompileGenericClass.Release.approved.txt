@@ -16,7 +16,7 @@
       .override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
       // Code size       161 (0xa1)
       .maxstack  3
-      .locals init ([0] int32 ,
+      .locals init ([0] int32 V_0,
                [1] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem> V_1,
                [2] valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!TItem> V_2,
                [3] class [mscorlib]System.Exception V_3)
@@ -122,8 +122,8 @@
                                                                                                                                        00 00 ) 
     // Code size       57 (0x39)
     .maxstack  2
-    .locals init (valuetype AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem> V_0,
-             valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+    .locals init ([0] valuetype AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem> V_0,
+             [1] valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
     IL_0000:  ldloca.s   V_0
     IL_0002:  ldarg.1
     IL_0003:  stfld      class [mscorlib]System.Threading.Tasks.Task`1<!0> valuetype AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem>::itemTask
