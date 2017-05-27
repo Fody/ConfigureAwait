@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 [assembly: Anotar.Custom.LogMinimalMessage]
 
