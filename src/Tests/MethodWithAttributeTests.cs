@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using NUnit.Framework;
 
 [TestFixture]
@@ -15,7 +16,7 @@ public class MethodWithAttributeTests
     }
 
     [Test]
-    public async void AsyncMethod()
+    public async Task AsyncMethod()
     {
         var context = (dynamic)Activator.CreateInstance(contextType);
         var test = (dynamic)Activator.CreateInstance(classType);

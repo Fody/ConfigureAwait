@@ -3,6 +3,7 @@ using System.IO;
 using System.Reflection;
 using ConfigureAwait;
 using Mono.Cecil;
+using NUnit.Framework;
 
 public static class AssemblyWeaver
 {
@@ -10,7 +11,7 @@ public static class AssemblyWeaver
 
     static AssemblyWeaver()
     {
-        BeforeAssemblyPath = Path.GetFullPath(@"..\..\..\AssemblyToProcess\bin\Debug\AssemblyToProcess.dll");
+        BeforeAssemblyPath = Path.GetFullPath(Path.Combine(TestContext.CurrentContext.TestDirectory,  @"..\..\..\AssemblyToProcess\bin\Debug\AssemblyToProcess.dll"));
         var beforePdbPath = Path.ChangeExtension(BeforeAssemblyPath, "pdb");
 
 #if (!DEBUG)
