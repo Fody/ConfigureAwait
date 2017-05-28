@@ -16,7 +16,7 @@ build:
   project: src\ConfigureAwait.sln
 
 test_script:
-  - nunit-console-x86 src\Tests\bin\Release\Tests.dll
+  - nunit3-console src\Tests\bin\Release\Tests.dll --x86 --result=myresults.xml;format=AppVeyor
 
 artifacts:
   - path: artifacts\*.nupkg
