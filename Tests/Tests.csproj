@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net46;netcoreapp2.0</TargetFrameworks>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <DisableFody>true</DisableFody>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <PackageReference Include="FodyHelpers" Version="2.4.4" />
+    <PackageReference Include="ApprovalTests" Version="3.0.14" Condition="'$(TargetFramework)' == 'net46'" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <ProjectReference Include="..\ConfigureAwait.Fody\ConfigureAwait.Fody.csproj" />
+    <ProjectReference Include="..\ConfigureAwait\ConfigureAwait.csproj" />
+    <ProjectReference Include="..\AssemblyToProcess\AssemblyToProcess.csproj" />
+  </ItemGroup>
+</Project>

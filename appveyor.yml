@@ -1,22 +1,17 @@
-skip_tags: true
-
+version: 1.0.{build}
+image: Visual Studio 2017
 configuration: Release
-
-cache:
-  - src\packages -> **\packages.config
-
+platform: Any CPU
+install:
+- cmd: appveyor downloadfile https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 before_build:
-  - nuget restore src\ConfigureAwait.sln
-
-after_build:
-  - src\BuildNuGetPackage\bin\Release\BuildNuGetPackage.exe artifacts
-
+- ps: nuget restore
 build:
-  parallel: true
-  project: src\ConfigureAwait.sln
-
+  verbosity: minimal
 test_script:
-  - nunit3-console src\Tests\bin\Release\Tests.dll --x86 --result=myresults.xml;format=AppVeyor
+- ps: >-
+    %xunit20%\xunit.console Tests\bin\Release\net46\Tests.dll
 
+    dotnet test "Tests\Tests.csproj" --framework netcoreapp2.0 --configuration Release --no-build --output bin\Release\netcoreapp2.0
 artifacts:
-  - path: artifacts\*.nupkg
+- path: nugets\**\*.nupkg

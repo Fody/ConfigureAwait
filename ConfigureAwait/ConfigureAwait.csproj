@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net452;netstandard1.4</TargetFrameworks>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+    <Authors>Cameron MacFarland, Simon Cropp</Authors>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Fody" Version="2.4.4" PrivateAssets="None" />
+    <PackageReference Include="FodyPackaging" Version="2.4.4" PrivateAssets="All" />
+  </ItemGroup>
+</Project>
