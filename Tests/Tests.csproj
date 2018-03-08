@@ -15,4 +15,7 @@
     <ProjectReference Include="..\ConfigureAwait\ConfigureAwait.csproj" />
     <ProjectReference Include="..\AssemblyToProcess\AssemblyToProcess.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApprovalFiles\" />
+  </ItemGroup>
 </Project>

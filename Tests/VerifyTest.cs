@@ -1,4 +1,4 @@
-﻿#if NET46
+﻿#if NET46 && DEBUG
 using System.Runtime.CompilerServices;
 using ApprovalTests;
 using Fody;
