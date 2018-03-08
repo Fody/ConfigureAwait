@@ -10,14 +10,14 @@ public partial class ModuleWeaverTests
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void DecompileExample()
     {
-        Approvals.Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.Example").Replace("\r\n", "\n").Replace("\n", "\r"));
+        Approvals.Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.Example"));
     }
 
     [Fact]
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void DecompileIssue1()
     {
-        Approvals.Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.Issue1").Replace("\r\n","\n").Replace("\n","\r"));
+        Approvals.Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.Issue1"));
     }
 
     [Fact]
