@@ -20,9 +20,9 @@ public class ModuleWeaver: BaseModuleWeaver
         }
 
         RemoveAttributes(types);
-        RemoveReference();
     }
 
+    public override bool ShouldCleanReference => true;
     void ProcessType(bool? assemblyConfigureAwaitValue, TypeDefinition type)
     {
         if (type.IsCompilerGenerated() && type.IsIAsyncStateMachine())
@@ -297,18 +297,5 @@ public class ModuleWeaver: BaseModuleWeaver
                 property.RemoveAllCustomAttributes();
             }
         }
-    }
-
-    void RemoveReference()
-    {
-        var referenceToRemove = ModuleDefinition.AssemblyReferences.FirstOrDefault(x => x.Name == "ConfigureAwait");
-        if (referenceToRemove == null)
-        {
-            LogInfo("\tNo reference to 'ConfigureAwait.dll' found. References not modified.");
-            return;
-        }
-
-        ModuleDefinition.AssemblyReferences.Remove(referenceToRemove);
-        LogInfo("\tRemoving reference to 'ConfigureAwait.dll'.");
     }
 }
