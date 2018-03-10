@@ -11,7 +11,7 @@ public partial class ModuleWeaverTests
 
     static ModuleWeaverTests()
     {
-        var assembly = Assembly.Load("xunit.assert");
+        Assembly.Load("xunit.assert");
         var weavingTask = new ModuleWeaver();
         testResult = weavingTask.ExecuteTestRun("AssemblyToProcess.dll");
 #if NET46
