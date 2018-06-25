@@ -75,8 +75,7 @@ public class ModuleWeaver : BaseModuleWeaver
 
     public override IEnumerable<string> GetAssembliesForScanning()
     {
-        yield return "netstandard";
-        yield return "mscorlib";
+        return Enumerable.Empty<string>();
     }
 
     void AddAwaitConfigToAsyncMethod(TypeDefinition type, bool value)
