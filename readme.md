@@ -1,19 +1,21 @@
 ![Icon](https://raw.github.com/Fody/ConfigureAwait/master/project_icon.png)
 
 
-### This is an add-in for [Fody](https://github.com/Fody/Fody/) 
+### This is an add-in for [Fody](https://github.com/Fody/Fody/)
 
 Allows you to set your async code's [`ConfigureAwait`](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.configureawait) at a global level.
 
-### Nuget package [![NuGet Status](http://img.shields.io/nuget/v/ConfigureAwait.Fody.svg?style=flat-square)](https://www.nuget.org/packages/ConfigureAwait.Fody/) [![Build Status](https://img.shields.io/appveyor/ci/distantcam/ConfigureAwait.svg?style=flat-square)](https://ci.appveyor.com/project/distantcam/configureawait)
+
+### NuGet package [![NuGet Status](http://img.shields.io/nuget/v/ConfigureAwait.Fody.svg?style=flat-square)](https://www.nuget.org/packages/ConfigureAwait.Fody/) [![Build Status](https://img.shields.io/appveyor/ci/distantcam/ConfigureAwait.svg?style=flat-square)](https://ci.appveyor.com/project/distantcam/configureawait)
 
 Available here http://nuget.org/packages/ConfigureAwait.Fody 
 
-To Install from the NuGet Package Manager Console 
-    
+To Install from the NuGet Package Manager Console
+
 ```
 PM> Install-Package ConfigureAwait.Fody
 ```
+
 
 ## How to use it
 
@@ -34,12 +36,13 @@ Add `<ConfigureAwait/>` to [FodyWeavers.xml](https://github.com/Fody/Fody#add-fo
 </Weavers>
 ```
 
+
 ## Example
 
 
 ### Your code
 
-```
+```csharp
 using Fody;
 
 [ConfigureAwait(false)]
@@ -47,13 +50,13 @@ public class MyAsyncLibrary
 {
     public async Task MyMethodAsync()
     {
-    	await Task.Delay(10);
-    	await Task.Delay(20);
+        await Task.Delay(10);
+        await Task.Delay(20);
     }
 
-	public async Task AnotherMethodAsync()
+    public async Task AnotherMethodAsync()
     {
-    	await Task.Delay(30);
+        await Task.Delay(30);
     }
 }
 ```
@@ -61,21 +64,22 @@ public class MyAsyncLibrary
 
 ### What gets compiled
 
-```
+```csharp
 public class MyAsyncLibrary
 {
     public async Task MyMethodAsync()
     {
-    	await Task.Delay(10).ConfigureAwait(false);
-		await Task.Delay(20).ConfigureAwait(false);
+        await Task.Delay(10).ConfigureAwait(false);
+        await Task.Delay(20).ConfigureAwait(false);
     }
 
-	public async Task AnotherMethodAsync()
+    public async Task AnotherMethodAsync()
     {
-    	await Task.Delay(30).ConfigureAwait(false);
+        await Task.Delay(30).ConfigureAwait(false);
     }
 }
 ```
+
 
 ## Icon
 
