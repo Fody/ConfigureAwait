@@ -1,4 +1,4 @@
-![Icon](https://raw.github.com/Fody/ConfigureAwait/master/project_icon.png)
+![Icon](https://raw.github.com/Fody/ConfigureAwait/master/package_icon.png)
 
 
 ### This is an add-in for [Fody](https://github.com/Fody/Fody/)
