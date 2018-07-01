@@ -53,8 +53,8 @@ namespace GlobalConfigureAwait.Extensions
                 if (field.FieldType.IsGenericInstance)
                 {
                     var genericFieldType = (GenericInstanceType)field.FieldType;
-                    var fieldtype = field.FieldType.Resolve();
-                    if (fieldtype.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
+                    var fieldType = field.FieldType.Resolve();
+                    if (fieldType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                     {
                         var genericArguments = genericFieldType.GenericArguments;
                         field.FieldType = _moduleDefinition.ImportReference(_genericConfiguredTaskAwaiterType)
@@ -236,8 +236,8 @@ namespace GlobalConfigureAwait.Extensions
                     if (fieldRef.FieldType.IsGenericInstance)
                     {
                         var genericFieldType = (GenericInstanceType)fieldRef.FieldType;
-                        var fieldtype = fieldRef.FieldType.Resolve();
-                        if (fieldtype.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
+                        var fieldType = fieldRef.FieldType.Resolve();
+                        if (fieldType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                         {
                             var genericArguments = genericFieldType.GenericArguments;
                             fieldRef.FieldType = _moduleDefinition.ImportReference(_genericConfiguredTaskAwaiterType)

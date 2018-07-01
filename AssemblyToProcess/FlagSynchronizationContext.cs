@@ -2,7 +2,7 @@ using System.Threading;
 
 namespace AssemblyToProcess
 {
-    public class FlagSyncronizationContext : SynchronizationContext
+    public class FlagSynchronizationContext : SynchronizationContext
     {
         public bool Flag { get; set; }
 

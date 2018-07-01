@@ -53,7 +53,7 @@ namespace ConfigureAwait.Fody
                 if (asyncStateMachineType == null)
                 {
                     if (methodSettings.MethodConfigureAwait.HasValue)
-                        LogWarning($"ConfigureAwaitAttribue applied to non-async method '{method.FullName}'.");
+                        LogWarning($"ConfigureAwaitAttribute applied to non-async method '{method.FullName}'.");
                     continue;
                 }
 

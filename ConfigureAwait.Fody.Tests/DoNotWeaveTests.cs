@@ -6,7 +6,7 @@ public partial class ModuleWeaverTests
     [Fact]
     public async Task DoNotWeave_AsyncMethod()
     {
-       var context = testResult.GetInstance("AssemblyToProcess.FlagSyncronizationContext");
+       var context = testResult.GetInstance("AssemblyToProcess.FlagSynchronizationContext");
         var test = testResult.GetInstance("AssemblyToProcess.DoNotWeave");
 
         Assert.False(context.Flag);
@@ -19,7 +19,7 @@ public partial class ModuleWeaverTests
     [Fact]
     public async Task DoNotWeave_AsyncMethodWithReturn()
     {
-        var context = testResult.GetInstance("AssemblyToProcess.FlagSyncronizationContext");
+        var context = testResult.GetInstance("AssemblyToProcess.FlagSynchronizationContext");
         var test = testResult.GetInstance("AssemblyToProcess.DoNotWeave");
 
         Assert.False(context.Flag);
@@ -33,7 +33,7 @@ public partial class ModuleWeaverTests
     [Fact]
     public async Task DoNotWeave_AsyncGenericMethod()
     {
-        var context = testResult.GetInstance("AssemblyToProcess.FlagSyncronizationContext");
+        var context = testResult.GetInstance("AssemblyToProcess.FlagSynchronizationContext");
         var test = testResult.GetInstance("AssemblyToProcess.DoNotWeave");
 
         Assert.False(context.Flag);
@@ -46,7 +46,7 @@ public partial class ModuleWeaverTests
     [Fact]
     public async Task DoNotWeave_AsyncGenericMethodWithReturn()
     {
-        var context = testResult.GetInstance("AssemblyToProcess.FlagSyncronizationContext");
+        var context = testResult.GetInstance("AssemblyToProcess.FlagSynchronizationContext");
         var test = testResult.GetInstance("AssemblyToProcess.DoNotWeave");
 
         Assert.False(context.Flag);
