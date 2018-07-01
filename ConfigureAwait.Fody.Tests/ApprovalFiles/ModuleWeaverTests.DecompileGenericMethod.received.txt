@@ -12,7 +12,7 @@
     .field private !TItem '<item>5__1'
     .field private !TItem '<>s__2'
     .field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem> '<>u__1'
-    .method public hidebysig specialname rtspecialname
+    .method public hidebysig specialname rtspecialname 
             instance void  .ctor() cil managed
     {
       // Code size       8 (0x8)
@@ -22,7 +22,7 @@
       IL_0006:  nop
       IL_0007:  ret
     } // end of method '<Method>d__0`1'::.ctor
-    .method private hidebysig newslot virtual final
+    .method private hidebysig newslot virtual final 
             instance void  MoveNext() cil managed
     {
       .override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
@@ -96,7 +96,7 @@
         IL_008c:  initobj    !TItem
         IL_0092:  leave.s    IL_00ae
       }  // end .try
-      catch [mscorlib]System.Exception
+      catch [mscorlib]System.Exception 
       {
         IL_0094:  stloc.s    V_4
         IL_0096:  ldarg.0
@@ -118,7 +118,7 @@
       IL_00c1:  nop
       IL_00c2:  ret
     } // end of method '<Method>d__0`1'::MoveNext
-    .method private hidebysig newslot virtual final
+    .method private hidebysig newslot virtual final 
             instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
     {
       .override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
@@ -126,8 +126,8 @@
       .maxstack  8
       IL_0000:  ret
     } // end of method '<Method>d__0`1'::SetStateMachine
-  }
-  .method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task
+  } 
+  .method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task 
           Method<TItem>(class [mscorlib]System.Threading.Tasks.Task`1<!!TItem> itemTask) cil managed
   {
                                                                                                                                        63 65 73 73 2E 47 65 6E 65 72 69 63 4D 65 74 68   // cess.GenericMeth
@@ -161,8 +161,8 @@
     IL_0037:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class AssemblyToProcess.GenericMethod/'<Method>d__0`1'<!!TItem>::'<>t__builder'
     IL_003c:  call       instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
     IL_0041:  ret
-  }
-  .method public hidebysig specialname rtspecialname
+  } 
+  .method public hidebysig specialname rtspecialname 
           instance void  .ctor() cil managed
   {
     // Code size       8 (0x8)
@@ -171,5 +171,5 @@
     IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
     IL_0006:  nop
     IL_0007:  ret
-  }
+  } 
 }

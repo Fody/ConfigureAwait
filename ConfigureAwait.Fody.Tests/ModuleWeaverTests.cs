@@ -3,9 +3,6 @@ using ConfigureAwait.Fody;
 using Fody;
 #pragma warning disable 618
 
-#if NET46
-[ApprovalTests.Namers.UseApprovalSubdirectory("ApprovalFiles")]
-#endif
 public partial class ModuleWeaverTests
 {
     static TestResult testResult;
