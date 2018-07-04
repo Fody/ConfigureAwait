@@ -1,4 +1,5 @@
 using System.Reflection;
+using ConfigureAwait.Fody;
 using Fody;
 #pragma warning disable 618
 

@@ -10,8 +10,8 @@ build_script:
 - cmd: dotnet build --configuration Release
 test_script:
 - cmd: >-
-    %xunit20%\xunit.console Tests\bin\Release\net46\Tests.dll
+    %xunit20%\xunit.console ConfigureAwait.Fody.Tests\bin\Release\net46\ConfigureAwait.Fody.Tests.dll
 
-    dotnet test "Tests\Tests.csproj" --framework netcoreapp2.0 --configuration Release --no-build --output bin\Release\netcoreapp2.0
+    dotnet test "ConfigureAwait.Fody.Tests\ConfigureAwait.Fody.Tests.csproj" --framework netcoreapp2.0 --configuration Release --no-build --output bin\Release\netcoreapp2.0
 artifacts:
 - path: nugets\**\*.nupkg
