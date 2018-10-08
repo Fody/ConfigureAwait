@@ -10,8 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <PackageReference Include="FodyHelpers" Version="3.2.6" />
-    <PackageReference Include="ApprovalTests" Version="3.0.14" Condition="'$(TargetFramework)' == 'net46'" />
+    <PackageReference Include="FodyHelpers" Version="3.2.9" />
+    <PackageReference Include="ApprovalTests" Version="3.0.18" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
     <ProjectReference Include="..\ConfigureAwait.Fody\ConfigureAwait.Fody.csproj" />
