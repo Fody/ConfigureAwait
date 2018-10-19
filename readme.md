@@ -6,15 +6,16 @@
 Allows you to set your async code's [`ConfigureAwait`](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.configureawait) at a global level.
 
 
-### NuGet package [![NuGet Status](http://img.shields.io/nuget/v/ConfigureAwait.Fody.svg?style=flat-square)](https://www.nuget.org/packages/ConfigureAwait.Fody/) [![Build Status](https://img.shields.io/appveyor/ci/distantcam/ConfigureAwait.svg?style=flat-square)](https://ci.appveyor.com/project/distantcam/configureawait)
+### NuGet package
 
-Available here http://nuget.org/packages/ConfigureAwait.Fody 
-
-To Install from the NuGet Package Manager Console
+Install the [ConfigureAwait.Fody NuGet package](https://nuget.org/packages/ConfigureAwait.Fody/) and update the [Fody NuGet package](https://nuget.org/packages/Fody/):
 
 ```
+PM> Install-Package Fody
 PM> Install-Package ConfigureAwait.Fody
 ```
+
+The `Install-Package Fody` is required since NuGet always defaults to the oldest, and most buggy, version of any dependency.
 
 
 ## How to use it
