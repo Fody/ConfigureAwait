@@ -1,7 +1,7 @@
 ![Icon](https://raw.github.com/Fody/ConfigureAwait/master/package_icon.png)
 
 
-### This is an add-in for [Fody](https://github.com/Fody/Fody/)
+### This is an add-in for [Fody](https://github.com/Fody/Home/)
 
 Allows you to set your async code's [`ConfigureAwait`](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.configureawait) at a global level.
 
@@ -28,7 +28,7 @@ By default, `ConfigureAwait.Fody` doesn't change any of your code. You have to e
 
 ### Add to FodyWeavers.xml
 
-Add `<ConfigureAwait/>` to [FodyWeavers.xml](https://github.com/Fody/Fody#add-fodyweaversxml)
+Add `<ConfigureAwait/>` to [FodyWeavers.xml](https://github.com/Fody/Home/blob/master/pages/usage.md#add-fodyweaversxml)
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
