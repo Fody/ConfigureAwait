@@ -5,6 +5,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <Authors>Cameron MacFarland, Simon Cropp</Authors>
+    <PackageOutputPath>$(SolutionDir)nugets</PackageOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Fody" Version="4.0.2" PrivateAssets="None" />
