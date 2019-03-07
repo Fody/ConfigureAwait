@@ -14,7 +14,6 @@ public partial class ModuleWeaverTests:IDisposable
         Assembly.Load("xunit.assert");
         var weavingTask = new ModuleWeaver();
         testResult = weavingTask.ExecuteTestRun("AssemblyToProcess.dll");
-
     }
 
     public ModuleWeaverTests()
