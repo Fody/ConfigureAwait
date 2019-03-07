@@ -1,0 +1,1107 @@
+﻿.class public auto ansi beforefieldinit AssemblyToProcess.CatchAndFinally
+extends [System.Runtime]System.Object
+{
+.class auto ansi sealed nested private beforefieldinit '<Catch1>d__0'
+extends [System.Runtime]System.Object
+implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class AssemblyToProcess.CatchAndFinally '<>4__this'
+.field private object '<>s__1'
+.field private int32 '<>s__2'
+.field private valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+object V_1,
+int32 V_2,
+valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_3,
+class AssemblyToProcess.CatchAndFinally/'<Catch1>d__0' V_4,
+class [System.Runtime]System.Exception V_5)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0074
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldarg.0
+IL_000e:  ldc.i4.0
+IL_000f:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>s__2'
+.try
+{
+IL_0014:  nop
+IL_0015:  newobj     instance void [System.Runtime]System.NotImplementedException::.ctor()
+IL_001a:  throw
+}  // end .try
+catch [System.Runtime]System.Object
+{
+IL_001b:  stloc.1
+IL_001c:  ldarg.0
+IL_001d:  ldloc.1
+IL_001e:  stfld      object AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>s__1'
+IL_0023:  ldarg.0
+IL_0024:  ldc.i4.1
+IL_0025:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>s__2'
+IL_002a:  leave.s    IL_002c
+}  // end handler
+IL_002c:  ldarg.0
+IL_002d:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>s__2'
+IL_0032:  stloc.2
+IL_0033:  ldloc.2
+IL_0034:  ldc.i4.1
+IL_0035:  beq.s      IL_0039
+IL_0037:  br.s       IL_009b
+IL_0039:  nop
+IL_003a:  ldc.i4.1
+IL_003b:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_0040:  callvirt   instance valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter [System.Runtime]System.Threading.Tasks.Task::GetAwaiter()
+IL_0045:  stloc.3
+IL_0046:  ldloca.s   V_3
+IL_0048:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted()
+IL_004d:  brtrue.s   IL_0090
+IL_004f:  ldarg.0
+IL_0050:  ldc.i4.0
+IL_0051:  dup
+IL_0052:  stloc.0
+IL_0053:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>1__state'
+IL_0058:  ldarg.0
+IL_0059:  ldloc.3
+IL_005a:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>u__1'
+IL_005f:  ldarg.0
+IL_0060:  stloc.s    V_4
+IL_0062:  ldarg.0
+IL_0063:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>t__builder'
+IL_0068:  ldloca.s   V_3
+IL_006a:  ldloca.s   V_4
+IL_006c:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'>(!!0&,
+!!1&)
+IL_0071:  nop
+IL_0072:  leave.s    IL_00d2
+IL_0074:  ldarg.0
+IL_0075:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>u__1'
+IL_007a:  stloc.3
+IL_007b:  ldarg.0
+IL_007c:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>u__1'
+IL_0081:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
+IL_0087:  ldarg.0
+IL_0088:  ldc.i4.m1
+IL_0089:  dup
+IL_008a:  stloc.0
+IL_008b:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>1__state'
+IL_0090:  ldloca.s   V_3
+IL_0092:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
+IL_0097:  nop
+IL_0098:  nop
+IL_0099:  br.s       IL_009b
+IL_009b:  ldarg.0
+IL_009c:  ldnull
+IL_009d:  stfld      object AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>s__1'
+IL_00a2:  leave.s    IL_00be
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_00a4:  stloc.s    V_5
+IL_00a6:  ldarg.0
+IL_00a7:  ldc.i4.s   -2
+IL_00a9:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>1__state'
+IL_00ae:  ldarg.0
+IL_00af:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>t__builder'
+IL_00b4:  ldloc.s    V_5
+IL_00b6:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_00bb:  nop
+IL_00bc:  leave.s    IL_00d2
+}  // end handler
+IL_00be:  ldarg.0
+IL_00bf:  ldc.i4.s   -2
+IL_00c1:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>1__state'
+IL_00c6:  ldarg.0
+IL_00c7:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>t__builder'
+IL_00cc:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00d1:  nop
+IL_00d2:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<Catch2>d__1'
+extends [System.Runtime]System.Object
+implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class AssemblyToProcess.CatchAndFinally '<>4__this'
+.field private object '<>s__1'
+.field private int32 '<>s__2'
+.field private valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+object V_1,
+int32 V_2,
+valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_3,
+valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_4,
+class AssemblyToProcess.CatchAndFinally/'<Catch2>d__1' V_5,
+class [System.Runtime]System.Exception V_6)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse    IL_0081
+IL_000d:  br.s       IL_000f
+IL_000f:  nop
+IL_0010:  ldarg.0
+IL_0011:  ldc.i4.0
+IL_0012:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>s__2'
+.try
+{
+IL_0017:  nop
+IL_0018:  newobj     instance void [System.Runtime]System.NotImplementedException::.ctor()
+IL_001d:  throw
+}  // end .try
+catch [System.Runtime]System.Object
+{
+IL_001e:  stloc.1
+IL_001f:  ldarg.0
+IL_0020:  ldloc.1
+IL_0021:  stfld      object AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>s__1'
+IL_0026:  ldarg.0
+IL_0027:  ldc.i4.1
+IL_0028:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>s__2'
+IL_002d:  leave.s    IL_002f
+}  // end handler
+IL_002f:  ldarg.0
+IL_0030:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>s__2'
+IL_0035:  stloc.2
+IL_0036:  ldloc.2
+IL_0037:  ldc.i4.1
+IL_0038:  beq.s      IL_003c
+IL_003a:  br.s       IL_00a8
+IL_003c:  nop
+IL_003d:  ldc.i4.1
+IL_003e:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_0043:  ldc.i4.0
+IL_0044:  callvirt   instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [netstandard]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0049:  stloc.s    V_4
+IL_004b:  ldloca.s   V_4
+IL_004d:  call       instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_0052:  stloc.3
+IL_0053:  ldloca.s   V_3
+IL_0055:  call       instance bool [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_005a:  brtrue.s   IL_009d
+IL_005c:  ldarg.0
+IL_005d:  ldc.i4.0
+IL_005e:  dup
+IL_005f:  stloc.0
+IL_0060:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>1__state'
+IL_0065:  ldarg.0
+IL_0066:  ldloc.3
+IL_0067:  stfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>u__1'
+IL_006c:  ldarg.0
+IL_006d:  stloc.s    V_5
+IL_006f:  ldarg.0
+IL_0070:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>t__builder'
+IL_0075:  ldloca.s   V_3
+IL_0077:  ldloca.s   V_5
+IL_0079:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'>(!!0&,
+!!1&)
+IL_007e:  nop
+IL_007f:  leave.s    IL_00df
+IL_0081:  ldarg.0
+IL_0082:  ldfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>u__1'
+IL_0087:  stloc.3
+IL_0088:  ldarg.0
+IL_0089:  ldflda     valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>u__1'
+IL_008e:  initobj    [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_0094:  ldarg.0
+IL_0095:  ldc.i4.m1
+IL_0096:  dup
+IL_0097:  stloc.0
+IL_0098:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>1__state'
+IL_009d:  ldloca.s   V_3
+IL_009f:  call       instance void [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_00a4:  nop
+IL_00a5:  nop
+IL_00a6:  br.s       IL_00a8
+IL_00a8:  ldarg.0
+IL_00a9:  ldnull
+IL_00aa:  stfld      object AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>s__1'
+IL_00af:  leave.s    IL_00cb
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_00b1:  stloc.s    V_6
+IL_00b3:  ldarg.0
+IL_00b4:  ldc.i4.s   -2
+IL_00b6:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>1__state'
+IL_00bb:  ldarg.0
+IL_00bc:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>t__builder'
+IL_00c1:  ldloc.s    V_6
+IL_00c3:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_00c8:  nop
+IL_00c9:  leave.s    IL_00df
+}  // end handler
+IL_00cb:  ldarg.0
+IL_00cc:  ldc.i4.s   -2
+IL_00ce:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>1__state'
+IL_00d3:  ldarg.0
+IL_00d4:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>t__builder'
+IL_00d9:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00de:  nop
+IL_00df:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<Catch3>d__2'
+extends [System.Runtime]System.Object
+implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class AssemblyToProcess.CatchAndFinally '<>4__this'
+.field private object '<>s__1'
+.field private int32 '<>s__2'
+.field private valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+object V_1,
+int32 V_2,
+valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_3,
+valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_4,
+class AssemblyToProcess.CatchAndFinally/'<Catch3>d__2' V_5,
+class [System.Runtime]System.Exception V_6)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_007e
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldarg.0
+IL_000e:  ldc.i4.0
+IL_000f:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>s__2'
+.try
+{
+IL_0014:  nop
+IL_0015:  newobj     instance void [System.Runtime]System.NotImplementedException::.ctor()
+IL_001a:  throw
+}  // end .try
+catch [System.Runtime]System.Object
+{
+IL_001b:  stloc.1
+IL_001c:  ldarg.0
+IL_001d:  ldloc.1
+IL_001e:  stfld      object AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>s__1'
+IL_0023:  ldarg.0
+IL_0024:  ldc.i4.1
+IL_0025:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>s__2'
+IL_002a:  leave.s    IL_002c
+}  // end handler
+IL_002c:  ldarg.0
+IL_002d:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>s__2'
+IL_0032:  stloc.2
+IL_0033:  ldloc.2
+IL_0034:  ldc.i4.1
+IL_0035:  beq.s      IL_0039
+IL_0037:  br.s       IL_00a5
+IL_0039:  nop
+IL_003a:  ldc.i4.1
+IL_003b:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_0040:  ldc.i4.0
+IL_0041:  callvirt   instance valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [System.Runtime]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0046:  stloc.s    V_4
+IL_0048:  ldloca.s   V_4
+IL_004a:  call       instance valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_004f:  stloc.3
+IL_0050:  ldloca.s   V_3
+IL_0052:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_0057:  brtrue.s   IL_009a
+IL_0059:  ldarg.0
+IL_005a:  ldc.i4.0
+IL_005b:  dup
+IL_005c:  stloc.0
+IL_005d:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>1__state'
+IL_0062:  ldarg.0
+IL_0063:  ldloc.3
+IL_0064:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>u__1'
+IL_0069:  ldarg.0
+IL_006a:  stloc.s    V_5
+IL_006c:  ldarg.0
+IL_006d:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>t__builder'
+IL_0072:  ldloca.s   V_3
+IL_0074:  ldloca.s   V_5
+IL_0076:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'>(!!0&,
+!!1&)
+IL_007b:  nop
+IL_007c:  leave.s    IL_00dc
+IL_007e:  ldarg.0
+IL_007f:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>u__1'
+IL_0084:  stloc.3
+IL_0085:  ldarg.0
+IL_0086:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>u__1'
+IL_008b:  initobj    [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_0091:  ldarg.0
+IL_0092:  ldc.i4.m1
+IL_0093:  dup
+IL_0094:  stloc.0
+IL_0095:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>1__state'
+IL_009a:  ldloca.s   V_3
+IL_009c:  call       instance void [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_00a1:  nop
+IL_00a2:  nop
+IL_00a3:  br.s       IL_00a5
+IL_00a5:  ldarg.0
+IL_00a6:  ldnull
+IL_00a7:  stfld      object AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>s__1'
+IL_00ac:  leave.s    IL_00c8
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_00ae:  stloc.s    V_6
+IL_00b0:  ldarg.0
+IL_00b1:  ldc.i4.s   -2
+IL_00b3:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>1__state'
+IL_00b8:  ldarg.0
+IL_00b9:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>t__builder'
+IL_00be:  ldloc.s    V_6
+IL_00c0:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_00c5:  nop
+IL_00c6:  leave.s    IL_00dc
+}  // end handler
+IL_00c8:  ldarg.0
+IL_00c9:  ldc.i4.s   -2
+IL_00cb:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>1__state'
+IL_00d0:  ldarg.0
+IL_00d1:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>t__builder'
+IL_00d6:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00db:  nop
+IL_00dc:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<Finally1>d__3'
+extends [System.Runtime]System.Object
+implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class AssemblyToProcess.CatchAndFinally '<>4__this'
+.field private object '<>s__1'
+.field private int32 '<>s__2'
+.field private valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+object V_1,
+valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_2,
+class AssemblyToProcess.CatchAndFinally/'<Finally1>d__3' V_3,
+class [System.Runtime]System.Exception V_4)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0069
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldarg.0
+IL_000e:  ldnull
+IL_000f:  stfld      object AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>s__1'
+IL_0014:  ldarg.0
+IL_0015:  ldc.i4.0
+IL_0016:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>s__2'
+.try
+{
+IL_001b:  nop
+IL_001c:  newobj     instance void [System.Runtime]System.NotImplementedException::.ctor()
+IL_0021:  throw
+}  // end .try
+catch [System.Runtime]System.Object
+{
+IL_0022:  stloc.1
+IL_0023:  ldarg.0
+IL_0024:  ldloc.1
+IL_0025:  stfld      object AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>s__1'
+IL_002a:  leave.s    IL_002c
+}  // end handler
+IL_002c:  nop
+IL_002d:  ldc.i4.1
+IL_002e:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_0033:  callvirt   instance valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter [System.Runtime]System.Threading.Tasks.Task::GetAwaiter()
+IL_0038:  stloc.2
+IL_0039:  ldloca.s   V_2
+IL_003b:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted()
+IL_0040:  brtrue.s   IL_0085
+IL_0042:  ldarg.0
+IL_0043:  ldc.i4.0
+IL_0044:  dup
+IL_0045:  stloc.0
+IL_0046:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>1__state'
+IL_004b:  ldarg.0
+IL_004c:  ldloc.2
+IL_004d:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>u__1'
+IL_0052:  ldarg.0
+IL_0053:  stloc.3
+IL_0054:  ldarg.0
+IL_0055:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>t__builder'
+IL_005a:  ldloca.s   V_2
+IL_005c:  ldloca.s   V_3
+IL_005e:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'>(!!0&,
+!!1&)
+IL_0063:  nop
+IL_0064:  leave      IL_00f1
+IL_0069:  ldarg.0
+IL_006a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>u__1'
+IL_006f:  stloc.2
+IL_0070:  ldarg.0
+IL_0071:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>u__1'
+IL_0076:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
+IL_007c:  ldarg.0
+IL_007d:  ldc.i4.m1
+IL_007e:  dup
+IL_007f:  stloc.0
+IL_0080:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>1__state'
+IL_0085:  ldloca.s   V_2
+IL_0087:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
+IL_008c:  nop
+IL_008d:  nop
+IL_008e:  ldarg.0
+IL_008f:  ldfld      object AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>s__1'
+IL_0094:  stloc.1
+IL_0095:  ldloc.1
+IL_0096:  brfalse.s  IL_00b3
+IL_0098:  ldloc.1
+IL_0099:  isinst     [System.Runtime]System.Exception
+IL_009e:  stloc.s    V_4
+IL_00a0:  ldloc.s    V_4
+IL_00a2:  brtrue.s   IL_00a6
+IL_00a4:  ldloc.1
+IL_00a5:  throw
+IL_00a6:  ldloc.s    V_4
+IL_00a8:  call       class [System.Runtime]System.Runtime.ExceptionServices.ExceptionDispatchInfo [System.Runtime]System.Runtime.ExceptionServices.ExceptionDispatchInfo::Capture(class [System.Runtime]System.Exception)
+IL_00ad:  callvirt   instance void [System.Runtime]System.Runtime.ExceptionServices.ExceptionDispatchInfo::Throw()
+IL_00b2:  nop
+IL_00b3:  ldarg.0
+IL_00b4:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>s__2'
+IL_00b9:  pop
+IL_00ba:  ldarg.0
+IL_00bb:  ldnull
+IL_00bc:  stfld      object AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>s__1'
+IL_00c1:  leave.s    IL_00dd
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_00c3:  stloc.s    V_4
+IL_00c5:  ldarg.0
+IL_00c6:  ldc.i4.s   -2
+IL_00c8:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>1__state'
+IL_00cd:  ldarg.0
+IL_00ce:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>t__builder'
+IL_00d3:  ldloc.s    V_4
+IL_00d5:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_00da:  nop
+IL_00db:  leave.s    IL_00f1
+}  // end handler
+IL_00dd:  ldarg.0
+IL_00de:  ldc.i4.s   -2
+IL_00e0:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>1__state'
+IL_00e5:  ldarg.0
+IL_00e6:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>t__builder'
+IL_00eb:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00f0:  nop
+IL_00f1:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<Finally2>d__4'
+extends [System.Runtime]System.Object
+implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class AssemblyToProcess.CatchAndFinally '<>4__this'
+.field private object '<>s__1'
+.field private int32 '<>s__2'
+.field private valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+object V_1,
+valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_2,
+valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_3,
+class AssemblyToProcess.CatchAndFinally/'<Finally2>d__4' V_4,
+class [System.Runtime]System.Exception V_5)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0073
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldarg.0
+IL_000e:  ldnull
+IL_000f:  stfld      object AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>s__1'
+IL_0014:  ldarg.0
+IL_0015:  ldc.i4.0
+IL_0016:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>s__2'
+.try
+{
+IL_001b:  nop
+IL_001c:  newobj     instance void [System.Runtime]System.NotImplementedException::.ctor()
+IL_0021:  throw
+}  // end .try
+catch [System.Runtime]System.Object
+{
+IL_0022:  stloc.1
+IL_0023:  ldarg.0
+IL_0024:  ldloc.1
+IL_0025:  stfld      object AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>s__1'
+IL_002a:  leave.s    IL_002c
+}  // end handler
+IL_002c:  nop
+IL_002d:  ldc.i4.1
+IL_002e:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_0033:  ldc.i4.0
+IL_0034:  callvirt   instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [netstandard]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0039:  stloc.3
+IL_003a:  ldloca.s   V_3
+IL_003c:  call       instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_0041:  stloc.2
+IL_0042:  ldloca.s   V_2
+IL_0044:  call       instance bool [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_0049:  brtrue.s   IL_008f
+IL_004b:  ldarg.0
+IL_004c:  ldc.i4.0
+IL_004d:  dup
+IL_004e:  stloc.0
+IL_004f:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>1__state'
+IL_0054:  ldarg.0
+IL_0055:  ldloc.2
+IL_0056:  stfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>u__1'
+IL_005b:  ldarg.0
+IL_005c:  stloc.s    V_4
+IL_005e:  ldarg.0
+IL_005f:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>t__builder'
+IL_0064:  ldloca.s   V_2
+IL_0066:  ldloca.s   V_4
+IL_0068:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'>(!!0&,
+!!1&)
+IL_006d:  nop
+IL_006e:  leave      IL_00fb
+IL_0073:  ldarg.0
+IL_0074:  ldfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>u__1'
+IL_0079:  stloc.2
+IL_007a:  ldarg.0
+IL_007b:  ldflda     valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>u__1'
+IL_0080:  initobj    [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_0086:  ldarg.0
+IL_0087:  ldc.i4.m1
+IL_0088:  dup
+IL_0089:  stloc.0
+IL_008a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>1__state'
+IL_008f:  ldloca.s   V_2
+IL_0091:  call       instance void [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_0096:  nop
+IL_0097:  nop
+IL_0098:  ldarg.0
+IL_0099:  ldfld      object AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>s__1'
+IL_009e:  stloc.1
+IL_009f:  ldloc.1
+IL_00a0:  brfalse.s  IL_00bd
+IL_00a2:  ldloc.1
+IL_00a3:  isinst     [System.Runtime]System.Exception
+IL_00a8:  stloc.s    V_5
+IL_00aa:  ldloc.s    V_5
+IL_00ac:  brtrue.s   IL_00b0
+IL_00ae:  ldloc.1
+IL_00af:  throw
+IL_00b0:  ldloc.s    V_5
+IL_00b2:  call       class [System.Runtime]System.Runtime.ExceptionServices.ExceptionDispatchInfo [System.Runtime]System.Runtime.ExceptionServices.ExceptionDispatchInfo::Capture(class [System.Runtime]System.Exception)
+IL_00b7:  callvirt   instance void [System.Runtime]System.Runtime.ExceptionServices.ExceptionDispatchInfo::Throw()
+IL_00bc:  nop
+IL_00bd:  ldarg.0
+IL_00be:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>s__2'
+IL_00c3:  pop
+IL_00c4:  ldarg.0
+IL_00c5:  ldnull
+IL_00c6:  stfld      object AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>s__1'
+IL_00cb:  leave.s    IL_00e7
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_00cd:  stloc.s    V_5
+IL_00cf:  ldarg.0
+IL_00d0:  ldc.i4.s   -2
+IL_00d2:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>1__state'
+IL_00d7:  ldarg.0
+IL_00d8:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>t__builder'
+IL_00dd:  ldloc.s    V_5
+IL_00df:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_00e4:  nop
+IL_00e5:  leave.s    IL_00fb
+}  // end handler
+IL_00e7:  ldarg.0
+IL_00e8:  ldc.i4.s   -2
+IL_00ea:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>1__state'
+IL_00ef:  ldarg.0
+IL_00f0:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>t__builder'
+IL_00f5:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00fa:  nop
+IL_00fb:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<Finally3>d__5'
+extends [System.Runtime]System.Object
+implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class AssemblyToProcess.CatchAndFinally '<>4__this'
+.field private object '<>s__1'
+.field private int32 '<>s__2'
+.field private valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+object V_1,
+valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_2,
+valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_3,
+class AssemblyToProcess.CatchAndFinally/'<Finally3>d__5' V_4,
+class [System.Runtime]System.Exception V_5)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0073
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldarg.0
+IL_000e:  ldnull
+IL_000f:  stfld      object AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>s__1'
+IL_0014:  ldarg.0
+IL_0015:  ldc.i4.0
+IL_0016:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>s__2'
+.try
+{
+IL_001b:  nop
+IL_001c:  newobj     instance void [System.Runtime]System.NotImplementedException::.ctor()
+IL_0021:  throw
+}  // end .try
+catch [System.Runtime]System.Object
+{
+IL_0022:  stloc.1
+IL_0023:  ldarg.0
+IL_0024:  ldloc.1
+IL_0025:  stfld      object AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>s__1'
+IL_002a:  leave.s    IL_002c
+}  // end handler
+IL_002c:  nop
+IL_002d:  ldc.i4.1
+IL_002e:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_0033:  ldc.i4.0
+IL_0034:  callvirt   instance valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [System.Runtime]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0039:  stloc.3
+IL_003a:  ldloca.s   V_3
+IL_003c:  call       instance valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_0041:  stloc.2
+IL_0042:  ldloca.s   V_2
+IL_0044:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_0049:  brtrue.s   IL_008f
+IL_004b:  ldarg.0
+IL_004c:  ldc.i4.0
+IL_004d:  dup
+IL_004e:  stloc.0
+IL_004f:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>1__state'
+IL_0054:  ldarg.0
+IL_0055:  ldloc.2
+IL_0056:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>u__1'
+IL_005b:  ldarg.0
+IL_005c:  stloc.s    V_4
+IL_005e:  ldarg.0
+IL_005f:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>t__builder'
+IL_0064:  ldloca.s   V_2
+IL_0066:  ldloca.s   V_4
+IL_0068:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'>(!!0&,
+!!1&)
+IL_006d:  nop
+IL_006e:  leave      IL_00fb
+IL_0073:  ldarg.0
+IL_0074:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>u__1'
+IL_0079:  stloc.2
+IL_007a:  ldarg.0
+IL_007b:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>u__1'
+IL_0080:  initobj    [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_0086:  ldarg.0
+IL_0087:  ldc.i4.m1
+IL_0088:  dup
+IL_0089:  stloc.0
+IL_008a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>1__state'
+IL_008f:  ldloca.s   V_2
+IL_0091:  call       instance void [System.Runtime]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_0096:  nop
+IL_0097:  nop
+IL_0098:  ldarg.0
+IL_0099:  ldfld      object AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>s__1'
+IL_009e:  stloc.1
+IL_009f:  ldloc.1
+IL_00a0:  brfalse.s  IL_00bd
+IL_00a2:  ldloc.1
+IL_00a3:  isinst     [System.Runtime]System.Exception
+IL_00a8:  stloc.s    V_5
+IL_00aa:  ldloc.s    V_5
+IL_00ac:  brtrue.s   IL_00b0
+IL_00ae:  ldloc.1
+IL_00af:  throw
+IL_00b0:  ldloc.s    V_5
+IL_00b2:  call       class [System.Runtime]System.Runtime.ExceptionServices.ExceptionDispatchInfo [System.Runtime]System.Runtime.ExceptionServices.ExceptionDispatchInfo::Capture(class [System.Runtime]System.Exception)
+IL_00b7:  callvirt   instance void [System.Runtime]System.Runtime.ExceptionServices.ExceptionDispatchInfo::Throw()
+IL_00bc:  nop
+IL_00bd:  ldarg.0
+IL_00be:  ldfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>s__2'
+IL_00c3:  pop
+IL_00c4:  ldarg.0
+IL_00c5:  ldnull
+IL_00c6:  stfld      object AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>s__1'
+IL_00cb:  leave.s    IL_00e7
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_00cd:  stloc.s    V_5
+IL_00cf:  ldarg.0
+IL_00d0:  ldc.i4.s   -2
+IL_00d2:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>1__state'
+IL_00d7:  ldarg.0
+IL_00d8:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>t__builder'
+IL_00dd:  ldloc.s    V_5
+IL_00df:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_00e4:  nop
+IL_00e5:  leave.s    IL_00fb
+}  // end handler
+IL_00e7:  ldarg.0
+IL_00e8:  ldc.i4.s   -2
+IL_00ea:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>1__state'
+IL_00ef:  ldarg.0
+IL_00f0:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>t__builder'
+IL_00f5:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00fa:  nop
+IL_00fb:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Catch1() cil managed
+{
+63 65 73 73 2E 43 61 74 63 68 41 6E 64 46 69 6E   // cess.CatchAndFin
+61 6C 6C 79 2B 3C 43 61 74 63 68 31 3E 64 5F 5F   // ally+<Catch1>d__
+30 00 00 )                                        // 0..
+.maxstack  2
+.locals init (class AssemblyToProcess.CatchAndFinally/'<Catch1>d__0' V_0,
+valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>t__builder'
+IL_0035:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Catch2() cil managed
+{
+63 65 73 73 2E 43 61 74 63 68 41 6E 64 46 69 6E   // cess.CatchAndFin
+61 6C 6C 79 2B 3C 43 61 74 63 68 32 3E 64 5F 5F   // ally+<Catch2>d__
+31 00 00 )                                        // 1..
+.maxstack  2
+.locals init (class AssemblyToProcess.CatchAndFinally/'<Catch2>d__1' V_0,
+valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>t__builder'
+IL_0035:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Catch3() cil managed
+{
+63 65 73 73 2E 43 61 74 63 68 41 6E 64 46 69 6E   // cess.CatchAndFin
+61 6C 6C 79 2B 3C 43 61 74 63 68 33 3E 64 5F 5F   // ally+<Catch3>d__
+32 00 00 )                                        // 2..
+.maxstack  2
+.locals init (class AssemblyToProcess.CatchAndFinally/'<Catch3>d__2' V_0,
+valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>t__builder'
+IL_0035:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Finally1() cil managed
+{
+63 65 73 73 2E 43 61 74 63 68 41 6E 64 46 69 6E   // cess.CatchAndFin
+61 6C 6C 79 2B 3C 46 69 6E 61 6C 6C 79 31 3E 64   // ally+<Finally1>d
+5F 5F 33 00 00 )                                  // __3..
+.maxstack  2
+.locals init (class AssemblyToProcess.CatchAndFinally/'<Finally1>d__3' V_0,
+valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>t__builder'
+IL_0035:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Finally2() cil managed
+{
+63 65 73 73 2E 43 61 74 63 68 41 6E 64 46 69 6E   // cess.CatchAndFin
+61 6C 6C 79 2B 3C 46 69 6E 61 6C 6C 79 32 3E 64   // ally+<Finally2>d
+5F 5F 34 00 00 )                                  // __4..
+.maxstack  2
+.locals init (class AssemblyToProcess.CatchAndFinally/'<Finally2>d__4' V_0,
+valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>t__builder'
+IL_0035:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Finally3() cil managed
+{
+63 65 73 73 2E 43 61 74 63 68 41 6E 64 46 69 6E   // cess.CatchAndFin
+61 6C 6C 79 2B 3C 46 69 6E 61 6C 6C 79 33 3E 64   // ally+<Finally3>d
+5F 5F 35 00 00 )                                  // __5..
+.maxstack  2
+.locals init (class AssemblyToProcess.CatchAndFinally/'<Finally3>d__5' V_0,
+valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>t__builder'
+IL_0035:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+}

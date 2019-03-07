@@ -1,0 +1,2217 @@
+﻿.class public auto ansi beforefieldinit AssemblyToProcess.Example
+extends [mscorlib]System.Object
+{
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod1>d__0'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter V_1,
+class AssemblyToProcess.Example/'<AsyncMethod1>d__0' V_2,
+class [mscorlib]System.Exception V_3)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0046
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldc.i4.1
+IL_000e:  call       class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::Delay(int32)
+IL_0013:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter [mscorlib]System.Threading.Tasks.Task::GetAwaiter()
+IL_0018:  stloc.1
+IL_0019:  ldloca.s   V_1
+IL_001b:  call       instance bool [mscorlib]System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted()
+IL_0020:  brtrue.s   IL_0062
+IL_0022:  ldarg.0
+IL_0023:  ldc.i4.0
+IL_0024:  dup
+IL_0025:  stloc.0
+IL_0026:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>1__state'
+IL_002b:  ldarg.0
+IL_002c:  ldloc.1
+IL_002d:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>u__1'
+IL_0032:  ldarg.0
+IL_0033:  stloc.2
+IL_0034:  ldarg.0
+IL_0035:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>t__builder'
+IL_003a:  ldloca.s   V_1
+IL_003c:  ldloca.s   V_2
+IL_003e:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter,class AssemblyToProcess.Example/'<AsyncMethod1>d__0'>(!!0&,
+!!1&)
+IL_0043:  nop
+IL_0044:  leave.s    IL_0098
+IL_0046:  ldarg.0
+IL_0047:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>u__1'
+IL_004c:  stloc.1
+IL_004d:  ldarg.0
+IL_004e:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>u__1'
+IL_0053:  initobj    [mscorlib]System.Runtime.CompilerServices.TaskAwaiter
+IL_0059:  ldarg.0
+IL_005a:  ldc.i4.m1
+IL_005b:  dup
+IL_005c:  stloc.0
+IL_005d:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>1__state'
+IL_0062:  ldloca.s   V_1
+IL_0064:  call       instance void [mscorlib]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
+IL_0069:  nop
+IL_006a:  leave.s    IL_0084
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_006c:  stloc.3
+IL_006d:  ldarg.0
+IL_006e:  ldc.i4.s   -2
+IL_0070:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>1__state'
+IL_0075:  ldarg.0
+IL_0076:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>t__builder'
+IL_007b:  ldloc.3
+IL_007c:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [mscorlib]System.Exception)
+IL_0081:  nop
+IL_0082:  leave.s    IL_0098
+}  // end handler
+IL_0084:  ldarg.0
+IL_0085:  ldc.i4.s   -2
+IL_0087:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>1__state'
+IL_008c:  ldarg.0
+IL_008d:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>t__builder'
+IL_0092:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_0097:  nop
+IL_0098:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod2>d__1'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_2,
+class AssemblyToProcess.Example/'<AsyncMethod2>d__1' V_3,
+class [mscorlib]System.Exception V_4)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_004f
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldc.i4.1
+IL_000e:  call       class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::Delay(int32)
+IL_0013:  ldc.i4.0
+IL_0014:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [mscorlib]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0019:  stloc.2
+IL_001a:  ldloca.s   V_2
+IL_001c:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_0021:  stloc.1
+IL_0022:  ldloca.s   V_1
+IL_0024:  call       instance bool [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_0029:  brtrue.s   IL_006b
+IL_002b:  ldarg.0
+IL_002c:  ldc.i4.0
+IL_002d:  dup
+IL_002e:  stloc.0
+IL_002f:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>1__state'
+IL_0034:  ldarg.0
+IL_0035:  ldloc.1
+IL_0036:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>u__1'
+IL_003b:  ldarg.0
+IL_003c:  stloc.3
+IL_003d:  ldarg.0
+IL_003e:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>t__builder'
+IL_0043:  ldloca.s   V_1
+IL_0045:  ldloca.s   V_3
+IL_0047:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.Example/'<AsyncMethod2>d__1'>(!!0&,
+!!1&)
+IL_004c:  nop
+IL_004d:  leave.s    IL_00a3
+IL_004f:  ldarg.0
+IL_0050:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>u__1'
+IL_0055:  stloc.1
+IL_0056:  ldarg.0
+IL_0057:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>u__1'
+IL_005c:  initobj    [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_0062:  ldarg.0
+IL_0063:  ldc.i4.m1
+IL_0064:  dup
+IL_0065:  stloc.0
+IL_0066:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>1__state'
+IL_006b:  ldloca.s   V_1
+IL_006d:  call       instance void [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_0072:  nop
+IL_0073:  leave.s    IL_008f
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_0075:  stloc.s    V_4
+IL_0077:  ldarg.0
+IL_0078:  ldc.i4.s   -2
+IL_007a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>1__state'
+IL_007f:  ldarg.0
+IL_0080:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>t__builder'
+IL_0085:  ldloc.s    V_4
+IL_0087:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [mscorlib]System.Exception)
+IL_008c:  nop
+IL_008d:  leave.s    IL_00a3
+}  // end handler
+IL_008f:  ldarg.0
+IL_0090:  ldc.i4.s   -2
+IL_0092:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>1__state'
+IL_0097:  ldarg.0
+IL_0098:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>t__builder'
+IL_009d:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00a2:  nop
+IL_00a3:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod3>d__2'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_2,
+class AssemblyToProcess.Example/'<AsyncMethod3>d__2' V_3,
+class [mscorlib]System.Exception V_4)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_004f
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldc.i4.1
+IL_000e:  call       class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::Delay(int32)
+IL_0013:  ldc.i4.0
+IL_0014:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [mscorlib]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0019:  stloc.2
+IL_001a:  ldloca.s   V_2
+IL_001c:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_0021:  stloc.1
+IL_0022:  ldloca.s   V_1
+IL_0024:  call       instance bool [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_0029:  brtrue.s   IL_006b
+IL_002b:  ldarg.0
+IL_002c:  ldc.i4.0
+IL_002d:  dup
+IL_002e:  stloc.0
+IL_002f:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>1__state'
+IL_0034:  ldarg.0
+IL_0035:  ldloc.1
+IL_0036:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>u__1'
+IL_003b:  ldarg.0
+IL_003c:  stloc.3
+IL_003d:  ldarg.0
+IL_003e:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>t__builder'
+IL_0043:  ldloca.s   V_1
+IL_0045:  ldloca.s   V_3
+IL_0047:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.Example/'<AsyncMethod3>d__2'>(!!0&,
+!!1&)
+IL_004c:  nop
+IL_004d:  leave.s    IL_00a3
+IL_004f:  ldarg.0
+IL_0050:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>u__1'
+IL_0055:  stloc.1
+IL_0056:  ldarg.0
+IL_0057:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>u__1'
+IL_005c:  initobj    [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_0062:  ldarg.0
+IL_0063:  ldc.i4.m1
+IL_0064:  dup
+IL_0065:  stloc.0
+IL_0066:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>1__state'
+IL_006b:  ldloca.s   V_1
+IL_006d:  call       instance void [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_0072:  nop
+IL_0073:  leave.s    IL_008f
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_0075:  stloc.s    V_4
+IL_0077:  ldarg.0
+IL_0078:  ldc.i4.s   -2
+IL_007a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>1__state'
+IL_007f:  ldarg.0
+IL_0080:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>t__builder'
+IL_0085:  ldloc.s    V_4
+IL_0087:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [mscorlib]System.Exception)
+IL_008c:  nop
+IL_008d:  leave.s    IL_00a3
+}  // end handler
+IL_008f:  ldarg.0
+IL_0090:  ldc.i4.s   -2
+IL_0092:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>1__state'
+IL_0097:  ldarg.0
+IL_0098:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>t__builder'
+IL_009d:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00a2:  nop
+IL_00a3:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod4>d__3'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private int32 '<result>5__1'
+.field private int32 '<>s__2'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+int32 V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> V_2,
+class AssemblyToProcess.Example/'<AsyncMethod4>d__3' V_3,
+class [mscorlib]System.Exception V_4)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0047
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldc.i4.s   10
+IL_000f:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<int32>(!!0)
+IL_0014:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<int32>::GetAwaiter()
+IL_0019:  stloc.2
+IL_001a:  ldloca.s   V_2
+IL_001c:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>::get_IsCompleted()
+IL_0021:  brtrue.s   IL_0063
+IL_0023:  ldarg.0
+IL_0024:  ldc.i4.0
+IL_0025:  dup
+IL_0026:  stloc.0
+IL_0027:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>1__state'
+IL_002c:  ldarg.0
+IL_002d:  ldloc.2
+IL_002e:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>u__1'
+IL_0033:  ldarg.0
+IL_0034:  stloc.3
+IL_0035:  ldarg.0
+IL_0036:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>t__builder'
+IL_003b:  ldloca.s   V_2
+IL_003d:  ldloca.s   V_3
+IL_003f:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>,class AssemblyToProcess.Example/'<AsyncMethod4>d__3'>(!!0&,
+!!1&)
+IL_0044:  nop
+IL_0045:  leave.s    IL_00b4
+IL_0047:  ldarg.0
+IL_0048:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>u__1'
+IL_004d:  stloc.2
+IL_004e:  ldarg.0
+IL_004f:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>u__1'
+IL_0054:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>
+IL_005a:  ldarg.0
+IL_005b:  ldc.i4.m1
+IL_005c:  dup
+IL_005d:  stloc.0
+IL_005e:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>1__state'
+IL_0063:  ldarg.0
+IL_0064:  ldloca.s   V_2
+IL_0066:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>::GetResult()
+IL_006b:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>s__2'
+IL_0070:  ldarg.0
+IL_0071:  ldarg.0
+IL_0072:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>s__2'
+IL_0077:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<result>5__1'
+IL_007c:  ldarg.0
+IL_007d:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<result>5__1'
+IL_0082:  stloc.1
+IL_0083:  leave.s    IL_009f
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_0085:  stloc.s    V_4
+IL_0087:  ldarg.0
+IL_0088:  ldc.i4.s   -2
+IL_008a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>1__state'
+IL_008f:  ldarg.0
+IL_0090:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>t__builder'
+IL_0095:  ldloc.s    V_4
+IL_0097:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetException(class [mscorlib]System.Exception)
+IL_009c:  nop
+IL_009d:  leave.s    IL_00b4
+}  // end handler
+IL_009f:  ldarg.0
+IL_00a0:  ldc.i4.s   -2
+IL_00a2:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>1__state'
+IL_00a7:  ldarg.0
+IL_00a8:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>t__builder'
+IL_00ad:  ldloc.1
+IL_00ae:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetResult(!0)
+IL_00b3:  nop
+IL_00b4:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod5>d__4'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private int32 '<result>5__1'
+.field private int32 '<>s__2'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+int32 V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> V_2,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32> V_3,
+class AssemblyToProcess.Example/'<AsyncMethod5>d__4' V_4,
+class [mscorlib]System.Exception V_5)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0051
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldc.i4.s   10
+IL_000f:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<int32>(!!0)
+IL_0014:  ldc.i4.0
+IL_0015:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<int32>::ConfigureAwait(bool)
+IL_001a:  stloc.3
+IL_001b:  ldloca.s   V_3
+IL_001d:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32>::GetAwaiter()
+IL_0022:  stloc.2
+IL_0023:  ldloca.s   V_2
+IL_0025:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::get_IsCompleted()
+IL_002a:  brtrue.s   IL_006d
+IL_002c:  ldarg.0
+IL_002d:  ldc.i4.0
+IL_002e:  dup
+IL_002f:  stloc.0
+IL_0030:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>1__state'
+IL_0035:  ldarg.0
+IL_0036:  ldloc.2
+IL_0037:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>u__1'
+IL_003c:  ldarg.0
+IL_003d:  stloc.s    V_4
+IL_003f:  ldarg.0
+IL_0040:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>t__builder'
+IL_0045:  ldloca.s   V_2
+IL_0047:  ldloca.s   V_4
+IL_0049:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>,class AssemblyToProcess.Example/'<AsyncMethod5>d__4'>(!!0&,
+!!1&)
+IL_004e:  nop
+IL_004f:  leave.s    IL_00be
+IL_0051:  ldarg.0
+IL_0052:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>u__1'
+IL_0057:  stloc.2
+IL_0058:  ldarg.0
+IL_0059:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>u__1'
+IL_005e:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>
+IL_0064:  ldarg.0
+IL_0065:  ldc.i4.m1
+IL_0066:  dup
+IL_0067:  stloc.0
+IL_0068:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>1__state'
+IL_006d:  ldarg.0
+IL_006e:  ldloca.s   V_2
+IL_0070:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::GetResult()
+IL_0075:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>s__2'
+IL_007a:  ldarg.0
+IL_007b:  ldarg.0
+IL_007c:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>s__2'
+IL_0081:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<result>5__1'
+IL_0086:  ldarg.0
+IL_0087:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<result>5__1'
+IL_008c:  stloc.1
+IL_008d:  leave.s    IL_00a9
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_008f:  stloc.s    V_5
+IL_0091:  ldarg.0
+IL_0092:  ldc.i4.s   -2
+IL_0094:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>1__state'
+IL_0099:  ldarg.0
+IL_009a:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>t__builder'
+IL_009f:  ldloc.s    V_5
+IL_00a1:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetException(class [mscorlib]System.Exception)
+IL_00a6:  nop
+IL_00a7:  leave.s    IL_00be
+}  // end handler
+IL_00a9:  ldarg.0
+IL_00aa:  ldc.i4.s   -2
+IL_00ac:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>1__state'
+IL_00b1:  ldarg.0
+IL_00b2:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>t__builder'
+IL_00b7:  ldloc.1
+IL_00b8:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetResult(!0)
+IL_00bd:  nop
+IL_00be:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod6>d__5'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private int32 '<result>5__1'
+.field private int32 '<>s__2'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+int32 V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> V_2,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32> V_3,
+class AssemblyToProcess.Example/'<AsyncMethod6>d__5' V_4,
+class [mscorlib]System.Exception V_5)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0051
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  ldc.i4.s   10
+IL_000f:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<int32>(!!0)
+IL_0014:  ldc.i4.0
+IL_0015:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<int32>::ConfigureAwait(bool)
+IL_001a:  stloc.3
+IL_001b:  ldloca.s   V_3
+IL_001d:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32>::GetAwaiter()
+IL_0022:  stloc.2
+IL_0023:  ldloca.s   V_2
+IL_0025:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::get_IsCompleted()
+IL_002a:  brtrue.s   IL_006d
+IL_002c:  ldarg.0
+IL_002d:  ldc.i4.0
+IL_002e:  dup
+IL_002f:  stloc.0
+IL_0030:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>1__state'
+IL_0035:  ldarg.0
+IL_0036:  ldloc.2
+IL_0037:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>u__1'
+IL_003c:  ldarg.0
+IL_003d:  stloc.s    V_4
+IL_003f:  ldarg.0
+IL_0040:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>t__builder'
+IL_0045:  ldloca.s   V_2
+IL_0047:  ldloca.s   V_4
+IL_0049:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>,class AssemblyToProcess.Example/'<AsyncMethod6>d__5'>(!!0&,
+!!1&)
+IL_004e:  nop
+IL_004f:  leave.s    IL_00be
+IL_0051:  ldarg.0
+IL_0052:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>u__1'
+IL_0057:  stloc.2
+IL_0058:  ldarg.0
+IL_0059:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>u__1'
+IL_005e:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>
+IL_0064:  ldarg.0
+IL_0065:  ldc.i4.m1
+IL_0066:  dup
+IL_0067:  stloc.0
+IL_0068:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>1__state'
+IL_006d:  ldarg.0
+IL_006e:  ldloca.s   V_2
+IL_0070:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::GetResult()
+IL_0075:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>s__2'
+IL_007a:  ldarg.0
+IL_007b:  ldarg.0
+IL_007c:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>s__2'
+IL_0081:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<result>5__1'
+IL_0086:  ldarg.0
+IL_0087:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<result>5__1'
+IL_008c:  stloc.1
+IL_008d:  leave.s    IL_00a9
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_008f:  stloc.s    V_5
+IL_0091:  ldarg.0
+IL_0092:  ldc.i4.s   -2
+IL_0094:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>1__state'
+IL_0099:  ldarg.0
+IL_009a:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>t__builder'
+IL_009f:  ldloc.s    V_5
+IL_00a1:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetException(class [mscorlib]System.Exception)
+IL_00a6:  nop
+IL_00a7:  leave.s    IL_00be
+}  // end handler
+IL_00a9:  ldarg.0
+IL_00aa:  ldc.i4.s   -2
+IL_00ac:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>1__state'
+IL_00b1:  ldarg.0
+IL_00b2:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>t__builder'
+IL_00b7:  ldloc.1
+IL_00b8:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetResult(!0)
+IL_00bd:  nop
+IL_00be:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod7>d__6'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private int32 '<count>5__1'
+.field private int32 '<sum>5__2'
+.field private int32 '<>s__3'
+.field private int32 '<i>5__4'
+.field private int32 '<>s__5'
+.field private int32 '<>s__6'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> '<>u__1'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter '<>u__2'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+int32 V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> V_2,
+class AssemblyToProcess.Example/'<AsyncMethod7>d__6' V_3,
+valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter V_4,
+valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> V_5,
+int32 V_6,
+bool V_7,
+class [mscorlib]System.Exception V_8)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  switch     (
+IL_0059,
+IL_00e0,
+IL_0154)
+IL_0019:  br.s       IL_001b
+IL_001b:  nop
+IL_001c:  ldc.i4.s   10
+IL_001e:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<int32>(!!0)
+IL_0023:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<int32>::GetAwaiter()
+IL_0028:  stloc.2
+IL_0029:  ldloca.s   V_2
+IL_002b:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>::get_IsCompleted()
+IL_0030:  brtrue.s   IL_0075
+IL_0032:  ldarg.0
+IL_0033:  ldc.i4.0
+IL_0034:  dup
+IL_0035:  stloc.0
+IL_0036:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
+IL_003b:  ldarg.0
+IL_003c:  ldloc.2
+IL_003d:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>u__1'
+IL_0042:  ldarg.0
+IL_0043:  stloc.3
+IL_0044:  ldarg.0
+IL_0045:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>t__builder'
+IL_004a:  ldloca.s   V_2
+IL_004c:  ldloca.s   V_3
+IL_004e:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>,class AssemblyToProcess.Example/'<AsyncMethod7>d__6'>(!!0&,
+!!1&)
+IL_0053:  nop
+IL_0054:  leave      IL_01f3
+IL_0059:  ldarg.0
+IL_005a:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>u__1'
+IL_005f:  stloc.2
+IL_0060:  ldarg.0
+IL_0061:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>u__1'
+IL_0066:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>
+IL_006c:  ldarg.0
+IL_006d:  ldc.i4.m1
+IL_006e:  dup
+IL_006f:  stloc.0
+IL_0070:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
+IL_0075:  ldarg.0
+IL_0076:  ldloca.s   V_2
+IL_0078:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>::GetResult()
+IL_007d:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>s__3'
+IL_0082:  ldarg.0
+IL_0083:  ldarg.0
+IL_0084:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>s__3'
+IL_0089:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<count>5__1'
+IL_008e:  ldarg.0
+IL_008f:  ldc.i4.0
+IL_0090:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<sum>5__2'
+IL_0095:  ldarg.0
+IL_0096:  ldc.i4.0
+IL_0097:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<i>5__4'
+IL_009c:  br         IL_01a4
+IL_00a1:  nop
+IL_00a2:  ldc.i4.1
+IL_00a3:  call       class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::Delay(int32)
+IL_00a8:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter [mscorlib]System.Threading.Tasks.Task::GetAwaiter()
+IL_00ad:  stloc.s    V_4
+IL_00af:  ldloca.s   V_4
+IL_00b1:  call       instance bool [mscorlib]System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted()
+IL_00b6:  brtrue.s   IL_00fd
+IL_00b8:  ldarg.0
+IL_00b9:  ldc.i4.1
+IL_00ba:  dup
+IL_00bb:  stloc.0
+IL_00bc:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
+IL_00c1:  ldarg.0
+IL_00c2:  ldloc.s    V_4
+IL_00c4:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>u__2'
+IL_00c9:  ldarg.0
+IL_00ca:  stloc.3
+IL_00cb:  ldarg.0
+IL_00cc:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>t__builder'
+IL_00d1:  ldloca.s   V_4
+IL_00d3:  ldloca.s   V_3
+IL_00d5:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter,class AssemblyToProcess.Example/'<AsyncMethod7>d__6'>(!!0&,
+!!1&)
+IL_00da:  nop
+IL_00db:  leave      IL_01f3
+IL_00e0:  ldarg.0
+IL_00e1:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>u__2'
+IL_00e6:  stloc.s    V_4
+IL_00e8:  ldarg.0
+IL_00e9:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>u__2'
+IL_00ee:  initobj    [mscorlib]System.Runtime.CompilerServices.TaskAwaiter
+IL_00f4:  ldarg.0
+IL_00f5:  ldc.i4.m1
+IL_00f6:  dup
+IL_00f7:  stloc.0
+IL_00f8:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
+IL_00fd:  ldloca.s   V_4
+IL_00ff:  call       instance void [mscorlib]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
+IL_0104:  nop
+IL_0105:  ldarg.0
+IL_0106:  ldarg.0
+IL_0107:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<sum>5__2'
+IL_010c:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>s__5'
+IL_0111:  ldarg.0
+IL_0112:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<i>5__4'
+IL_0117:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<int32>(!!0)
+IL_011c:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<int32>::GetAwaiter()
+IL_0121:  stloc.s    V_5
+IL_0123:  ldloca.s   V_5
+IL_0125:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>::get_IsCompleted()
+IL_012a:  brtrue.s   IL_0171
+IL_012c:  ldarg.0
+IL_012d:  ldc.i4.2
+IL_012e:  dup
+IL_012f:  stloc.0
+IL_0130:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
+IL_0135:  ldarg.0
+IL_0136:  ldloc.s    V_5
+IL_0138:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>u__1'
+IL_013d:  ldarg.0
+IL_013e:  stloc.3
+IL_013f:  ldarg.0
+IL_0140:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>t__builder'
+IL_0145:  ldloca.s   V_5
+IL_0147:  ldloca.s   V_3
+IL_0149:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>,class AssemblyToProcess.Example/'<AsyncMethod7>d__6'>(!!0&,
+!!1&)
+IL_014e:  nop
+IL_014f:  leave      IL_01f3
+IL_0154:  ldarg.0
+IL_0155:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>u__1'
+IL_015a:  stloc.s    V_5
+IL_015c:  ldarg.0
+IL_015d:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>u__1'
+IL_0162:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>
+IL_0168:  ldarg.0
+IL_0169:  ldc.i4.m1
+IL_016a:  dup
+IL_016b:  stloc.0
+IL_016c:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
+IL_0171:  ldarg.0
+IL_0172:  ldloca.s   V_5
+IL_0174:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<int32>::GetResult()
+IL_0179:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>s__6'
+IL_017e:  ldarg.0
+IL_017f:  ldarg.0
+IL_0180:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>s__5'
+IL_0185:  ldarg.0
+IL_0186:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>s__6'
+IL_018b:  add
+IL_018c:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<sum>5__2'
+IL_0191:  nop
+IL_0192:  ldarg.0
+IL_0193:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<i>5__4'
+IL_0198:  stloc.s    V_6
+IL_019a:  ldarg.0
+IL_019b:  ldloc.s    V_6
+IL_019d:  ldc.i4.1
+IL_019e:  add
+IL_019f:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<i>5__4'
+IL_01a4:  ldarg.0
+IL_01a5:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<i>5__4'
+IL_01aa:  ldarg.0
+IL_01ab:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<count>5__1'
+IL_01b0:  clt
+IL_01b2:  stloc.s    V_7
+IL_01b4:  ldloc.s    V_7
+IL_01b6:  brtrue     IL_00a1
+IL_01bb:  ldarg.0
+IL_01bc:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<sum>5__2'
+IL_01c1:  stloc.1
+IL_01c2:  leave.s    IL_01de
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_01c4:  stloc.s    V_8
+IL_01c6:  ldarg.0
+IL_01c7:  ldc.i4.s   -2
+IL_01c9:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
+IL_01ce:  ldarg.0
+IL_01cf:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>t__builder'
+IL_01d4:  ldloc.s    V_8
+IL_01d6:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetException(class [mscorlib]System.Exception)
+IL_01db:  nop
+IL_01dc:  leave.s    IL_01f3
+}  // end handler
+IL_01de:  ldarg.0
+IL_01df:  ldc.i4.s   -2
+IL_01e1:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
+IL_01e6:  ldarg.0
+IL_01e7:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>t__builder'
+IL_01ec:  ldloc.1
+IL_01ed:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetResult(!0)
+IL_01f2:  nop
+IL_01f3:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod8>d__7'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private int32 '<count>5__1'
+.field private int32 '<sum>5__2'
+.field private int32 '<>s__3'
+.field private int32 '<i>5__4'
+.field private int32 '<>s__5'
+.field private int32 '<>s__6'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> '<>u__1'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__2'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+int32 V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> V_2,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32> V_3,
+class AssemblyToProcess.Example/'<AsyncMethod8>d__7' V_4,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_5,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32> V_6,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_7,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> V_8,
+int32 V_9,
+bool V_10,
+class [mscorlib]System.Exception V_11)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  switch     (
+IL_0063,
+IL_00f5,
+IL_0174)
+IL_0019:  br.s       IL_001b
+IL_001b:  nop
+IL_001c:  ldc.i4.s   10
+IL_001e:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<int32>(!!0)
+IL_0023:  ldc.i4.0
+IL_0024:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<int32>::ConfigureAwait(bool)
+IL_0029:  stloc.3
+IL_002a:  ldloca.s   V_3
+IL_002c:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32>::GetAwaiter()
+IL_0031:  stloc.2
+IL_0032:  ldloca.s   V_2
+IL_0034:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::get_IsCompleted()
+IL_0039:  brtrue.s   IL_007f
+IL_003b:  ldarg.0
+IL_003c:  ldc.i4.0
+IL_003d:  dup
+IL_003e:  stloc.0
+IL_003f:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
+IL_0044:  ldarg.0
+IL_0045:  ldloc.2
+IL_0046:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>u__1'
+IL_004b:  ldarg.0
+IL_004c:  stloc.s    V_4
+IL_004e:  ldarg.0
+IL_004f:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>t__builder'
+IL_0054:  ldloca.s   V_2
+IL_0056:  ldloca.s   V_4
+IL_0058:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>,class AssemblyToProcess.Example/'<AsyncMethod8>d__7'>(!!0&,
+!!1&)
+IL_005d:  nop
+IL_005e:  leave      IL_0213
+IL_0063:  ldarg.0
+IL_0064:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>u__1'
+IL_0069:  stloc.2
+IL_006a:  ldarg.0
+IL_006b:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>u__1'
+IL_0070:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>
+IL_0076:  ldarg.0
+IL_0077:  ldc.i4.m1
+IL_0078:  dup
+IL_0079:  stloc.0
+IL_007a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
+IL_007f:  ldarg.0
+IL_0080:  ldloca.s   V_2
+IL_0082:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::GetResult()
+IL_0087:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>s__3'
+IL_008c:  ldarg.0
+IL_008d:  ldarg.0
+IL_008e:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>s__3'
+IL_0093:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<count>5__1'
+IL_0098:  ldarg.0
+IL_0099:  ldc.i4.0
+IL_009a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<sum>5__2'
+IL_009f:  ldarg.0
+IL_00a0:  ldc.i4.0
+IL_00a1:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<i>5__4'
+IL_00a6:  br         IL_01c4
+IL_00ab:  nop
+IL_00ac:  ldc.i4.1
+IL_00ad:  call       class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::Delay(int32)
+IL_00b2:  ldc.i4.0
+IL_00b3:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [mscorlib]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_00b8:  stloc.s    V_5
+IL_00ba:  ldloca.s   V_5
+IL_00bc:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_00c1:  stloc.s    V_7
+IL_00c3:  ldloca.s   V_7
+IL_00c5:  call       instance bool [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_00ca:  brtrue.s   IL_0112
+IL_00cc:  ldarg.0
+IL_00cd:  ldc.i4.1
+IL_00ce:  dup
+IL_00cf:  stloc.0
+IL_00d0:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
+IL_00d5:  ldarg.0
+IL_00d6:  ldloc.s    V_7
+IL_00d8:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>u__2'
+IL_00dd:  ldarg.0
+IL_00de:  stloc.s    V_4
+IL_00e0:  ldarg.0
+IL_00e1:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>t__builder'
+IL_00e6:  ldloca.s   V_7
+IL_00e8:  ldloca.s   V_4
+IL_00ea:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.Example/'<AsyncMethod8>d__7'>(!!0&,
+!!1&)
+IL_00ef:  nop
+IL_00f0:  leave      IL_0213
+IL_00f5:  ldarg.0
+IL_00f6:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>u__2'
+IL_00fb:  stloc.s    V_7
+IL_00fd:  ldarg.0
+IL_00fe:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>u__2'
+IL_0103:  initobj    [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_0109:  ldarg.0
+IL_010a:  ldc.i4.m1
+IL_010b:  dup
+IL_010c:  stloc.0
+IL_010d:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
+IL_0112:  ldloca.s   V_7
+IL_0114:  call       instance void [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_0119:  nop
+IL_011a:  ldarg.0
+IL_011b:  ldarg.0
+IL_011c:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<sum>5__2'
+IL_0121:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>s__5'
+IL_0126:  ldarg.0
+IL_0127:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<i>5__4'
+IL_012c:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<int32>(!!0)
+IL_0131:  ldc.i4.0
+IL_0132:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<int32>::ConfigureAwait(bool)
+IL_0137:  stloc.s    V_6
+IL_0139:  ldloca.s   V_6
+IL_013b:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32>::GetAwaiter()
+IL_0140:  stloc.s    V_8
+IL_0142:  ldloca.s   V_8
+IL_0144:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::get_IsCompleted()
+IL_0149:  brtrue.s   IL_0191
+IL_014b:  ldarg.0
+IL_014c:  ldc.i4.2
+IL_014d:  dup
+IL_014e:  stloc.0
+IL_014f:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
+IL_0154:  ldarg.0
+IL_0155:  ldloc.s    V_8
+IL_0157:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>u__1'
+IL_015c:  ldarg.0
+IL_015d:  stloc.s    V_4
+IL_015f:  ldarg.0
+IL_0160:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>t__builder'
+IL_0165:  ldloca.s   V_8
+IL_0167:  ldloca.s   V_4
+IL_0169:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>,class AssemblyToProcess.Example/'<AsyncMethod8>d__7'>(!!0&,
+!!1&)
+IL_016e:  nop
+IL_016f:  leave      IL_0213
+IL_0174:  ldarg.0
+IL_0175:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>u__1'
+IL_017a:  stloc.s    V_8
+IL_017c:  ldarg.0
+IL_017d:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>u__1'
+IL_0182:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>
+IL_0188:  ldarg.0
+IL_0189:  ldc.i4.m1
+IL_018a:  dup
+IL_018b:  stloc.0
+IL_018c:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
+IL_0191:  ldarg.0
+IL_0192:  ldloca.s   V_8
+IL_0194:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::GetResult()
+IL_0199:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>s__6'
+IL_019e:  ldarg.0
+IL_019f:  ldarg.0
+IL_01a0:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>s__5'
+IL_01a5:  ldarg.0
+IL_01a6:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>s__6'
+IL_01ab:  add
+IL_01ac:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<sum>5__2'
+IL_01b1:  nop
+IL_01b2:  ldarg.0
+IL_01b3:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<i>5__4'
+IL_01b8:  stloc.s    V_9
+IL_01ba:  ldarg.0
+IL_01bb:  ldloc.s    V_9
+IL_01bd:  ldc.i4.1
+IL_01be:  add
+IL_01bf:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<i>5__4'
+IL_01c4:  ldarg.0
+IL_01c5:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<i>5__4'
+IL_01ca:  ldarg.0
+IL_01cb:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<count>5__1'
+IL_01d0:  clt
+IL_01d2:  stloc.s    V_10
+IL_01d4:  ldloc.s    V_10
+IL_01d6:  brtrue     IL_00ab
+IL_01db:  ldarg.0
+IL_01dc:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<sum>5__2'
+IL_01e1:  stloc.1
+IL_01e2:  leave.s    IL_01fe
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_01e4:  stloc.s    V_11
+IL_01e6:  ldarg.0
+IL_01e7:  ldc.i4.s   -2
+IL_01e9:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
+IL_01ee:  ldarg.0
+IL_01ef:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>t__builder'
+IL_01f4:  ldloc.s    V_11
+IL_01f6:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetException(class [mscorlib]System.Exception)
+IL_01fb:  nop
+IL_01fc:  leave.s    IL_0213
+}  // end handler
+IL_01fe:  ldarg.0
+IL_01ff:  ldc.i4.s   -2
+IL_0201:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
+IL_0206:  ldarg.0
+IL_0207:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>t__builder'
+IL_020c:  ldloc.1
+IL_020d:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetResult(!0)
+IL_0212:  nop
+IL_0213:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod9>d__8'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private int32 '<count>5__1'
+.field private int32 '<sum>5__2'
+.field private int32 '<>s__3'
+.field private int32 '<i>5__4'
+.field private int32 '<>s__5'
+.field private int32 '<>s__6'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> '<>u__1'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__2'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+int32 V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> V_2,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32> V_3,
+class AssemblyToProcess.Example/'<AsyncMethod9>d__8' V_4,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_5,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_6,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> V_7,
+int32 V_8,
+bool V_9,
+class [mscorlib]System.Exception V_10)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  switch     (
+IL_0063,
+IL_00f5,
+IL_0173)
+IL_0019:  br.s       IL_001b
+IL_001b:  nop
+IL_001c:  ldc.i4.s   10
+IL_001e:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<int32>(!!0)
+IL_0023:  ldc.i4.0
+IL_0024:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<int32>::ConfigureAwait(bool)
+IL_0029:  stloc.3
+IL_002a:  ldloca.s   V_3
+IL_002c:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32>::GetAwaiter()
+IL_0031:  stloc.2
+IL_0032:  ldloca.s   V_2
+IL_0034:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::get_IsCompleted()
+IL_0039:  brtrue.s   IL_007f
+IL_003b:  ldarg.0
+IL_003c:  ldc.i4.0
+IL_003d:  dup
+IL_003e:  stloc.0
+IL_003f:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
+IL_0044:  ldarg.0
+IL_0045:  ldloc.2
+IL_0046:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>u__1'
+IL_004b:  ldarg.0
+IL_004c:  stloc.s    V_4
+IL_004e:  ldarg.0
+IL_004f:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>t__builder'
+IL_0054:  ldloca.s   V_2
+IL_0056:  ldloca.s   V_4
+IL_0058:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>,class AssemblyToProcess.Example/'<AsyncMethod9>d__8'>(!!0&,
+!!1&)
+IL_005d:  nop
+IL_005e:  leave      IL_0212
+IL_0063:  ldarg.0
+IL_0064:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>u__1'
+IL_0069:  stloc.2
+IL_006a:  ldarg.0
+IL_006b:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>u__1'
+IL_0070:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>
+IL_0076:  ldarg.0
+IL_0077:  ldc.i4.m1
+IL_0078:  dup
+IL_0079:  stloc.0
+IL_007a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
+IL_007f:  ldarg.0
+IL_0080:  ldloca.s   V_2
+IL_0082:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::GetResult()
+IL_0087:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>s__3'
+IL_008c:  ldarg.0
+IL_008d:  ldarg.0
+IL_008e:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>s__3'
+IL_0093:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<count>5__1'
+IL_0098:  ldarg.0
+IL_0099:  ldc.i4.0
+IL_009a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<sum>5__2'
+IL_009f:  ldarg.0
+IL_00a0:  ldc.i4.0
+IL_00a1:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<i>5__4'
+IL_00a6:  br         IL_01c3
+IL_00ab:  nop
+IL_00ac:  ldc.i4.1
+IL_00ad:  call       class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Threading.Tasks.Task::Delay(int32)
+IL_00b2:  ldc.i4.0
+IL_00b3:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [mscorlib]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_00b8:  stloc.s    V_6
+IL_00ba:  ldloca.s   V_6
+IL_00bc:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_00c1:  stloc.s    V_5
+IL_00c3:  ldloca.s   V_5
+IL_00c5:  call       instance bool [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_00ca:  brtrue.s   IL_0112
+IL_00cc:  ldarg.0
+IL_00cd:  ldc.i4.1
+IL_00ce:  dup
+IL_00cf:  stloc.0
+IL_00d0:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
+IL_00d5:  ldarg.0
+IL_00d6:  ldloc.s    V_5
+IL_00d8:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>u__2'
+IL_00dd:  ldarg.0
+IL_00de:  stloc.s    V_4
+IL_00e0:  ldarg.0
+IL_00e1:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>t__builder'
+IL_00e6:  ldloca.s   V_5
+IL_00e8:  ldloca.s   V_4
+IL_00ea:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.Example/'<AsyncMethod9>d__8'>(!!0&,
+!!1&)
+IL_00ef:  nop
+IL_00f0:  leave      IL_0212
+IL_00f5:  ldarg.0
+IL_00f6:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>u__2'
+IL_00fb:  stloc.s    V_5
+IL_00fd:  ldarg.0
+IL_00fe:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>u__2'
+IL_0103:  initobj    [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_0109:  ldarg.0
+IL_010a:  ldc.i4.m1
+IL_010b:  dup
+IL_010c:  stloc.0
+IL_010d:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
+IL_0112:  ldloca.s   V_5
+IL_0114:  call       instance void [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_0119:  nop
+IL_011a:  ldarg.0
+IL_011b:  ldarg.0
+IL_011c:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<sum>5__2'
+IL_0121:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>s__5'
+IL_0126:  ldarg.0
+IL_0127:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<i>5__4'
+IL_012c:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<int32>(!!0)
+IL_0131:  ldc.i4.0
+IL_0132:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<int32>::ConfigureAwait(bool)
+IL_0137:  stloc.3
+IL_0138:  ldloca.s   V_3
+IL_013a:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<int32>::GetAwaiter()
+IL_013f:  stloc.s    V_7
+IL_0141:  ldloca.s   V_7
+IL_0143:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::get_IsCompleted()
+IL_0148:  brtrue.s   IL_0190
+IL_014a:  ldarg.0
+IL_014b:  ldc.i4.2
+IL_014c:  dup
+IL_014d:  stloc.0
+IL_014e:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
+IL_0153:  ldarg.0
+IL_0154:  ldloc.s    V_7
+IL_0156:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>u__1'
+IL_015b:  ldarg.0
+IL_015c:  stloc.s    V_4
+IL_015e:  ldarg.0
+IL_015f:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>t__builder'
+IL_0164:  ldloca.s   V_7
+IL_0166:  ldloca.s   V_4
+IL_0168:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>,class AssemblyToProcess.Example/'<AsyncMethod9>d__8'>(!!0&,
+!!1&)
+IL_016d:  nop
+IL_016e:  leave      IL_0212
+IL_0173:  ldarg.0
+IL_0174:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>u__1'
+IL_0179:  stloc.s    V_7
+IL_017b:  ldarg.0
+IL_017c:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>u__1'
+IL_0181:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>
+IL_0187:  ldarg.0
+IL_0188:  ldc.i4.m1
+IL_0189:  dup
+IL_018a:  stloc.0
+IL_018b:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
+IL_0190:  ldarg.0
+IL_0191:  ldloca.s   V_7
+IL_0193:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<int32>::GetResult()
+IL_0198:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>s__6'
+IL_019d:  ldarg.0
+IL_019e:  ldarg.0
+IL_019f:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>s__5'
+IL_01a4:  ldarg.0
+IL_01a5:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>s__6'
+IL_01aa:  add
+IL_01ab:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<sum>5__2'
+IL_01b0:  nop
+IL_01b1:  ldarg.0
+IL_01b2:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<i>5__4'
+IL_01b7:  stloc.s    V_8
+IL_01b9:  ldarg.0
+IL_01ba:  ldloc.s    V_8
+IL_01bc:  ldc.i4.1
+IL_01bd:  add
+IL_01be:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<i>5__4'
+IL_01c3:  ldarg.0
+IL_01c4:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<i>5__4'
+IL_01c9:  ldarg.0
+IL_01ca:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<count>5__1'
+IL_01cf:  clt
+IL_01d1:  stloc.s    V_9
+IL_01d3:  ldloc.s    V_9
+IL_01d5:  brtrue     IL_00ab
+IL_01da:  ldarg.0
+IL_01db:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<sum>5__2'
+IL_01e0:  stloc.1
+IL_01e1:  leave.s    IL_01fd
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_01e3:  stloc.s    V_10
+IL_01e5:  ldarg.0
+IL_01e6:  ldc.i4.s   -2
+IL_01e8:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
+IL_01ed:  ldarg.0
+IL_01ee:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>t__builder'
+IL_01f3:  ldloc.s    V_10
+IL_01f5:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetException(class [mscorlib]System.Exception)
+IL_01fa:  nop
+IL_01fb:  leave.s    IL_0212
+}  // end handler
+IL_01fd:  ldarg.0
+IL_01fe:  ldc.i4.s   -2
+IL_0200:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
+IL_0205:  ldarg.0
+IL_0206:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>t__builder'
+IL_020b:  ldloc.1
+IL_020c:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::SetResult(!0)
+IL_0211:  nop
+IL_0212:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod10>d__9'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private class AssemblyToProcess.Example '<result>5__1'
+.field private class AssemblyToProcess.Example '<>s__2'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<class AssemblyToProcess.Example> '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+class AssemblyToProcess.Example V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<class AssemblyToProcess.Example> V_2,
+class AssemblyToProcess.Example/'<AsyncMethod10>d__9' V_3,
+class [mscorlib]System.Exception V_4)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_004a
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  newobj     instance void AssemblyToProcess.Example::.ctor()
+IL_0012:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<class AssemblyToProcess.Example>(!!0)
+IL_0017:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<class AssemblyToProcess.Example>::GetAwaiter()
+IL_001c:  stloc.2
+IL_001d:  ldloca.s   V_2
+IL_001f:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<class AssemblyToProcess.Example>::get_IsCompleted()
+IL_0024:  brtrue.s   IL_0066
+IL_0026:  ldarg.0
+IL_0027:  ldc.i4.0
+IL_0028:  dup
+IL_0029:  stloc.0
+IL_002a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>1__state'
+IL_002f:  ldarg.0
+IL_0030:  ldloc.2
+IL_0031:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>u__1'
+IL_0036:  ldarg.0
+IL_0037:  stloc.3
+IL_0038:  ldarg.0
+IL_0039:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>t__builder'
+IL_003e:  ldloca.s   V_2
+IL_0040:  ldloca.s   V_3
+IL_0042:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<class AssemblyToProcess.Example>,class AssemblyToProcess.Example/'<AsyncMethod10>d__9'>(!!0&,
+!!1&)
+IL_0047:  nop
+IL_0048:  leave.s    IL_00be
+IL_004a:  ldarg.0
+IL_004b:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>u__1'
+IL_0050:  stloc.2
+IL_0051:  ldarg.0
+IL_0052:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>u__1'
+IL_0057:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<class AssemblyToProcess.Example>
+IL_005d:  ldarg.0
+IL_005e:  ldc.i4.m1
+IL_005f:  dup
+IL_0060:  stloc.0
+IL_0061:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>1__state'
+IL_0066:  ldarg.0
+IL_0067:  ldloca.s   V_2
+IL_0069:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.TaskAwaiter`1<class AssemblyToProcess.Example>::GetResult()
+IL_006e:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>s__2'
+IL_0073:  ldarg.0
+IL_0074:  ldarg.0
+IL_0075:  ldfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>s__2'
+IL_007a:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<result>5__1'
+IL_007f:  ldarg.0
+IL_0080:  ldnull
+IL_0081:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>s__2'
+IL_0086:  ldarg.0
+IL_0087:  ldfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<result>5__1'
+IL_008c:  stloc.1
+IL_008d:  leave.s    IL_00a9
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_008f:  stloc.s    V_4
+IL_0091:  ldarg.0
+IL_0092:  ldc.i4.s   -2
+IL_0094:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>1__state'
+IL_0099:  ldarg.0
+IL_009a:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>t__builder'
+IL_009f:  ldloc.s    V_4
+IL_00a1:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::SetException(class [mscorlib]System.Exception)
+IL_00a6:  nop
+IL_00a7:  leave.s    IL_00be
+}  // end handler
+IL_00a9:  ldarg.0
+IL_00aa:  ldc.i4.s   -2
+IL_00ac:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>1__state'
+IL_00b1:  ldarg.0
+IL_00b2:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>t__builder'
+IL_00b7:  ldloc.1
+IL_00b8:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::SetResult(!0)
+IL_00bd:  nop
+IL_00be:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod11>d__10'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private class AssemblyToProcess.Example '<result>5__1'
+.field private class AssemblyToProcess.Example '<>s__2'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example> '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+class AssemblyToProcess.Example V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example> V_2,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<class AssemblyToProcess.Example> V_3,
+class AssemblyToProcess.Example/'<AsyncMethod11>d__10' V_4,
+class [mscorlib]System.Exception V_5)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0054
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  newobj     instance void AssemblyToProcess.Example::.ctor()
+IL_0012:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<class AssemblyToProcess.Example>(!!0)
+IL_0017:  ldc.i4.0
+IL_0018:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<class AssemblyToProcess.Example>::ConfigureAwait(bool)
+IL_001d:  stloc.3
+IL_001e:  ldloca.s   V_3
+IL_0020:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<class AssemblyToProcess.Example>::GetAwaiter()
+IL_0025:  stloc.2
+IL_0026:  ldloca.s   V_2
+IL_0028:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example>::get_IsCompleted()
+IL_002d:  brtrue.s   IL_0070
+IL_002f:  ldarg.0
+IL_0030:  ldc.i4.0
+IL_0031:  dup
+IL_0032:  stloc.0
+IL_0033:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>1__state'
+IL_0038:  ldarg.0
+IL_0039:  ldloc.2
+IL_003a:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>u__1'
+IL_003f:  ldarg.0
+IL_0040:  stloc.s    V_4
+IL_0042:  ldarg.0
+IL_0043:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>t__builder'
+IL_0048:  ldloca.s   V_2
+IL_004a:  ldloca.s   V_4
+IL_004c:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example>,class AssemblyToProcess.Example/'<AsyncMethod11>d__10'>(!!0&,
+!!1&)
+IL_0051:  nop
+IL_0052:  leave.s    IL_00c8
+IL_0054:  ldarg.0
+IL_0055:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>u__1'
+IL_005a:  stloc.2
+IL_005b:  ldarg.0
+IL_005c:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>u__1'
+IL_0061:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example>
+IL_0067:  ldarg.0
+IL_0068:  ldc.i4.m1
+IL_0069:  dup
+IL_006a:  stloc.0
+IL_006b:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>1__state'
+IL_0070:  ldarg.0
+IL_0071:  ldloca.s   V_2
+IL_0073:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example>::GetResult()
+IL_0078:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>s__2'
+IL_007d:  ldarg.0
+IL_007e:  ldarg.0
+IL_007f:  ldfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>s__2'
+IL_0084:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<result>5__1'
+IL_0089:  ldarg.0
+IL_008a:  ldnull
+IL_008b:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>s__2'
+IL_0090:  ldarg.0
+IL_0091:  ldfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<result>5__1'
+IL_0096:  stloc.1
+IL_0097:  leave.s    IL_00b3
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_0099:  stloc.s    V_5
+IL_009b:  ldarg.0
+IL_009c:  ldc.i4.s   -2
+IL_009e:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>1__state'
+IL_00a3:  ldarg.0
+IL_00a4:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>t__builder'
+IL_00a9:  ldloc.s    V_5
+IL_00ab:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::SetException(class [mscorlib]System.Exception)
+IL_00b0:  nop
+IL_00b1:  leave.s    IL_00c8
+}  // end handler
+IL_00b3:  ldarg.0
+IL_00b4:  ldc.i4.s   -2
+IL_00b6:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>1__state'
+IL_00bb:  ldarg.0
+IL_00bc:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>t__builder'
+IL_00c1:  ldloc.1
+IL_00c2:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::SetResult(!0)
+IL_00c7:  nop
+IL_00c8:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<AsyncMethod12>d__11'
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> '<>t__builder'
+.field public class AssemblyToProcess.Example '<>4__this'
+.field private class AssemblyToProcess.Example '<result>5__1'
+.field private class AssemblyToProcess.Example '<>s__2'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example> '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+class AssemblyToProcess.Example V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example> V_2,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<class AssemblyToProcess.Example> V_3,
+class AssemblyToProcess.Example/'<AsyncMethod12>d__11' V_4,
+class [mscorlib]System.Exception V_5)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0054
+IL_000a:  br.s       IL_000c
+IL_000c:  nop
+IL_000d:  newobj     instance void AssemblyToProcess.Example::.ctor()
+IL_0012:  call       class [mscorlib]System.Threading.Tasks.Task`1<!!0> [mscorlib]System.Threading.Tasks.Task::FromResult<class AssemblyToProcess.Example>(!!0)
+IL_0017:  ldc.i4.0
+IL_0018:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<class AssemblyToProcess.Example>::ConfigureAwait(bool)
+IL_001d:  stloc.3
+IL_001e:  ldloca.s   V_3
+IL_0020:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<class AssemblyToProcess.Example>::GetAwaiter()
+IL_0025:  stloc.2
+IL_0026:  ldloca.s   V_2
+IL_0028:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example>::get_IsCompleted()
+IL_002d:  brtrue.s   IL_0070
+IL_002f:  ldarg.0
+IL_0030:  ldc.i4.0
+IL_0031:  dup
+IL_0032:  stloc.0
+IL_0033:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>1__state'
+IL_0038:  ldarg.0
+IL_0039:  ldloc.2
+IL_003a:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>u__1'
+IL_003f:  ldarg.0
+IL_0040:  stloc.s    V_4
+IL_0042:  ldarg.0
+IL_0043:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>t__builder'
+IL_0048:  ldloca.s   V_2
+IL_004a:  ldloca.s   V_4
+IL_004c:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example>,class AssemblyToProcess.Example/'<AsyncMethod12>d__11'>(!!0&,
+!!1&)
+IL_0051:  nop
+IL_0052:  leave.s    IL_00c8
+IL_0054:  ldarg.0
+IL_0055:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>u__1'
+IL_005a:  stloc.2
+IL_005b:  ldarg.0
+IL_005c:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>u__1'
+IL_0061:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example>
+IL_0067:  ldarg.0
+IL_0068:  ldc.i4.m1
+IL_0069:  dup
+IL_006a:  stloc.0
+IL_006b:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>1__state'
+IL_0070:  ldarg.0
+IL_0071:  ldloca.s   V_2
+IL_0073:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<class AssemblyToProcess.Example>::GetResult()
+IL_0078:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>s__2'
+IL_007d:  ldarg.0
+IL_007e:  ldarg.0
+IL_007f:  ldfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>s__2'
+IL_0084:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<result>5__1'
+IL_0089:  ldarg.0
+IL_008a:  ldnull
+IL_008b:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>s__2'
+IL_0090:  ldarg.0
+IL_0091:  ldfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<result>5__1'
+IL_0096:  stloc.1
+IL_0097:  leave.s    IL_00b3
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_0099:  stloc.s    V_5
+IL_009b:  ldarg.0
+IL_009c:  ldc.i4.s   -2
+IL_009e:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>1__state'
+IL_00a3:  ldarg.0
+IL_00a4:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>t__builder'
+IL_00a9:  ldloc.s    V_5
+IL_00ab:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::SetException(class [mscorlib]System.Exception)
+IL_00b0:  nop
+IL_00b1:  leave.s    IL_00c8
+}  // end handler
+IL_00b3:  ldarg.0
+IL_00b4:  ldc.i4.s   -2
+IL_00b6:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>1__state'
+IL_00bb:  ldarg.0
+IL_00bc:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>t__builder'
+IL_00c1:  ldloc.1
+IL_00c2:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::SetResult(!0)
+IL_00c7:  nop
+IL_00c8:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task
+AsyncMethod1() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 31 3E 64 5F 5F 30 00   // yncMethod1>d__0.
+00 )
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod1>d__0' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod1>d__0'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.Example/'<AsyncMethod1>d__0'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task
+AsyncMethod2() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 32 3E 64 5F 5F 31 00   // yncMethod2>d__1.
+00 )
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod2>d__1' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod2>d__1'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.Example/'<AsyncMethod2>d__1'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task
+AsyncMethod3() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 33 3E 64 5F 5F 32 00   // yncMethod3>d__2.
+00 )
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod3>d__2' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod3>d__2'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.Example/'<AsyncMethod3>d__2'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<int32>
+AsyncMethod4() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 34 3E 64 5F 5F 33 00   // yncMethod4>d__3.
+00 )
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod4>d__3' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod4>d__3'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Start<class AssemblyToProcess.Example/'<AsyncMethod4>d__3'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<int32>
+AsyncMethod5() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 35 3E 64 5F 5F 34 00   // yncMethod5>d__4.
+00 )
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod5>d__4' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod5>d__4'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Start<class AssemblyToProcess.Example/'<AsyncMethod5>d__4'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<int32>
+AsyncMethod6() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 36 3E 64 5F 5F 35 00   // yncMethod6>d__5.
+00 )
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod6>d__5' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod6>d__5'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Start<class AssemblyToProcess.Example/'<AsyncMethod6>d__5'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<int32>
+AsyncMethod7() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 37 3E 64 5F 5F 36 00   // yncMethod7>d__6.
+00 )
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod7>d__6' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod7>d__6'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Start<class AssemblyToProcess.Example/'<AsyncMethod7>d__6'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<int32>
+AsyncMethod8() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 38 3E 64 5F 5F 37 00   // yncMethod8>d__7.
+00 )
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod8>d__7' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod8>d__7'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Start<class AssemblyToProcess.Example/'<AsyncMethod8>d__7'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<int32>
+AsyncMethod9() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 39 3E 64 5F 5F 38 00   // yncMethod9>d__8.
+00 )
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod9>d__8' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod9>d__8'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Start<class AssemblyToProcess.Example/'<AsyncMethod9>d__8'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<class AssemblyToProcess.Example>
+AsyncMethod10() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 31 30 3E 64 5F 5F 39   // yncMethod10>d__9
+00 00 )
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod10>d__9' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod10>d__9'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Start<class AssemblyToProcess.Example/'<AsyncMethod10>d__9'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<class AssemblyToProcess.Example>
+AsyncMethod11() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 31 31 3E 64 5F 5F 31   // yncMethod11>d__1
+30 00 00 )                                        // 0..
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod11>d__10' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod11>d__10'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Start<class AssemblyToProcess.Example/'<AsyncMethod11>d__10'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task`1<class AssemblyToProcess.Example>
+AsyncMethod12() cil managed
+{
+63 65 73 73 2E 45 78 61 6D 70 6C 65 2B 3C 41 73   // cess.Example+<As
+79 6E 63 4D 65 74 68 6F 64 31 32 3E 64 5F 5F 31   // yncMethod12>d__1
+31 00 00 )                                        // 1..
+.maxstack  2
+.locals init (class AssemblyToProcess.Example/'<AsyncMethod12>d__11' V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> V_1)
+IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod12>d__11'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Create()
+IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>t__builder'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>t__builder'
+IL_0025:  stloc.1
+IL_0026:  ldloca.s   V_1
+IL_0028:  ldloca.s   V_0
+IL_002a:  call       instance void valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Start<class AssemblyToProcess.Example/'<AsyncMethod12>d__11'>(!!0&)
+IL_002f:  ldloc.0
+IL_0030:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>t__builder'
+IL_0035:  call       instance class [mscorlib]System.Threading.Tasks.Task`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::get_Task()
+IL_003a:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+}

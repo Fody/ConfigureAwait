@@ -3,7 +3,7 @@
 
 ### This is an add-in for [Fody](https://github.com/Fody/Home/)
 
-Allows you to set your async code's [`ConfigureAwait`](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.configureawait) at a global level.
+Configure async code's [`ConfigureAwait`](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.configureawait) at a global level.
 
 
 ### NuGet package
@@ -41,7 +41,7 @@ Add `<ConfigureAwait/>` to [FodyWeavers.xml](https://github.com/Fody/Home/blob/m
 ## Example
 
 
-### Your code
+### Before code
 
 ```csharp
 using Fody;
