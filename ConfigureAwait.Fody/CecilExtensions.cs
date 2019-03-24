@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Fody;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 
@@ -57,9 +56,15 @@ static class CecilExtensions
         return value.CustomAttributes.FirstOrDefault(a => a.AttributeType.FullName == "Fody.ConfigureAwaitAttribute");
     }
 
-    public static bool? GetConfigureAwaitConfig(this ICustomAttributeProvider value)
+    public static bool? GetConfigureAwaitConfig(this ICustomAttributeProvider value, bool? defaultValue = null)
     {
-        return (bool?)value.GetConfigureAwaitAttribute()?.ConstructorArguments[0].Value;
+        var configureAwaitAttribute = value.GetConfigureAwaitAttribute();
+        if (configureAwaitAttribute != null)
+        {
+            return (bool?)configureAwaitAttribute.ConstructorArguments[0].Value;
+        }
+
+        return defaultValue;
     }
 
     public static void RemoveAllCustomAttributes(this ICustomAttributeProvider definition)

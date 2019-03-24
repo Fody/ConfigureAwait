@@ -61,8 +61,7 @@ public class ModuleWeaver : BaseModuleWeaver
             return;
         }
 
-        var configureAwaitValue = type.GetConfigureAwaitConfig();
-        configureAwaitValue = configureAwaitValue ?? assemblyConfigureAwaitValue;
+        var configureAwaitValue = type.GetConfigureAwaitConfig(assemblyConfigureAwaitValue);
 
         foreach (var method in type.Methods)
         {
