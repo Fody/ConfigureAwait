@@ -65,9 +65,7 @@ public class ModuleWeaver : BaseModuleWeaver
 
         foreach (var method in type.Methods)
         {
-            var localConfigureAwaitValue = (bool?)method.GetConfigureAwaitAttribute()?.ConstructorArguments[0].Value;
-            var localConfigWasSet = localConfigureAwaitValue.HasValue;
-            localConfigureAwaitValue = localConfigureAwaitValue ?? configureAwaitValue;
+            var localConfigureAwaitValue = method.GetConfigureAwaitConfig(configureAwaitValue);
             if (localConfigureAwaitValue == null)
             {
                 continue;
@@ -77,11 +75,6 @@ public class ModuleWeaver : BaseModuleWeaver
             if (asyncStateMachineType != null)
             {
                 AddAwaitConfigToAsyncMethod(asyncStateMachineType, localConfigureAwaitValue.Value);
-            }
-            else if (localConfigWasSet)
-            {
-                LogWarning($"ConfigureAwaitAttribute applied to non-async method '{method.FullName}'.");
-                continue;
             }
         }
     }

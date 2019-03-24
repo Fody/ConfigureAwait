@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Fody;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 
@@ -43,13 +44,14 @@ static class CecilExtensions
 
     public static TypeDefinition GetAsyncStateMachineType(this ICustomAttributeProvider provider)
     {
-        if (provider == null || !provider.HasCustomAttributes)
+        var attribute = provider.CustomAttributes
+            .FirstOrDefault(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute");
+        if (attribute == null)
         {
             return null;
         }
 
-        return (TypeDefinition)provider.CustomAttributes
-            .FirstOrDefault(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute")?.ConstructorArguments[0].Value;
+        return (TypeDefinition)attribute.ConstructorArguments[0].Value;
     }
 
     public static CustomAttribute GetConfigureAwaitAttribute(this ICustomAttributeProvider value)
@@ -60,12 +62,18 @@ static class CecilExtensions
     public static bool? GetConfigureAwaitConfig(this ICustomAttributeProvider value, bool? defaultValue = null)
     {
         var attribute = value.GetConfigureAwaitAttribute();
-        if (attribute != null)
+        if (attribute == null)
         {
-            return (bool?)attribute.ConstructorArguments[0].Value;
+            return defaultValue;
         }
 
-        return defaultValue;
+        if (value is MethodDefinition method &&
+            !method.IsAsyncStateMachineType())
+        {
+            throw new WeavingException($"ConfigureAwaitAttribute applied to non-async method '{method.FullName}'.");
+        }
+        return (bool?)attribute.ConstructorArguments[0].Value;
+
     }
 
     public static void RemoveAllCustomAttributes(this ICustomAttributeProvider definition)

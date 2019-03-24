@@ -1,1 +1,0 @@
-﻿Warning[0] = ConfigureAwaitAttribute applied to non-async method 'System.Void AssemblyToProcess.AttributeAppliedToNormalMethod::NormalMethod()'.
