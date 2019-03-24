@@ -30,12 +30,13 @@ public class ModuleWeaver : BaseModuleWeaver
         configuredTaskAwaitableTypeRef = ModuleDefinition.ImportReference(configuredTaskAwaitableTypeDef);
         configuredTaskAwaiterTypeRef = ModuleDefinition.ImportReference(configuredTaskAwaiterTypeDef);
 
-        genericConfigureAwaitMethodDef = FindType("System.Threading.Tasks.Task`1").Methods.First(m => m.Name == "ConfigureAwait");
+        var genericTaskDef = FindType("System.Threading.Tasks.Task`1");
+        genericConfigureAwaitMethodDef = genericTaskDef.Methods.First(m => m.Name == "ConfigureAwait");
         genericConfiguredTaskAwaitableTypeDef = FindType("System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1");
         genericConfiguredTaskAwaiterTypeDef = genericConfiguredTaskAwaitableTypeDef.NestedTypes[0];
         genericConfiguredTaskAwaiterTypeRef = ModuleDefinition.ImportReference(genericConfiguredTaskAwaiterTypeDef);
         genericConfiguredTaskAwaitableTypeRef = ModuleDefinition.ImportReference(genericConfiguredTaskAwaitableTypeDef);
-        genericTaskType = ModuleDefinition.ImportReference(FindType("System.Threading.Tasks.Task`1"));
+        genericTaskType = ModuleDefinition.ImportReference(genericTaskDef);
 
 
         var configureAwaitValue = (bool?)ModuleDefinition.Assembly.GetConfigureAwaitAttribute()?.ConstructorArguments[0].Value;
