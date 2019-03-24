@@ -20,7 +20,7 @@ The `Install-Package Fody` is required since NuGet always defaults to the oldest
 
 ## How to use it
 
-By default, `ConfigureAwait.Fody` doesn't change any of your code. You have to explicitly set a configure await value at the assembly, class, or method level.
+By default, `ConfigureAwait.Fody` doesn't change any code. Set a configure await value at the assembly, class, or method level.
 
  * `[assembly: Fody.ConfigureAwait(false)]` - Assembly level
  * `[Fody.ConfigureAwait(false)]` - Class or method level
@@ -31,9 +31,16 @@ By default, `ConfigureAwait.Fody` doesn't change any of your code. You have to e
 Add `<ConfigureAwait/>` to [FodyWeavers.xml](https://github.com/Fody/Home/blob/master/pages/usage.md#add-fodyweaversxml)
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
 <Weavers>
   <ConfigureAwait/>
+</Weavers>
+```
+
+It is also possible set the default ContinueOnCapturedContext in the xml config:
+
+```xml
+<Weavers>
+  <ConfigureAwait ContinueOnCapturedContext="false" />
 </Weavers>
 ```
 
