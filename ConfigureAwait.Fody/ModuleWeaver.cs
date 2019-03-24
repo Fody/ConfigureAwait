@@ -16,10 +16,13 @@ public class ModuleWeaver : BaseModuleWeaver
     TypeReference genericConfiguredTaskAwaiterTypeRef;
     MethodDefinition genericConfigureAwaitMethodDef;
     TypeDefinition taskDef;
+    MethodReference configureAwaitMethod;
 
     public override void Execute()
     {
         taskDef = FindType("System.Threading.Tasks.Task");
+        var configureAwaitMethodDef = taskDef.Methods.First(m => m.Name == "ConfigureAwait");
+        configureAwaitMethod = ModuleDefinition.ImportReference(configureAwaitMethodDef);
         configuredTaskAwaitableTypeDef = FindType("System.Runtime.CompilerServices.ConfiguredTaskAwaitable");
         configuredTaskAwaiterTypeDef = configuredTaskAwaitableTypeDef.NestedTypes[0];
         configuredTaskAwaitableTypeRef = ModuleDefinition.ImportReference(configuredTaskAwaitableTypeDef);
@@ -119,7 +122,7 @@ public class ModuleWeaver : BaseModuleWeaver
         foreach (var v in method.Body.Variables.ToArray())
         {
             VariableDefinition awaitableVar = null;
-            MethodReference configureAwaitMethod = null;
+            MethodReference localConfigAwait = null;
             // Change variable type
             if (v.VariableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter")
             {
@@ -127,8 +130,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 awaitableVar = new VariableDefinition(configuredTaskAwaitableTypeRef);
                 method.Body.Variables.Insert(i + 1, awaitableVar);
 
-                var configureAwaitMethodDef = taskDef.Methods.First(m => m.Name == "ConfigureAwait");
-                configureAwaitMethod = ModuleDefinition.ImportReference(configureAwaitMethodDef);
+                localConfigAwait = configureAwaitMethod;
             }
 
             if (v.VariableType.IsGenericInstance)
@@ -141,15 +143,15 @@ public class ModuleWeaver : BaseModuleWeaver
                     awaitableVar = new VariableDefinition(ModuleDefinition.ImportReference(genericConfiguredTaskAwaitableTypeDef).MakeGenericInstanceType(genericVariableType.GenericArguments));
                     method.Body.Variables.Insert(i + 1, awaitableVar);
 
-                    configureAwaitMethod = ModuleDefinition.ImportReference(genericConfigureAwaitMethodDef);
-                    configureAwaitMethod.DeclaringType = ModuleDefinition.ImportReference(FindType("System.Threading.Tasks.Task`1")).MakeGenericInstanceType(genericVariableType.GenericArguments);
+                    localConfigAwait = ModuleDefinition.ImportReference(genericConfigureAwaitMethodDef);
+                    localConfigAwait.DeclaringType = ModuleDefinition.ImportReference(FindType("System.Threading.Tasks.Task`1")).MakeGenericInstanceType(genericVariableType.GenericArguments);
                 }
             }
 
             if (awaitableVar != null)
             {
                 awaitAwaiterPair.Add(v, awaitableVar);
-                configureAwaitMethods.Add(v, configureAwaitMethod);
+                configureAwaitMethods.Add(v, localConfigAwait);
             }
 
             i++;
