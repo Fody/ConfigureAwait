@@ -40,6 +40,7 @@ static class CecilExtensions
         return provider.CustomAttributes
             .Any(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute");
     }
+
     public static TypeDefinition GetAsyncStateMachineType(this ICustomAttributeProvider provider)
     {
         if (provider == null || !provider.HasCustomAttributes)
@@ -58,10 +59,10 @@ static class CecilExtensions
 
     public static bool? GetConfigureAwaitConfig(this ICustomAttributeProvider value, bool? defaultValue = null)
     {
-        var configureAwaitAttribute = value.GetConfigureAwaitAttribute();
-        if (configureAwaitAttribute != null)
+        var attribute = value.GetConfigureAwaitAttribute();
+        if (attribute != null)
         {
-            return (bool?)configureAwaitAttribute.ConstructorArguments[0].Value;
+            return (bool?)attribute.ConstructorArguments[0].Value;
         }
 
         return defaultValue;
@@ -71,7 +72,7 @@ static class CecilExtensions
     {
         var customAttributes = definition.CustomAttributes;
 
-        var attributes = customAttributes.Where(x => x.AttributeType.Namespace == "Fody").ToArray();
+        var attributes = customAttributes.Where(x => x.AttributeType.FullName == "Fody.ConfigureAwaitAttribute").ToArray();
 
         foreach (var attribute in attributes)
         {
