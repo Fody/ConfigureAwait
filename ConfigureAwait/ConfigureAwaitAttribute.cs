@@ -6,7 +6,7 @@ namespace Fody
     /// Controls the config of the ConfigureAwait fody weaver.
     /// </summary>
     [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Method)]
-    public class ConfigureAwaitAttribute : Attribute
+    public sealed class ConfigureAwaitAttribute : Attribute
     {
         /// <summary>
         /// Instantiate a new instance of <see cref="ConfigureAwaitAttribute"/>.
