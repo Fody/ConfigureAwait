@@ -15,9 +15,11 @@ public class ModuleWeaver : BaseModuleWeaver
     TypeDefinition configuredTaskAwaiterTypeDef;
     TypeReference genericConfiguredTaskAwaiterTypeRef;
     MethodDefinition genericConfigureAwaitMethodDef;
+    TypeDefinition taskDef;
 
     public override void Execute()
     {
+        taskDef = FindType("System.Threading.Tasks.Task");
         configuredTaskAwaitableTypeDef = FindType("System.Runtime.CompilerServices.ConfiguredTaskAwaitable");
         configuredTaskAwaiterTypeDef = configuredTaskAwaitableTypeDef.NestedTypes[0];
         configuredTaskAwaitableTypeRef = ModuleDefinition.ImportReference(configuredTaskAwaitableTypeDef);
@@ -27,6 +29,8 @@ public class ModuleWeaver : BaseModuleWeaver
         genericConfiguredTaskAwaitableTypeDef = FindType("System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1");
         genericConfiguredTaskAwaiterTypeDef = genericConfiguredTaskAwaitableTypeDef.NestedTypes[0];
         genericConfiguredTaskAwaiterTypeRef = ModuleDefinition.ImportReference(genericConfiguredTaskAwaiterTypeDef);
+
+
         var configureAwaitValue = (bool?)ModuleDefinition.Assembly.GetConfigureAwaitAttribute()?.ConstructorArguments[0].Value;
 
         var types = ModuleDefinition.GetTypes()
@@ -123,7 +127,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 awaitableVar = new VariableDefinition(configuredTaskAwaitableTypeRef);
                 method.Body.Variables.Insert(i + 1, awaitableVar);
 
-                var configureAwaitMethodDef = FindType("System.Threading.Tasks.Task").Methods.First(m => m.Name == "ConfigureAwait");
+                var configureAwaitMethodDef = taskDef.Methods.First(m => m.Name == "ConfigureAwait");
                 configureAwaitMethod = ModuleDefinition.ImportReference(configureAwaitMethodDef);
             }
 
