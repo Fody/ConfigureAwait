@@ -18,6 +18,7 @@ public class ModuleWeaver : BaseModuleWeaver
     TypeDefinition taskDef;
     MethodReference configureAwaitMethod;
     TypeReference genericConfiguredTaskAwaitableTypeRef;
+    TypeReference genericTaskType;
 
     public override void Execute()
     {
@@ -34,6 +35,7 @@ public class ModuleWeaver : BaseModuleWeaver
         genericConfiguredTaskAwaiterTypeDef = genericConfiguredTaskAwaitableTypeDef.NestedTypes[0];
         genericConfiguredTaskAwaiterTypeRef = ModuleDefinition.ImportReference(genericConfiguredTaskAwaiterTypeDef);
         genericConfiguredTaskAwaitableTypeRef = ModuleDefinition.ImportReference(genericConfiguredTaskAwaitableTypeDef);
+        genericTaskType = ModuleDefinition.ImportReference(FindType("System.Threading.Tasks.Task`1"));
 
 
         var configureAwaitValue = (bool?)ModuleDefinition.Assembly.GetConfigureAwaitAttribute()?.ConstructorArguments[0].Value;
@@ -146,7 +148,7 @@ public class ModuleWeaver : BaseModuleWeaver
                     method.Body.Variables.Insert(i + 1, awaitableVar);
 
                     localConfigAwait = ModuleDefinition.ImportReference(genericConfigureAwaitMethodDef);
-                    localConfigAwait.DeclaringType = ModuleDefinition.ImportReference(FindType("System.Threading.Tasks.Task`1")).MakeGenericInstanceType(genericVariableType.GenericArguments);
+                    localConfigAwait.DeclaringType = genericTaskType.MakeGenericInstanceType(genericVariableType.GenericArguments);
                 }
             }
 
