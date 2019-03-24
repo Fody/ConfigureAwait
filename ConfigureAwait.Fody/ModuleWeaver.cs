@@ -17,6 +17,7 @@ public class ModuleWeaver : BaseModuleWeaver
     MethodDefinition genericConfigureAwaitMethodDef;
     TypeDefinition taskDef;
     MethodReference configureAwaitMethod;
+    TypeReference genericConfiguredTaskAwaitableTypeRef;
 
     public override void Execute()
     {
@@ -32,6 +33,7 @@ public class ModuleWeaver : BaseModuleWeaver
         genericConfiguredTaskAwaitableTypeDef = FindType("System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1");
         genericConfiguredTaskAwaiterTypeDef = genericConfiguredTaskAwaitableTypeDef.NestedTypes[0];
         genericConfiguredTaskAwaiterTypeRef = ModuleDefinition.ImportReference(genericConfiguredTaskAwaiterTypeDef);
+        genericConfiguredTaskAwaitableTypeRef = ModuleDefinition.ImportReference(genericConfiguredTaskAwaitableTypeDef);
 
 
         var configureAwaitValue = (bool?)ModuleDefinition.Assembly.GetConfigureAwaitAttribute()?.ConstructorArguments[0].Value;
@@ -140,7 +142,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 if (variableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                 {
                     v.VariableType = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                    awaitableVar = new VariableDefinition(ModuleDefinition.ImportReference(genericConfiguredTaskAwaitableTypeDef).MakeGenericInstanceType(genericVariableType.GenericArguments));
+                    awaitableVar = new VariableDefinition(genericConfiguredTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
                     method.Body.Variables.Insert(i + 1, awaitableVar);
 
                     localConfigAwait = ModuleDefinition.ImportReference(genericConfigureAwaitMethodDef);
@@ -197,7 +199,7 @@ public class ModuleWeaver : BaseModuleWeaver
                         var genericArguments = ((GenericInstanceType)methodRef.DeclaringType).GenericArguments;
 
                         var newOperandRef = ModuleDefinition.ImportReference(newOperand);
-                        newOperandRef.DeclaringType = ModuleDefinition.ImportReference(genericConfiguredTaskAwaitableTypeDef).MakeGenericInstanceType(genericArguments);
+                        newOperandRef.DeclaringType = genericConfiguredTaskAwaitableTypeRef.MakeGenericInstanceType(genericArguments);
                         method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, newOperandRef);
                     }
                 }
