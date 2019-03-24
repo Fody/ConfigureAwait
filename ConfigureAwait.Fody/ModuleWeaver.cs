@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Mono.Cecil.Rocks;
@@ -22,6 +23,8 @@ public class ModuleWeaver : BaseModuleWeaver
 
     public override void Execute()
     {
+        ReadConfig();
+
         taskDef = FindType("System.Threading.Tasks.Task");
         var configureAwaitMethodDef = taskDef.Methods.First(m => m.Name == "ConfigureAwait");
         configureAwaitMethod = ModuleDefinition.ImportReference(configureAwaitMethodDef);
@@ -38,8 +41,7 @@ public class ModuleWeaver : BaseModuleWeaver
         genericConfiguredTaskAwaitableTypeRef = ModuleDefinition.ImportReference(genericConfiguredTaskAwaitableTypeDef);
         genericTaskType = ModuleDefinition.ImportReference(genericTaskDef);
 
-
-        var configureAwaitValue = ModuleDefinition.Assembly.GetConfigureAwaitConfig();
+        var configureAwaitValue = ModuleDefinition.Assembly.GetConfigureAwaitConfig(continueOnCapturedContext);
 
         var types = ModuleDefinition.GetTypes()
             .ToList();
@@ -51,6 +53,26 @@ public class ModuleWeaver : BaseModuleWeaver
 
         RemoveAttributes(types);
     }
+
+    void ReadConfig()
+    {
+        var value = Config?.Attribute("ContinueOnCapturedContext")?.Value;
+        if (value == null)
+        {
+            return;
+        }
+
+        try
+        {
+            continueOnCapturedContext = XmlConvert.ToBoolean(value.ToLowerInvariant());
+        }
+        catch
+        {
+            throw new WeavingException($"Could not parse 'ContinueOnCapturedContext' from '{value}'.");
+        }
+    }
+
+    bool? continueOnCapturedContext;
 
     public override bool ShouldCleanReference => true;
 
