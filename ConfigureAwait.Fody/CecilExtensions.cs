@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Fody;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 
@@ -35,6 +36,11 @@ static class CecilExtensions
         }
     }
 
+    public static bool IsAsyncStateMachineType(this ICustomAttributeProvider provider)
+    {
+        return provider.CustomAttributes
+            .Any(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute");
+    }
     public static TypeDefinition GetAsyncStateMachineType(this ICustomAttributeProvider provider)
     {
         if (provider == null || !provider.HasCustomAttributes)
@@ -49,6 +55,11 @@ static class CecilExtensions
     public static CustomAttribute GetConfigureAwaitAttribute(this ICustomAttributeProvider value)
     {
         return value.CustomAttributes.FirstOrDefault(a => a.AttributeType.FullName == "Fody.ConfigureAwaitAttribute");
+    }
+
+    public static bool? GetConfigureAwaitConfig(this ICustomAttributeProvider value)
+    {
+        return (bool?)value.GetConfigureAwaitAttribute()?.ConstructorArguments[0].Value;
     }
 
     public static void RemoveAllCustomAttributes(this ICustomAttributeProvider definition)

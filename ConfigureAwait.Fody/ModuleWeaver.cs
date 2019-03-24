@@ -39,7 +39,7 @@ public class ModuleWeaver : BaseModuleWeaver
         genericTaskType = ModuleDefinition.ImportReference(genericTaskDef);
 
 
-        var configureAwaitValue = (bool?)ModuleDefinition.Assembly.GetConfigureAwaitAttribute()?.ConstructorArguments[0].Value;
+        var configureAwaitValue = ModuleDefinition.Assembly.GetConfigureAwaitConfig();
 
         var types = ModuleDefinition.GetTypes()
             .ToList();
