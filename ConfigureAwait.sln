@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.1
-MinimumVisualStudioVersion = 15.0.27428.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28721.148
+MinimumVisualStudioVersion = 16.0.28721.148
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigureAwait.Fody", "ConfigureAwait.Fody\ConfigureAwait.Fody.csproj", "{7AF0B1F1-21CC-415E-B205-B39C0FA174ED}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{45A4343F-734B-4220-998B-81AB1AA67F72}"
