@@ -2,7 +2,8 @@
 using Fody;
 using Xunit;
 
-public partial class ModuleWeaverTests
+public partial class ModuleWeaverTests :
+    XunitLoggingBase
 {
     [Fact]
     public void DecompileExample()

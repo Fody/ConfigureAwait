@@ -2,9 +2,9 @@ using System;
 using System.Reflection;
 using ApprovalTests.Namers;
 using Fody;
-#pragma warning disable 618
+using Xunit.Abstractions;
 
-public partial class ModuleWeaverTests:IDisposable
+public partial class ModuleWeaverTests
 {
     static TestResult testResult;
     IDisposable disposable;
@@ -16,7 +16,8 @@ public partial class ModuleWeaverTests:IDisposable
         testResult = weavingTask.ExecuteTestRun("AssemblyToProcess.dll");
     }
 
-    public ModuleWeaverTests()
+    public ModuleWeaverTests(ITestOutputHelper output) : 
+        base(output)
     {
 #if DEBUG
         disposable = NamerFactory.AsEnvironmentSpecificTest(() => "Debug"+ApprovalResults.GetDotNetRuntime(true));
@@ -25,8 +26,9 @@ public partial class ModuleWeaverTests:IDisposable
 #endif
     }
 
-    public void Dispose()
+    public override void Dispose()
     {
+        base.Dispose();
         disposable.Dispose();
     }
 }
