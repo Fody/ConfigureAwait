@@ -7,7 +7,7 @@
     <Authors>Cameron MacFarland, Simon Cropp</Authors>
     <PackageOutputPath>$(SolutionDir)nugets</PackageOutputPath>
     <PackageIconUrl>https://raw.githubusercontent.com/Fody/ConfigureAwait/master/package_icon.png</PackageIconUrl>
-    <PackageProjectUrl>http://github.com/Fody/ConfigureAwait</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Fody/ConfigureAwait</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
