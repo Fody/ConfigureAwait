@@ -91,4 +91,4 @@ public class MyAsyncLibrary
 
 ## Icon
 
-Created by Dmitry Baranovskiy from the Noun Project.
+Created by Dmitry Baranovskiy from [The Noun Project](https://thenounproject.com).
