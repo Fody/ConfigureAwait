@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using ApprovalTests.Namers;
 using Fody;
 using Xunit.Abstractions;
@@ -16,13 +17,13 @@ public partial class ModuleWeaverTests
         testResult = weavingTask.ExecuteTestRun("AssemblyToProcess.dll");
     }
 
-    public ModuleWeaverTests(ITestOutputHelper output) : 
+    public ModuleWeaverTests(ITestOutputHelper output) :
         base(output)
     {
 #if DEBUG
-        disposable = NamerFactory.AsEnvironmentSpecificTest(() => "Debug"+ApprovalResults.GetDotNetRuntime(true));
+        disposable = NamerFactory.AsEnvironmentSpecificTest(() => "Debug" + ApprovalResults.GetDotNetRuntime(true, RuntimeInformation.FrameworkDescription));
 #else
-        disposable = NamerFactory.AsEnvironmentSpecificTest(() => "Release"+ApprovalResults.GetDotNetRuntime(true));
+        disposable = NamerFactory.AsEnvironmentSpecificTest(() => "Release" + ApprovalResults.GetDotNetRuntime(true, RuntimeInformation.FrameworkDescription));
 #endif
     }
 
