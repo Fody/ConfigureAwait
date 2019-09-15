@@ -1,6 +1,8 @@
 using System;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using ApprovalTests.Namers;
 using Fody;
 using Xunit.Abstractions;
@@ -20,11 +22,16 @@ public partial class ModuleWeaverTests
     public ModuleWeaverTests(ITestOutputHelper output) :
         base(output)
     {
+        var targetFrameworkAttribute = (TargetFrameworkAttribute)Assembly.GetExecutingAssembly()
+            .GetCustomAttributes(typeof(TargetFrameworkAttribute), false)
+            .SingleOrDefault();
+        var framework = targetFrameworkAttribute.FrameworkDisplayName.Split(' ').Last();
 #if DEBUG
-        disposable = NamerFactory.AsEnvironmentSpecificTest(() => "Debug" + ApprovalResults.GetDotNetRuntime(true, RuntimeInformation.FrameworkDescription));
+        var suffix = "Debug" + framework;
 #else
-        disposable = NamerFactory.AsEnvironmentSpecificTest(() => "Release" + ApprovalResults.GetDotNetRuntime(true, RuntimeInformation.FrameworkDescription));
-#endif
+        var suffix = "Release" + framework;
+#endif 
+        disposable = NamerFactory.AsEnvironmentSpecificTest(() => suffix);
     }
 
     public override void Dispose()
