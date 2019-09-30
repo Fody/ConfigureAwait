@@ -5,6 +5,7 @@
     <DisableFody>true</DisableFody>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <PackageReference Include="FodyHelpers" Version="6.0.0" />
     <PackageReference Include="ApprovalTests" Version="4.2.2" />
     <PackageReference Include="Xunit" Version="2.4.1" />
