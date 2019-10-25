@@ -15,5 +15,17 @@ namespace AssemblyToProcess
                 await writer.WriteLineAsync(line);
             }
         }
+
+#if NETCOREAPP2_0
+        [ConfigureAwait(false)]
+        async Task WithReaderAndWriter_WithValueTask(TextWriter writer, StreamReader reader)
+        {
+            string line;
+            while ((line = await new ValueTask<string>(reader.ReadLineAsync())) != null)
+            {
+                await new ValueTask(writer.WriteLineAsync(line));
+            }
+        }
+#endif
     }
 }
