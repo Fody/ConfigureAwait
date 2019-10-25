@@ -55,7 +55,6 @@ public class ModuleWeaver : BaseModuleWeaver
 
         if (TryFindType("System.Threading.Tasks.ValueTask", out valueTaskDef))
         {
-            valueTaskDef = FindType("System.Threading.Tasks.ValueTask");
             var configureValueTaskAwaitMethodDef = valueTaskDef.Methods.First(m => m.Name == "ConfigureAwait");
             valueTaskConfigureAwaitMethod = ModuleDefinition.ImportReference(configureValueTaskAwaitMethodDef);
             configuredValueTaskAwaitableTypeDef = FindType("System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable");
@@ -133,7 +132,10 @@ public class ModuleWeaver : BaseModuleWeaver
         }
     }
 
-    public override IEnumerable<string> GetAssembliesForScanning() => Enumerable.Empty<string>();
+    public override IEnumerable<string> GetAssembliesForScanning()
+    {
+        yield return "System.Threading.Tasks.Extensions";
+    }
 
     void AddAwaitConfigToAsyncMethod(TypeDefinition type, bool value)
     {
