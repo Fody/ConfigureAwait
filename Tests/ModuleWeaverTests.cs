@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using ApprovalTests.Namers;
 using Fody;
@@ -30,8 +29,8 @@ public partial class ModuleWeaverTests
         var suffix = "Debug" + framework;
 #else
         var suffix = "Release" + framework;
-#endif 
-        disposable = NamerFactory.AsEnvironmentSpecificTest(() => suffix);
+#endif
+        disposable = NamerFactory.AsEnvironmentSpecificTest(suffix);
     }
 
     public override void Dispose()
