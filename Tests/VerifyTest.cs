@@ -1,37 +1,36 @@
-﻿using ApprovalTests;
+﻿using System.Threading.Tasks;
 using Fody;
 using Xunit;
 
-public partial class ModuleWeaverTests :
-    XunitApprovalBase
+public partial class ModuleWeaverTests
 {
     [Fact]
-    public void DecompileExample()
+    public Task DecompileExample()
     {
-        Approvals.Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.Example"));
+        return Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.Example"));
     }
 
     [Fact]
-    public void DecompileIssue1()
+    public Task DecompileIssue1()
     {
-        Approvals.Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.Issue1"));
+        return Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.Issue1"));
     }
 
     [Fact]
-    public void DecompileGenericClass()
+    public Task DecompileGenericClass()
     {
-        Approvals.Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.GenericClass`1"));
+        return Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.GenericClass`1"));
     }
 
     [Fact]
-    public void DecompileGenericMethod()
+    public Task DecompileGenericMethod()
     {
-        Approvals.Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.GenericMethod"));
+        return Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.GenericMethod"));
     }
 
     [Fact]
-    public void DecompileCatchAndFinally()
+    public Task DecompileCatchAndFinally()
     {
-        Approvals.Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.CatchAndFinally"));
+        return Verify(Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.CatchAndFinally"));
     }
 }

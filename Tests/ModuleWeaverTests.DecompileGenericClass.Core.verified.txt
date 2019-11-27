@@ -1,4 +1,4 @@
-﻿.class private auto ansi sealed beforefieldinit AssemblyToProcess.GenericClass`1<TItem>
+.class private auto ansi sealed beforefieldinit AssemblyToProcess.GenericClass`1<TItem>
 extends [System.Runtime]System.Object
 {
 .class auto ansi sealed nested private beforefieldinit '<Method>d__0'<TItem>

@@ -1,4 +1,4 @@
-﻿.class public auto ansi beforefieldinit AssemblyToProcess.CatchAndFinally
+.class public auto ansi beforefieldinit AssemblyToProcess.CatchAndFinally
 extends [mscorlib]System.Object
 {
 .class auto ansi sealed nested private beforefieldinit '<Catch1>d__0'

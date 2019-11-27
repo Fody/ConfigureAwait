@@ -1,4 +1,4 @@
-﻿.class private auto ansi beforefieldinit AssemblyToProcess.Issue1
+.class private auto ansi beforefieldinit AssemblyToProcess.Issue1
 extends [mscorlib]System.Object
 {
 .class auto ansi sealed nested private beforefieldinit '<WithReaderAndWriter>d__0'

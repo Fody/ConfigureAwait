@@ -1,4 +1,4 @@
-﻿.class private auto ansi sealed beforefieldinit AssemblyToProcess.GenericMethod
+.class private auto ansi sealed beforefieldinit AssemblyToProcess.GenericMethod
 extends [mscorlib]System.Object
 {
 .class auto ansi sealed nested private beforefieldinit '<Method>d__0`1'<TItem>

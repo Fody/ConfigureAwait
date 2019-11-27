@@ -1,4 +1,4 @@
-﻿.class public auto ansi beforefieldinit AssemblyToProcess.Example
+.class public auto ansi beforefieldinit AssemblyToProcess.Example
 extends [System.Runtime]System.Object
 {
 .class auto ansi sealed nested private beforefieldinit '<AsyncMethod1>d__0'

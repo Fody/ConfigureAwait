@@ -1,18 +1,18 @@
 ﻿using System.Linq;
-using ApprovalTests;
+using System.Threading.Tasks;
 using Xunit;
 
 public partial class ModuleWeaverTests
 {
     [Fact]
-    public void InfoMessages()
+    public Task InfoMessages()
     {
-        Approvals.VerifyAll(testResult.Messages.OrderBy(s => s).Select(x=>x.Text), "Info");
+        return Verify(testResult.Messages.OrderBy(s => s).Select(x=>x.Text));
     }
 
     [Fact]
-    public void ErrorMessages()
+    public Task ErrorMessages()
     {
-        Approvals.VerifyAll(testResult.Errors.OrderBy(s => s).Select(x => x.Text), "Error");
+        return Verify(testResult.Errors.OrderBy(s => s).Select(x => x.Text));
     }
 }
