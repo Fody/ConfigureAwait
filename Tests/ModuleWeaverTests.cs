@@ -1,5 +1,6 @@
 using System.Reflection;
 using Fody;
+using Verify;
 using VerifyXunit;
 using Xunit.Abstractions;
 
@@ -18,6 +19,6 @@ public partial class ModuleWeaverTests:
     public ModuleWeaverTests(ITestOutputHelper output) :
         base(output)
     {
-        UniqueForRuntime();
+        SharedVerifySettings.UniqueForRuntime();
     }
 }
