@@ -1,9 +1,19 @@
-![Icon](https://raw.github.com/Fody/ConfigureAwait/master/package_icon.png)
+# <img src="/package_icon.png" height="30px"> ConfigureAwait.Fody
+
+[![Chat on Gitter](https://img.shields.io/gitter/room/fody/fody.svg)](https://gitter.im/Fody/Fody)
+[![NuGet Status](https://badge.fury.io/nu/configureawait.fody.svg)](https://www.nuget.org/packages/ConfigureAwait.Fody/)
+
+Configure async code's [`ConfigureAwait`](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.configureawait) at a global level.
 
 
 ### This is an add-in for [Fody](https://github.com/Fody/Home/)
 
-Configure async code's [`ConfigureAwait`](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.configureawait) at a global level.
+**It is expected that all developers using Fody either [become a Patron on OpenCollective](https://opencollective.com/fody/), or have a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-fody?utm_source=nuget-fody&utm_medium=referral&utm_campaign=enterprise).**
+
+
+## Usage
+
+See also [Fody usage](https://github.com/Fody/Home/blob/master/pages/usage.md).
 
 
 ### NuGet package
@@ -18,7 +28,7 @@ PM> Install-Package ConfigureAwait.Fody
 The `Install-Package Fody` is required since NuGet always defaults to the oldest, and most buggy, version of any dependency.
 
 
-## How to use it
+### How to use it
 
 By default, `ConfigureAwait.Fody` doesn't change any code. Set a configure await value at the assembly, class, or method level.
 
