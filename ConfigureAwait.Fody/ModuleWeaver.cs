@@ -37,36 +37,36 @@ public class ModuleWeaver : BaseModuleWeaver
     {
         ReadConfig();
 
-        taskDef = FindType("System.Threading.Tasks.Task");
+        taskDef = FindTypeDefinition("System.Threading.Tasks.Task");
         var configureTaskAwaitMethodDef = taskDef.Methods.First(m => m.Name == "ConfigureAwait");
         taskConfigureAwaitMethod = ModuleDefinition.ImportReference(configureTaskAwaitMethodDef);
-        configuredTaskAwaitableTypeDef = FindType("System.Runtime.CompilerServices.ConfiguredTaskAwaitable");
+        configuredTaskAwaitableTypeDef = FindTypeDefinition("System.Runtime.CompilerServices.ConfiguredTaskAwaitable");
         configuredTaskAwaiterTypeDef = configuredTaskAwaitableTypeDef.NestedTypes[0];
         configuredTaskAwaitableTypeRef = ModuleDefinition.ImportReference(configuredTaskAwaitableTypeDef);
         configuredTaskAwaiterTypeRef = ModuleDefinition.ImportReference(configuredTaskAwaiterTypeDef);
 
-        var genericTaskDef = FindType("System.Threading.Tasks.Task`1");
+        var genericTaskDef = FindTypeDefinition("System.Threading.Tasks.Task`1");
         genericTaskConfigureAwaitMethodDef = genericTaskDef.Methods.First(m => m.Name == "ConfigureAwait");
-        genericConfiguredTaskAwaitableTypeDef = FindType("System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1");
+        genericConfiguredTaskAwaitableTypeDef = FindTypeDefinition("System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1");
         genericConfiguredTaskAwaiterTypeDef = genericConfiguredTaskAwaitableTypeDef.NestedTypes[0];
         genericConfiguredTaskAwaiterTypeRef = ModuleDefinition.ImportReference(genericConfiguredTaskAwaiterTypeDef);
         genericConfiguredTaskAwaitableTypeRef = ModuleDefinition.ImportReference(genericConfiguredTaskAwaitableTypeDef);
         genericTaskType = ModuleDefinition.ImportReference(genericTaskDef);
 
-        if (TryFindType("System.Threading.Tasks.ValueTask", out valueTaskDef))
+        if (TryFindTypeDefinition("System.Threading.Tasks.ValueTask", out valueTaskDef))
         {
             var configureValueTaskAwaitMethodDef = valueTaskDef.Methods.First(m => m.Name == "ConfigureAwait");
             valueTaskConfigureAwaitMethod = ModuleDefinition.ImportReference(configureValueTaskAwaitMethodDef);
-            configuredValueTaskAwaitableTypeDef = FindType("System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable");
+            configuredValueTaskAwaitableTypeDef = FindTypeDefinition("System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable");
             configuredValueTaskAwaiterTypeDef = configuredValueTaskAwaitableTypeDef.NestedTypes[0];
             configuredValueTaskAwaitableTypeRef = ModuleDefinition.ImportReference(configuredValueTaskAwaitableTypeDef);
             configuredValueTaskAwaiterTypeRef = ModuleDefinition.ImportReference(configuredValueTaskAwaiterTypeDef);
         }
 
-        if (TryFindType("System.Threading.Tasks.ValueTask`1", out var genericValueTaskDef))
+        if (TryFindTypeDefinition("System.Threading.Tasks.ValueTask`1", out var genericValueTaskDef))
         {
             genericValueTaskConfigureAwaitMethodDef = genericValueTaskDef.Methods.First(m => m.Name == "ConfigureAwait");
-            genericConfiguredValueTaskAwaitableTypeDef = FindType("System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1");
+            genericConfiguredValueTaskAwaitableTypeDef = FindTypeDefinition("System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1");
             genericConfiguredValueTaskAwaiterTypeDef = genericConfiguredValueTaskAwaitableTypeDef.NestedTypes[0];
             genericConfiguredValueTaskAwaiterTypeRef = ModuleDefinition.ImportReference(genericConfiguredValueTaskAwaiterTypeDef);
             genericConfiguredValueTaskAwaitableTypeRef = ModuleDefinition.ImportReference(genericConfiguredValueTaskAwaitableTypeDef);
