@@ -5,6 +5,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <Authors>Cameron MacFarland, Simon Cropp</Authors>
+    <Description>Configure async code's ConfigureAwait at a global level.</Description>
     <PackageOutputPath>$(SolutionDir)nugets</PackageOutputPath>
     <PackageIconUrl>https://raw.githubusercontent.com/Fody/ConfigureAwait/master/package_icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/Fody/ConfigureAwait</PackageProjectUrl>
