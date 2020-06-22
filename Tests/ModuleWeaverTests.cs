@@ -1,11 +1,11 @@
 using System.Reflection;
 using Fody;
-using Verify;
+using VerifyTests;
 using VerifyXunit;
 using Xunit.Abstractions;
 
-public partial class ModuleWeaverTests:
-    VerifyBase
+[UsesVerify]
+public partial class ModuleWeaverTests
 {
     static TestResult testResult;
 
@@ -16,9 +16,8 @@ public partial class ModuleWeaverTests:
         testResult = weavingTask.ExecuteTestRun("AssemblyToProcess.dll");
     }
 
-    public ModuleWeaverTests(ITestOutputHelper output) :
-        base(output)
+    public ModuleWeaverTests(ITestOutputHelper output)
     {
-        SharedVerifySettings.UniqueForRuntime();
+        VerifierSettings.UniqueForRuntime();
     }
 }

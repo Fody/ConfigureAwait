@@ -1,0 +1,488 @@
+.class private auto ansi beforefieldinit AssemblyToProcess.Issue1
+extends [System.Runtime]System.Object
+{
+.class auto ansi sealed nested private beforefieldinit '<WithReaderAndWriter>d__0'
+extends [System.Runtime]System.Object
+implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class [System.Runtime.Extensions]System.IO.TextWriter writer
+.field public class [System.Runtime.Extensions]System.IO.StreamReader reader
+.field public class AssemblyToProcess.Issue1 '<>4__this'
+.field private string '<line>5__1'
+.field private string '<>s__2'
+.field private valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
+.field private valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<string> '<>u__2'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_1,
+valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_2,
+class AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0' V_3,
+bool V_4,
+valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<string> V_5,
+valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<string> V_6,
+string V_7,
+class [System.Runtime]System.Exception V_8)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0012
+IL_000a:  br.s       IL_000c
+IL_000c:  ldloc.0
+IL_000d:  ldc.i4.1
+IL_000e:  beq.s      IL_0014
+IL_0010:  br.s       IL_0019
+IL_0012:  br.s       IL_006d
+IL_0014:  br         IL_00df
+IL_0019:  nop
+IL_001a:  br.s       IL_0092
+IL_001c:  nop
+IL_001d:  ldarg.0
+IL_001e:  ldfld      class [System.Runtime.Extensions]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::writer
+IL_0023:  ldarg.0
+IL_0024:  ldfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<line>5__1'
+IL_0029:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task [System.Runtime.Extensions]System.IO.TextWriter::WriteLineAsync(string)
+IL_002e:  ldc.i4.0
+IL_002f:  callvirt   instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [netstandard]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0034:  stloc.2
+IL_0035:  ldloca.s   V_2
+IL_0037:  call       instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_003c:  stloc.1
+IL_003d:  ldloca.s   V_1
+IL_003f:  call       instance bool [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_0044:  brtrue.s   IL_0089
+IL_0046:  ldarg.0
+IL_0047:  ldc.i4.0
+IL_0048:  dup
+IL_0049:  stloc.0
+IL_004a:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'
+IL_004f:  ldarg.0
+IL_0050:  ldloc.1
+IL_0051:  stfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>u__1'
+IL_0056:  ldarg.0
+IL_0057:  stloc.3
+IL_0058:  ldarg.0
+IL_0059:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_005e:  ldloca.s   V_1
+IL_0060:  ldloca.s   V_3
+IL_0062:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'>(!!0&,
+!!1&)
+IL_0067:  nop
+IL_0068:  leave      IL_016b
+IL_006d:  ldarg.0
+IL_006e:  ldfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>u__1'
+IL_0073:  stloc.1
+IL_0074:  ldarg.0
+IL_0075:  ldflda     valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>u__1'
+IL_007a:  initobj    [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_0080:  ldarg.0
+IL_0081:  ldc.i4.m1
+IL_0082:  dup
+IL_0083:  stloc.0
+IL_0084:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'
+IL_0089:  ldloca.s   V_1
+IL_008b:  call       instance void [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_0090:  nop
+IL_0091:  nop
+IL_0092:  ldarg.0
+IL_0093:  ldfld      class [System.Runtime.Extensions]System.IO.StreamReader AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::reader
+IL_0098:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task`1<string> [System.Runtime.Extensions]System.IO.TextReader::ReadLineAsync()
+IL_009d:  ldc.i4.0
+IL_009e:  callvirt   instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [netstandard]System.Threading.Tasks.Task`1<string>::ConfigureAwait(bool)
+IL_00a3:  stloc.s    V_5
+IL_00a5:  ldloca.s   V_5
+IL_00a7:  call       instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<string>::GetAwaiter()
+IL_00ac:  stloc.s    V_6
+IL_00ae:  ldloca.s   V_6
+IL_00b0:  call       instance bool valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<string>::get_IsCompleted()
+IL_00b5:  brtrue.s   IL_00fc
+IL_00b7:  ldarg.0
+IL_00b8:  ldc.i4.1
+IL_00b9:  dup
+IL_00ba:  stloc.0
+IL_00bb:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'
+IL_00c0:  ldarg.0
+IL_00c1:  ldloc.s    V_6
+IL_00c3:  stfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<string> AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>u__2'
+IL_00c8:  ldarg.0
+IL_00c9:  stloc.3
+IL_00ca:  ldarg.0
+IL_00cb:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_00d0:  ldloca.s   V_6
+IL_00d2:  ldloca.s   V_3
+IL_00d4:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<string>,class AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'>(!!0&,
+!!1&)
+IL_00d9:  nop
+IL_00da:  leave      IL_016b
+IL_00df:  ldarg.0
+IL_00e0:  ldfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<string> AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>u__2'
+IL_00e5:  stloc.s    V_6
+IL_00e7:  ldarg.0
+IL_00e8:  ldflda     valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<string> AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>u__2'
+IL_00ed:  initobj    valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<string>
+IL_00f3:  ldarg.0
+IL_00f4:  ldc.i4.m1
+IL_00f5:  dup
+IL_00f6:  stloc.0
+IL_00f7:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'
+IL_00fc:  ldarg.0
+IL_00fd:  ldloca.s   V_6
+IL_00ff:  call       instance !0 valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<string>::GetResult()
+IL_0104:  stfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>s__2'
+IL_0109:  ldarg.0
+IL_010a:  ldarg.0
+IL_010b:  ldfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>s__2'
+IL_0110:  dup
+IL_0111:  stloc.s    V_7
+IL_0113:  stfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<line>5__1'
+IL_0118:  ldloc.s    V_7
+IL_011a:  ldnull
+IL_011b:  cgt.un
+IL_011d:  stloc.s    V_4
+IL_011f:  ldloc.s    V_4
+IL_0121:  brtrue     IL_001c
+IL_0126:  ldarg.0
+IL_0127:  ldnull
+IL_0128:  stfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>s__2'
+IL_012d:  leave.s    IL_0150
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_012f:  stloc.s    V_8
+IL_0131:  ldarg.0
+IL_0132:  ldc.i4.s   -2
+IL_0134:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'
+IL_0139:  ldarg.0
+IL_013a:  ldnull
+IL_013b:  stfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<line>5__1'
+IL_0140:  ldarg.0
+IL_0141:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_0146:  ldloc.s    V_8
+IL_0148:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_014d:  nop
+IL_014e:  leave.s    IL_016b
+}  // end handler
+IL_0150:  ldarg.0
+IL_0151:  ldc.i4.s   -2
+IL_0153:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'
+IL_0158:  ldarg.0
+IL_0159:  ldnull
+IL_015a:  stfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<line>5__1'
+IL_015f:  ldarg.0
+IL_0160:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_0165:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_016a:  nop
+IL_016b:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<WithReaderAndWriter_WithValueTask>d__1'
+extends [System.Runtime]System.Object
+implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class [System.Runtime.Extensions]System.IO.TextWriter writer
+.field public class [System.Runtime.Extensions]System.IO.StreamReader reader
+.field public class AssemblyToProcess.Issue1 '<>4__this'
+.field private string '<line>5__1'
+.field private string '<>s__2'
+.field private valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter '<>u__1'
+.field private valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<string> '<>u__2'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter V_1,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable V_2,
+valuetype [System.Threading.Tasks.Extensions]System.Threading.Tasks.ValueTask V_3,
+class AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1' V_4,
+bool V_5,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<string> V_6,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<string> V_7,
+valuetype [System.Threading.Tasks.Extensions]System.Threading.Tasks.ValueTask`1<string> V_8,
+string V_9,
+class [System.Runtime]System.Exception V_10)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0012
+IL_000a:  br.s       IL_000c
+IL_000c:  ldloc.0
+IL_000d:  ldc.i4.1
+IL_000e:  beq.s      IL_0014
+IL_0010:  br.s       IL_0019
+IL_0012:  br.s       IL_0079
+IL_0014:  br         IL_00f5
+IL_0019:  nop
+IL_001a:  br         IL_009e
+IL_001f:  nop
+IL_0020:  ldarg.0
+IL_0021:  ldfld      class [System.Runtime.Extensions]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::writer
+IL_0026:  ldarg.0
+IL_0027:  ldfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<line>5__1'
+IL_002c:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task [System.Runtime.Extensions]System.IO.TextWriter::WriteLineAsync(string)
+IL_0031:  call       instance void [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable::.ctor(valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask)
+IL_0036:  stloc.3
+IL_0037:  ldloca.s   V_3
+IL_0039:  ldc.i4.0
+IL_003a:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable [System.Private.CoreLib]System.Threading.Tasks.ValueTask::ConfigureAwait(bool)
+IL_003f:  stloc.2
+IL_0040:  ldloca.s   V_2
+IL_0042:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable::GetAwaiter()
+IL_0047:  stloc.1
+IL_0048:  ldloca.s   V_1
+IL_004a:  call       instance bool [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter::get_IsCompleted()
+IL_004f:  brtrue.s   IL_0095
+IL_0051:  ldarg.0
+IL_0052:  ldc.i4.0
+IL_0053:  dup
+IL_0054:  stloc.0
+IL_0055:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>1__state'
+IL_005a:  ldarg.0
+IL_005b:  ldloc.1
+IL_005c:  stfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>u__1'
+IL_0061:  ldarg.0
+IL_0062:  stloc.s    V_4
+IL_0064:  ldarg.0
+IL_0065:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>t__builder'
+IL_006a:  ldloca.s   V_1
+IL_006c:  ldloca.s   V_4
+IL_006e:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter,class AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'>(!!0&,
+!!1&)
+IL_0073:  nop
+IL_0074:  leave      IL_0181
+IL_0079:  ldarg.0
+IL_007a:  ldfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>u__1'
+IL_007f:  stloc.1
+IL_0080:  ldarg.0
+IL_0081:  ldflda     valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>u__1'
+IL_0086:  initobj    [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter
+IL_008c:  ldarg.0
+IL_008d:  ldc.i4.m1
+IL_008e:  dup
+IL_008f:  stloc.0
+IL_0090:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>1__state'
+IL_0095:  ldloca.s   V_1
+IL_0097:  call       instance void [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable/ConfiguredValueTaskAwaiter::GetResult()
+IL_009c:  nop
+IL_009d:  nop
+IL_009e:  ldarg.0
+IL_009f:  ldfld      class [System.Runtime.Extensions]System.IO.StreamReader AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::reader
+IL_00a4:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task`1<string> [System.Runtime.Extensions]System.IO.TextReader::ReadLineAsync()
+IL_00a9:  call       instance void valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<string>::.ctor(valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<!0>)
+IL_00ae:  stloc.s    V_8
+IL_00b0:  ldloca.s   V_8
+IL_00b2:  ldc.i4.0
+IL_00b3:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!0> valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<string>::ConfigureAwait(bool)
+IL_00b8:  stloc.s    V_6
+IL_00ba:  ldloca.s   V_6
+IL_00bc:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!0> valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<string>::GetAwaiter()
+IL_00c1:  stloc.s    V_7
+IL_00c3:  ldloca.s   V_7
+IL_00c5:  call       instance bool valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<string>::get_IsCompleted()
+IL_00ca:  brtrue.s   IL_0112
+IL_00cc:  ldarg.0
+IL_00cd:  ldc.i4.1
+IL_00ce:  dup
+IL_00cf:  stloc.0
+IL_00d0:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>1__state'
+IL_00d5:  ldarg.0
+IL_00d6:  ldloc.s    V_7
+IL_00d8:  stfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<string> AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>u__2'
+IL_00dd:  ldarg.0
+IL_00de:  stloc.s    V_4
+IL_00e0:  ldarg.0
+IL_00e1:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>t__builder'
+IL_00e6:  ldloca.s   V_7
+IL_00e8:  ldloca.s   V_4
+IL_00ea:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<string>,class AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'>(!!0&,
+!!1&)
+IL_00ef:  nop
+IL_00f0:  leave      IL_0181
+IL_00f5:  ldarg.0
+IL_00f6:  ldfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<string> AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>u__2'
+IL_00fb:  stloc.s    V_7
+IL_00fd:  ldarg.0
+IL_00fe:  ldflda     valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<string> AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>u__2'
+IL_0103:  initobj    valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<string>
+IL_0109:  ldarg.0
+IL_010a:  ldc.i4.m1
+IL_010b:  dup
+IL_010c:  stloc.0
+IL_010d:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>1__state'
+IL_0112:  ldarg.0
+IL_0113:  ldloca.s   V_7
+IL_0115:  call       instance !0 valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<string>::GetResult()
+IL_011a:  stfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>s__2'
+IL_011f:  ldarg.0
+IL_0120:  ldarg.0
+IL_0121:  ldfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>s__2'
+IL_0126:  dup
+IL_0127:  stloc.s    V_9
+IL_0129:  stfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<line>5__1'
+IL_012e:  ldloc.s    V_9
+IL_0130:  ldnull
+IL_0131:  cgt.un
+IL_0133:  stloc.s    V_5
+IL_0135:  ldloc.s    V_5
+IL_0137:  brtrue     IL_001f
+IL_013c:  ldarg.0
+IL_013d:  ldnull
+IL_013e:  stfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>s__2'
+IL_0143:  leave.s    IL_0166
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_0145:  stloc.s    V_10
+IL_0147:  ldarg.0
+IL_0148:  ldc.i4.s   -2
+IL_014a:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>1__state'
+IL_014f:  ldarg.0
+IL_0150:  ldnull
+IL_0151:  stfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<line>5__1'
+IL_0156:  ldarg.0
+IL_0157:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>t__builder'
+IL_015c:  ldloc.s    V_10
+IL_015e:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_0163:  nop
+IL_0164:  leave.s    IL_0181
+}  // end handler
+IL_0166:  ldarg.0
+IL_0167:  ldc.i4.s   -2
+IL_0169:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>1__state'
+IL_016e:  ldarg.0
+IL_016f:  ldnull
+IL_0170:  stfld      string AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<line>5__1'
+IL_0175:  ldarg.0
+IL_0176:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>t__builder'
+IL_017b:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_0180:  nop
+IL_0181:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.method private hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+WithReaderAndWriter(class [System.Runtime.Extensions]System.IO.TextWriter writer,
+class [System.Runtime.Extensions]System.IO.StreamReader reader) cil managed
+{
+63 65 73 73 2E 49 73 73 75 65 31 2B 3C 57 69 74   // cess.Issue1+<Wit
+68 52 65 61 64 65 72 41 6E 64 57 72 69 74 65 72   // hReaderAndWriter
+3E 64 5F 5F 30 00 00 )                            // >d__0..
+.maxstack  2
+.locals init (class AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0' V_0)
+IL_0000:  newobj     instance void AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Issue1 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  ldarg.1
+IL_000f:  stfld      class [System.Runtime.Extensions]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::writer
+IL_0014:  ldloc.0
+IL_0015:  ldarg.2
+IL_0016:  stfld      class [System.Runtime.Extensions]System.IO.StreamReader AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::reader
+IL_001b:  ldloc.0
+IL_001c:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0021:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_0026:  ldloc.0
+IL_0027:  ldc.i4.m1
+IL_0028:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'
+IL_002d:  ldloc.0
+IL_002e:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_0033:  ldloca.s   V_0
+IL_0035:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'>(!!0&)
+IL_003a:  ldloc.0
+IL_003b:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_0040:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_0045:  ret
+}
+.method private hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+WithReaderAndWriter_WithValueTask(class [System.Runtime.Extensions]System.IO.TextWriter writer,
+class [System.Runtime.Extensions]System.IO.StreamReader reader) cil managed
+{
+63 65 73 73 2E 49 73 73 75 65 31 2B 3C 57 69 74   // cess.Issue1+<Wit
+68 52 65 61 64 65 72 41 6E 64 57 72 69 74 65 72   // hReaderAndWriter
+5F 57 69 74 68 56 61 6C 75 65 54 61 73 6B 3E 64   // _WithValueTask>d
+5F 5F 31 00 00 )                                  // __1..
+.maxstack  2
+.locals init (class AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1' V_0)
+IL_0000:  newobj     instance void AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  ldarg.0
+IL_0008:  stfld      class AssemblyToProcess.Issue1 AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>4__this'
+IL_000d:  ldloc.0
+IL_000e:  ldarg.1
+IL_000f:  stfld      class [System.Runtime.Extensions]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::writer
+IL_0014:  ldloc.0
+IL_0015:  ldarg.2
+IL_0016:  stfld      class [System.Runtime.Extensions]System.IO.StreamReader AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::reader
+IL_001b:  ldloc.0
+IL_001c:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0021:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>t__builder'
+IL_0026:  ldloc.0
+IL_0027:  ldc.i4.m1
+IL_0028:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>1__state'
+IL_002d:  ldloc.0
+IL_002e:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>t__builder'
+IL_0033:  ldloca.s   V_0
+IL_0035:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'>(!!0&)
+IL_003a:  ldloc.0
+IL_003b:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>t__builder'
+IL_0040:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_0045:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+}
