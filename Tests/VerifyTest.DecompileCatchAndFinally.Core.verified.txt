@@ -154,7 +154,7 @@ implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMa
 .field public class AssemblyToProcess.CatchAndFinally '<>4__this'
 .field private object '<>s__1'
 .field private int32 '<>s__2'
-.field private valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
+.field private valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
 .method public hidebysig specialname rtspecialname
 instance void  .ctor() cil managed
 {
@@ -172,8 +172,8 @@ instance void  MoveNext() cil managed
 .locals init (int32 V_0,
 object V_1,
 int32 V_2,
-valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_3,
-valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_4,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_3,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_4,
 class AssemblyToProcess.CatchAndFinally/'<Catch2>d__1' V_5,
 class [System.Runtime]System.Exception V_6)
 IL_0000:  ldarg.0
@@ -217,13 +217,13 @@ IL_003e:  nop
 IL_003f:  ldc.i4.1
 IL_0040:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
 IL_0045:  ldc.i4.0
-IL_0046:  callvirt   instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [netstandard]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0046:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [System.Private.CoreLib]System.Threading.Tasks.Task::ConfigureAwait(bool)
 IL_004b:  stloc.s    V_4
 IL_004d:  ldloca.s   V_4
-IL_004f:  call       instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_004f:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
 IL_0054:  stloc.3
 IL_0055:  ldloca.s   V_3
-IL_0057:  call       instance bool [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_0057:  call       instance bool [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
 IL_005c:  brtrue.s   IL_009f
 IL_005e:  ldarg.0
 IL_005f:  ldc.i4.0
@@ -232,30 +232,30 @@ IL_0061:  stloc.0
 IL_0062:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>1__state'
 IL_0067:  ldarg.0
 IL_0068:  ldloc.3
-IL_0069:  stfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>u__1'
+IL_0069:  stfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>u__1'
 IL_006e:  ldarg.0
 IL_006f:  stloc.s    V_5
 IL_0071:  ldarg.0
 IL_0072:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>t__builder'
 IL_0077:  ldloca.s   V_3
 IL_0079:  ldloca.s   V_5
-IL_007b:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'>(!!0&,
+IL_007b:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'>(!!0&,
 !!1&)
 IL_0080:  nop
 IL_0081:  leave.s    IL_00e1
 IL_0083:  ldarg.0
-IL_0084:  ldfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>u__1'
+IL_0084:  ldfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>u__1'
 IL_0089:  stloc.3
 IL_008a:  ldarg.0
-IL_008b:  ldflda     valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>u__1'
-IL_0090:  initobj    [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_008b:  ldflda     valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>u__1'
+IL_0090:  initobj    [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
 IL_0096:  ldarg.0
 IL_0097:  ldc.i4.m1
 IL_0098:  dup
 IL_0099:  stloc.0
 IL_009a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>1__state'
 IL_009f:  ldloca.s   V_3
-IL_00a1:  call       instance void [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_00a1:  call       instance void [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
 IL_00a6:  nop
 IL_00a7:  nop
 IL_00a8:  br.s       IL_00aa
@@ -606,7 +606,7 @@ implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMa
 .field public class AssemblyToProcess.CatchAndFinally '<>4__this'
 .field private object '<>s__1'
 .field private int32 '<>s__2'
-.field private valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
+.field private valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
 .method public hidebysig specialname rtspecialname
 instance void  .ctor() cil managed
 {
@@ -623,8 +623,8 @@ instance void  MoveNext() cil managed
 .maxstack  3
 .locals init (int32 V_0,
 object V_1,
-valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_2,
-valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_3,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_2,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_3,
 class AssemblyToProcess.CatchAndFinally/'<Finally2>d__4' V_4,
 class [System.Runtime]System.Exception V_5)
 IL_0000:  ldarg.0
@@ -661,13 +661,13 @@ IL_002e:  nop
 IL_002f:  ldc.i4.1
 IL_0030:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
 IL_0035:  ldc.i4.0
-IL_0036:  callvirt   instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [netstandard]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0036:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [System.Private.CoreLib]System.Threading.Tasks.Task::ConfigureAwait(bool)
 IL_003b:  stloc.3
 IL_003c:  ldloca.s   V_3
-IL_003e:  call       instance valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_003e:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
 IL_0043:  stloc.2
 IL_0044:  ldloca.s   V_2
-IL_0046:  call       instance bool [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_0046:  call       instance bool [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
 IL_004b:  brtrue.s   IL_0091
 IL_004d:  ldarg.0
 IL_004e:  ldc.i4.0
@@ -676,30 +676,30 @@ IL_0050:  stloc.0
 IL_0051:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>1__state'
 IL_0056:  ldarg.0
 IL_0057:  ldloc.2
-IL_0058:  stfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>u__1'
+IL_0058:  stfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>u__1'
 IL_005d:  ldarg.0
 IL_005e:  stloc.s    V_4
 IL_0060:  ldarg.0
 IL_0061:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>t__builder'
 IL_0066:  ldloca.s   V_2
 IL_0068:  ldloca.s   V_4
-IL_006a:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'>(!!0&,
+IL_006a:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,class AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'>(!!0&,
 !!1&)
 IL_006f:  nop
 IL_0070:  leave      IL_00fd
 IL_0075:  ldarg.0
-IL_0076:  ldfld      valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>u__1'
+IL_0076:  ldfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>u__1'
 IL_007b:  stloc.2
 IL_007c:  ldarg.0
-IL_007d:  ldflda     valuetype [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>u__1'
-IL_0082:  initobj    [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_007d:  ldflda     valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>u__1'
+IL_0082:  initobj    [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
 IL_0088:  ldarg.0
 IL_0089:  ldc.i4.m1
 IL_008a:  dup
 IL_008b:  stloc.0
 IL_008c:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>1__state'
 IL_0091:  ldloca.s   V_2
-IL_0093:  call       instance void [netstandard]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_0093:  call       instance void [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
 IL_0098:  nop
 IL_0099:  nop
 IL_009a:  ldarg.0
@@ -1135,7 +1135,7 @@ IL_003c:  br.s       IL_00b3
 IL_003e:  nop
 IL_003f:  ldc.i4.1
 IL_0040:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
-IL_0045:  call       instance void [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable::.ctor(valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask)
+IL_0045:  call       instance void [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable::.ctor(valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask&)
 IL_004a:  stloc.s    V_5
 IL_004c:  ldloca.s   V_5
 IL_004e:  ldc.i4.0
@@ -1591,7 +1591,7 @@ IL_002c:  leave.s    IL_002e
 IL_002e:  nop
 IL_002f:  ldc.i4.1
 IL_0030:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
-IL_0035:  call       instance void [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable::.ctor(valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask)
+IL_0035:  call       instance void [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable::.ctor(valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask&)
 IL_003a:  stloc.s    V_4
 IL_003c:  ldloca.s   V_4
 IL_003e:  ldc.i4.0
