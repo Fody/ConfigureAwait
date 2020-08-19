@@ -321,14 +321,14 @@ class [System.Runtime.Extensions]System.IO.StreamReader reader) cil managed
 .maxstack  2
 .locals init (valuetype AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0' V_0)
 IL_0000:  ldloca.s   V_0
-IL_0002:  ldarg.1
-IL_0003:  stfld      class [System.Runtime.Extensions]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::writer
-IL_0008:  ldloca.s   V_0
-IL_000a:  ldarg.2
-IL_000b:  stfld      class [System.Runtime.Extensions]System.IO.StreamReader AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::reader
-IL_0010:  ldloca.s   V_0
-IL_0012:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0017:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_0002:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0007:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_000c:  ldloca.s   V_0
+IL_000e:  ldarg.1
+IL_000f:  stfld      class [System.Runtime.Extensions]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::writer
+IL_0014:  ldloca.s   V_0
+IL_0016:  ldarg.2
+IL_0017:  stfld      class [System.Runtime.Extensions]System.IO.StreamReader AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::reader
 IL_001c:  ldloca.s   V_0
 IL_001e:  ldc.i4.m1
 IL_001f:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'
@@ -352,14 +352,14 @@ class [System.Runtime.Extensions]System.IO.StreamReader reader) cil managed
 .maxstack  2
 .locals init (valuetype AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1' V_0)
 IL_0000:  ldloca.s   V_0
-IL_0002:  ldarg.1
-IL_0003:  stfld      class [System.Runtime.Extensions]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::writer
-IL_0008:  ldloca.s   V_0
-IL_000a:  ldarg.2
-IL_000b:  stfld      class [System.Runtime.Extensions]System.IO.StreamReader AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::reader
-IL_0010:  ldloca.s   V_0
-IL_0012:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0017:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>t__builder'
+IL_0002:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0007:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>t__builder'
+IL_000c:  ldloca.s   V_0
+IL_000e:  ldarg.1
+IL_000f:  stfld      class [System.Runtime.Extensions]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::writer
+IL_0014:  ldloca.s   V_0
+IL_0016:  ldarg.2
+IL_0017:  stfld      class [System.Runtime.Extensions]System.IO.StreamReader AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::reader
 IL_001c:  ldloca.s   V_0
 IL_001e:  ldc.i4.m1
 IL_001f:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::'<>1__state'
