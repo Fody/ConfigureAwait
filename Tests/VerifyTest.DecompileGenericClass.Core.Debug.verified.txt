@@ -274,14 +274,14 @@ Method(class [System.Runtime]System.Threading.Tasks.Task`1<!TItem> itemTask) cil
 IL_0000:  newobj     instance void class AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem>::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.GenericClass`1<!0> class AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem>::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  ldarg.1
-IL_000f:  stfld      class [System.Runtime]System.Threading.Tasks.Task`1<!0> class AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem>::itemTask
-IL_0014:  ldloc.0
-IL_0015:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_001a:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem>::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem>::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.GenericClass`1<!0> class AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem>::'<>4__this'
+IL_0018:  ldloc.0
+IL_0019:  ldarg.1
+IL_001a:  stfld      class [System.Runtime]System.Threading.Tasks.Task`1<!0> class AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem>::itemTask
 IL_001f:  ldloc.0
 IL_0020:  ldc.i4.m1
 IL_0021:  stfld      int32 class AssemblyToProcess.GenericClass`1/'<Method>d__0'<!TItem>::'<>1__state'
@@ -305,14 +305,14 @@ Method_WithValueTask(class [System.Runtime]System.Threading.Tasks.Task`1<!TItem>
 IL_0000:  newobj     instance void class AssemblyToProcess.GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.GenericClass`1<!0> class AssemblyToProcess.GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  ldarg.1
-IL_000f:  stfld      class [System.Runtime]System.Threading.Tasks.Task`1<!0> class AssemblyToProcess.GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::itemTask
-IL_0014:  ldloc.0
-IL_0015:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_001a:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class AssemblyToProcess.GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class AssemblyToProcess.GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.GenericClass`1<!0> class AssemblyToProcess.GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>4__this'
+IL_0018:  ldloc.0
+IL_0019:  ldarg.1
+IL_001a:  stfld      class [System.Runtime]System.Threading.Tasks.Task`1<!0> class AssemblyToProcess.GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::itemTask
 IL_001f:  ldloc.0
 IL_0020:  ldc.i4.m1
 IL_0021:  stfld      int32 class AssemblyToProcess.GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>1__state'

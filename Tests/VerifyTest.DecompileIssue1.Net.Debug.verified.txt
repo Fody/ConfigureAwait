@@ -211,17 +211,17 @@ class [mscorlib]System.IO.StreamReader reader) cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Issue1 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  ldarg.1
-IL_000f:  stfld      class [mscorlib]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::writer
-IL_0014:  ldloc.0
-IL_0015:  ldarg.2
-IL_0016:  stfld      class [mscorlib]System.IO.StreamReader AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::reader
-IL_001b:  ldloc.0
-IL_001c:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0021:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Issue1 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>4__this'
+IL_0018:  ldloc.0
+IL_0019:  ldarg.1
+IL_001a:  stfld      class [mscorlib]System.IO.TextWriter AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::writer
+IL_001f:  ldloc.0
+IL_0020:  ldarg.2
+IL_0021:  stfld      class [mscorlib]System.IO.StreamReader AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::reader
 IL_0026:  ldloc.0
 IL_0027:  ldc.i4.m1
 IL_0028:  stfld      int32 AssemblyToProcess.Issue1/'<WithReaderAndWriter>d__0'::'<>1__state'

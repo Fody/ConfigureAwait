@@ -1864,11 +1864,11 @@ Catch1() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1>d__0'::'<>1__state'
@@ -1892,11 +1892,11 @@ Catch2() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2>d__1'::'<>1__state'
@@ -1920,11 +1920,11 @@ Catch3() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3>d__2'::'<>1__state'
@@ -1948,11 +1948,11 @@ Finally1() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally1>d__3'::'<>1__state'
@@ -1976,11 +1976,11 @@ Finally2() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2>d__4'::'<>1__state'
@@ -2004,11 +2004,11 @@ Finally3() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally3>d__5'::'<>1__state'
@@ -2033,11 +2033,11 @@ Catch1_WithValueTask() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Catch1_WithValueTask>d__6'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch1_WithValueTask>d__6'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1_WithValueTask>d__6'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch1_WithValueTask>d__6'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch1_WithValueTask>d__6'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch1_WithValueTask>d__6'::'<>1__state'
@@ -2062,11 +2062,11 @@ Catch2_WithValueTask() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Catch2_WithValueTask>d__7'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch2_WithValueTask>d__7'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2_WithValueTask>d__7'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch2_WithValueTask>d__7'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch2_WithValueTask>d__7'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch2_WithValueTask>d__7'::'<>1__state'
@@ -2091,11 +2091,11 @@ Catch3_WithValueTask() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Catch3_WithValueTask>d__8'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch3_WithValueTask>d__8'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3_WithValueTask>d__8'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Catch3_WithValueTask>d__8'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Catch3_WithValueTask>d__8'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Catch3_WithValueTask>d__8'::'<>1__state'
@@ -2120,11 +2120,11 @@ Finally1_WithValueTask() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Finally1_WithValueTask>d__9'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally1_WithValueTask>d__9'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1_WithValueTask>d__9'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally1_WithValueTask>d__9'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally1_WithValueTask>d__9'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally1_WithValueTask>d__9'::'<>1__state'
@@ -2149,11 +2149,11 @@ Finally2_WithValueTask() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Finally2_WithValueTask>d__10'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally2_WithValueTask>d__10'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2_WithValueTask>d__10'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally2_WithValueTask>d__10'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally2_WithValueTask>d__10'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally2_WithValueTask>d__10'::'<>1__state'
@@ -2178,11 +2178,11 @@ Finally3_WithValueTask() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.CatchAndFinally/'<Finally3_WithValueTask>d__11'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally3_WithValueTask>d__11'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3_WithValueTask>d__11'::'<>t__builder'
+IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.CatchAndFinally/'<Finally3_WithValueTask>d__11'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.CatchAndFinally AssemblyToProcess.CatchAndFinally/'<Finally3_WithValueTask>d__11'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.CatchAndFinally/'<Finally3_WithValueTask>d__11'::'<>1__state'

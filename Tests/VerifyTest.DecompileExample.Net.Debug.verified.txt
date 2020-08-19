@@ -1880,11 +1880,11 @@ AsyncMethod1() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod1>d__0'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod1>d__0'::'<>1__state'
@@ -1908,11 +1908,11 @@ AsyncMethod2() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod2>d__1'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod2>d__1'::'<>1__state'
@@ -1936,11 +1936,11 @@ AsyncMethod3() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod3>d__2'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod3>d__2'::'<>1__state'
@@ -1964,11 +1964,11 @@ AsyncMethod4() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod4>d__3'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod4>d__3'::'<>1__state'
@@ -1992,11 +1992,11 @@ AsyncMethod5() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod5>d__4'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod5>d__4'::'<>1__state'
@@ -2020,11 +2020,11 @@ AsyncMethod6() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod6>d__5'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod6>d__5'::'<>1__state'
@@ -2048,11 +2048,11 @@ AsyncMethod7() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod7>d__6'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod7>d__6'::'<>1__state'
@@ -2076,11 +2076,11 @@ AsyncMethod8() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod8>d__7'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod8>d__7'::'<>1__state'
@@ -2104,11 +2104,11 @@ AsyncMethod9() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod9>d__8'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32>::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<int32> AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod9>d__8'::'<>1__state'
@@ -2132,11 +2132,11 @@ AsyncMethod10() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod10>d__9'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod10>d__9'::'<>1__state'
@@ -2160,11 +2160,11 @@ AsyncMethod11() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod11>d__10'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod11>d__10'::'<>1__state'
@@ -2188,11 +2188,11 @@ AsyncMethod12() cil managed
 IL_0000:  newobj     instance void AssemblyToProcess.Example/'<AsyncMethod12>d__11'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  ldarg.0
-IL_0008:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>4__this'
-IL_000d:  ldloc.0
-IL_000e:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Create()
-IL_0013:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>t__builder'
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example>::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<class AssemblyToProcess.Example> AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class AssemblyToProcess.Example AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>4__this'
 IL_0018:  ldloc.0
 IL_0019:  ldc.i4.m1
 IL_001a:  stfld      int32 AssemblyToProcess.Example/'<AsyncMethod12>d__11'::'<>1__state'
