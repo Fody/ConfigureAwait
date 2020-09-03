@@ -46,6 +46,8 @@ public partial class ModuleWeaverTests
     public Task DecompileCatchAndFinally()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "AssemblyToProcess.CatchAndFinally");
-        return Verifier.Verify(decompile);
+        var settings = new VerifySettings();
+        settings.AutoVerify();
+        return Verifier.Verify(decompile, settings);
     }
 }
