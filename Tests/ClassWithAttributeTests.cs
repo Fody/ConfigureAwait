@@ -6,8 +6,8 @@ public partial class ModuleWeaverTests
     [Fact]
     public async Task ClassWithAttribute_AsyncMethod()
     {
-        var context = testResult.GetInstance("AssemblyToProcess.FlagSynchronizationContext");
-        var test = testResult.GetInstance("AssemblyToProcess.ClassWithAttribute");
+        var context = testResult.GetInstance("FlagSynchronizationContext");
+        var test = testResult.GetInstance("ClassWithAttribute");
 
         Assert.False(context.Flag);
 
@@ -19,8 +19,8 @@ public partial class ModuleWeaverTests
     [Fact]
     public async Task ClassWithAttribute_AsyncMethodWithReturn()
     {
-        var context = testResult.GetInstance("AssemblyToProcess.FlagSynchronizationContext");
-        var test = testResult.GetInstance("AssemblyToProcess.ClassWithAttribute");
+        var context = testResult.GetInstance("FlagSynchronizationContext");
+        var test = testResult.GetInstance("ClassWithAttribute");
 
         Assert.False(context.Flag);
 
@@ -33,8 +33,8 @@ public partial class ModuleWeaverTests
     [Fact]
     public async Task ClassWithAttribute_AsyncGenericMethod()
     {
-        var context = testResult.GetInstance("AssemblyToProcess.FlagSynchronizationContext");
-        var test = testResult.GetInstance("AssemblyToProcess.ClassWithAttribute");
+        var context = testResult.GetInstance("FlagSynchronizationContext");
+        var test = testResult.GetInstance("ClassWithAttribute");
 
         Assert.False(context.Flag);
 
@@ -46,8 +46,8 @@ public partial class ModuleWeaverTests
     [Fact]
     public async Task ClassWithAttribute_AsyncGenericMethodWithReturn()
     {
-        var context = testResult.GetInstance("AssemblyToProcess.FlagSynchronizationContext");
-        var test = testResult.GetInstance("AssemblyToProcess.ClassWithAttribute");
+        var context = testResult.GetInstance("FlagSynchronizationContext");
+        var test = testResult.GetInstance("ClassWithAttribute");
 
         Assert.False(context.Flag);
 

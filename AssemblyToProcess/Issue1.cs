@@ -2,30 +2,27 @@
 using System.Threading.Tasks;
 using Fody;
 
-namespace AssemblyToProcess
+class Issue1
 {
-    class Issue1
+    [ConfigureAwait(false)]
+    async Task WithReaderAndWriter(TextWriter writer, StreamReader reader)
     {
-        [ConfigureAwait(false)]
-        async Task WithReaderAndWriter(TextWriter writer, StreamReader reader)
+        string line;
+        while ((line = await reader.ReadLineAsync()) != null)
         {
-            string line;
-            while ((line = await reader.ReadLineAsync()) != null)
-            {
-                await writer.WriteLineAsync(line);
-            }
+            await writer.WriteLineAsync(line);
         }
+    }
 
 #if NETCOREAPP2_0
-        [ConfigureAwait(false)]
-        async Task WithReaderAndWriter_WithValueTask(TextWriter writer, StreamReader reader)
+    [ConfigureAwait(false)]
+    async Task WithReaderAndWriter_WithValueTask(TextWriter writer, StreamReader reader)
+    {
+        string line;
+        while ((line = await new ValueTask<string>(reader.ReadLineAsync())) != null)
         {
-            string line;
-            while ((line = await new ValueTask<string>(reader.ReadLineAsync())) != null)
-            {
-                await new ValueTask(writer.WriteLineAsync(line));
-            }
+            await new ValueTask(writer.WriteLineAsync(line));
         }
-#endif
     }
+#endif
 }

@@ -6,8 +6,8 @@ public partial class ModuleWeaverTests
     [Fact]
     public async Task MethodWithAttribute_AsyncMethod()
     {
-        var context = testResult.GetInstance("AssemblyToProcess.FlagSynchronizationContext");
-        var test = testResult.GetInstance("AssemblyToProcess.MethodWithAttribute");
+        var context = testResult.GetInstance("FlagSynchronizationContext");
+        var test = testResult.GetInstance("MethodWithAttribute");
 
         Assert.False(context.Flag);
 

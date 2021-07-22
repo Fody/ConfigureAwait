@@ -2,24 +2,21 @@ using System.Threading;
 using System.Threading.Tasks;
 using Fody;
 
-namespace AssemblyToProcess
+public class MethodWithAttribute
 {
-    public class MethodWithAttribute
+    [ConfigureAwait(false)]
+    public async Task AsyncMethod(SynchronizationContext context)
     {
-        [ConfigureAwait(false)]
-        public async Task AsyncMethod(SynchronizationContext context)
-        {
-            SynchronizationContext.SetSynchronizationContext(context);
-            await Task.Delay(0);
-        }
+        SynchronizationContext.SetSynchronizationContext(context);
+        await Task.Delay(0);
+    }
 
 #if NETCOREAPP2_0
-        [ConfigureAwait(false)]
-        public async Task AsyncMethod_WithValueTask(SynchronizationContext context)
-        {
-            SynchronizationContext.SetSynchronizationContext(context);
-            await new ValueTask(Task.Delay(0));
-        }
-#endif
+    [ConfigureAwait(false)]
+    public async Task AsyncMethod_WithValueTask(SynchronizationContext context)
+    {
+        SynchronizationContext.SetSynchronizationContext(context);
+        await new ValueTask(Task.Delay(0));
     }
+#endif
 }

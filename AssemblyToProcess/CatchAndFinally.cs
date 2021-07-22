@@ -2,83 +2,81 @@
 using System.Threading.Tasks;
 using Fody;
 
-namespace AssemblyToProcess
+public class CatchAndFinally
 {
-    public class CatchAndFinally
+    public async Task Catch1()
     {
-        public async Task Catch1()
+        try
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch
-            {
-                await Task.Delay(1);
-            }
+            throw new NotImplementedException();
         }
+        catch
+        {
+            await Task.Delay(1);
+        }
+    }
 
-        [ConfigureAwait(false)]
-        public async Task Catch2()
+    [ConfigureAwait(false)]
+    public async Task Catch2()
+    {
+        try
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch
-            {
-                await Task.Delay(1);
-            }
+            throw new NotImplementedException();
         }
+        catch
+        {
+            await Task.Delay(1);
+        }
+    }
 
-        public async Task Catch3()
+    public async Task Catch3()
+    {
+        try
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch
-            {
-                await Task.Delay(1).ConfigureAwait(false);
-            }
+            throw new NotImplementedException();
         }
+        catch
+        {
+            await Task.Delay(1).ConfigureAwait(false);
+        }
+    }
 
-        public async Task Finally1()
+    public async Task Finally1()
+    {
+        try
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            finally
-            {
-                await Task.Delay(1);
-            }
+            throw new NotImplementedException();
         }
+        finally
+        {
+            await Task.Delay(1);
+        }
+    }
 
-        [ConfigureAwait(false)]
-        public async Task Finally2()
+    [ConfigureAwait(false)]
+    public async Task Finally2()
+    {
+        try
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            finally
-            {
-                await Task.Delay(1);
-            }
+            throw new NotImplementedException();
         }
+        finally
+        {
+            await Task.Delay(1);
+        }
+    }
 
-        public async Task Finally3()
+    public async Task Finally3()
+    {
+        try
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            finally
-            {
-                await Task.Delay(1).ConfigureAwait(false);
-            }
+            throw new NotImplementedException();
         }
+        finally
+        {
+            await Task.Delay(1).ConfigureAwait(false);
+        }
+    }
 
 #if NETCOREAPP2_0
         public async Task Catch1_WithValueTask()
@@ -155,5 +153,4 @@ namespace AssemblyToProcess
             }
         }
 #endif
-    }
 }
