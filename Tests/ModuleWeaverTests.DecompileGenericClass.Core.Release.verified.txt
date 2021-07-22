@@ -1,386 +1,281 @@
-﻿.assembly extern System.Runtime
+﻿.class private auto ansi sealed beforefieldinit GenericClass`1<TItem>
+extends [System.Runtime]System.Object
 {
-.publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
-.ver 4:2:0:0
-}
-.assembly extern System.Threading.Tasks
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.param type TItem
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.class auto ansi sealed nested private beforefieldinit '<Method>d__0'<TItem>
+extends [System.Runtime]System.ValueType
+implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
 {
-.publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
-.ver 4:1:0:0
-}
-.assembly extern System.Diagnostics.Debug
+.interfaceimpl type [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.param type TItem
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.field public int32 '<>1__state'
+.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class [System.Runtime]System.Threading.Tasks.Task`1<!TItem> itemTask
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
+.field private valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem> '<>u__1'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
 {
-.publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
-.ver 4:1:0:0
-}
-.assembly extern System.Threading.Tasks.Extensions
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem> V_1,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!TItem> V_2,
+class [System.Runtime]System.Exception V_3)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>1__state'
+IL_0006:  stloc.0
+.try
 {
-.publickeytoken = (CC 7B 13 FF CD 2D DD 51 )                         // .{...-.Q
-.ver 4:2:0:1
-}
-.assembly extern System.Threading
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0048
+IL_000a:  ldarg.0
+IL_000b:  ldfld      class [System.Runtime]System.Threading.Tasks.Task`1<!0> valuetype GenericClass`1/'<Method>d__0'<!TItem>::itemTask
+IL_0010:  ldc.i4.0
+IL_0011:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [System.Private.CoreLib]System.Threading.Tasks.Task`1<!TItem>::ConfigureAwait(bool)
+IL_0016:  stloc.2
+IL_0017:  ldloca.s   V_2
+IL_0019:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!TItem>::GetAwaiter()
+IL_001e:  stloc.1
+IL_001f:  ldloca.s   V_1
+IL_0021:  call       instance bool valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem>::get_IsCompleted()
+IL_0026:  brtrue.s   IL_0064
+IL_0028:  ldarg.0
+IL_0029:  ldc.i4.0
+IL_002a:  dup
+IL_002b:  stloc.0
+IL_002c:  stfld      int32 valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>1__state'
+IL_0031:  ldarg.0
+IL_0032:  ldloc.1
+IL_0033:  stfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>u__1'
+IL_0038:  ldarg.0
+IL_0039:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>t__builder'
+IL_003e:  ldloca.s   V_1
+IL_0040:  ldarg.0
+IL_0041:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem>,valuetype GenericClass`1/'<Method>d__0'<!TItem>>(!!0&,
+!!1&)
+IL_0046:  leave.s    IL_0098
+IL_0048:  ldarg.0
+IL_0049:  ldfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>u__1'
+IL_004e:  stloc.1
+IL_004f:  ldarg.0
+IL_0050:  ldflda     valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>u__1'
+IL_0055:  initobj    valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem>
+IL_005b:  ldarg.0
+IL_005c:  ldc.i4.m1
+IL_005d:  dup
+IL_005e:  stloc.0
+IL_005f:  stfld      int32 valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>1__state'
+IL_0064:  ldloca.s   V_1
+IL_0066:  call       instance !0 valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem>::GetResult()
+IL_006b:  pop
+IL_006c:  leave.s    IL_0085
+}  // end .try
+catch [System.Runtime]System.Exception
 {
-.publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
-.ver 4:1:0:0
+IL_006e:  stloc.3
+IL_006f:  ldarg.0
+IL_0070:  ldc.i4.s   -2
+IL_0072:  stfld      int32 valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>1__state'
+IL_0077:  ldarg.0
+IL_0078:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>t__builder'
+IL_007d:  ldloc.3
+IL_007e:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_0083:  leave.s    IL_0098
+}  // end handler
+IL_0085:  ldarg.0
+IL_0086:  ldc.i4.s   -2
+IL_0088:  stfld      int32 valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>1__state'
+IL_008d:  ldarg.0
+IL_008e:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>t__builder'
+IL_0093:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_0098:  ret
 }
-.assembly extern System.Runtime.Extensions
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
 {
-.publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
-.ver 4:2:0:0
+.param [1]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>t__builder'
+IL_0006:  ldarg.1
+IL_0007:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)
+IL_000c:  ret
 }
-.assembly extern System.Private.CoreLib
+}
+.class auto ansi sealed nested private beforefieldinit '<Method_WithValueTask>d__1'<TItem>
+extends [System.Runtime]System.ValueType
+implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
 {
-.publickeytoken = (7C EC 85 D7 BE A7 79 8E )                         // |.....y.
-.ver 4:0:0:0
-}
-.assembly AssemblyToProcess
+.interfaceimpl type [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.param type TItem
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.field public int32 '<>1__state'
+.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class [System.Runtime]System.Threading.Tasks.Task`1<!TItem> itemTask
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
+.field private valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!TItem> '<>u__1'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
 {
-63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
-65 72 73 69 6F 6E 3D 76 32 2E 30 01 00 54 0E 14   // ersion=v2.0..T..
-46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C 61 79   // FrameworkDisplay
-4E 61 6D 65 00 )                                  // Name.
-63 65 73 73 00 00 )                               // cess..
-63 65 73 73 00 00 )                               // cess..
-63 65 73 73 00 00 )                               // cess..
-.hash algorithm 0x00008004
-.ver 3:3:1:0
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!TItem> V_1,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!TItem> V_2,
+valuetype [System.Threading.Tasks.Extensions]System.Threading.Tasks.ValueTask`1<!TItem> V_3,
+class [System.Runtime]System.Exception V_4)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0050
+IL_000a:  ldarg.0
+IL_000b:  ldfld      class [System.Runtime]System.Threading.Tasks.Task`1<!0> valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::itemTask
+IL_0010:  call       instance void valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!TItem>::.ctor(valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<!0>&)
+IL_0015:  stloc.3
+IL_0016:  ldloca.s   V_3
+IL_0018:  ldc.i4.0
+IL_0019:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!0> valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<!TItem>::ConfigureAwait(bool)
+IL_001e:  stloc.2
+IL_001f:  ldloca.s   V_2
+IL_0021:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!0> valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!TItem>::GetAwaiter()
+IL_0026:  stloc.1
+IL_0027:  ldloca.s   V_1
+IL_0029:  call       instance bool valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!TItem>::get_IsCompleted()
+IL_002e:  brtrue.s   IL_006c
+IL_0030:  ldarg.0
+IL_0031:  ldc.i4.0
+IL_0032:  dup
+IL_0033:  stloc.0
+IL_0034:  stfld      int32 valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>1__state'
+IL_0039:  ldarg.0
+IL_003a:  ldloc.1
+IL_003b:  stfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!0> valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>u__1'
+IL_0040:  ldarg.0
+IL_0041:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>t__builder'
+IL_0046:  ldloca.s   V_1
+IL_0048:  ldarg.0
+IL_0049:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!TItem>,valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>>(!!0&,
+!!1&)
+IL_004e:  leave.s    IL_00a2
+IL_0050:  ldarg.0
+IL_0051:  ldfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!0> valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>u__1'
+IL_0056:  stloc.1
+IL_0057:  ldarg.0
+IL_0058:  ldflda     valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!0> valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>u__1'
+IL_005d:  initobj    valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!TItem>
+IL_0063:  ldarg.0
+IL_0064:  ldc.i4.m1
+IL_0065:  dup
+IL_0066:  stloc.0
+IL_0067:  stfld      int32 valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>1__state'
+IL_006c:  ldloca.s   V_1
+IL_006e:  call       instance !0 valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!TItem>::GetResult()
+IL_0073:  pop
+IL_0074:  leave.s    IL_008f
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_0076:  stloc.s    V_4
+IL_0078:  ldarg.0
+IL_0079:  ldc.i4.s   -2
+IL_007b:  stfld      int32 valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>1__state'
+IL_0080:  ldarg.0
+IL_0081:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>t__builder'
+IL_0086:  ldloc.s    V_4
+IL_0088:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_008d:  leave.s    IL_00a2
+}  // end handler
+IL_008f:  ldarg.0
+IL_0090:  ldc.i4.s   -2
+IL_0092:  stfld      int32 valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>1__state'
+IL_0097:  ldarg.0
+IL_0098:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>t__builder'
+IL_009d:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00a2:  ret
 }
-.module AssemblyToProcess.dll
-.imagebase 0x00400000
-.file alignment 0x00000200
-.stackreserve 0x00100000
-.subsystem 0x0003       // WINDOWS_CUI
-.corflags 0x00000001    //  ILONLY
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Catch1()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1C 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 43 61 74 63 68 31 3E 64 5F 5F 30 00   // ly+<Catch1>d__0.
-00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Catch2()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1C 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 43 61 74 63 68 32 3E 64 5F 5F 31 00   // ly+<Catch2>d__1.
-00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Catch3()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1C 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 43 61 74 63 68 33 3E 64 5F 5F 32 00   // ly+<Catch3>d__2.
-00 )
-.custom (CatchAndFinally/'<Catch1>d__0') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Finally1()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1E 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 46 69 6E 61 6C 6C 79 31 3E 64 5F 5F   // ly+<Finally1>d__
-33 00 00 )                                        // 3..
-.custom (CatchAndFinally/'<Catch2>d__1') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Finally2()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1E 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 46 69 6E 61 6C 6C 79 32 3E 64 5F 5F   // ly+<Finally2>d__
-34 00 00 )                                        // 4..
-.custom (CatchAndFinally/'<Catch3>d__2') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Finally3()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1E 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 46 69 6E 61 6C 6C 79 33 3E 64 5F 5F   // ly+<Finally3>d__
-35 00 00 )                                        // 5..
-.custom (CatchAndFinally/'<Finally1>d__3') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Catch1_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2A 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ..*CatchAndFinal
-6C 79 2B 3C 43 61 74 63 68 31 5F 57 69 74 68 56   // ly+<Catch1_WithV
-61 6C 75 65 54 61 73 6B 3E 64 5F 5F 36 00 00 )    // alueTask>d__6..
-.custom (CatchAndFinally/'<Finally2>d__4') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Catch2_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2A 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ..*CatchAndFinal
-6C 79 2B 3C 43 61 74 63 68 32 5F 57 69 74 68 56   // ly+<Catch2_WithV
-61 6C 75 65 54 61 73 6B 3E 64 5F 5F 37 00 00 )    // alueTask>d__7..
-.custom (CatchAndFinally/'<Finally3>d__5') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Catch3_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2A 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ..*CatchAndFinal
-6C 79 2B 3C 43 61 74 63 68 33 5F 57 69 74 68 56   // ly+<Catch3_WithV
-61 6C 75 65 54 61 73 6B 3E 64 5F 5F 38 00 00 )    // alueTask>d__8..
-.custom (CatchAndFinally/'<Catch1_WithValueTask>d__6') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Finally1_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2C 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ..,CatchAndFinal
-6C 79 2B 3C 46 69 6E 61 6C 6C 79 31 5F 57 69 74   // ly+<Finally1_Wit
-68 56 61 6C 75 65 54 61 73 6B 3E 64 5F 5F 39 00   // hValueTask>d__9.
-00 )
-.custom (CatchAndFinally/'<Catch2_WithValueTask>d__7') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Finally2_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2D 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ..-CatchAndFinal
-6C 79 2B 3C 46 69 6E 61 6C 6C 79 32 5F 57 69 74   // ly+<Finally2_Wit
-68 56 61 6C 75 65 54 61 73 6B 3E 64 5F 5F 31 30   // hValueTask>d__10
-00 00 )
-.custom (CatchAndFinally/'<Catch3_WithValueTask>d__8') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task CatchAndFinally::Finally3_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2D 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ..-CatchAndFinal
-6C 79 2B 3C 46 69 6E 61 6C 6C 79 33 5F 57 69 74   // ly+<Finally3_Wit
-68 56 61 6C 75 65 54 61 73 6B 3E 64 5F 5F 31 31   // hValueTask>d__11
-00 00 )
-.custom (CatchAndFinally/'<Finally1_WithValueTask>d__9') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (CatchAndFinally/'<Finally2_WithValueTask>d__10') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (CatchAndFinally/'<Finally3_WithValueTask>d__11') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Catch1>d__0'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncMethod>d__0') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Catch2>d__1'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncMethodWithReturn>d__1') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<>c') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Catch3>d__2'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncGenericMethod>d__2') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncGenericMethodWithReturn>d__3') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Finally1>d__3'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncMethod_WithValueTask>d__4') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncMethodWithReturn_WithValueTask>d__5') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Finally2>d__4'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncGenericMethod_WithValueTask>d__6') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncGenericMethodWithReturn_WithValueTask>d__7') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Finally3>d__5'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncMethod>d__0') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Catch1_WithValueTask>d__6'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncMethodWithReturn>d__1') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<>c') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Catch2_WithValueTask>d__7'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncGenericMethod>d__2') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncGenericMethodWithReturn>d__3') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Catch3_WithValueTask>d__8'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncMethod_WithValueTask>d__4') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncMethodWithReturn_WithValueTask>d__5') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Finally1_WithValueTask>d__9'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncGenericMethod_WithValueTask>d__6') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncGenericMethodWithReturn_WithValueTask>d__7') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Finally2_WithValueTask>d__10'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod1>d__0') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Finally3_WithValueTask>d__11'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod2>d__1') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task ClassWithAttribute::AsyncMethod(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 24 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ..$ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 4D 65 74 68   // ibute+<AsyncMeth
-6F 64 3E 64 5F 5F 30 00 00 )                      // od>d__0..
-.custom (Example/'<AsyncMethod3>d__2') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> ClassWithAttribute::AsyncMethodWithReturn(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2E 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ...ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 4D 65 74 68   // ibute+<AsyncMeth
-6F 64 57 69 74 68 52 65 74 75 72 6E 3E 64 5F 5F   // odWithReturn>d__
-31 00 00 )                                        // 1..
-.custom (Example/'<AsyncMethod4>d__3') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task ClassWithAttribute::AsyncGenericMethod(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2B 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ..+ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 47 65 6E 65   // ibute+<AsyncGene
-72 69 63 4D 65 74 68 6F 64 3E 64 5F 5F 32 00 00 ) // ricMethod>d__2..
-.custom (Example/'<AsyncMethod5>d__4') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> ClassWithAttribute::AsyncGenericMethodWithReturn(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 35 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ..5ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 47 65 6E 65   // ibute+<AsyncGene
-72 69 63 4D 65 74 68 6F 64 57 69 74 68 52 65 74   // ricMethodWithRet
-75 72 6E 3E 64 5F 5F 33 00 00 )                   // urn>d__3..
-.custom (Example/'<AsyncMethod6>d__5') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task ClassWithAttribute::AsyncMethod_WithValueTask(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 32 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ..2ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 4D 65 74 68   // ibute+<AsyncMeth
-6F 64 5F 57 69 74 68 56 61 6C 75 65 54 61 73 6B   // od_WithValueTask
-3E 64 5F 5F 34 00 00 )                            // >d__4..
-.custom (Example/'<AsyncMethod7>d__6') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> ClassWithAttribute::AsyncMethodWithReturn_WithValueTask(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 3C 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ..<ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 4D 65 74 68   // ibute+<AsyncMeth
-6F 64 57 69 74 68 52 65 74 75 72 6E 5F 57 69 74   // odWithReturn_Wit
-68 56 61 6C 75 65 54 61 73 6B 3E 64 5F 5F 35 00   // hValueTask>d__5.
-00 )
-.custom (Example/'<AsyncMethod8>d__7') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task ClassWithAttribute::AsyncGenericMethod_WithValueTask(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 39 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ..9ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 47 65 6E 65   // ibute+<AsyncGene
-72 69 63 4D 65 74 68 6F 64 5F 57 69 74 68 56 61   // ricMethod_WithVa
-6C 75 65 54 61 73 6B 3E 64 5F 5F 36 00 00 )       // lueTask>d__6..
-.custom (Example/'<AsyncMethod9>d__8') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> ClassWithAttribute::AsyncGenericMethodWithReturn_WithValueTask(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 43 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ..CClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 47 65 6E 65   // ibute+<AsyncGene
-72 69 63 4D 65 74 68 6F 64 57 69 74 68 52 65 74   // ricMethodWithRet
-75 72 6E 5F 57 69 74 68 56 61 6C 75 65 54 61 73   // urn_WithValueTas
-6B 3E 64 5F 5F 37 00 00 )                         // k>d__7..
-.custom (Example/'<AsyncMethod10>d__9') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod11>d__10') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod12>d__11') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncMethod>d__0'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod1_WithValueTask>d__12') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod2_WithValueTask>d__13') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncMethodWithReturn>d__1'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod3_WithValueTask>d__14') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod4_WithValueTask>d__15') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod5_WithValueTask>d__16') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod6_WithValueTask>d__17') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod7_WithValueTask>d__18') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod8_WithValueTask>d__19') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod9_WithValueTask>d__20') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod10_WithValueTask>d__21') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncGenericMethod>d__2'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod11_WithValueTask>d__22') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod12_WithValueTask>d__23') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncGenericMethodWithReturn>d__3'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncMethod_WithValueTask>d__4'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (GenericClass`1/'<Method>d__0') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (GenericClass`1/'<Method_WithValueTask>d__1') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncMethodWithReturn_WithValueTask>d__5'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (GenericMethod/'<Method>d__0`1') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncGenericMethod_WithValueTask>d__6'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (GenericMethod/'<Method_WithValueTask>d__1`1') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncGenericMethodWithReturn_WithValueTask>d__7'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Issue1/'<WithReaderAndWriter>d__0') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task DoNotWeave::AsyncMethod(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1C 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ...DoNotWeave+<A
-73 79 6E 63 4D 65 74 68 6F 64 3E 64 5F 5F 30 00   // syncMethod>d__0.
-00 )
-.custom (Issue1/'<WithReaderAndWriter_WithValueTask>d__1') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> DoNotWeave::AsyncMethodWithReturn(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 26 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ..&DoNotWeave+<A
-73 79 6E 63 4D 65 74 68 6F 64 57 69 74 68 52 65   // syncMethodWithRe
-74 75 72 6E 3E 64 5F 5F 31 00 00 )                // turn>d__1..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task DoNotWeave::AsyncGenericMethod(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 23 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ..#DoNotWeave+<A
-73 79 6E 63 47 65 6E 65 72 69 63 4D 65 74 68 6F   // syncGenericMetho
-64 3E 64 5F 5F 32 00 00 )                         // d>d__2..
-.custom (MethodWithAttribute/'<AsyncMethod>d__0') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> DoNotWeave::AsyncGenericMethodWithReturn(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2D 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ..-DoNotWeave+<A
-73 79 6E 63 47 65 6E 65 72 69 63 4D 65 74 68 6F   // syncGenericMetho
-64 57 69 74 68 52 65 74 75 72 6E 3E 64 5F 5F 33   // dWithReturn>d__3
-00 00 )
-.custom (MethodWithAttribute/'<AsyncMethod_WithValueTask>d__1') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task DoNotWeave::AsyncMethod_WithValueTask(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2A 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ..*DoNotWeave+<A
-73 79 6E 63 4D 65 74 68 6F 64 5F 57 69 74 68 56   // syncMethod_WithV
-61 6C 75 65 54 61 73 6B 3E 64 5F 5F 34 00 00 )    // alueTask>d__4..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> DoNotWeave::AsyncMethodWithReturn_WithValueTask(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 34 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ..4DoNotWeave+<A
-73 79 6E 63 4D 65 74 68 6F 64 57 69 74 68 52 65   // syncMethodWithRe
-74 75 72 6E 5F 57 69 74 68 56 61 6C 75 65 54 61   // turn_WithValueTa
-73 6B 3E 64 5F 5F 35 00 00 )                      // sk>d__5..
-.custom (MethodWithUsing/'<AsyncMethod>d__0') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task DoNotWeave::AsyncGenericMethod_WithValueTask(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 31 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ..1DoNotWeave+<A
-73 79 6E 63 47 65 6E 65 72 69 63 4D 65 74 68 6F   // syncGenericMetho
-64 5F 57 69 74 68 56 61 6C 75 65 54 61 73 6B 3E   // d_WithValueTask>
-64 5F 5F 36 00 00 )                               // d__6..
-.custom (MethodWithUsing/'<NewMethod>d__1') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> DoNotWeave::AsyncGenericMethodWithReturn_WithValueTask(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 3B 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ..;DoNotWeave+<A
-73 79 6E 63 47 65 6E 65 72 69 63 4D 65 74 68 6F   // syncGenericMetho
-64 57 69 74 68 52 65 74 75 72 6E 5F 57 69 74 68   // dWithReturn_With
-56 61 6C 75 65 54 61 73 6B 3E 64 5F 5F 37 00 00 ) // ValueTask>d__7..
-.custom (MethodWithUsing/'<AsyncMethod_WithValueTask>d__2') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (MethodWithUsing/'<NewMethod_WithValueTask>d__3') instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncMethod>d__0'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncMethodWithReturn>d__1'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncGenericMethod>d__2'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncGenericMethodWithReturn>d__3'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncMethod_WithValueTask>d__4'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncMethodWithReturn_WithValueTask>d__5'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncGenericMethod_WithValueTask>d__6'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncGenericMethodWithReturn_WithValueTask>d__7'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task Example::AsyncMethod1()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 31 3E 64 5F 5F 30 00 00 )    // cMethod1>d__0..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task Example::AsyncMethod2()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 32 3E 64 5F 5F 31 00 00 )    // cMethod2>d__1..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task Example::AsyncMethod3()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 33 3E 64 5F 5F 32 00 00 )    // cMethod3>d__2..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod4()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 34 3E 64 5F 5F 33 00 00 )    // cMethod4>d__3..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod5()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 35 3E 64 5F 5F 34 00 00 )    // cMethod5>d__4..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod6()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 36 3E 64 5F 5F 35 00 00 )    // cMethod6>d__5..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod7()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 37 3E 64 5F 5F 36 00 00 )    // cMethod7>d__6..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod8()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 38 3E 64 5F 5F 37 00 00 )    // cMethod8>d__7..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod9()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 39 3E 64 5F 5F 38 00 00 )    // cMethod9>d__8..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod10()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1B 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 31 30 3E 64 5F 5F 39 00 00 ) // cMethod10>d__9..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod11()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1C 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 31 31 3E 64 5F 5F 31 30 00   // cMethod11>d__10.
-00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod12()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1C 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 31 32 3E 64 5F 5F 31 31 00   // cMethod12>d__11.
-00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task Example::AsyncMethod1_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 29 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..)Example+<Asyn
-63 4D 65 74 68 6F 64 31 5F 57 69 74 68 56 61 6C   // cMethod1_WithVal
-75 65 54 61 73 6B 3E 64 5F 5F 31 32 00 00 )       // ueTask>d__12..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task Example::AsyncMethod2_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 29 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..)Example+<Asyn
-63 4D 65 74 68 6F 64 32 5F 57 69 74 68 56 61 6C   // cMethod2_WithVal
-75 65 54 61 73 6B 3E 64 5F 5F 31 33 00 00 )       // ueTask>d__13..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task Example::AsyncMethod3_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 29 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..)Example+<Asyn
-63 4D 65 74 68 6F 64 33 5F 57 69 74 68 56 61 6C   // cMethod3_WithVal
-75 65 54 61 73 6B 3E 64 5F 5F 31 34 00 00 )       // ueTask>d__14..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod4_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 29 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..)Example+<Asyn
-63 4D 65 74 68 6F 64 34 5F 57 69 74 68 56 61 6C   // cMethod4_WithVal
-75 65 54 61 73 6B 3E 64 5F 5F 31 35 00 00 )       // ueTask>d__15..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod5_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 29 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..)Example+<Asyn
-63 4D 65 74 68 6F 64 35 5F 57 69 74 68 56 61 6C   // cMethod5_WithVal
-75 65 54 61 73 6B 3E 64 5F 5F 31 36 00 00 )       // ueTask>d__16..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod6_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 29 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..)Example+<Asyn
-63 4D 65 74 68 6F 64 36 5F 57 69 74 68 56 61 6C   // cMethod6_WithVal
-75 65 54 61 73 6B 3E 64 5F 5F 31 37 00 00 )       // ueTask>d__17..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod7_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 29 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..)Example+<Asyn
-63 4D 65 74 68 6F 64 37 5F 57 69 74 68 56 61 6C   // cMethod7_WithVal
-75 65 54 61 73 6B 3E 64 5F 5F 31 38 00 00 )       // ueTask>d__18..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod8_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 29 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..)Example+<Asyn
-63 4D 65 74 68 6F 64 38 5F 57 69 74 68 56 61 6C   // cMethod8_WithVal
-75 65 54 61 73 6B 3E 64 5F 5F 31 39 00 00 )       // ueTask>d__19..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod9_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 29 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..)Example+<Asyn
-63 4D 65 74 68 6F 64 39 5F 57 69 74 68 56 61 6C   // cMethod9_WithVal
-75 65 54 61 73 6B 3E 64 5F 5F 32 30 00 00 )       // ueTask>d__20..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod10_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..*Example+<Asyn
-63 4D 65 74 68 6F 64 31 30 5F 57 69 74 68 56 61   // cMethod10_WithVa
-6C 75 65 54 61 73 6B 3E 64 5F 5F 32 31 00 00 )    // lueTask>d__21..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod11_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..*Example+<Asyn
-63 4D 65 74 68 6F 64 31 31 5F 57 69 74 68 56 61   // cMethod11_WithVa
-6C 75 65 54 61 73 6B 3E 64 5F 5F 32 32 00 00 )    // lueTask>d__22..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod12_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ..*Example+<Asyn
-63 4D 65 74 68 6F 64 31 32 5F 57 69 74 68 56 61   // cMethod12_WithVa
-6C 75 65 54 61 73 6B 3E 64 5F 5F 32 33 00 00 )    // lueTask>d__23..
-.custom (method instance void Example/'<AsyncMethod1>d__0'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod2>d__1'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod3>d__2'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod4>d__3'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod5>d__4'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod6>d__5'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod7>d__6'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod8>d__7'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod9>d__8'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod10>d__9'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod11>d__10'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod12>d__11'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod1_WithValueTask>d__12'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod2_WithValueTask>d__13'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod3_WithValueTask>d__14'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod4_WithValueTask>d__15'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod5_WithValueTask>d__16'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod6_WithValueTask>d__17'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod7_WithValueTask>d__18'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod8_WithValueTask>d__19'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod9_WithValueTask>d__20'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod10_WithValueTask>d__21'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod11_WithValueTask>d__22'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod12_WithValueTask>d__23'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance bool FlagSynchronizationContext::get_Flag()) instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void FlagSynchronizationContext::set_Flag(bool)) instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task GenericClass`1::Method(class [System.Runtime]System.Threading.Tasks.Task`1<!0>)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1B 47 65 6E 65 72 69 63 43 6C 61 73 73 60   // ...GenericClass`
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.param [1]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>t__builder'
+IL_0006:  ldarg.1
+IL_0007:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)
+IL_000c:  ret
+}
+}
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Method(class [System.Runtime]System.Threading.Tasks.Task`1<!TItem> itemTask) cil managed
+{
 31 2B 3C 4D 65 74 68 6F 64 3E 64 5F 5F 30 00 00 ) // 1+<Method>d__0..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task GenericClass`1::Method_WithValueTask(class [System.Runtime]System.Threading.Tasks.Task`1<!0>)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 29 47 65 6E 65 72 69 63 43 6C 61 73 73 60   // ..)GenericClass`
+.maxstack  2
+.locals init (valuetype GenericClass`1/'<Method>d__0'<!TItem> V_0)
+IL_0000:  ldloca.s   V_0
+IL_0002:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0007:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>t__builder'
+IL_000c:  ldloca.s   V_0
+IL_000e:  ldarg.1
+IL_000f:  stfld      class [System.Runtime]System.Threading.Tasks.Task`1<!0> valuetype GenericClass`1/'<Method>d__0'<!TItem>::itemTask
+IL_0014:  ldloca.s   V_0
+IL_0016:  ldc.i4.m1
+IL_0017:  stfld      int32 valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>1__state'
+IL_001c:  ldloca.s   V_0
+IL_001e:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>t__builder'
+IL_0023:  ldloca.s   V_0
+IL_0025:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<valuetype GenericClass`1/'<Method>d__0'<!TItem>>(!!0&)
+IL_002a:  ldloca.s   V_0
+IL_002c:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method>d__0'<!TItem>::'<>t__builder'
+IL_0031:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_0036:  ret
+}
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Method_WithValueTask(class [System.Runtime]System.Threading.Tasks.Task`1<!TItem> itemTask) cil managed
+{
 31 2B 3C 4D 65 74 68 6F 64 5F 57 69 74 68 56 61   // 1+<Method_WithVa
 6C 75 65 54 61 73 6B 3E 64 5F 5F 31 00 00 )       // lueTask>d__1..
-.custom (method instance void GenericClass`1/'<Method>d__0'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void GenericClass`1/'<Method_WithValueTask>d__1'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task GenericMethod::Method<[1]>(class [System.Runtime]System.Threading.Tasks.Task`1<!!0>)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1C 47 65 6E 65 72 69 63 4D 65 74 68 6F 64   // ...GenericMethod
-2B 3C 4D 65 74 68 6F 64 3E 64 5F 5F 30 60 31 00   // +<Method>d__0`1.
-00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task GenericMethod::Method_WithValueTask<[1]>(class [System.Runtime]System.Threading.Tasks.Task`1<!!0>)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2A 47 65 6E 65 72 69 63 4D 65 74 68 6F 64   // ..*GenericMethod
-2B 3C 4D 65 74 68 6F 64 5F 57 69 74 68 56 61 6C   // +<Method_WithVal
-75 65 54 61 73 6B 3E 64 5F 5F 31 60 31 00 00 )    // ueTask>d__1`1..
-.custom (method instance void GenericMethod/'<Method>d__0`1'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void GenericMethod/'<Method_WithValueTask>d__1`1'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task Issue1::WithReaderAndWriter(class [System.Runtime.Extensions]System.IO.TextWriter,class [System.Runtime.Extensions]System.IO.StreamReader)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 20 49 73 73 75 65 31 2B 3C 57 69 74 68 52   // .. Issue1+<WithR
-65 61 64 65 72 41 6E 64 57 72 69 74 65 72 3E 64   // eaderAndWriter>d
-5F 5F 30 00 00 )                                  // __0..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task Issue1::WithReaderAndWriter_WithValueTask(class [System.Runtime.Extensions]System.IO.TextWriter,class [System.Runtime.Extensions]System.IO.StreamReader)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2E 49 73 73 75 65 31 2B 3C 57 69 74 68 52   // ...Issue1+<WithR
-65 61 64 65 72 41 6E 64 57 72 69 74 65 72 5F 57   // eaderAndWriter_W
-69 74 68 56 61 6C 75 65 54 61 73 6B 3E 64 5F 5F   // ithValueTask>d__
-31 00 00 )                                        // 1..
-.custom (method instance void Issue1/'<WithReaderAndWriter>d__0'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Issue1/'<WithReaderAndWriter_WithValueTask>d__1'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task MethodWithAttribute::AsyncMethod(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 25 4D 65 74 68 6F 64 57 69 74 68 41 74 74   // ..%MethodWithAtt
-72 69 62 75 74 65 2B 3C 41 73 79 6E 63 4D 65 74   // ribute+<AsyncMet
-68 6F 64 3E 64 5F 5F 30 00 00 )                   // hod>d__0..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task MethodWithAttribute::AsyncMethod_WithValueTask(class [System.Threading]System.Threading.SynchronizationContext)) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 33 4D 65 74 68 6F 64 57 69 74 68 41 74 74   // ..3MethodWithAtt
-72 69 62 75 74 65 2B 3C 41 73 79 6E 63 4D 65 74   // ribute+<AsyncMet
-68 6F 64 5F 57 69 74 68 56 61 6C 75 65 54 61 73   // hod_WithValueTas
-6B 3E 64 5F 5F 31 00 00 )                         // k>d__1..
-.custom (method instance void MethodWithAttribute/'<AsyncMethod>d__0'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void MethodWithAttribute/'<AsyncMethod_WithValueTask>d__1'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task MethodWithUsing::AsyncMethod()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 21 4D 65 74 68 6F 64 57 69 74 68 55 73 69   // ..!MethodWithUsi
-6E 67 2B 3C 41 73 79 6E 63 4D 65 74 68 6F 64 3E   // ng+<AsyncMethod>
-64 5F 5F 30 00 00 )                               // d__0..
-.custom (method class [System.Runtime]System.Threading.Tasks.Task`1<class [System.Runtime]System.IDisposable> MethodWithUsing::NewMethod()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 1F 4D 65 74 68 6F 64 57 69 74 68 55 73 69   // ...MethodWithUsi
-6E 67 2B 3C 4E 65 77 4D 65 74 68 6F 64 3E 64 5F   // ng+<NewMethod>d_
-5F 31 00 00 )                                     // _1..
-.custom (method instance class [System.Runtime]System.Threading.Tasks.Task MethodWithUsing::AsyncMethod_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2F 4D 65 74 68 6F 64 57 69 74 68 55 73 69   // ../MethodWithUsi
-6E 67 2B 3C 41 73 79 6E 63 4D 65 74 68 6F 64 5F   // ng+<AsyncMethod_
-57 69 74 68 56 61 6C 75 65 54 61 73 6B 3E 64 5F   // WithValueTask>d_
-5F 32 00 00 )                                     // _2..
-.custom (method class [System.Runtime]System.Threading.Tasks.Task`1<class [System.Runtime]System.IDisposable> MethodWithUsing::NewMethod_WithValueTask()) instance void [System.Runtime]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [System.Runtime]System.Type) = ( 01 00 2D 4D 65 74 68 6F 64 57 69 74 68 55 73 69   // ..-MethodWithUsi
-6E 67 2B 3C 4E 65 77 4D 65 74 68 6F 64 5F 57 69   // ng+<NewMethod_Wi
-74 68 56 61 6C 75 65 54 61 73 6B 3E 64 5F 5F 33   // thValueTask>d__3
-00 00 )
-.custom (method instance void MethodWithUsing/'<AsyncMethod>d__0'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void MethodWithUsing/'<NewMethod>d__1'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void MethodWithUsing/'<AsyncMethod_WithValueTask>d__2'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void MethodWithUsing/'<NewMethod_WithValueTask>d__3'::SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [System.Diagnostics.Debug]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (UNKNOWN_OWNER) instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
+.maxstack  2
+.locals init (valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem> V_0)
+IL_0000:  ldloca.s   V_0
+IL_0002:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0007:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>t__builder'
+IL_000c:  ldloca.s   V_0
+IL_000e:  ldarg.1
+IL_000f:  stfld      class [System.Runtime]System.Threading.Tasks.Task`1<!0> valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::itemTask
+IL_0014:  ldloca.s   V_0
+IL_0016:  ldc.i4.m1
+IL_0017:  stfld      int32 valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>1__state'
+IL_001c:  ldloca.s   V_0
+IL_001e:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>t__builder'
+IL_0023:  ldloca.s   V_0
+IL_0025:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>>(!!0&)
+IL_002a:  ldloca.s   V_0
+IL_002c:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder valuetype GenericClass`1/'<Method_WithValueTask>d__1'<!TItem>::'<>t__builder'
+IL_0031:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_0036:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  ret
+}
+}

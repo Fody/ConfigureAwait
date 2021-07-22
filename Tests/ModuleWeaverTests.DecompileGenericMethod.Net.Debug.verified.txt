@@ -1,219 +1,175 @@
-.assembly extern mscorlib
+.class private auto ansi sealed beforefieldinit GenericMethod
+extends [mscorlib]System.Object
 {
-.publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
-.ver 4:0:0:0
-}
-.assembly extern System.Threading.Tasks.Extensions
+.class auto ansi sealed nested private beforefieldinit '<Method>d__0`1'<TItem>
+extends [mscorlib]System.Object
+implements [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine
 {
-.publickeytoken = (CC 7B 13 FF CD 2D DD 51 )                         // .{...-.Q
-.ver 4:2:0:1
-}
-.assembly AssemblyToProcess
+.field public int32 '<>1__state'
+.field public valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public class [mscorlib]System.Threading.Tasks.Task`1<!TItem> itemTask
+.field public class GenericMethod '<>4__this'
+.field private !TItem '<item>5__1'
+.field private !TItem '<>s__2'
+.field private valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem> '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
 {
-63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
-2C 56 65 72 73 69 6F 6E 3D 76 34 2E 37 2E 32 01   // ,Version=v4.7.2.
-00 54 0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73   // .T..FrameworkDis
-70 6C 61 79 4E 61 6D 65 14 2E 4E 45 54 20 46 72   // playName..NET Fr
-61 6D 65 77 6F 72 6B 20 34 2E 37 2E 32 )          // amework 4.7.2
-63 65 73 73 00 00 )                               // cess..
-63 65 73 73 00 00 )                               // cess..
-63 65 73 73 00 00 )                               // cess..
-.hash algorithm 0x00008004
-.ver 3:3:1:0
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
 }
-.module AssemblyToProcess.dll
-.imagebase 0x00400000
-.file alignment 0x00000200
-.stackreserve 0x00100000
-.subsystem 0x0003       // WINDOWS_CUI
-.corflags 0x00000001    //  ILONLY
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Catch1()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1C 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 43 61 74 63 68 31 3E 64 5F 5F 30 00   // ly+<Catch1>d__0.
-00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Catch1()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Catch2()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1C 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 43 61 74 63 68 32 3E 64 5F 5F 31 00   // ly+<Catch2>d__1.
-00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Catch2()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Catch3()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1C 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 43 61 74 63 68 33 3E 64 5F 5F 32 00   // ly+<Catch3>d__2.
-00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Catch3()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (CatchAndFinally/'<Catch1>d__0') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Finally1()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1E 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 46 69 6E 61 6C 6C 79 31 3E 64 5F 5F   // ly+<Finally1>d__
-33 00 00 )                                        // 3..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Finally1()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (CatchAndFinally/'<Catch2>d__1') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Finally2()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1E 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 46 69 6E 61 6C 6C 79 32 3E 64 5F 5F   // ly+<Finally2>d__
-34 00 00 )                                        // 4..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Finally2()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (CatchAndFinally/'<Catch3>d__2') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Finally3()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1E 43 61 74 63 68 41 6E 64 46 69 6E 61 6C   // ...CatchAndFinal
-6C 79 2B 3C 46 69 6E 61 6C 6C 79 33 3E 64 5F 5F   // ly+<Finally3>d__
-35 00 00 )                                        // 5..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task CatchAndFinally::Finally3()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (CatchAndFinally/'<Finally1>d__3') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (CatchAndFinally/'<Finally2>d__4') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (CatchAndFinally/'<Finally3>d__5') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Catch1>d__0'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncMethod>d__0') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncMethodWithReturn>d__1') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<>c') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Catch2>d__1'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncGenericMethod>d__2') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (ClassWithAttribute/'<AsyncGenericMethodWithReturn>d__3') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Catch3>d__2'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncMethod>d__0') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncMethodWithReturn>d__1') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<>c') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Finally1>d__3'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncGenericMethod>d__2') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (DoNotWeave/'<AsyncGenericMethodWithReturn>d__3') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Finally2>d__4'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod1>d__0') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod2>d__1') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod3>d__2') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void CatchAndFinally/'<Finally3>d__5'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod4>d__3') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task ClassWithAttribute::AsyncMethod(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 24 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ..$ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 4D 65 74 68   // ibute+<AsyncMeth
-6F 64 3E 64 5F 5F 30 00 00 )                      // od>d__0..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task ClassWithAttribute::AsyncMethod(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod5>d__4') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> ClassWithAttribute::AsyncMethodWithReturn(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 2E 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ...ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 4D 65 74 68   // ibute+<AsyncMeth
-6F 64 57 69 74 68 52 65 74 75 72 6E 3E 64 5F 5F   // odWithReturn>d__
-31 00 00 )                                        // 1..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> ClassWithAttribute::AsyncMethodWithReturn(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod6>d__5') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task ClassWithAttribute::AsyncGenericMethod(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 2B 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ..+ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 47 65 6E 65   // ibute+<AsyncGene
-72 69 63 4D 65 74 68 6F 64 3E 64 5F 5F 32 00 00 ) // ricMethod>d__2..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task ClassWithAttribute::AsyncGenericMethod(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod7>d__6') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> ClassWithAttribute::AsyncGenericMethodWithReturn(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 35 43 6C 61 73 73 57 69 74 68 41 74 74 72   // ..5ClassWithAttr
-69 62 75 74 65 2B 3C 41 73 79 6E 63 47 65 6E 65   // ibute+<AsyncGene
-72 69 63 4D 65 74 68 6F 64 57 69 74 68 52 65 74   // ricMethodWithRet
-75 72 6E 3E 64 5F 5F 33 00 00 )                   // urn>d__3..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> ClassWithAttribute::AsyncGenericMethodWithReturn(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod8>d__7') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod9>d__8') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod10>d__9') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod11>d__10') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncMethod>d__0'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Example/'<AsyncMethod12>d__11') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncMethodWithReturn>d__1'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (GenericClass`1/'<Method>d__0') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (GenericMethod/'<Method>d__0`1') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (Issue1/'<WithReaderAndWriter>d__0') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (MethodWithAttribute/'<AsyncMethod>d__0') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncGenericMethod>d__2'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (MethodWithUsing/'<AsyncMethod>d__0') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (MethodWithUsing/'<NewMethod>d__1') instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void ClassWithAttribute/'<AsyncGenericMethodWithReturn>d__3'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task DoNotWeave::AsyncMethod(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1C 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ...DoNotWeave+<A
-73 79 6E 63 4D 65 74 68 6F 64 3E 64 5F 5F 30 00   // syncMethod>d__0.
-00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task DoNotWeave::AsyncMethod(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> DoNotWeave::AsyncMethodWithReturn(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 26 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ..&DoNotWeave+<A
-73 79 6E 63 4D 65 74 68 6F 64 57 69 74 68 52 65   // syncMethodWithRe
-74 75 72 6E 3E 64 5F 5F 31 00 00 )                // turn>d__1..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> DoNotWeave::AsyncMethodWithReturn(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task DoNotWeave::AsyncGenericMethod(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 23 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ..#DoNotWeave+<A
-73 79 6E 63 47 65 6E 65 72 69 63 4D 65 74 68 6F   // syncGenericMetho
-64 3E 64 5F 5F 32 00 00 )                         // d>d__2..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task DoNotWeave::AsyncGenericMethod(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> DoNotWeave::AsyncGenericMethodWithReturn(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 2D 44 6F 4E 6F 74 57 65 61 76 65 2B 3C 41   // ..-DoNotWeave+<A
-73 79 6E 63 47 65 6E 65 72 69 63 4D 65 74 68 6F   // syncGenericMetho
-64 57 69 74 68 52 65 74 75 72 6E 3E 64 5F 5F 33   // dWithReturn>d__3
-00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> DoNotWeave::AsyncGenericMethodWithReturn(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncMethod>d__0'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncMethodWithReturn>d__1'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncGenericMethod>d__2'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void DoNotWeave/'<AsyncGenericMethodWithReturn>d__3'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task Example::AsyncMethod1()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 31 3E 64 5F 5F 30 00 00 )    // cMethod1>d__0..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task Example::AsyncMethod1()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task Example::AsyncMethod2()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 32 3E 64 5F 5F 31 00 00 )    // cMethod2>d__1..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task Example::AsyncMethod2()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task Example::AsyncMethod3()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 33 3E 64 5F 5F 32 00 00 )    // cMethod3>d__2..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task Example::AsyncMethod3()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod4()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 34 3E 64 5F 5F 33 00 00 )    // cMethod4>d__3..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod4()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod5()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 35 3E 64 5F 5F 34 00 00 )    // cMethod5>d__4..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod5()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod6()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 36 3E 64 5F 5F 35 00 00 )    // cMethod6>d__5..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod6()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod7()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 37 3E 64 5F 5F 36 00 00 )    // cMethod7>d__6..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod7()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod8()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 38 3E 64 5F 5F 37 00 00 )    // cMethod8>d__7..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod8()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod9()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1A 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 39 3E 64 5F 5F 38 00 00 )    // cMethod9>d__8..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<int32> Example::AsyncMethod9()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod10()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1B 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 31 30 3E 64 5F 5F 39 00 00 ) // cMethod10>d__9..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod10()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod11()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1C 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 31 31 3E 64 5F 5F 31 30 00   // cMethod11>d__10.
-00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod11()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod12()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1C 45 78 61 6D 70 6C 65 2B 3C 41 73 79 6E   // ...Example+<Asyn
-63 4D 65 74 68 6F 64 31 32 3E 64 5F 5F 31 31 00   // cMethod12>d__11.
-00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task`1<class Example> Example::AsyncMethod12()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod1>d__0'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod2>d__1'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod3>d__2'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod4>d__3'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod5>d__4'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod6>d__5'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod7>d__6'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod8>d__7'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod9>d__8'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod10>d__9'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod11>d__10'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Example/'<AsyncMethod12>d__11'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance bool FlagSynchronizationContext::get_Flag()) instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void FlagSynchronizationContext::set_Flag(bool)) instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task GenericClass`1::Method(class [mscorlib]System.Threading.Tasks.Task`1<!0>)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1B 47 65 6E 65 72 69 63 43 6C 61 73 73 60   // ...GenericClass`
-31 2B 3C 4D 65 74 68 6F 64 3E 64 5F 5F 30 00 00 ) // 1+<Method>d__0..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task GenericClass`1::Method(class [mscorlib]System.Threading.Tasks.Task`1<!0>)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void GenericClass`1/'<Method>d__0'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task GenericMethod::Method<[1]>(class [mscorlib]System.Threading.Tasks.Task`1<!!0>)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1C 47 65 6E 65 72 69 63 4D 65 74 68 6F 64   // ...GenericMethod
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem> V_1,
+valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!TItem> V_2,
+class GenericMethod/'<Method>d__0`1'<!TItem> V_3,
+class [mscorlib]System.Exception V_4)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 class GenericMethod/'<Method>d__0`1'<!TItem>::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_000c
+IL_000a:  br.s       IL_000e
+IL_000c:  br.s       IL_0054
+IL_000e:  nop
+IL_000f:  ldarg.0
+IL_0010:  ldfld      class [mscorlib]System.Threading.Tasks.Task`1<!0> class GenericMethod/'<Method>d__0`1'<!TItem>::itemTask
+IL_0015:  ldc.i4.0
+IL_0016:  callvirt   instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [mscorlib]System.Threading.Tasks.Task`1<!TItem>::ConfigureAwait(bool)
+IL_001b:  stloc.2
+IL_001c:  ldloca.s   V_2
+IL_001e:  call       instance valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!TItem>::GetAwaiter()
+IL_0023:  stloc.1
+IL_0024:  ldloca.s   V_1
+IL_0026:  call       instance bool valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem>::get_IsCompleted()
+IL_002b:  brtrue.s   IL_0070
+IL_002d:  ldarg.0
+IL_002e:  ldc.i4.0
+IL_002f:  dup
+IL_0030:  stloc.0
+IL_0031:  stfld      int32 class GenericMethod/'<Method>d__0`1'<!TItem>::'<>1__state'
+IL_0036:  ldarg.0
+IL_0037:  ldloc.1
+IL_0038:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> class GenericMethod/'<Method>d__0`1'<!TItem>::'<>u__1'
+IL_003d:  ldarg.0
+IL_003e:  stloc.3
+IL_003f:  ldarg.0
+IL_0040:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!TItem>::'<>t__builder'
+IL_0045:  ldloca.s   V_1
+IL_0047:  ldloca.s   V_3
+IL_0049:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem>,class GenericMethod/'<Method>d__0`1'<!TItem>>(!!0&,
+!!1&)
+IL_004e:  nop
+IL_004f:  leave      IL_00dd
+IL_0054:  ldarg.0
+IL_0055:  ldfld      valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> class GenericMethod/'<Method>d__0`1'<!TItem>::'<>u__1'
+IL_005a:  stloc.1
+IL_005b:  ldarg.0
+IL_005c:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!0> class GenericMethod/'<Method>d__0`1'<!TItem>::'<>u__1'
+IL_0061:  initobj    valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem>
+IL_0067:  ldarg.0
+IL_0068:  ldc.i4.m1
+IL_0069:  dup
+IL_006a:  stloc.0
+IL_006b:  stfld      int32 class GenericMethod/'<Method>d__0`1'<!TItem>::'<>1__state'
+IL_0070:  ldarg.0
+IL_0071:  ldloca.s   V_1
+IL_0073:  call       instance !0 valuetype [mscorlib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem>::GetResult()
+IL_0078:  stfld      !0 class GenericMethod/'<Method>d__0`1'<!TItem>::'<>s__2'
+IL_007d:  ldarg.0
+IL_007e:  ldarg.0
+IL_007f:  ldfld      !0 class GenericMethod/'<Method>d__0`1'<!TItem>::'<>s__2'
+IL_0084:  stfld      !0 class GenericMethod/'<Method>d__0`1'<!TItem>::'<item>5__1'
+IL_0089:  ldarg.0
+IL_008a:  ldflda     !0 class GenericMethod/'<Method>d__0`1'<!TItem>::'<>s__2'
+IL_008f:  initobj    !TItem
+IL_0095:  leave.s    IL_00bd
+}  // end .try
+catch [mscorlib]System.Exception
+{
+IL_0097:  stloc.s    V_4
+IL_0099:  ldarg.0
+IL_009a:  ldc.i4.s   -2
+IL_009c:  stfld      int32 class GenericMethod/'<Method>d__0`1'<!TItem>::'<>1__state'
+IL_00a1:  ldarg.0
+IL_00a2:  ldflda     !0 class GenericMethod/'<Method>d__0`1'<!TItem>::'<item>5__1'
+IL_00a7:  initobj    !TItem
+IL_00ad:  ldarg.0
+IL_00ae:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!TItem>::'<>t__builder'
+IL_00b3:  ldloc.s    V_4
+IL_00b5:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [mscorlib]System.Exception)
+IL_00ba:  nop
+IL_00bb:  leave.s    IL_00dd
+}  // end handler
+IL_00bd:  ldarg.0
+IL_00be:  ldc.i4.s   -2
+IL_00c0:  stfld      int32 class GenericMethod/'<Method>d__0`1'<!TItem>::'<>1__state'
+IL_00c5:  ldarg.0
+IL_00c6:  ldflda     !0 class GenericMethod/'<Method>d__0`1'<!TItem>::'<item>5__1'
+IL_00cb:  initobj    !TItem
+IL_00d1:  ldarg.0
+IL_00d2:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!TItem>::'<>t__builder'
+IL_00d7:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00dc:  nop
+IL_00dd:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.method public hidebysig instance class [mscorlib]System.Threading.Tasks.Task
+Method<TItem>(class [mscorlib]System.Threading.Tasks.Task`1<!!TItem> itemTask) cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
 2B 3C 4D 65 74 68 6F 64 3E 64 5F 5F 30 60 31 00   // +<Method>d__0`1.
 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task GenericMethod::Method<[1]>(class [mscorlib]System.Threading.Tasks.Task`1<!!0>)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void GenericMethod/'<Method>d__0`1'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task Issue1::WithReaderAndWriter(class [mscorlib]System.IO.TextWriter,class [mscorlib]System.IO.StreamReader)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 20 49 73 73 75 65 31 2B 3C 57 69 74 68 52   // .. Issue1+<WithR
-65 61 64 65 72 41 6E 64 57 72 69 74 65 72 3E 64   // eaderAndWriter>d
-5F 5F 30 00 00 )                                  // __0..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task Issue1::WithReaderAndWriter(class [mscorlib]System.IO.TextWriter,class [mscorlib]System.IO.StreamReader)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void Issue1/'<WithReaderAndWriter>d__0'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task MethodWithAttribute::AsyncMethod(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 25 4D 65 74 68 6F 64 57 69 74 68 41 74 74   // ..%MethodWithAtt
-72 69 62 75 74 65 2B 3C 41 73 79 6E 63 4D 65 74   // ribute+<AsyncMet
-68 6F 64 3E 64 5F 5F 30 00 00 )                   // hod>d__0..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task MethodWithAttribute::AsyncMethod(class [mscorlib]System.Threading.SynchronizationContext)) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void MethodWithAttribute/'<AsyncMethod>d__0'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task MethodWithUsing::AsyncMethod()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 21 4D 65 74 68 6F 64 57 69 74 68 55 73 69   // ..!MethodWithUsi
-6E 67 2B 3C 41 73 79 6E 63 4D 65 74 68 6F 64 3E   // ng+<AsyncMethod>
-64 5F 5F 30 00 00 )                               // d__0..
-.custom (method instance class [mscorlib]System.Threading.Tasks.Task MethodWithUsing::AsyncMethod()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.IDisposable> MethodWithUsing::NewMethod()) instance void [mscorlib]System.Runtime.CompilerServices.AsyncStateMachineAttribute::.ctor(class [mscorlib]System.Type) = ( 01 00 1F 4D 65 74 68 6F 64 57 69 74 68 55 73 69   // ...MethodWithUsi
-6E 67 2B 3C 4E 65 77 4D 65 74 68 6F 64 3E 64 5F   // ng+<NewMethod>d_
-5F 31 00 00 )                                     // _1..
-.custom (method class [mscorlib]System.Threading.Tasks.Task`1<class [mscorlib]System.IDisposable> MethodWithUsing::NewMethod()) instance void [mscorlib]System.Diagnostics.DebuggerStepThroughAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void MethodWithUsing/'<AsyncMethod>d__0'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (method instance void MethodWithUsing/'<NewMethod>d__1'::SetStateMachine(class [mscorlib]System.Runtime.CompilerServices.IAsyncStateMachine)) instance void [mscorlib]System.Diagnostics.DebuggerHiddenAttribute::.ctor() = ( 01 00 00 00 )
-.custom (UNKNOWN_OWNER) instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 )
-.custom (UNKNOWN_OWNER) instance void [mscorlib]System.Diagnostics.DebuggerBrowsableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggerBrowsableState) = ( 01 00 00 00 00 00 00 00 )
+.param type TItem
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  2
+.locals init (class GenericMethod/'<Method>d__0`1'<!!TItem> V_0)
+IL_0000:  newobj     instance void class GenericMethod/'<Method>d__0`1'<!!TItem>::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  call       valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      class GenericMethod class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>4__this'
+IL_0018:  ldloc.0
+IL_0019:  ldarg.1
+IL_001a:  stfld      class [mscorlib]System.Threading.Tasks.Task`1<!0> class GenericMethod/'<Method>d__0`1'<!!TItem>::itemTask
+IL_001f:  ldloc.0
+IL_0020:  ldc.i4.m1
+IL_0021:  stfld      int32 class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>1__state'
+IL_0026:  ldloc.0
+IL_0027:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>t__builder'
+IL_002c:  ldloca.s   V_0
+IL_002e:  call       instance void [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class GenericMethod/'<Method>d__0`1'<!!0>>(!!0&)
+IL_0033:  ldloc.0
+IL_0034:  ldflda     valuetype [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>t__builder'
+IL_0039:  call       instance class [mscorlib]System.Threading.Tasks.Task [mscorlib]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_003e:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+}

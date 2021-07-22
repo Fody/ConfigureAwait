@@ -6,7 +6,7 @@ public partial class ModuleWeaverTests
     [Fact]
     public async Task DoNotWeave_AsyncMethod()
     {
-       var context = testResult.GetInstance("FlagSynchronizationContext");
+        var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("DoNotWeave");
 
         Assert.False(context.Flag);
