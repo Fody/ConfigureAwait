@@ -10,6 +10,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssemblyToProcess", "AssemblyToProcess\AssemblyToProcess.csproj", "{3B9F43A3-30EC-4F49-8AA1-1B8B2D10D749}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigureAwait", "ConfigureAwait\ConfigureAwait.csproj", "{343A1590-7BE6-4670-BFB7-7F22FF90F577}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7AF0B1F1-21CC-415E-B205-B39C0FA174ED} = {7AF0B1F1-21CC-415E-B205-B39C0FA174ED}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A6E87DF3-25B9-49D7-850A-64AEEC38FD58}"
 	ProjectSection(SolutionItems) = preProject
