@@ -186,7 +186,7 @@ public class ModuleWeaver : BaseModuleWeaver
             if (v.VariableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter")
             {
                 v.VariableType = configuredTaskAwaiterTypeRef;
-                awaitableVar = new VariableDefinition(configuredTaskAwaitableTypeRef);
+                awaitableVar = new(configuredTaskAwaitableTypeRef);
                 method.Body.Variables.Insert(i + 1, awaitableVar);
 
                 localConfigAwait = taskConfigureAwaitMethod;
@@ -194,7 +194,7 @@ public class ModuleWeaver : BaseModuleWeaver
             else if (v.VariableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
             {
                 v.VariableType = configuredValueTaskAwaiterTypeRef;
-                awaitableVar = new VariableDefinition(configuredValueTaskAwaitableTypeRef);
+                awaitableVar = new(configuredValueTaskAwaitableTypeRef);
                 method.Body.Variables.Insert(i + 1, awaitableVar);
 
                 localConfigAwait = valueTaskConfigureAwaitMethod;
@@ -207,7 +207,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 if (variableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                 {
                     v.VariableType = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                    awaitableVar = new VariableDefinition(genericConfiguredTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
+                    awaitableVar = new(genericConfiguredTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
                     method.Body.Variables.Insert(i + 1, awaitableVar);
 
                     localConfigAwait = ModuleDefinition.ImportReference(genericTaskConfigureAwaitMethodDef);
@@ -216,7 +216,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 else if (variableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
                 {
                     v.VariableType = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                    awaitableVar = new VariableDefinition(genericConfiguredValueTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
+                    awaitableVar = new(genericConfiguredValueTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
                     method.Body.Variables.Insert(i + 1, awaitableVar);
 
                     localConfigAwait = ModuleDefinition.ImportReference(genericValueTaskConfigureAwaitMethodDef);
@@ -447,11 +447,12 @@ public class ModuleWeaver : BaseModuleWeaver
     {
         if (instruction.Operand is MethodReference method)
         {
+            var declaringType = method.DeclaringType;
             return (
-                method.DeclaringType.FullName == "System.Threading.Tasks.Task" || 
-                method.DeclaringType.Resolve().FullName == "System.Threading.Tasks.Task`1" ||
-                method.DeclaringType.FullName == "System.Threading.Tasks.ValueTask" ||
-                method.DeclaringType.Resolve().FullName == "System.Threading.Tasks.ValueTask`1")
+                       declaringType.FullName == "System.Threading.Tasks.Task" ||
+                       declaringType.Resolve().FullName == "System.Threading.Tasks.Task`1" ||
+                       declaringType.FullName == "System.Threading.Tasks.ValueTask" ||
+                       declaringType.Resolve().FullName == "System.Threading.Tasks.ValueTask`1")
                    && method.Name == "GetAwaiter";
         }
 
