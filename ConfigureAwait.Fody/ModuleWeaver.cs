@@ -355,27 +355,28 @@ public class ModuleWeaver : BaseModuleWeaver
                 {
                     var awaitUnsafeOnCompleted = (GenericInstanceMethod)methodRef;
 
-                    for (var j = 0; j < awaitUnsafeOnCompleted.GenericArguments.Count; j++)
+                    var arguments = awaitUnsafeOnCompleted.GenericArguments;
+                    for (var j = 0; j < arguments.Count; j++)
                     {
-                        if (awaitUnsafeOnCompleted.GenericArguments[j].FullName == "System.Runtime.CompilerServices.TaskAwaiter")
+                        if (arguments[j].FullName == "System.Runtime.CompilerServices.TaskAwaiter")
                         {
-                            awaitUnsafeOnCompleted.GenericArguments[j] = configuredTaskAwaiterTypeRef;
+                            arguments[j] = configuredTaskAwaiterTypeRef;
                         }
-                        else if (awaitUnsafeOnCompleted.GenericArguments[j].FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
+                        else if (arguments[j].FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
                         {
-                            awaitUnsafeOnCompleted.GenericArguments[j] = configuredValueTaskAwaiterTypeRef;
+                            arguments[j] = configuredValueTaskAwaiterTypeRef;
                         }
 
-                        var theArg = awaitUnsafeOnCompleted.GenericArguments[j].Resolve();
+                        var theArg = arguments[j].Resolve();
                         if (theArg.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                         {
-                            var genericArguments = ((GenericInstanceType)awaitUnsafeOnCompleted.GenericArguments[j]).GenericArguments;
-                            awaitUnsafeOnCompleted.GenericArguments[j] = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
+                            var genericArguments = ((GenericInstanceType)arguments[j]).GenericArguments;
+                            arguments[j] = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
                         }
                         else if (theArg.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
                         {
-                            var genericArguments = ((GenericInstanceType)awaitUnsafeOnCompleted.GenericArguments[j]).GenericArguments;
-                            awaitUnsafeOnCompleted.GenericArguments[j] = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
+                            var genericArguments = ((GenericInstanceType)arguments[j]).GenericArguments;
+                            arguments[j] = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
                         }
                     }
                 }
