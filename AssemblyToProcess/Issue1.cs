@@ -7,7 +7,7 @@ class Issue1
     [ConfigureAwait(false)]
     async Task WithReaderAndWriter(TextWriter writer, StreamReader reader)
     {
-        string line;
+        string? line;
         while ((line = await reader.ReadLineAsync()) != null)
         {
             await writer.WriteLineAsync(line);

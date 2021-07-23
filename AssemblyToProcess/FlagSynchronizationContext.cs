@@ -5,7 +5,7 @@ public class FlagSynchronizationContext :
 {
     public bool Flag { get; set; }
 
-    public override void Post(SendOrPostCallback d, object state)
+    public override void Post(SendOrPostCallback d, object? state)
     {
         Flag = true;
         base.Post(d, state);
