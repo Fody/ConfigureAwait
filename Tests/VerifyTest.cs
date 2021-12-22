@@ -12,7 +12,7 @@ public partial class ModuleWeaverTests
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "Example");
         var settings = new VerifySettings();
         settings.AutoVerify();
-        return Verifier.Verify(decompile, settings);
+        return Verify(decompile, settings);
     }
 
     [Fact]
@@ -21,7 +21,7 @@ public partial class ModuleWeaverTests
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "Issue1");
         var settings = new VerifySettings();
         settings.AutoVerify();
-        return Verifier.Verify(decompile, settings);
+        return Verify(decompile, settings);
     }
 
     [Fact]
@@ -30,7 +30,7 @@ public partial class ModuleWeaverTests
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "GenericClass`1");
         var settings = new VerifySettings();
         settings.AutoVerify();
-        return Verifier.Verify(decompile, settings);
+        return Verify(decompile, settings);
     }
 
     [Fact]
@@ -39,7 +39,7 @@ public partial class ModuleWeaverTests
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "GenericMethod");
         var settings = new VerifySettings();
         settings.AutoVerify();
-        return Verifier.Verify(decompile, settings);
+        return Verify(decompile, settings);
     }
 
     [Fact]
@@ -48,6 +48,6 @@ public partial class ModuleWeaverTests
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "CatchAndFinally");
         var settings = new VerifySettings();
         settings.AutoVerify();
-        return Verifier.Verify(decompile, settings);
+        return Verify(decompile, settings);
     }
 }
