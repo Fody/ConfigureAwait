@@ -5,6 +5,7 @@
     <DebugType>portable</DebugType>
   </PropertyGroup>
   <ItemGroup>
+    <Using Remove="System.Net.Http" />
     <PackageReference Include="FodyHelpers" Version="6.6.0" />
   </ItemGroup>
 </Project>

@@ -5,6 +5,7 @@
     <DisableFody>true</DisableFody>
   </PropertyGroup>
   <ItemGroup>
+    <Using Remove="System.Net.Http" />
     <Reference Include="Microsoft.CSharp" />
     <PackageReference Include="FodyHelpers" Version="6.6.0" />
     <PackageReference Include="Xunit" Version="2.4.1" />
