@@ -35,6 +35,7 @@ By default, `ConfigureAwait.Fody` doesn't change any code. Set a configure await
  * `[assembly: Fody.ConfigureAwait(false)]` - Assembly level
  * `[Fody.ConfigureAwait(false)]` - Class or method level
 
+Explicitly configured awaiters will not be overwritten by the weaver, allowing exceptions to the Assembly / Class / Method level setting.
 
 ### Add to FodyWeavers.xml
 
@@ -69,7 +70,7 @@ public class MyAsyncLibrary
     public async Task MyMethodAsync()
     {
         await Task.Delay(10);
-        await Task.Delay(20);
+        await Task.Delay(20).ConfigureAwait(true);
     }
 
     public async Task AnotherMethodAsync()
@@ -88,7 +89,7 @@ public class MyAsyncLibrary
     public async Task MyMethodAsync()
     {
         await Task.Delay(10).ConfigureAwait(false);
-        await Task.Delay(20).ConfigureAwait(false);
+        await Task.Delay(20).ConfigureAwait(true);
     }
 
     public async Task AnotherMethodAsync()
