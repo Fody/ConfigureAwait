@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-static class Extensions
+﻿static class Extensions
 {
     public static int SearchIndexOf<T>(this IEnumerable<T> source, Func<T, bool> predicate)
     {

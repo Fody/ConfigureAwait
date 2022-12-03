@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Fody;
+﻿using Fody;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 
@@ -46,12 +44,8 @@ static class CecilExtensions
     {
         var attribute = provider.CustomAttributes
             .FirstOrDefault(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute");
-        if (attribute == null)
-        {
-            return null;
-        }
 
-        return (TypeDefinition)attribute.ConstructorArguments[0].Value;
+        return (TypeDefinition)attribute?.ConstructorArguments[0].Value;
     }
 
     public static CustomAttribute GetConfigureAwaitAttribute(this ICustomAttributeProvider value)

@@ -1,5 +1,3 @@
-using System.Threading;
-
 public class FlagSynchronizationContext :
     SynchronizationContext
 {

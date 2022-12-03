@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Fody;
+﻿using Fody;
 
 public class Example
 {

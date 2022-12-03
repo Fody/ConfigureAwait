@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Xml;
+﻿using System.Xml;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Mono.Cecil.Rocks;
@@ -444,20 +442,21 @@ public class ModuleWeaver : BaseModuleWeaver
         method.Body.OptimizeMacros();
     }
 
-    bool GetAwaiterSearch(Instruction instruction)
+    static bool GetAwaiterSearch(Instruction instruction)
     {
-        if (instruction.Operand is MethodReference method)
+        if (instruction.Operand is not MethodReference method)
         {
-            var declaringType = method.DeclaringType;
-            return (
-                       declaringType.FullName == "System.Threading.Tasks.Task" ||
-                       declaringType.Resolve().FullName == "System.Threading.Tasks.Task`1" ||
-                       declaringType.FullName == "System.Threading.Tasks.ValueTask" ||
-                       declaringType.Resolve().FullName == "System.Threading.Tasks.ValueTask`1")
-                   && method.Name == "GetAwaiter";
+            return false;
         }
 
-        return false;
+        var declaringType = method.DeclaringType;
+        return (
+                   declaringType.FullName == "System.Threading.Tasks.Task" ||
+                   declaringType.Resolve().FullName == "System.Threading.Tasks.Task`1" ||
+                   declaringType.FullName == "System.Threading.Tasks.ValueTask" ||
+                   declaringType.Resolve().FullName == "System.Threading.Tasks.ValueTask`1")
+               && method.Name == "GetAwaiter";
+
     }
 
     void RemoveAttributes(List<TypeDefinition> types)

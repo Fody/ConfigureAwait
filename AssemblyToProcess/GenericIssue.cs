@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Fody;
+﻿using Fody;
 // ReSharper disable UnusedVariable
 
 sealed class GenericClass<TItem>

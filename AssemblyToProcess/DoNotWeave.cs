@@ -1,6 +1,4 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Fody;
+﻿using Fody;
 
 [ConfigureAwait(false)]
 public class DoNotWeave

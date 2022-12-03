@@ -1,7 +1,5 @@
 using System.Reflection;
 using Fody;
-using VerifyTests;
-using VerifyXunit;
 
 [UsesVerify]
 public partial class ModuleWeaverTests

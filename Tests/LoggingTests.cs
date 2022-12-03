@@ -1,9 +1,4 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using VerifyXunit;
-using Xunit;
-
-public partial class ModuleWeaverTests
+﻿public partial class ModuleWeaverTests
 {
     [Fact]
     public Task InfoMessages()
