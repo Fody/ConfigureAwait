@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Using Remove="System.Net.Http" />
-    <Reference Include="Microsoft.CSharp" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="FodyHelpers" Version="6.6.3" />
     <PackageReference Include="Xunit" Version="*" />
     <PackageReference Include="Verify.Xunit" Version="17.4.2" />
