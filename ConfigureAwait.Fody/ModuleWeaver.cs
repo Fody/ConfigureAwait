@@ -135,7 +135,7 @@ public class ModuleWeaver : BaseModuleWeaver
         yield return "System.Threading.Tasks.Extensions";
     }
 
-    void AddAwaitConfigToAsyncMethod(TypeDefinition type, bool value)
+    void AddAwaitConfigToAsyncMethod(TypeDefinition type, bool configureAwaitValue)
     {
         foreach (var field in type.Fields)
         {
@@ -239,7 +239,7 @@ public class ModuleWeaver : BaseModuleWeaver
             var configureAwait = configureAwaitMethods[variable];
 
             ilProcessor.InsertBefore(instruction,
-                Instruction.Create(value ? OpCodes.Ldc_I4_1 : OpCodes.Ldc_I4_0), // true or false
+                Instruction.Create(configureAwaitValue ? OpCodes.Ldc_I4_1 : OpCodes.Ldc_I4_0), // true or false
                 Instruction.Create(OpCodes.Callvirt, configureAwait), // Call ConfigureAwait
                 Instruction.Create(OpCodes.Stloc, awaitableVar), // Store in variable
                 Instruction.Create(OpCodes.Ldloca, awaitableVar) // Load variable
