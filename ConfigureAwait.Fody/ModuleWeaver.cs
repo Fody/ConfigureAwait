@@ -170,83 +170,10 @@ public class ModuleWeaver : BaseModuleWeaver
         // Modify MoveNext method
         var method = type.Methods.First(m => m.Name == "MoveNext");
         method.Body.SimplifyMacros();
-        var ilProcessor = method.Body.GetILProcessor();
 
-        var awaitAwaiterPair = new Dictionary<VariableDefinition, VariableDefinition>();
-        var configureAwaitMethods = new Dictionary<VariableDefinition, MethodReference>();
-        var i = 0;
+        ProcessVariables(configureAwaitValue, method);
 
-        foreach (var v in method.Body.Variables.ToArray())
-        {
-            VariableDefinition awaitableVar = null;
-            MethodReference localConfigAwait = null;
-            // Change variable type
-            if (v.VariableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter")
-            {
-                v.VariableType = configuredTaskAwaiterTypeRef;
-                awaitableVar = new(configuredTaskAwaitableTypeRef);
-                method.Body.Variables.Insert(i + 1, awaitableVar);
-
-                localConfigAwait = taskConfigureAwaitMethod;
-            }
-            else if (v.VariableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
-            {
-                v.VariableType = configuredValueTaskAwaiterTypeRef;
-                awaitableVar = new(configuredValueTaskAwaitableTypeRef);
-                method.Body.Variables.Insert(i + 1, awaitableVar);
-
-                localConfigAwait = valueTaskConfigureAwaitMethod;
-            }
-
-            if (v.VariableType.IsGenericInstance)
-            {
-                var genericVariableType = (GenericInstanceType)v.VariableType;
-                var variableType = v.VariableType.Resolve();
-                if (variableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
-                {
-                    v.VariableType = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                    awaitableVar = new(genericConfiguredTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
-                    method.Body.Variables.Insert(i + 1, awaitableVar);
-
-                    localConfigAwait = ModuleDefinition.ImportReference(genericTaskConfigureAwaitMethodDef);
-                    localConfigAwait.DeclaringType = genericTaskType.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                }
-                else if (variableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
-                {
-                    v.VariableType = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                    awaitableVar = new(genericConfiguredValueTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
-                    method.Body.Variables.Insert(i + 1, awaitableVar);
-
-                    localConfigAwait = ModuleDefinition.ImportReference(genericValueTaskConfigureAwaitMethodDef);
-                    localConfigAwait.DeclaringType = genericValueTaskType.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                }
-            }
-
-            if (awaitableVar != null)
-            {
-                awaitAwaiterPair.Add(v, awaitableVar);
-                configureAwaitMethods.Add(v, localConfigAwait);
-            }
-
-            i++;
-        }
-
-        // Insert ConfigureAwait call just before GetAwaiter call.
-        foreach (var instruction in method.Body.Instructions.Where(GetAwaiterSearch).ToList())
-        {
-            var variable = (VariableDefinition)instruction.Next.Operand;
-            var awaitableVar = awaitAwaiterPair[variable];
-            var configureAwait = configureAwaitMethods[variable];
-
-            ilProcessor.InsertBefore(instruction,
-                Instruction.Create(configureAwaitValue ? OpCodes.Ldc_I4_1 : OpCodes.Ldc_I4_0), // true or false
-                Instruction.Create(OpCodes.Callvirt, configureAwait), // Call ConfigureAwait
-                Instruction.Create(OpCodes.Stloc, awaitableVar), // Store in variable
-                Instruction.Create(OpCodes.Ldloca, awaitableVar) // Load variable
-            );
-        }
-
-        for (i = 0; i < method.Body.Instructions.Count; i++)
+        for (var i = 0; i < method.Body.Instructions.Count; i++)
         {
             var instruction = method.Body.Instructions[i];
 
@@ -440,6 +367,85 @@ public class ModuleWeaver : BaseModuleWeaver
         }
 
         method.Body.OptimizeMacros();
+    }
+
+    void ProcessVariables(bool configureAwaitValue, MethodDefinition method)
+    {
+        var ilProcessor = method.Body.GetILProcessor();
+        var awaitAwaiterPair = new Dictionary<VariableDefinition, VariableDefinition>();
+        var configureAwaitMethods = new Dictionary<VariableDefinition, MethodReference>();
+
+        var variableIndex = 0;
+
+        foreach (var variable in method.Body.Variables.ToArray())
+        {
+            VariableDefinition awaitableVar = null;
+            MethodReference localConfigAwait = null;
+            // Change variable type
+            if (variable.VariableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter")
+            {
+                variable.VariableType = configuredTaskAwaiterTypeRef;
+                awaitableVar = new(configuredTaskAwaitableTypeRef);
+                method.Body.Variables.Insert(variableIndex + 1, awaitableVar);
+
+                localConfigAwait = taskConfigureAwaitMethod;
+            }
+            else if (variable.VariableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
+            {
+                variable.VariableType = configuredValueTaskAwaiterTypeRef;
+                awaitableVar = new(configuredValueTaskAwaitableTypeRef);
+                method.Body.Variables.Insert(variableIndex + 1, awaitableVar);
+
+                localConfigAwait = valueTaskConfigureAwaitMethod;
+            }
+
+            if (variable.VariableType.IsGenericInstance)
+            {
+                var genericVariableType = (GenericInstanceType)variable.VariableType;
+                var variableType = variable.VariableType.Resolve();
+                if (variableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
+                {
+                    variable.VariableType = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
+                    awaitableVar = new(genericConfiguredTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
+                    method.Body.Variables.Insert(variableIndex + 1, awaitableVar);
+
+                    localConfigAwait = ModuleDefinition.ImportReference(genericTaskConfigureAwaitMethodDef);
+                    localConfigAwait.DeclaringType = genericTaskType.MakeGenericInstanceType(genericVariableType.GenericArguments);
+                }
+                else if (variableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
+                {
+                    variable.VariableType = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
+                    awaitableVar = new(genericConfiguredValueTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
+                    method.Body.Variables.Insert(variableIndex + 1, awaitableVar);
+
+                    localConfigAwait = ModuleDefinition.ImportReference(genericValueTaskConfigureAwaitMethodDef);
+                    localConfigAwait.DeclaringType = genericValueTaskType.MakeGenericInstanceType(genericVariableType.GenericArguments);
+                }
+            }
+
+            if (awaitableVar != null)
+            {
+                awaitAwaiterPair.Add(variable, awaitableVar);
+                configureAwaitMethods.Add(variable, localConfigAwait);
+            }
+
+            variableIndex++;
+        }
+
+        // Insert ConfigureAwait call just before GetAwaiter call.
+        foreach (var instruction in method.Body.Instructions.Where(GetAwaiterSearch).ToList())
+        {
+            var variable = (VariableDefinition)instruction.Next.Operand;
+            var awaitableVar = awaitAwaiterPair[variable];
+            var configureAwait = configureAwaitMethods[variable];
+
+            ilProcessor.InsertBefore(instruction,
+                Instruction.Create(configureAwaitValue ? OpCodes.Ldc_I4_1 : OpCodes.Ldc_I4_0), // true or false
+                Instruction.Create(OpCodes.Callvirt, configureAwait), // Call ConfigureAwait
+                Instruction.Create(OpCodes.Stloc, awaitableVar), // Store in variable
+                Instruction.Create(OpCodes.Ldloca, awaitableVar) // Load variable
+            );
+        }
     }
 
     static bool GetAwaiterSearch(Instruction instruction)
