@@ -440,10 +440,14 @@ public class ModuleWeaver : BaseModuleWeaver
             var configureAwait = configureAwaitMethods[variable];
 
             ilProcessor.InsertBefore(instruction,
-                Instruction.Create(configureAwaitValue ? OpCodes.Ldc_I4_1 : OpCodes.Ldc_I4_0), // true or false
-                Instruction.Create(OpCodes.Callvirt, configureAwait), // Call ConfigureAwait
-                Instruction.Create(OpCodes.Stloc, awaitableVar), // Store in variable
-                Instruction.Create(OpCodes.Ldloca, awaitableVar) // Load variable
+                // true or false
+                Instruction.Create(configureAwaitValue ? OpCodes.Ldc_I4_1 : OpCodes.Ldc_I4_0),
+                // Call ConfigureAwait
+                Instruction.Create(OpCodes.Callvirt, configureAwait),
+                // Store in variable
+                Instruction.Create(OpCodes.Stloc, awaitableVar),
+                // Load variable
+                Instruction.Create(OpCodes.Ldloca, awaitableVar)
             );
         }
     }
@@ -456,11 +460,12 @@ public class ModuleWeaver : BaseModuleWeaver
         }
 
         var declaringType = method.DeclaringType;
-        return (
-                   declaringType.FullName == "System.Threading.Tasks.Task" ||
-                   declaringType.Resolve().FullName == "System.Threading.Tasks.Task`1" ||
-                   declaringType.FullName == "System.Threading.Tasks.ValueTask" ||
-                   declaringType.Resolve().FullName == "System.Threading.Tasks.ValueTask`1")
+        var fullName = declaringType.FullName;
+        var resolvedFullName = declaringType.Resolve().FullName;
+        return (fullName == "System.Threading.Tasks.Task" ||
+                resolvedFullName == "System.Threading.Tasks.Task`1" ||
+                fullName == "System.Threading.Tasks.ValueTask" ||
+                resolvedFullName == "System.Threading.Tasks.ValueTask`1")
                && method.Name == "GetAwaiter";
     }
 }
