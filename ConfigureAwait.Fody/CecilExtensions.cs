@@ -15,6 +15,11 @@ static class CecilExtensions
             .Any(x => x.InterfaceType.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
     }
 
+    public static MethodDefinition Method(this TypeDefinition type, MethodReference reference)
+    {
+        return type.Methods.FirstOrDefault(_ => _.Name == reference.Name);
+    }
+
     public static bool IsCompilerGenerated(this ICustomAttributeProvider provider)
     {
         if (provider is not {HasCustomAttributes: true})

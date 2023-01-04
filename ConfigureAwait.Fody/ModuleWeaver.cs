@@ -255,7 +255,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 // Change Task to ConfiguredTaskAwaitable
                 if (methodRef.DeclaringType.FullName == "System.Threading.Tasks.Task")
                 {
-                    var newOperand = configuredTaskAwaitableTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
+                    var newOperand = configuredTaskAwaitableTypeDef.Method(methodRef);
                     if (newOperand != null)
                     {
                         method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, ModuleDefinition.ImportReference(newOperand));
@@ -265,7 +265,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 // Change Task`1 to ConfiguredTaskAwaitable`1
                 if (methodRef.DeclaringType.Resolve().FullName == "System.Threading.Tasks.Task`1")
                 {
-                    var newOperand = genericConfiguredTaskAwaitableTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
+                    var newOperand = genericConfiguredTaskAwaitableTypeDef.Method(methodRef);
                     if (newOperand != null)
                     {
                         var genericArguments = ((GenericInstanceType)methodRef.DeclaringType).GenericArguments;
@@ -278,7 +278,7 @@ public class ModuleWeaver : BaseModuleWeaver
 
                 if (methodRef.DeclaringType.FullName == "System.Threading.Tasks.ValueTask")
                 {
-                    var newOperand = configuredValueTaskAwaitableTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
+                    var newOperand = configuredValueTaskAwaitableTypeDef.Method(methodRef);
                     if (newOperand != null)
                     {
                         method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, ModuleDefinition.ImportReference(newOperand));
@@ -288,7 +288,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 // Change Task`1 to ConfiguredTaskAwaitable`1
                 if (methodRef.DeclaringType.Resolve().FullName == "System.Threading.Tasks.ValueTask`1")
                 {
-                    var newOperand = genericConfiguredValueTaskAwaitableTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
+                    var newOperand = genericConfiguredValueTaskAwaitableTypeDef.Method(methodRef);
                     if (newOperand != null)
                     {
                         var genericArguments = ((GenericInstanceType)methodRef.DeclaringType).GenericArguments;
@@ -302,7 +302,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 // Change TaskAwaiter to ConfiguredTaskAwaiter
                 if (methodRef.DeclaringType.FullName == "System.Runtime.CompilerServices.TaskAwaiter")
                 {
-                    var newOperand = configuredTaskAwaiterTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
+                    var newOperand = configuredTaskAwaiterTypeDef.Method(methodRef);
                     if (newOperand != null)
                     {
                         method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, ModuleDefinition.ImportReference(newOperand));
@@ -312,7 +312,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 // Change TaskAwaiter`1 to ConfiguredTaskAwaiter`1
                 if (methodRef.DeclaringType.Resolve().FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
                 {
-                    var newOperand = genericConfiguredTaskAwaiterTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
+                    var newOperand = genericConfiguredTaskAwaiterTypeDef.Method(methodRef);
                     if (newOperand != null)
                     {
                         var genericArguments = ((GenericInstanceType)methodRef.DeclaringType).GenericArguments;
@@ -326,7 +326,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 // Change TaskAwaiter to ConfiguredTaskAwaiter
                 if (methodRef.DeclaringType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
                 {
-                    var newOperand = configuredValueTaskAwaiterTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
+                    var newOperand = configuredValueTaskAwaiterTypeDef.Method(methodRef);
                     if (newOperand != null)
                     {
                         method.Body.Instructions[i] = Instruction.Create(OpCodes.Call, ModuleDefinition.ImportReference(newOperand));
@@ -336,7 +336,7 @@ public class ModuleWeaver : BaseModuleWeaver
                 // Change TaskAwaiter`1 to ConfiguredTaskAwaiter`1
                 if (methodRef.DeclaringType.Resolve().FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
                 {
-                    var newOperand = genericConfiguredValueTaskAwaiterTypeDef.Methods.FirstOrDefault(m => m.Name == methodRef.Name);
+                    var newOperand = genericConfiguredValueTaskAwaiterTypeDef.Method(methodRef);
                     if (newOperand != null)
                     {
                         var genericArguments = ((GenericInstanceType)methodRef.DeclaringType).GenericArguments;
