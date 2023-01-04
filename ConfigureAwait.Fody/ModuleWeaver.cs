@@ -293,10 +293,10 @@ public partial class ModuleWeaver : BaseModuleWeaver
         method.Body.OptimizeMacros();
     }
 
-    void TryRedirectTypeInstruction(TypeReference typeRef, Instruction instruction)
+    void TryRedirectTypeInstruction(TypeReference type, Instruction instruction)
     {
         // Change TaskAwaiter to ConfiguredTaskAwaiter
-        var typeFullName = typeRef.FullName;
+        var typeFullName = type.FullName;
         if (typeFullName == "System.Runtime.CompilerServices.TaskAwaiter")
         {
             instruction.Operand = configuredTaskAwaiterTypeRef;
@@ -310,7 +310,7 @@ public partial class ModuleWeaver : BaseModuleWeaver
         }
 
         // Change TaskAwaiter`1 to ConfiguredTaskAwaiter`1
-        if (typeRef is not GenericInstanceType genericType)
+        if (type is not GenericInstanceType genericType)
         {
             return;
         }
