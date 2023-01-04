@@ -137,35 +137,7 @@ public partial class ModuleWeaver : BaseModuleWeaver
 
     void AddAwaitConfigToAsyncMethod(TypeDefinition type, bool configureAwaitValue)
     {
-        foreach (var field in type.Fields)
-        {
-            // Change TaskAwaiter to ConfiguredTaskAwaiter
-            if (field.FieldType.FullName == "System.Runtime.CompilerServices.TaskAwaiter")
-            {
-                field.FieldType = configuredTaskAwaiterTypeRef;
-            }
-            else if (field.FieldType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
-            {
-                field.FieldType = configuredValueTaskAwaiterTypeRef;
-            }
-
-            // Change TaskAwaiter`1 to ConfiguredTaskAwaiter`1
-            if (field.FieldType.IsGenericInstance)
-            {
-                var genericFieldType = (GenericInstanceType)field.FieldType;
-                var fieldType = field.FieldType.Resolve();
-                if (fieldType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
-                {
-                    var genericArguments = genericFieldType.GenericArguments;
-                    field.FieldType = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
-                }
-                else if (fieldType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
-                {
-                    var genericArguments = genericFieldType.GenericArguments;
-                    field.FieldType = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
-                }
-            }
-        }
+        ProcessFields(type);
 
         // Modify MoveNext method
         var method = type.Methods.First(m => m.Name == "MoveNext");
@@ -309,63 +281,49 @@ public partial class ModuleWeaver : BaseModuleWeaver
 
             if (instruction.Operand is TypeReference typeRef)
             {
-                // Change TaskAwaiter to ConfiguredTaskAwaiter
-                var typeFullName = typeRef.FullName;
-                if (typeFullName == "System.Runtime.CompilerServices.TaskAwaiter")
-                {
-                    instruction.Operand = configuredTaskAwaiterTypeRef;
-                }
-                else if (typeFullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
-                {
-                    instruction.Operand = configuredValueTaskAwaiterTypeRef;
-                }
-
-                // Change TaskAwaiter`1 to ConfiguredTaskAwaiter`1
-                var theType = typeRef.Resolve();
-                if (theType?.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
-                {
-                    var genericArguments = ((GenericInstanceType)typeRef).GenericArguments;
-                    instruction.Operand = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
-                }
-                else if (theType?.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
-                {
-                    var genericArguments = ((GenericInstanceType)typeRef).GenericArguments;
-                    instruction.Operand = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
-                }
+                TryRedirectTypeInstruction(typeRef, instruction);
             }
 
             if (instruction.Operand is FieldReference fieldRef)
             {
-                // Change TaskAwaiter to ConfiguredTaskAwaiter
-                var typeFullName = fieldRef.FieldType.FullName;
-                if (typeFullName == "System.Runtime.CompilerServices.TaskAwaiter")
-                {
-                    fieldRef.FieldType = configuredTaskAwaiterTypeRef;
-                }
-                else if (typeFullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
-                {
-                    fieldRef.FieldType = configuredValueTaskAwaiterTypeRef;
-                }
-
-                // Change TaskAwaiter`1 to ConfiguredTaskAwaiter`1
-                if (fieldRef.FieldType.IsGenericInstance)
-                {
-                    var genericFieldType = (GenericInstanceType)fieldRef.FieldType;
-                    var fieldType = fieldRef.FieldType.Resolve();
-                    if (fieldType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
-                    {
-                        var genericArguments = genericFieldType.GenericArguments;
-                        fieldRef.FieldType = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
-                    }
-                    else if (fieldType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
-                    {
-                        var genericArguments = genericFieldType.GenericArguments;
-                        fieldRef.FieldType = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
-                    }
-                }
+                TryRedirectFieldInstruction(fieldRef);
             }
         }
 
         method.Body.OptimizeMacros();
+    }
+
+    void TryRedirectTypeInstruction(TypeReference typeRef, Instruction instruction)
+    {
+        // Change TaskAwaiter to ConfiguredTaskAwaiter
+        var typeFullName = typeRef.FullName;
+        if (typeFullName == "System.Runtime.CompilerServices.TaskAwaiter")
+        {
+            instruction.Operand = configuredTaskAwaiterTypeRef;
+            return;
+        }
+
+        if (typeFullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
+        {
+            instruction.Operand = configuredValueTaskAwaiterTypeRef;
+            return;
+        }
+
+        // Change TaskAwaiter`1 to ConfiguredTaskAwaiter`1
+        if (typeRef is not GenericInstanceType genericType)
+        {
+            return;
+        }
+
+        var genericArguments = genericType.GenericArguments;
+
+        if (genericType.FullName.StartsWith("System.Runtime.CompilerServices.TaskAwaiter`1"))
+        {
+            instruction.Operand = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
+        }
+        else if (genericType.FullName.StartsWith("System.Runtime.CompilerServices.ValueTaskAwaiter`1"))
+        {
+            instruction.Operand = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericArguments);
+        }
     }
 }
