@@ -228,7 +228,7 @@ public partial class ModuleWeaver : BaseModuleWeaver
 
         // Change AwaitUnsafeOnCompleted<TaskAwaiter, T> to AwaitUnsafeOnCompleted<ConfiguredTaskAwaiter, T>
         // Change AwaitUnsafeOnCompleted<TaskAwaiter`1, T> to AwaitUnsafeOnCompleted<ConfiguredTaskAwaiter`1, T>
-        if (method is GenericInstanceMethod awaitUnsafeOnCompleted && method.Name == "AwaitUnsafeOnCompleted")
+        if (method.Name == "AwaitUnsafeOnCompleted" && method is GenericInstanceMethod awaitUnsafeOnCompleted)
         {
             var arguments = awaitUnsafeOnCompleted.GenericArguments;
             for (var index = 0; index < arguments.Count; index++)
