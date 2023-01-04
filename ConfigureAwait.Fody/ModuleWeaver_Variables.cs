@@ -5,13 +5,13 @@ public partial class ModuleWeaver
 {
     void ProcessVariables(bool configureAwaitValue, MethodDefinition method)
     {
-        var ilProcessor = method.Body.GetILProcessor();
         var awaitAwaiterPair = new Dictionary<VariableDefinition, VariableDefinition>();
         var configureAwaitMethods = new Dictionary<VariableDefinition, MethodReference>();
 
         var variableIndex = 0;
 
-        var variables = method.Body.Variables;
+        var body = method.Body;
+        var variables = body.Variables;
         foreach (var variable in variables.ToArray())
         {
             if (IsAwaiterVariable(variable, out var awaitableVar, out var localConfigAwait))
@@ -24,8 +24,9 @@ public partial class ModuleWeaver
             variableIndex++;
         }
 
+        var ilProcessor = body.GetILProcessor();
         // Insert ConfigureAwait call just before GetAwaiter call.
-        foreach (var instruction in method.Body.Instructions.Where(GetAwaiterSearch).ToList())
+        foreach (var instruction in body.Instructions.Where(GetAwaiterSearch).ToList())
         {
             var variable = (VariableDefinition)instruction.Next.Operand;
             var awaitableVar = awaitAwaiterPair[variable];
@@ -67,13 +68,14 @@ public partial class ModuleWeaver
         {
             var genericVariableType = (GenericInstanceType)variable.VariableType;
             var variableType = variable.VariableType.Resolve();
+
             if (variableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
             {
                 variable.VariableType = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
                 awaitableVar = new(genericConfiguredTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
                 localConfigAwait = ModuleDefinition.ImportReference(genericTaskConfigureAwaitMethodDef);
                 localConfigAwait.DeclaringType = genericTaskType.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                return  true;
+                return true;
             }
 
             if (variableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
@@ -102,15 +104,16 @@ public partial class ModuleWeaver
         {
             return false;
         }
-        var declaringType = method.DeclaringType;
 
-        if (declaringType.FullName is
+        var declaring = method.DeclaringType;
+
+        if (declaring.FullName is
             "System.Threading.Tasks.Task" or "System.Threading.Tasks.ValueTask")
         {
             return true;
         }
 
-        return declaringType.Resolve().FullName is
+        return declaring.Resolve().FullName is
             "System.Threading.Tasks.Task`1" or "System.Threading.Tasks.ValueTask`1";
     }
 }
