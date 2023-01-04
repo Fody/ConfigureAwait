@@ -105,15 +105,16 @@ public partial class ModuleWeaver
             return false;
         }
 
-        var declaring = method.DeclaringType;
 
-        if (declaring.FullName is
+        var fullName = method.DeclaringType.FullName;
+
+        if (fullName is
             "System.Threading.Tasks.Task" or "System.Threading.Tasks.ValueTask")
         {
             return true;
         }
 
-        return declaring.Resolve().FullName is
-            "System.Threading.Tasks.Task`1" or "System.Threading.Tasks.ValueTask`1";
+        return fullName.StartsWith("System.Threading.Tasks.Task`1") ||
+               fullName.StartsWith("System.Threading.Tasks.ValueTask`1");
     }
 }
