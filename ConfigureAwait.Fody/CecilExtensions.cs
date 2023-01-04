@@ -67,19 +67,6 @@ static class CecilExtensions
             throw new WeavingException($"ConfigureAwaitAttribute applied to non-async method '{method.FullName}'.");
         }
         return (bool?)attribute.ConstructorArguments[0].Value;
-
-    }
-
-    public static void RemoveAllCustomAttributes(this ICustomAttributeProvider definition)
-    {
-        var customAttributes = definition.CustomAttributes;
-
-        var attributes = customAttributes.Where(x => x.AttributeType.FullName == "Fody.ConfigureAwaitAttribute").ToArray();
-
-        foreach (var attribute in attributes)
-        {
-            customAttributes.Remove(attribute);
-        }
     }
 
     public static GenericInstanceType MakeGenericInstanceType(this TypeReference self, IEnumerable<TypeReference> arguments)

@@ -80,7 +80,7 @@ public class ModuleWeaver : BaseModuleWeaver
             ProcessType(configureAwaitValue, type);
         }
 
-        RemoveAttributes(types);
+        AttributeCleaner.Run(ModuleDefinition);
     }
 
     void ReadConfig()
@@ -456,25 +456,5 @@ public class ModuleWeaver : BaseModuleWeaver
                    declaringType.FullName == "System.Threading.Tasks.ValueTask" ||
                    declaringType.Resolve().FullName == "System.Threading.Tasks.ValueTask`1")
                && method.Name == "GetAwaiter";
-    }
-
-    void RemoveAttributes(List<TypeDefinition> types)
-    {
-        ModuleDefinition.Assembly.RemoveAllCustomAttributes();
-        ModuleDefinition.RemoveAllCustomAttributes();
-        foreach (var typeDefinition in types)
-        {
-            typeDefinition.RemoveAllCustomAttributes();
-
-            foreach (var method in typeDefinition.Methods)
-            {
-                method.RemoveAllCustomAttributes();
-            }
-
-            foreach (var property in typeDefinition.Properties)
-            {
-                property.RemoveAllCustomAttributes();
-            }
-        }
     }
 }
