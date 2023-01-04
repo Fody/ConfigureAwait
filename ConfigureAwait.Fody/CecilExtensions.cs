@@ -4,14 +4,14 @@ using Mono.Cecil.Cil;
 
 static class CecilExtensions
 {
-    public static bool IsIAsyncStateMachine(this TypeDefinition typeDefinition)
+    public static bool IsIAsyncStateMachine(this TypeDefinition type)
     {
-        if (typeDefinition is not {HasInterfaces: true})
+        if (type is not {HasInterfaces: true})
         {
             return false;
         }
 
-        return typeDefinition.Interfaces
+        return type.Interfaces
             .Any(x => x.InterfaceType.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
     }
 
