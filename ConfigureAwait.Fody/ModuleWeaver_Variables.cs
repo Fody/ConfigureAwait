@@ -105,7 +105,6 @@ public partial class ModuleWeaver
             return false;
         }
 
-
         var fullName = method.DeclaringType.FullName;
 
         if (fullName is
