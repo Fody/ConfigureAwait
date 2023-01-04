@@ -6,7 +6,7 @@ static class CecilExtensions
 {
     public static bool IsIAsyncStateMachine(this TypeDefinition typeDefinition)
     {
-        if (typeDefinition == null || !typeDefinition.HasInterfaces)
+        if (typeDefinition is not {HasInterfaces: true})
         {
             return false;
         }
@@ -17,7 +17,7 @@ static class CecilExtensions
 
     public static bool IsCompilerGenerated(this ICustomAttributeProvider provider)
     {
-        if (provider == null || !provider.HasCustomAttributes)
+        if (provider is not {HasCustomAttributes: true})
         {
             return false;
         }

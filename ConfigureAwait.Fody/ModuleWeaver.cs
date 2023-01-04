@@ -456,7 +456,6 @@ public class ModuleWeaver : BaseModuleWeaver
                    declaringType.FullName == "System.Threading.Tasks.ValueTask" ||
                    declaringType.Resolve().FullName == "System.Threading.Tasks.ValueTask`1")
                && method.Name == "GetAwaiter";
-
     }
 
     void RemoveAttributes(List<TypeDefinition> types)
