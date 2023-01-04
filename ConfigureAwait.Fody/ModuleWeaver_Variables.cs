@@ -14,47 +14,7 @@ public partial class ModuleWeaver
         var variables = method.Body.Variables;
         foreach (var variable in variables.ToArray())
         {
-            VariableDefinition awaitableVar = null;
-            MethodReference localConfigAwait = null;
-            bool found = false;
-            // Change variable type
-            if (variable.VariableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter")
-            {
-                variable.VariableType = configuredTaskAwaiterTypeRef;
-                awaitableVar = new(configuredTaskAwaitableTypeRef);
-                localConfigAwait = taskConfigureAwaitMethod;
-                found = true;
-            }
-            else if (variable.VariableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
-            {
-                variable.VariableType = configuredValueTaskAwaiterTypeRef;
-                awaitableVar = new(configuredValueTaskAwaitableTypeRef);
-                localConfigAwait = valueTaskConfigureAwaitMethod;
-                found = true;
-            }
-            else if (variable.VariableType.IsGenericInstance)
-            {
-                var genericVariableType = (GenericInstanceType)variable.VariableType;
-                var variableType = variable.VariableType.Resolve();
-                if (variableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
-                {
-                    variable.VariableType = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                    awaitableVar = new(genericConfiguredTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
-                    localConfigAwait = ModuleDefinition.ImportReference(genericTaskConfigureAwaitMethodDef);
-                    localConfigAwait.DeclaringType = genericTaskType.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                    found = true;
-                }
-                else if (variableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
-                {
-                    variable.VariableType = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                    awaitableVar = new(genericConfiguredValueTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
-                    localConfigAwait = ModuleDefinition.ImportReference(genericValueTaskConfigureAwaitMethodDef);
-                    localConfigAwait.DeclaringType = genericValueTaskType.MakeGenericInstanceType(genericVariableType.GenericArguments);
-                    found = true;
-                }
-            }
-
-            if (found)
+            if (IsAwaiterVariable(variable, out var awaitableVar, out var localConfigAwait))
             {
                 variables.Insert(variableIndex + 1, awaitableVar);
                 awaitAwaiterPair.Add(variable, awaitableVar);
@@ -82,6 +42,53 @@ public partial class ModuleWeaver
                 Instruction.Create(OpCodes.Ldloca, awaitableVar)
             );
         }
+    }
+
+    bool IsAwaiterVariable(VariableDefinition variable, out VariableDefinition awaitableVar, out MethodReference localConfigAwait)
+    {
+        // Change variable type
+        if (variable.VariableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter")
+        {
+            variable.VariableType = configuredTaskAwaiterTypeRef;
+            awaitableVar = new(configuredTaskAwaitableTypeRef);
+            localConfigAwait = taskConfigureAwaitMethod;
+            return true;
+        }
+
+        if (variable.VariableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter")
+        {
+            variable.VariableType = configuredValueTaskAwaiterTypeRef;
+            awaitableVar = new(configuredValueTaskAwaitableTypeRef);
+            localConfigAwait = valueTaskConfigureAwaitMethod;
+            return true;
+        }
+
+        if (variable.VariableType.IsGenericInstance)
+        {
+            var genericVariableType = (GenericInstanceType)variable.VariableType;
+            var variableType = variable.VariableType.Resolve();
+            if (variableType.FullName == "System.Runtime.CompilerServices.TaskAwaiter`1")
+            {
+                variable.VariableType = genericConfiguredTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
+                awaitableVar = new(genericConfiguredTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
+                localConfigAwait = ModuleDefinition.ImportReference(genericTaskConfigureAwaitMethodDef);
+                localConfigAwait.DeclaringType = genericTaskType.MakeGenericInstanceType(genericVariableType.GenericArguments);
+                return  true;
+            }
+
+            if (variableType.FullName == "System.Runtime.CompilerServices.ValueTaskAwaiter`1")
+            {
+                variable.VariableType = genericConfiguredValueTaskAwaiterTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments);
+                awaitableVar = new(genericConfiguredValueTaskAwaitableTypeRef.MakeGenericInstanceType(genericVariableType.GenericArguments));
+                localConfigAwait = ModuleDefinition.ImportReference(genericValueTaskConfigureAwaitMethodDef);
+                localConfigAwait.DeclaringType = genericValueTaskType.MakeGenericInstanceType(genericVariableType.GenericArguments);
+                return true;
+            }
+        }
+
+        awaitableVar = null;
+        localConfigAwait = null;
+        return false;
     }
 
     static bool GetAwaiterSearch(Instruction instruction)
