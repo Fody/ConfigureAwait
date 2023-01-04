@@ -459,13 +459,19 @@ public class ModuleWeaver : BaseModuleWeaver
             return false;
         }
 
+        if (method.Name != "GetAwaiter")
+        {
+            return false;
+        }
         var declaringType = method.DeclaringType;
-        var fullName = declaringType.FullName;
-        var resolvedFullName = declaringType.Resolve().FullName;
-        return (fullName == "System.Threading.Tasks.Task" ||
-                resolvedFullName == "System.Threading.Tasks.Task`1" ||
-                fullName == "System.Threading.Tasks.ValueTask" ||
-                resolvedFullName == "System.Threading.Tasks.ValueTask`1")
-               && method.Name == "GetAwaiter";
+
+        if (declaringType.FullName is
+            "System.Threading.Tasks.Task" or "System.Threading.Tasks.ValueTask")
+        {
+            return true;
+        }
+
+        return declaringType.Resolve().FullName is
+            "System.Threading.Tasks.Task`1" or "System.Threading.Tasks.ValueTask`1";
     }
 }
