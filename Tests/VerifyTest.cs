@@ -1,4 +1,5 @@
 ﻿using Fody;
+#pragma warning disable CS0618
 
 public partial class ModuleWeaverTests
 {
