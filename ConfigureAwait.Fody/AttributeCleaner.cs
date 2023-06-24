@@ -27,7 +27,7 @@ static class AttributeCleaner
     {
         var customAttributes = definition.CustomAttributes;
 
-        var attributes = customAttributes.Where(x => x.AttributeType.FullName == "Fody.ConfigureAwaitAttribute").ToArray();
+        var attributes = customAttributes.Where(_ => _.AttributeType.FullName == "Fody.ConfigureAwaitAttribute").ToArray();
 
         foreach (var attribute in attributes)
         {

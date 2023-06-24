@@ -9,6 +9,6 @@
     [Fact]
     public Task ErrorMessages()
     {
-        return Verify(testResult.Errors.OrderBy(s => s).Select(x => x.Text));
+        return Verify(testResult.Errors.OrderBy(s => s).Select(_ => _.Text));
     }
 }

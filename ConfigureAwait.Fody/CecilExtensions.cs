@@ -12,7 +12,7 @@ static class CecilExtensions
         }
 
         return type.Interfaces
-            .Any(x => x.InterfaceType.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
+            .Any(_ => _.InterfaceType.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
     }
 
     public static MethodDefinition Method(this TypeDefinition type, MethodReference reference)
