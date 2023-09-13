@@ -79,7 +79,7 @@ public partial class ModuleWeaver : BaseModuleWeaver
         ProcessFields(type);
 
         // Modify MoveNext method
-        var method = type.Methods.First(m => m.Name == "MoveNext");
+        var method = type.Methods.First(_ => _.Name == "MoveNext");
         method.Body.SimplifyMacros();
 
         ProcessVariables(configureAwaitValue, method);
