@@ -8,10 +8,10 @@
     <Using Remove="System.Net.Http" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="FodyHelpers" Version="6.8.0" />
-    <PackageReference Include="Xunit" Version="2.6.0" />
-    <PackageReference Include="Verify.Xunit" Version="22.1.4" />
+    <PackageReference Include="Xunit" Version="2.6.1" />
+    <PackageReference Include="Verify.Xunit" Version="22.5.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <ProjectReference Include="..\ConfigureAwait.Fody\ConfigureAwait.Fody.csproj" />
     <ProjectReference Include="..\ConfigureAwait\ConfigureAwait.csproj" />
     <ProjectReference Include="..\AssemblyToProcess\AssemblyToProcess.csproj" />
