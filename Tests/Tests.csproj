@@ -10,7 +10,7 @@
     <PackageReference Include="FodyHelpers" Version="6.8.0" />
     <PackageReference Include="Xunit" Version="2.6.2" />
     <PackageReference Include="Verify.Xunit" Version="22.6.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.4" PrivateAssets="all" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.5" PrivateAssets="all" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <ProjectReference Include="..\ConfigureAwait.Fody\ConfigureAwait.Fody.csproj" />
     <ProjectReference Include="..\ConfigureAwait\ConfigureAwait.csproj" />
