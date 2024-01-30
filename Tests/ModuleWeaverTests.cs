@@ -9,8 +9,8 @@ public partial class ModuleWeaverTests
     static ModuleWeaverTests()
     {
         Assembly.Load("xunit.assert");
-        var weavingTask = new ModuleWeaver();
-        testResult = weavingTask.ExecuteTestRun("AssemblyToProcess.dll");
+        var weaver = new ModuleWeaver();
+        testResult = weaver.ExecuteTestRun("AssemblyToProcess.dll");
         VerifierSettings.UniqueForRuntime();
         VerifierSettings.UniqueForAssemblyConfiguration();
     }
