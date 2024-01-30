@@ -1,7 +1,6 @@
 using System.Reflection;
 using Fody;
 
-[UsesVerify]
 public partial class ModuleWeaverTests
 {
     static TestResult testResult;
