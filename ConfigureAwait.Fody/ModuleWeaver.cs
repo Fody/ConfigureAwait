@@ -10,7 +10,7 @@ public partial class ModuleWeaver : BaseModuleWeaver
     {
         ReadConfig();
 
-        FindTypes();
+        FindRuntimeTypes();
 
         var configureAwaitValue = ModuleDefinition.Assembly.GetConfigureAwaitConfig(continueOnCapturedContext);
 
@@ -114,6 +114,10 @@ public partial class ModuleWeaver : BaseModuleWeaver
         var declaringType = method.DeclaringType;
         if (declaringType.FullName == "System.Threading.Tasks.Task")
         {
+            // Only redirect GetAwaiter; constructors and other members must not be redirected
+            if (method.Name != "GetAwaiter")
+                return;
+
             var newOperand = configuredTaskAwaitableTypeDef.Method(method);
             if (newOperand != null)
             {
@@ -126,6 +130,10 @@ public partial class ModuleWeaver : BaseModuleWeaver
 
         if (declaringType.FullName == "System.Threading.Tasks.ValueTask")
         {
+            // Only redirect GetAwaiter; constructors and other members must not be redirected
+            if (method.Name != "GetAwaiter")
+                return;
+
             var newOperand = configuredValueTaskAwaitableTypeDef.Method(method);
             if (newOperand != null)
             {
@@ -168,6 +176,10 @@ public partial class ModuleWeaver : BaseModuleWeaver
             // Change Task`1 to ConfiguredTaskAwaitable`1
             if (declaringType.FullName.StartsWith("System.Threading.Tasks.Task`1"))
             {
+                // Only redirect GetAwaiter; other members (including constructors) must not be redirected
+                if (method.Name != "GetAwaiter")
+                    return;
+
                 var newOperand = genericConfiguredTaskAwaitableTypeDef.Method(method);
                 if (newOperand != null)
                 {
@@ -183,6 +195,10 @@ public partial class ModuleWeaver : BaseModuleWeaver
             // Change Task`1 to ConfiguredTaskAwaitable`1
             if (declaringType.FullName.StartsWith("System.Threading.Tasks.ValueTask`1"))
             {
+                // Only redirect GetAwaiter; other members (including constructors) must not be redirected
+                if (method.Name != "GetAwaiter")
+                    return;
+
                 var newOperand = genericConfiguredValueTaskAwaitableTypeDef.Method(method);
                 if (newOperand != null)
                 {

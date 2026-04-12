@@ -9,7 +9,7 @@ sealed class GenericClass<TItem>
         var item = await itemTask;
     }
 
-#if NETCOREAPP2_0
+#if NET
     [ConfigureAwait(false)]
     public async Task Method_WithValueTask(Task<TItem> itemTask)
     {
@@ -26,7 +26,7 @@ sealed class GenericMethod
         var item = await itemTask;
     }
 
-#if NETCOREAPP2_0
+#if NET
     [ConfigureAwait(false)]
     public async Task Method_WithValueTask<TItem>(Task<TItem> itemTask)
     {

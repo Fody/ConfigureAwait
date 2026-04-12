@@ -1,5 +1,4 @@
-public class FlagSynchronizationContext :
-    SynchronizationContext
+public class FlagSynchronizationContext : SynchronizationContext
 {
     public bool Flag { get; set; }
 

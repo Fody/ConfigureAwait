@@ -28,7 +28,7 @@ public class DoNotWeave
         return await Task.Run(() => 10).ConfigureAwait(true);
     }
 
-#if NETCOREAPP2_0
+#if NET
     public async Task AsyncMethod_WithValueTask(SynchronizationContext context)
     {
         SynchronizationContext.SetSynchronizationContext(context);

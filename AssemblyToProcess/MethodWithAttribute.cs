@@ -9,7 +9,7 @@ public class MethodWithAttribute
         await Task.Delay(0);
     }
 
-#if NETCOREAPP2_0
+#if NET
     [ConfigureAwait(false)]
     public async Task AsyncMethod_WithValueTask(SynchronizationContext context)
     {

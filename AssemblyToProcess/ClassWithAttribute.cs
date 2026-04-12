@@ -28,7 +28,7 @@ public class ClassWithAttribute
         return await Task.Run(() => 10);
     }
 
-#if NETCOREAPP2_0
+#if NET
     public async Task AsyncMethod_WithValueTask(SynchronizationContext context)
     {
         SynchronizationContext.SetSynchronizationContext(context);

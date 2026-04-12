@@ -76,7 +76,7 @@ public class CatchAndFinally
         }
     }
 
-#if NETCOREAPP2_0
+#if NET
         public async Task Catch1_WithValueTask()
         {
             try

@@ -11,11 +11,11 @@ class Issue1
         }
     }
 
-#if NETCOREAPP2_0
+#if NET
     [ConfigureAwait(false)]
     async Task WithReaderAndWriter_WithValueTask(TextWriter writer, StreamReader reader)
     {
-        while (await new ValueTask<string>(reader.ReadLineAsync()) is { } line)
+        while (await new ValueTask<string?>(reader.ReadLineAsync()) is { } line)
         {
             await new ValueTask(writer.WriteLineAsync(line));
         }
