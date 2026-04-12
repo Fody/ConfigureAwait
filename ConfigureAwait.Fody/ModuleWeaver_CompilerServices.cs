@@ -96,7 +96,7 @@ partial class ModuleWeaver
                 configureAwaitMethodRef = ModuleDefinition.ImportReference(configureAwaitMethodDef);
                 configureAwaitMethodRef.DeclaringType = taskT;
 
-                var targetMethodDefinition = FindTargetMethodDefinition(declaringType, configuredAwaitableName); 
+                var targetMethodDefinition = FindAwaitMethodDefinition(declaringType, configuredAwaitableName); 
 
                 var genericTargetMethodRef = new GenericInstanceMethod(ModuleDefinition.ImportReference(targetMethodDefinition));
                 genericTargetMethodRef.GenericArguments.Add(typeArg);
@@ -122,7 +122,7 @@ partial class ModuleWeaver
                         continue;
                 }
 
-                var targetMethodDefinition = FindTargetMethodDefinition(declaringType, configuredAwaitableName);
+                var targetMethodDefinition = FindAwaitMethodDefinition(declaringType, configuredAwaitableName);
 
                 targetMethodRef = ModuleDefinition.ImportReference(targetMethodDefinition);
             }
@@ -170,7 +170,7 @@ partial class ModuleWeaver
         body.OptimizeMacros();
     }
 
-    static MethodDefinition FindTargetMethodDefinition(TypeDefinition declaringType, string configuredAwaitableName)
+    static MethodDefinition FindAwaitMethodDefinition(TypeDefinition declaringType, string configuredAwaitableName)
     {
         return declaringType.Methods.FirstOrDefault(m =>
             m.Name == "Await" &&
