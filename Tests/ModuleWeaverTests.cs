@@ -9,7 +9,7 @@ public partial class ModuleWeaverTests
     {
         var weaver = new ModuleWeaver();
         testResult = weaver.ExecuteTestRun("AssemblyToProcess.dll");
-        VerifierSettings.UniqueForRuntime();
+        VerifierSettings.UniqueForRuntimeAndVersion();
         VerifierSettings.UniqueForAssemblyConfiguration();
     }
 }
