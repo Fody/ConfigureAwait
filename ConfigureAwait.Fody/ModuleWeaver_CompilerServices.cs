@@ -3,7 +3,7 @@ using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Mono.Cecil.Rocks;
 
-partial class ModuleWeaver
+public partial class ModuleWeaver
 {
     /// <summary>
     /// Rewrites calls to <c>System.Runtime.CompilerServices.AsyncHelpers.Await(task)</c> inside
