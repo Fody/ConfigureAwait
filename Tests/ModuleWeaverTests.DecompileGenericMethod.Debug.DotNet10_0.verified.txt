@@ -1,26 +1,18 @@
 ﻿.class private auto ansi sealed beforefieldinit GenericMethod
 extends [System.Runtime]System.Object
 {
-.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .class auto ansi sealed nested private beforefieldinit '<Method>d__0`1'<TItem>
 extends [System.Runtime]System.Object
-implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
-.interfaceimpl type [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 .field public int32 '<>1__state'
-.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
 .field public class [System.Runtime]System.Threading.Tasks.Task`1<!TItem> itemTask
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .field public class GenericMethod '<>4__this'
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .field private !TItem '<item>5__1'
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .field private !TItem '<>s__2'
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .field private valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem> '<>u__1'
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .method public hidebysig specialname rtspecialname
 instance void  .ctor() cil managed
 {
@@ -33,7 +25,7 @@ IL_0007:  ret
 .method private hidebysig newslot virtual final
 instance void  MoveNext() cil managed
 {
-.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
 .maxstack  3
 .locals init (int32 V_0,
 valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem> V_1,
@@ -72,10 +64,10 @@ IL_0038:  stfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerSe
 IL_003d:  ldarg.0
 IL_003e:  stloc.3
 IL_003f:  ldarg.0
-IL_0040:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!TItem>::'<>t__builder'
+IL_0040:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!TItem>::'<>t__builder'
 IL_0045:  ldloca.s   V_1
 IL_0047:  ldloca.s   V_3
-IL_0049:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem>,class GenericMethod/'<Method>d__0`1'<!TItem>>(!!0&,
+IL_0049:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1/ConfiguredTaskAwaiter<!TItem>,class GenericMethod/'<Method>d__0`1'<!TItem>>(!!0&,
 !!1&)
 IL_004e:  nop
 IL_004f:  leave      IL_00dd
@@ -113,9 +105,9 @@ IL_00a1:  ldarg.0
 IL_00a2:  ldflda     !0 class GenericMethod/'<Method>d__0`1'<!TItem>::'<item>5__1'
 IL_00a7:  initobj    !TItem
 IL_00ad:  ldarg.0
-IL_00ae:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!TItem>::'<>t__builder'
+IL_00ae:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!TItem>::'<>t__builder'
 IL_00b3:  ldloc.s    V_4
-IL_00b5:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_00b5:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
 IL_00ba:  nop
 IL_00bb:  leave.s    IL_00dd
 }  // end handler
@@ -126,39 +118,31 @@ IL_00c5:  ldarg.0
 IL_00c6:  ldflda     !0 class GenericMethod/'<Method>d__0`1'<!TItem>::'<item>5__1'
 IL_00cb:  initobj    !TItem
 IL_00d1:  ldarg.0
-IL_00d2:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!TItem>::'<>t__builder'
-IL_00d7:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00d2:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!TItem>::'<>t__builder'
+IL_00d7:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
 IL_00dc:  nop
 IL_00dd:  ret
 }
 .method private hidebysig newslot virtual final
-instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
 {
-.param [1]
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
-.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
 .maxstack  8
 IL_0000:  ret
 }
 }
 .class auto ansi sealed nested private beforefieldinit '<Method_WithValueTask>d__1`1'<TItem>
 extends [System.Runtime]System.Object
-implements [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
+implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
-.interfaceimpl type [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 .field public int32 '<>1__state'
-.field public valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
 .field public class [System.Runtime]System.Threading.Tasks.Task`1<!TItem> itemTask
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .field public class GenericMethod '<>4__this'
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .field private !TItem '<item>5__1'
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .field private !TItem '<>s__2'
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .field private valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!TItem> '<>u__1'
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .method public hidebysig specialname rtspecialname
 instance void  .ctor() cil managed
 {
@@ -171,12 +155,12 @@ IL_0007:  ret
 .method private hidebysig newslot virtual final
 instance void  MoveNext() cil managed
 {
-.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
 .maxstack  3
 .locals init (int32 V_0,
 valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!TItem> V_1,
 valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!TItem> V_2,
-valuetype [System.Threading.Tasks.Extensions]System.Threading.Tasks.ValueTask`1<!TItem> V_3,
+valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<!TItem> V_3,
 class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem> V_4,
 class [System.Runtime]System.Exception V_5)
 IL_0000:  ldarg.0
@@ -191,7 +175,7 @@ IL_000c:  br.s       IL_005d
 IL_000e:  nop
 IL_000f:  ldarg.0
 IL_0010:  ldfld      class [System.Runtime]System.Threading.Tasks.Task`1<!0> class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>::itemTask
-IL_0015:  call       instance void valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!TItem>::.ctor(valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<!0>&)
+IL_0015:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<!TItem>::.ctor(class [System.Runtime]System.Threading.Tasks.Task`1<!0>)
 IL_001a:  stloc.3
 IL_001b:  ldloca.s   V_3
 IL_001d:  ldc.i4.0
@@ -214,10 +198,10 @@ IL_0040:  stfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerSe
 IL_0045:  ldarg.0
 IL_0046:  stloc.s    V_4
 IL_0048:  ldarg.0
-IL_0049:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>::'<>t__builder'
+IL_0049:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>::'<>t__builder'
 IL_004e:  ldloca.s   V_1
 IL_0050:  ldloca.s   V_4
-IL_0052:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!TItem>,class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>>(!!0&,
+IL_0052:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1/ConfiguredValueTaskAwaiter<!TItem>,class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>>(!!0&,
 !!1&)
 IL_0057:  nop
 IL_0058:  leave      IL_00e6
@@ -255,9 +239,9 @@ IL_00aa:  ldarg.0
 IL_00ab:  ldflda     !0 class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>::'<item>5__1'
 IL_00b0:  initobj    !TItem
 IL_00b6:  ldarg.0
-IL_00b7:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>::'<>t__builder'
+IL_00b7:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>::'<>t__builder'
 IL_00bc:  ldloc.s    V_5
-IL_00be:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_00be:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
 IL_00c3:  nop
 IL_00c4:  leave.s    IL_00e6
 }  // end handler
@@ -268,17 +252,15 @@ IL_00ce:  ldarg.0
 IL_00cf:  ldflda     !0 class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>::'<item>5__1'
 IL_00d4:  initobj    !TItem
 IL_00da:  ldarg.0
-IL_00db:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>::'<>t__builder'
-IL_00e0:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00db:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!TItem>::'<>t__builder'
+IL_00e0:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
 IL_00e5:  nop
 IL_00e6:  ret
 }
 .method private hidebysig newslot virtual final
-instance void  SetStateMachine(class [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
 {
-.param [1]
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
-.override [System.Threading.Tasks]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
 .maxstack  8
 IL_0000:  ret
 }
@@ -289,14 +271,13 @@ Method<TItem>(class [System.Runtime]System.Threading.Tasks.Task`1<!!TItem> itemT
 2B 3C 4D 65 74 68 6F 64 3E 64 5F 5F 30 60 31 00   // +<Method>d__0`1.
 00 )
 .param type TItem
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
 .maxstack  2
 .locals init (class GenericMethod/'<Method>d__0`1'<!!TItem> V_0)
 IL_0000:  newobj     instance void class GenericMethod/'<Method>d__0`1'<!!TItem>::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>t__builder'
+IL_0007:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>t__builder'
 IL_0011:  ldloc.0
 IL_0012:  ldarg.0
 IL_0013:  stfld      class GenericMethod class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>4__this'
@@ -307,12 +288,12 @@ IL_001f:  ldloc.0
 IL_0020:  ldc.i4.m1
 IL_0021:  stfld      int32 class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>1__state'
 IL_0026:  ldloc.0
-IL_0027:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>t__builder'
+IL_0027:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>t__builder'
 IL_002c:  ldloca.s   V_0
-IL_002e:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class GenericMethod/'<Method>d__0`1'<!!0>>(!!0&)
+IL_002e:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class GenericMethod/'<Method>d__0`1'<!!0>>(!!0&)
 IL_0033:  ldloc.0
-IL_0034:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>t__builder'
-IL_0039:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_0034:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method>d__0`1'<!!TItem>::'<>t__builder'
+IL_0039:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
 IL_003e:  ret
 }
 .method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
@@ -321,14 +302,13 @@ Method_WithValueTask<TItem>(class [System.Runtime]System.Threading.Tasks.Task`1<
 2B 3C 4D 65 74 68 6F 64 5F 57 69 74 68 56 61 6C   // +<Method_WithVal
 75 65 54 61 73 6B 3E 64 5F 5F 31 60 31 00 00 )    // ueTask>d__1`1..
 .param type TItem
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
 .maxstack  2
 .locals init (class GenericMethod/'<Method_WithValueTask>d__1`1'<!!TItem> V_0)
 IL_0000:  newobj     instance void class GenericMethod/'<Method_WithValueTask>d__1`1'<!!TItem>::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
-IL_0007:  call       valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
-IL_000c:  stfld      valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!!TItem>::'<>t__builder'
+IL_0007:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!!TItem>::'<>t__builder'
 IL_0011:  ldloc.0
 IL_0012:  ldarg.0
 IL_0013:  stfld      class GenericMethod class GenericMethod/'<Method_WithValueTask>d__1`1'<!!TItem>::'<>4__this'
@@ -339,12 +319,12 @@ IL_001f:  ldloc.0
 IL_0020:  ldc.i4.m1
 IL_0021:  stfld      int32 class GenericMethod/'<Method_WithValueTask>d__1`1'<!!TItem>::'<>1__state'
 IL_0026:  ldloc.0
-IL_0027:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!!TItem>::'<>t__builder'
+IL_0027:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!!TItem>::'<>t__builder'
 IL_002c:  ldloca.s   V_0
-IL_002e:  call       instance void [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class GenericMethod/'<Method_WithValueTask>d__1`1'<!!0>>(!!0&)
+IL_002e:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class GenericMethod/'<Method_WithValueTask>d__1`1'<!!0>>(!!0&)
 IL_0033:  ldloc.0
-IL_0034:  ldflda     valuetype [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!!TItem>::'<>t__builder'
-IL_0039:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Threading.Tasks]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_0034:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder class GenericMethod/'<Method_WithValueTask>d__1`1'<!!TItem>::'<>t__builder'
+IL_0039:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
 IL_003e:  ret
 }
 .method public hidebysig specialname rtspecialname
