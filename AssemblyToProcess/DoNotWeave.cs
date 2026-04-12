@@ -56,7 +56,7 @@ public class DoNotWeave
 
 #endif
 
-    // using some more complex task then () => 10, to make sure the method is not optimized away by the compiler, which would make the test fail;
+    // using some more complex task than () => 10, to make sure the method is not optimized away by the compiler, which would make the test fail;
     async Task<int> Return10()
     {
         await Task.Delay(10).ConfigureAwait(false);
