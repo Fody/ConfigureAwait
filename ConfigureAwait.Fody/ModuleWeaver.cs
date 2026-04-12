@@ -44,27 +44,30 @@ public partial class ModuleWeaver : BaseModuleWeaver
 
     public override bool ShouldCleanReference => true;
 
-    void ProcessType(bool? assemblyConfigureAwaitValue, TypeDefinition type)
+    void ProcessType(bool? configureAwaitValue, TypeDefinition type)
     {
         if (type.IsCompilerGenerated() && type.IsIAsyncStateMachine())
         {
             return;
         }
 
-        var configureAwaitValue = type.GetConfigureAwaitConfig(assemblyConfigureAwaitValue);
+        configureAwaitValue = type.GetConfigureAwaitConfig(configureAwaitValue);
 
         foreach (var method in type.Methods)
         {
-            var localConfigureAwaitValue = method.GetConfigureAwaitConfig(configureAwaitValue);
-            if (localConfigureAwaitValue == null)
-            {
+            configureAwaitValue = method.GetConfigureAwaitConfig(configureAwaitValue);
+
+            if (!configureAwaitValue.HasValue)
                 continue;
-            }
 
             var asyncStateMachineType = method.GetAsyncStateMachineType();
             if (asyncStateMachineType != null)
             {
-                AddAwaitConfigToAsyncMethod(asyncStateMachineType, localConfigureAwaitValue.Value);
+                AddAwaitConfigToAsyncMethod(asyncStateMachineType, configureAwaitValue.Value);
+            }
+            else if (method.GetAsyncStateMachineKind() == AsyncStateMachineKind.CompilerService)
+            {
+                AddAwaitConfigToAsyncMethod(method, configureAwaitValue.Value);
             }
         }
     }

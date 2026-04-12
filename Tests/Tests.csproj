@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net472;net10.0</TargetFrameworks>
+    <TargetFrameworks>net472;net10.0;net11.0</TargetFrameworks>
     <DisableFody>true</DisableFody>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net11.0'">
+    <DefineConstants>$(DefineConstants);NET11_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />

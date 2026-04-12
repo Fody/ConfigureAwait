@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net472;net10.0</TargetFrameworks>
+    <TargetFrameworks>net472;net10.0;net11.0</TargetFrameworks>
     <DisableFody>true</DisableFody>
     <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net11.0'">
+    <EnablePreviewFeatures>true</EnablePreviewFeatures>
+    <Features>$(Features);runtime-async=on</Features>
+    <DefineConstants>$(DefineConstants);NET11_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Using Remove="System.Net.Http" />
