@@ -1,5 +1,5 @@
-using System.Reflection;
 using Fody;
+using TestResult = Fody.TestResult;
 
 public partial class ModuleWeaverTests
 {
@@ -7,7 +7,6 @@ public partial class ModuleWeaverTests
 
     static ModuleWeaverTests()
     {
-        Assembly.Load("xunit.assert");
         var weaver = new ModuleWeaver();
         testResult = weaver.ExecuteTestRun("AssemblyToProcess.dll");
         VerifierSettings.UniqueForRuntime();
