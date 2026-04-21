@@ -1,0 +1,66 @@
+﻿.class private auto ansi beforefieldinit Issue1
+extends [System.Runtime]System.Object
+{
+.method private hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+WithReaderAndWriter(class [System.Runtime]System.IO.TextWriter writer,
+class [System.Runtime]System.IO.StreamReader reader) cil managed
+{
+.maxstack  2
+.locals init (string V_0)
+IL_0000:  ldarg.2
+IL_0001:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task`1<string> [System.Runtime]System.IO.TextReader::ReadLineAsync()
+IL_0006:  ldc.i4.0
+IL_0007:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [System.Private.CoreLib]System.Threading.Tasks.Task`1<string>::ConfigureAwait(bool)
+IL_000c:  call       !!0 [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await<string>(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!!0>)
+IL_0011:  stloc.0
+IL_0012:  ldloc.0
+IL_0013:  brfalse.s  IL_0029
+IL_0015:  ldarg.1
+IL_0016:  ldloc.0
+IL_0017:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.IO.TextWriter::WriteLineAsync(string)
+IL_001c:  ldc.i4.0
+IL_001d:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [System.Private.CoreLib]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0022:  call       void [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable)
+IL_0027:  br.s       IL_0000
+IL_0029:  ret
+}
+.method private hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+WithReaderAndWriter_WithValueTask(class [System.Runtime]System.IO.TextWriter writer,
+class [System.Runtime]System.IO.StreamReader reader) cil managed
+{
+.maxstack  2
+.locals init (string V_0,
+valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<string> V_1,
+valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask V_2)
+IL_0000:  ldarg.2
+IL_0001:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task`1<string> [System.Runtime]System.IO.TextReader::ReadLineAsync()
+IL_0006:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::.ctor(class [System.Runtime]System.Threading.Tasks.Task`1<!0>)
+IL_000b:  stloc.1
+IL_000c:  ldloca.s   V_1
+IL_000e:  ldc.i4.0
+IL_000f:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!0> valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<string>::ConfigureAwait(bool)
+IL_0014:  call       !!0 [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await<string>(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!!0>)
+IL_0019:  stloc.0
+IL_001a:  ldloc.0
+IL_001b:  brfalse.s  IL_0039
+IL_001d:  ldarg.1
+IL_001e:  ldloc.0
+IL_001f:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.IO.TextWriter::WriteLineAsync(string)
+IL_0024:  newobj     instance void [System.Runtime]System.Threading.Tasks.ValueTask::.ctor(class [System.Runtime]System.Threading.Tasks.Task)
+IL_0029:  stloc.2
+IL_002a:  ldloca.s   V_2
+IL_002c:  ldc.i4.0
+IL_002d:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable [System.Private.CoreLib]System.Threading.Tasks.ValueTask::ConfigureAwait(bool)
+IL_0032:  call       void [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable)
+IL_0037:  br.s       IL_0000
+IL_0039:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  ret
+}
+}

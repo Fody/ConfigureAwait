@@ -7,44 +7,42 @@ public partial class ModuleWeaverTests
     public Task DecompileExample()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "Example");
-        var settings = new VerifySettings();
-        settings.AutoVerify();
-        return Verify(decompile, settings);
+        return Verify(decompile, GetSettings());
     }
 
     [Fact]
     public Task DecompileIssue1()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "Issue1");
-        var settings = new VerifySettings();
-        settings.AutoVerify();
-        return Verify(decompile, settings);
+        return Verify(decompile, GetSettings());
     }
 
     [Fact]
     public Task DecompileGenericClass()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "GenericClass`1");
-        var settings = new VerifySettings();
-        settings.AutoVerify();
-        return Verify(decompile, settings);
+        return Verify(decompile, GetSettings());
     }
 
     [Fact]
     public Task DecompileGenericMethod()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "GenericMethod");
-        var settings = new VerifySettings();
-        settings.AutoVerify();
-        return Verify(decompile, settings);
+        return Verify(decompile, GetSettings());
     }
 
     [Fact]
     public Task DecompileCatchAndFinally()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "CatchAndFinally");
+        return Verify(decompile, GetSettings());
+    }
+
+    VerifySettings GetSettings()
+    {
         var settings = new VerifySettings();
         settings.AutoVerify();
-        return Verify(decompile, settings);
+        settings.UniqueForRuntimeAndVersion();
+        return settings;
     }
 }

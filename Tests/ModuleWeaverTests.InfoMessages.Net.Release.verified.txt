@@ -1,3 +1,0 @@
-[
-  Removing reference to 'ConfigureAwait'.
-]

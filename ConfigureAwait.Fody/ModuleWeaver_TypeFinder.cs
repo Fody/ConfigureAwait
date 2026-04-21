@@ -27,7 +27,7 @@ public partial class ModuleWeaver
     TypeReference genericTaskType;
     TypeReference genericValueTaskType;
 
-    void FindTypes()
+    void FindRuntimeTypes()
     {
         taskDef = FindTypeDefinition("System.Threading.Tasks.Task");
         var configureTaskAwaitMethodDef = taskDef.Methods.First(_ => _.Name == "ConfigureAwait");

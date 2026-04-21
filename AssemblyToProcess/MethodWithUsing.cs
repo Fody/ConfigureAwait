@@ -14,7 +14,7 @@ public class MethodWithUsing
         return new MyDisposable();
     }
 
-#if NETCOREAPP2_0
+#if NET
     [ConfigureAwait(false)]
     public async Task AsyncMethod_WithValueTask()
     {

@@ -19,16 +19,16 @@ public class DoNotWeave
     public async Task AsyncGenericMethod(SynchronizationContext context)
     {
         SynchronizationContext.SetSynchronizationContext(context);
-        await Task.Run(() => 10).ConfigureAwait(true);
+        await Task.Run(async () => await Return10()).ConfigureAwait(true);
     }
 
     public async Task<int> AsyncGenericMethodWithReturn(SynchronizationContext context)
     {
         SynchronizationContext.SetSynchronizationContext(context);
-        return await Task.Run(() => 10).ConfigureAwait(true);
+        return await Task.Run(async () => await Return10()).ConfigureAwait(true);
     }
 
-#if NETCOREAPP2_0
+#if NET
     public async Task AsyncMethod_WithValueTask(SynchronizationContext context)
     {
         SynchronizationContext.SetSynchronizationContext(context);
@@ -45,13 +45,21 @@ public class DoNotWeave
     public async Task AsyncGenericMethod_WithValueTask(SynchronizationContext context)
     {
         SynchronizationContext.SetSynchronizationContext(context);
-        await new ValueTask(Task.Run(() => 10)).ConfigureAwait(true);
+        await new ValueTask(Task.Run(async () => await Return10())).ConfigureAwait(true);
     }
 
     public async Task<int> AsyncGenericMethodWithReturn_WithValueTask(SynchronizationContext context)
     {
         SynchronizationContext.SetSynchronizationContext(context);
-        return await new ValueTask<int>(Task.Run(() => 10)).ConfigureAwait(true);
+        return await new ValueTask<int>(Task.Run(async () => await Return10())).ConfigureAwait(true);
     }
+
 #endif
+
+    // using some more complex task than () => 10, to make sure the method is not optimized away by the compiler, which would make the test fail;
+    async Task<int> Return10()
+    {
+        await Task.Delay(10).ConfigureAwait(false);
+        return 10;
+    }
 }

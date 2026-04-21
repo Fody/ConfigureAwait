@@ -93,7 +93,7 @@ public class Example
         return result;
     }
 
-#if NETCOREAPP2_0
+#if NET
     public async Task AsyncMethod1_WithValueTask()
     {
         await new ValueTask(Task.Delay(1));

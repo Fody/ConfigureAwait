@@ -1,0 +1,91 @@
+﻿.class private auto ansi beforefieldinit Issue1
+extends [System.Runtime]System.Object
+{
+.method private hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+WithReaderAndWriter(class [System.Runtime]System.IO.TextWriter writer,
+class [System.Runtime]System.IO.StreamReader reader) cil managed
+{
+.maxstack  2
+.locals init (string V_0,
+string V_1,
+bool V_2)
+IL_0000:  nop
+IL_0001:  ldarg.2
+IL_0002:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task`1<string> [System.Runtime]System.IO.TextReader::ReadLineAsync()
+IL_0007:  ldc.i4.0
+IL_0008:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [System.Private.CoreLib]System.Threading.Tasks.Task`1<string>::ConfigureAwait(bool)
+IL_000d:  call       !!0 [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await<string>(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!!0>)
+IL_0012:  stloc.1
+IL_0013:  ldloc.1
+IL_0014:  stloc.0
+IL_0015:  ldloc.0
+IL_0016:  ldnull
+IL_0017:  cgt.un
+IL_0019:  stloc.2
+IL_001a:  ldloc.2
+IL_001b:  brfalse.s  IL_0034
+IL_001d:  nop
+IL_001e:  ldarg.1
+IL_001f:  ldloc.0
+IL_0020:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.IO.TextWriter::WriteLineAsync(string)
+IL_0025:  ldc.i4.0
+IL_0026:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [System.Private.CoreLib]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_002b:  call       void [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable)
+IL_0030:  nop
+IL_0031:  nop
+IL_0032:  br.s       IL_0001
+IL_0034:  ret
+}
+.method private hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+WithReaderAndWriter_WithValueTask(class [System.Runtime]System.IO.TextWriter writer,
+class [System.Runtime]System.IO.StreamReader reader) cil managed
+{
+.maxstack  2
+.locals init (string V_0,
+string V_1,
+bool V_2,
+valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<string> V_3,
+valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask V_4)
+IL_0000:  nop
+IL_0001:  ldarg.2
+IL_0002:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task`1<string> [System.Runtime]System.IO.TextReader::ReadLineAsync()
+IL_0007:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::.ctor(class [System.Runtime]System.Threading.Tasks.Task`1<!0>)
+IL_000c:  stloc.3
+IL_000d:  ldloca.s   V_3
+IL_000f:  ldc.i4.0
+IL_0010:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!0> valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<string>::ConfigureAwait(bool)
+IL_0015:  call       !!0 [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await<string>(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!!0>)
+IL_001a:  stloc.1
+IL_001b:  ldloc.1
+IL_001c:  stloc.0
+IL_001d:  ldloc.0
+IL_001e:  ldnull
+IL_001f:  cgt.un
+IL_0021:  stloc.2
+IL_0022:  ldloc.2
+IL_0023:  brfalse.s  IL_0045
+IL_0025:  nop
+IL_0026:  ldarg.1
+IL_0027:  ldloc.0
+IL_0028:  callvirt   instance class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.IO.TextWriter::WriteLineAsync(string)
+IL_002d:  newobj     instance void [System.Runtime]System.Threading.Tasks.ValueTask::.ctor(class [System.Runtime]System.Threading.Tasks.Task)
+IL_0032:  stloc.s    V_4
+IL_0034:  ldloca.s   V_4
+IL_0036:  ldc.i4.0
+IL_0037:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable [System.Private.CoreLib]System.Threading.Tasks.ValueTask::ConfigureAwait(bool)
+IL_003c:  call       void [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable)
+IL_0041:  nop
+IL_0042:  nop
+IL_0043:  br.s       IL_0001
+IL_0045:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+}

@@ -6,10 +6,11 @@ environment:
 build_script:
 - pwsh: |
     Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile "./dotnet-install.ps1"
-    ./dotnet-install.ps1 -JSonFile global.json -Architecture x64 -InstallDir 'C:\Program Files\dotnet'
+    ./dotnet-install.ps1 -Channel 10.0 -Architecture x64 -InstallDir 'C:\Program Files\dotnet'
+    ./dotnet-install.ps1 -Channel 11.0 -Quality preview -Architecture x64 -InstallDir 'C:\Program Files\dotnet'
 - dotnet build --configuration Release
 - dotnet test --configuration Release --no-build --no-restore
-test: off
+test: false
 artifacts:
 - path: nugets\*.nupkg
 on_failure:

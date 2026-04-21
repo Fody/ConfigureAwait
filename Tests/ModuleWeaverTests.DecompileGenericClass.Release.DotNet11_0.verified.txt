@@ -1,0 +1,39 @@
+﻿.class private auto ansi sealed beforefieldinit GenericClass`1<TItem>
+extends [System.Runtime]System.Object
+{
+.param type TItem
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Method(class [System.Runtime]System.Threading.Tasks.Task`1<!TItem> itemTask) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  ldc.i4.0
+IL_0002:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!0> class [System.Private.CoreLib]System.Threading.Tasks.Task`1<!TItem>::ConfigureAwait(bool)
+IL_0007:  call       !!0 [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await<!TItem>(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1<!!0>)
+IL_000c:  pop
+IL_000d:  ret
+}
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Method_WithValueTask(class [System.Runtime]System.Threading.Tasks.Task`1<!TItem> itemTask) cil managed
+{
+.maxstack  2
+.locals (valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<!TItem> V_0)
+IL_0000:  ldarg.1
+IL_0001:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<!TItem>::.ctor(class [System.Runtime]System.Threading.Tasks.Task`1<!0>)
+IL_0006:  stloc.0
+IL_0007:  ldloca.s   V_0
+IL_0009:  ldc.i4.0
+IL_000a:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!0> valuetype [System.Private.CoreLib]System.Threading.Tasks.ValueTask`1<!TItem>::ConfigureAwait(bool)
+IL_000f:  call       !!0 [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await<!TItem>(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable`1<!!0>)
+IL_0014:  pop
+IL_0015:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  ret
+}
+}

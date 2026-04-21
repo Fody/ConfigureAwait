@@ -2,8 +2,18 @@
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 
+enum AsyncStateMachineKind
+{
+    None,
+    StateMachine,
+    CompilerService
+}
+
 static class CecilExtensions
 {
+    // Not yet defined in Cecil, remove later when update is available.
+    const MethodImplAttributes MethodImplAttributes_Async = (MethodImplAttributes)0x2000;
+
     public static bool IsIAsyncStateMachine(this TypeDefinition type)
     {
         if (type is not {HasInterfaces: true})
@@ -12,12 +22,12 @@ static class CecilExtensions
         }
 
         return type.Interfaces
-            .Any(_ => _.InterfaceType.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
+            .Any(item => item.InterfaceType.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
     }
 
     public static MethodDefinition Method(this TypeDefinition type, MethodReference reference)
     {
-        return type.Methods.FirstOrDefault(_ => _.Name == reference.Name);
+        return type.Methods.FirstOrDefault(item => item.Name == reference.Name);
     }
 
     public static bool IsCompilerGenerated(this ICustomAttributeProvider provider)
@@ -39,10 +49,15 @@ static class CecilExtensions
         }
     }
 
-    public static bool IsAsyncStateMachineType(this ICustomAttributeProvider provider)
+    public static AsyncStateMachineKind GetAsyncStateMachineKind(this MethodDefinition method)
     {
-        return provider.CustomAttributes
-            .Any(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute");
+        if (method.CustomAttributes.Any(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute"))
+            return AsyncStateMachineKind.StateMachine;
+
+        if (method.ImplAttributes.HasFlag(MethodImplAttributes_Async))
+            return AsyncStateMachineKind.CompilerService;
+
+        return AsyncStateMachineKind.None;
     }
 
     public static TypeDefinition GetAsyncStateMachineType(this ICustomAttributeProvider provider)
@@ -53,7 +68,7 @@ static class CecilExtensions
         return (TypeDefinition)attribute?.ConstructorArguments[0].Value;
     }
 
-    public static CustomAttribute GetConfigureAwaitAttribute(this ICustomAttributeProvider value)
+    static CustomAttribute GetConfigureAwaitAttribute(this ICustomAttributeProvider value)
     {
         return value.CustomAttributes.FirstOrDefault(a => a.AttributeType.FullName == "Fody.ConfigureAwaitAttribute");
     }
@@ -66,11 +81,11 @@ static class CecilExtensions
             return defaultValue;
         }
 
-        if (value is MethodDefinition method &&
-            !method.IsAsyncStateMachineType())
+        if (value is MethodDefinition method && method.GetAsyncStateMachineKind() == AsyncStateMachineKind.None)
         {
             throw new WeavingException($"ConfigureAwaitAttribute applied to non-async method '{method.FullName}'.");
         }
+
         return (bool?)attribute.ConstructorArguments[0].Value;
     }
 
