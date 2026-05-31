@@ -32,9 +32,11 @@ public partial class ModuleWeaver
             var awaitableVar = awaitAwaiterPair[variable];
             var configureAwait = configureAwaitMethods[variable];
 
+            // true or false
+            var loadConfigureAwaitValue = Instruction.Create(configureAwaitValue ? OpCodes.Ldc_I4_1 : OpCodes.Ldc_I4_0);
+
             ilProcessor.InsertBefore(instruction,
-                // true or false
-                Instruction.Create(configureAwaitValue ? OpCodes.Ldc_I4_1 : OpCodes.Ldc_I4_0),
+                loadConfigureAwaitValue,
                 // Call ConfigureAwait
                 Instruction.Create(OpCodes.Callvirt, configureAwait),
                 // Store in variable
@@ -42,6 +44,32 @@ public partial class ModuleWeaver
                 // Load variable
                 Instruction.Create(OpCodes.Ldloca, awaitableVar)
             );
+
+            // When the awaited value comes from a conditional (e.g. await (x ? a : b)),
+            // one branch jumps straight to the GetAwaiter call. Redirect any such
+            // branch to the inserted ConfigureAwait so it is not bypassed.
+            RedirectBranches(body, instruction, loadConfigureAwaitValue);
+        }
+    }
+
+    static void RedirectBranches(MethodBody body, Instruction from, Instruction to)
+    {
+        foreach (var instruction in body.Instructions)
+        {
+            if (instruction.Operand == from)
+            {
+                instruction.Operand = to;
+            }
+            else if (instruction.Operand is Instruction[] targets)
+            {
+                for (var index = 0; index < targets.Length; index++)
+                {
+                    if (targets[index] == from)
+                    {
+                        targets[index] = to;
+                    }
+                }
+            }
         }
     }
 

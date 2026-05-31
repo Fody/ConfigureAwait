@@ -1,0 +1,33 @@
+﻿.class public auto ansi beforefieldinit AwaitTernary
+extends [System.Runtime]System.Object
+{
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Method(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  ldstr      "anyValue"
+IL_0006:  call       bool [System.Runtime]System.String::op_Equality(string,
+string)
+IL_000b:  brtrue.s   IL_0015
+IL_000d:  ldc.i4.2
+IL_000e:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_0013:  br.s       IL_001b
+IL_0015:  ldc.i4.1
+IL_0016:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_001b:  ldc.i4.0
+IL_001c:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [System.Private.CoreLib]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0021:  call       void [System.Private.CoreLib]System.Runtime.CompilerServices.AsyncHelpers::Await(valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable)
+IL_0026:  nop
+IL_0027:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+}

@@ -130,6 +130,11 @@ public partial class ModuleWeaver
             // For value-type awaitables (ValueTask, ValueTask<T>): ConfigureAwait is an instance method on a struct, so its 'this' parameter must be a managed pointer. We stash the value into a new local and ldloca it, then use call (not callvirt).
             var configureAwaitParameterInstruction = Instruction.Create(OpCodes.Ldc_I4, configureAwaitValue ? 1 : 0);
 
+            // The first instruction inserted before the Await call. Branches that
+            // jumped to the Await call (e.g. one arm of await (x ? a : b)) must be
+            // redirected here so they flow through ConfigureAwait instead of past it.
+            Instruction firstInserted;
+
             if (isValueType)
             {
                 // Determine the concrete value-type to use for the temp local.
@@ -151,16 +156,20 @@ public partial class ModuleWeaver
                 // ldloca <tempLocal>          ; push managed pointer to it
                 // ldc.i4 <configureAwaitArg>
                 // call   ValueTask::ConfigureAwait(bool)
-                ilProcessor.InsertBefore(instruction, Instruction.Create(OpCodes.Stloc, tempLocal));
+                firstInserted = Instruction.Create(OpCodes.Stloc, tempLocal);
+                ilProcessor.InsertBefore(instruction, firstInserted);
                 ilProcessor.InsertBefore(instruction, Instruction.Create(OpCodes.Ldloca, tempLocal));
                 ilProcessor.InsertBefore(instruction, configureAwaitParameterInstruction);
                 ilProcessor.InsertBefore(instruction, Instruction.Create(OpCodes.Call, configureAwaitMethodRef));
             }
             else
             {
+                firstInserted = configureAwaitParameterInstruction;
                 ilProcessor.InsertBefore(instruction, configureAwaitParameterInstruction);
                 ilProcessor.InsertBefore(instruction, Instruction.Create(OpCodes.Callvirt, configureAwaitMethodRef));
             }
+
+            RedirectBranches(body, instruction, firstInserted);
 
             instruction.Operand = targetMethodRef;
         }

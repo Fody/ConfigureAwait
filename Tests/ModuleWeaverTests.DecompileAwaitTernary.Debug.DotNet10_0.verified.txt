@@ -46,7 +46,7 @@ string)
 IL_001e:  brtrue.s   IL_0028
 IL_0020:  ldc.i4.2
 IL_0021:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
-IL_0026:  br.s       IL_0037
+IL_0026:  br.s       IL_002e
 IL_0028:  ldc.i4.1
 IL_0029:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
 IL_002e:  ldc.i4.0
