@@ -38,6 +38,7 @@ By default, `ConfigureAwait.Fody` doesn't change any code. Set a configure await
 
 Explicitly configured awaiters will not be overwritten by the weaver, allowing exceptions to the Assembly / Class / Method level setting.
 
+
 ### Add to FodyWeavers.xml
 
 Add `<ConfigureAwait/>` to [FodyWeavers.xml](https://github.com/Fody/Home/blob/master/pages/usage.md#add-fodyweaversxml)
