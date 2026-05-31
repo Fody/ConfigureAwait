@@ -38,6 +38,13 @@ public partial class ModuleWeaverTests
         return Verify(decompile, GetSettings());
     }
 
+    [Fact]
+    public Task DecompileAwaitTernary()
+    {
+        var decompile = Ildasm.Decompile(testResult.AssemblyPath, "AwaitTernary");
+        return Verify(decompile, GetSettings());
+    }
+
     VerifySettings GetSettings()
     {
         var settings = new VerifySettings();
