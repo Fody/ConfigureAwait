@@ -1,5 +1,6 @@
 # <img src="/package_icon.png" height="30px"> ConfigureAwait.Fody
 
+[![Build status](https://img.shields.io/appveyor/build/SimonCropp/ConfigureAwait)](https://ci.appveyor.com/project/SimonCropp/ConfigureAwait)
 [![NuGet Status](https://badge.fury.io/nu/configureawait.fody.svg)](https://www.nuget.org/packages/ConfigureAwait.Fody/)
 
 Configure async code's [`ConfigureAwait`](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.configureawait) at a global level.
