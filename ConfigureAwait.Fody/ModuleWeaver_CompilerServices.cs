@@ -80,14 +80,12 @@ public partial class ModuleWeaver
                         configuredAwaitableName = "ConfiguredValueTaskAwaitable`1";
                         isValueType = true;
                         break;
-                    
                     case "Task`1":
                         taskBaseType = genericTaskType;
                         configureAwaitMethodDef = genericTaskConfigureAwaitMethodDef;
                         configuredAwaitableName = "ConfiguredTaskAwaitable`1";
                         isValueType = false;
                         break;
-                    
                     default:
                         continue;
                 }
@@ -96,7 +94,7 @@ public partial class ModuleWeaver
                 configureAwaitMethodRef = ModuleDefinition.ImportReference(configureAwaitMethodDef);
                 configureAwaitMethodRef.DeclaringType = taskT;
 
-                var targetMethodDefinition = FindAwaitMethodDefinition(declaringType, configuredAwaitableName); 
+                var targetMethodDefinition = FindAwaitMethodDefinition(declaringType, configuredAwaitableName);
 
                 var genericTargetMethodRef = new GenericInstanceMethod(ModuleDefinition.ImportReference(targetMethodDefinition));
                 genericTargetMethodRef.GenericArguments.Add(typeArg);

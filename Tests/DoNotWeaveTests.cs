@@ -94,7 +94,7 @@ public partial class ModuleWeaverTests
 
         Assert.True(context.Flag);
     }
- 
+
     [Fact]
     public async Task DoNotWeave_AsyncGenericMethodWithReturn_WithValueTask()
     {
