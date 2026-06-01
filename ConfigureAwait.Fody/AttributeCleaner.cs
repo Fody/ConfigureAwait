@@ -1,6 +1,4 @@
-﻿using Mono.Cecil;
-
-static class AttributeCleaner
+﻿static class AttributeCleaner
 {
     public static void Run(ModuleDefinition module)
     {

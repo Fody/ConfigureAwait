@@ -1,15 +1,4 @@
-﻿using Fody;
-using Mono.Cecil;
-using Mono.Cecil.Cil;
-
-enum AsyncStateMachineKind
-{
-    None,
-    StateMachine,
-    CompilerService
-}
-
-static class CecilExtensions
+﻿static class CecilExtensions
 {
     // Not yet defined in Cecil, remove later when update is available.
     const MethodImplAttributes MethodImplAttributes_Async = (MethodImplAttributes)0x2000;
@@ -22,7 +11,7 @@ static class CecilExtensions
         }
 
         return type.Interfaces
-            .Any(item => item.InterfaceType.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
+            .Any(_ => _.InterfaceType.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
     }
 
     public static MethodDefinition Method(this TypeDefinition type, MethodReference reference)
@@ -63,10 +52,14 @@ static class CecilExtensions
     public static AsyncStateMachineKind GetAsyncStateMachineKind(this MethodDefinition method)
     {
         if (method.CustomAttributes.Any(IsAsyncStateMachineAttribute))
+        {
             return AsyncStateMachineKind.StateMachine;
+        }
 
         if (method.ImplAttributes.HasFlag(MethodImplAttributes_Async))
+        {
             return AsyncStateMachineKind.CompilerService;
+        }
 
         return AsyncStateMachineKind.None;
     }

@@ -1,7 +1,4 @@
-﻿using Mono.Cecil;
-using Mono.Cecil.Cil;
-
-public partial class ModuleWeaver
+﻿public partial class ModuleWeaver
 {
     void ProcessVariables(bool configureAwaitValue, MethodDefinition method)
     {
