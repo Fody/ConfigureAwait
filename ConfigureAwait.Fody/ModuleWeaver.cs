@@ -1,10 +1,4 @@
-﻿using System.Xml;
-using Mono.Cecil;
-using Mono.Cecil.Cil;
-using Mono.Cecil.Rocks;
-using Fody;
-
-public partial class ModuleWeaver : BaseModuleWeaver
+﻿public partial class ModuleWeaver : BaseModuleWeaver
 {
     public override void Execute()
     {
@@ -181,7 +175,9 @@ public partial class ModuleWeaver : BaseModuleWeaver
             {
                 // Only redirect GetAwaiter; other members (including constructors) must not be redirected
                 if (method.Name != "GetAwaiter")
+                {
                     return;
+                }
 
                 var newOperand = genericConfiguredTaskAwaitableTypeDef.Method(method);
                 if (newOperand != null)
@@ -200,7 +196,9 @@ public partial class ModuleWeaver : BaseModuleWeaver
             {
                 // Only redirect GetAwaiter; other members (including constructors) must not be redirected
                 if (method.Name != "GetAwaiter")
+                {
                     return;
+                }
 
                 var newOperand = genericConfiguredValueTaskAwaitableTypeDef.Method(method);
                 if (newOperand != null)
