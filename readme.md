@@ -59,6 +59,25 @@ It is also possible set the default ContinueOnCapturedContext in the xml config:
 ```
 
 
+### Configure once for a whole solution
+
+To share the same setting across every project in a solution, instead of adding the attribute or a `FodyWeavers.xml` to each project, use Fody's [`WeaverConfiguration`](https://github.com/Fody/Home/blob/master/pages/configuration.md) MSBuild property in a `Directory.Build.props` at the root of the solution:
+
+```xml
+<Project>
+  <PropertyGroup>
+    <WeaverConfiguration>
+      <Weavers>
+        <ConfigureAwait ContinueOnCapturedContext="false" />
+      </Weavers>
+    </WeaverConfiguration>
+  </PropertyGroup>
+</Project>
+```
+
+`WeaverConfiguration` overrides any per-project `FodyWeavers.xml`, and supports MSBuild property interpolation (`$(SomeProperty)`) and `Condition` attributes, so the value can vary by build configuration.
+
+
 ## Example
 
 
