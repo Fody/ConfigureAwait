@@ -45,6 +45,15 @@ public partial class ModuleWeaverTests
         return Verify(decompile, GetSettings());
     }
 
+#if NET
+    [Fact]
+    public Task DecompileAsyncEnumerable()
+    {
+        var decompile = Ildasm.Decompile(testResult.AssemblyPath, "AsyncEnumerable");
+        return Verify(decompile, GetSettings());
+    }
+#endif
+
     VerifySettings GetSettings()
     {
         var settings = new VerifySettings();

@@ -49,9 +49,20 @@ static class CecilExtensions
         }
     }
 
+    // Async iterators (async IAsyncEnumerable<T> with yield) are lowered to a state machine
+    // just like normal async methods, but the generated method carries
+    // AsyncIteratorStateMachineAttribute rather than AsyncStateMachineAttribute.
+    static bool IsAsyncStateMachineAttribute(this CustomAttribute attribute)
+    {
+        var fullName = attribute.AttributeType.FullName;
+        return fullName is
+            "System.Runtime.CompilerServices.AsyncStateMachineAttribute" or
+            "System.Runtime.CompilerServices.AsyncIteratorStateMachineAttribute";
+    }
+
     public static AsyncStateMachineKind GetAsyncStateMachineKind(this MethodDefinition method)
     {
-        if (method.CustomAttributes.Any(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute"))
+        if (method.CustomAttributes.Any(IsAsyncStateMachineAttribute))
             return AsyncStateMachineKind.StateMachine;
 
         if (method.ImplAttributes.HasFlag(MethodImplAttributes_Async))
@@ -63,7 +74,7 @@ static class CecilExtensions
     public static TypeDefinition GetAsyncStateMachineType(this ICustomAttributeProvider provider)
     {
         var attribute = provider.CustomAttributes
-            .FirstOrDefault(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute");
+            .FirstOrDefault(IsAsyncStateMachineAttribute);
 
         return (TypeDefinition)attribute?.ConstructorArguments[0].Value;
     }
