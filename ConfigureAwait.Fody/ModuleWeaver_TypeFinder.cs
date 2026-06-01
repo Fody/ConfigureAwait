@@ -1,6 +1,4 @@
-﻿using Mono.Cecil;
-
-public partial class ModuleWeaver
+﻿public partial class ModuleWeaver
 {
     TypeReference configuredTaskAwaitableTypeRef;
     TypeReference configuredValueTaskAwaitableTypeRef;

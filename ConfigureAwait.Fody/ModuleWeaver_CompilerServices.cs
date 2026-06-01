@@ -1,9 +1,4 @@
-﻿using Fody;
-using Mono.Cecil;
-using Mono.Cecil.Cil;
-using Mono.Cecil.Rocks;
-
-public partial class ModuleWeaver
+﻿public partial class ModuleWeaver
 {
     /// <summary>
     /// Rewrites calls to <c>System.Runtime.CompilerServices.AsyncHelpers.Await(task)</c> inside
@@ -179,9 +174,10 @@ public partial class ModuleWeaver
 
     static MethodDefinition FindAwaitMethodDefinition(TypeDefinition declaringType, string configuredAwaitableName)
     {
-        return declaringType.Methods.FirstOrDefault(m =>
-            m.Name == "Await" &&
-            m.Parameters.Count == 1 &&
-            m.Parameters[0].ParameterType.Name == configuredAwaitableName) ?? throw new WeavingException($"Failed to find target method: Await({configuredAwaitableName})");
+        return declaringType.Methods
+            .FirstOrDefault(_ =>
+                _.Name == "Await" &&
+                _.Parameters.Count == 1 &&
+                _.Parameters[0].ParameterType.Name == configuredAwaitableName) ?? throw new WeavingException($"Failed to find target method: Await({configuredAwaitableName})");
     }
 }

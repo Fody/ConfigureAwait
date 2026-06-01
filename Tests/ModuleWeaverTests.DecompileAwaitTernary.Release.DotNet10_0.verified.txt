@@ -1,0 +1,143 @@
+﻿.class public auto ansi beforefieldinit AwaitTernary
+extends [System.Runtime]System.Object
+{
+.class auto ansi sealed nested private beforefieldinit '<Method>d__0'
+extends [System.Runtime]System.ValueType
+implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.field public int32 '<>1__state'
+.field public valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public string 'value'
+.field private valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter '<>u__1'
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter V_1,
+valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable V_2,
+class [System.Runtime]System.Exception V_3)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 AwaitTernary/'<Method>d__0'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0062
+IL_000a:  ldarg.0
+IL_000b:  ldfld      string AwaitTernary/'<Method>d__0'::'value'
+IL_0010:  ldstr      "anyValue"
+IL_0015:  call       bool [System.Runtime]System.String::op_Equality(string,
+string)
+IL_001a:  brtrue.s   IL_0024
+IL_001c:  ldc.i4.2
+IL_001d:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_0022:  br.s       IL_002a
+IL_0024:  ldc.i4.1
+IL_0025:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_002a:  ldc.i4.0
+IL_002b:  callvirt   instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable [System.Private.CoreLib]System.Threading.Tasks.Task::ConfigureAwait(bool)
+IL_0030:  stloc.2
+IL_0031:  ldloca.s   V_2
+IL_0033:  call       instance valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable::GetAwaiter()
+IL_0038:  stloc.1
+IL_0039:  ldloca.s   V_1
+IL_003b:  call       instance bool [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::get_IsCompleted()
+IL_0040:  brtrue.s   IL_007e
+IL_0042:  ldarg.0
+IL_0043:  ldc.i4.0
+IL_0044:  dup
+IL_0045:  stloc.0
+IL_0046:  stfld      int32 AwaitTernary/'<Method>d__0'::'<>1__state'
+IL_004b:  ldarg.0
+IL_004c:  ldloc.1
+IL_004d:  stfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AwaitTernary/'<Method>d__0'::'<>u__1'
+IL_0052:  ldarg.0
+IL_0053:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AwaitTernary/'<Method>d__0'::'<>t__builder'
+IL_0058:  ldloca.s   V_1
+IL_005a:  ldarg.0
+IL_005b:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter,valuetype AwaitTernary/'<Method>d__0'>(!!0&,
+!!1&)
+IL_0060:  leave.s    IL_00b1
+IL_0062:  ldarg.0
+IL_0063:  ldfld      valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AwaitTernary/'<Method>d__0'::'<>u__1'
+IL_0068:  stloc.1
+IL_0069:  ldarg.0
+IL_006a:  ldflda     valuetype [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter AwaitTernary/'<Method>d__0'::'<>u__1'
+IL_006f:  initobj    [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter
+IL_0075:  ldarg.0
+IL_0076:  ldc.i4.m1
+IL_0077:  dup
+IL_0078:  stloc.0
+IL_0079:  stfld      int32 AwaitTernary/'<Method>d__0'::'<>1__state'
+IL_007e:  ldloca.s   V_1
+IL_0080:  call       instance void [System.Private.CoreLib]System.Runtime.CompilerServices.ConfiguredTaskAwaitable/ConfiguredTaskAwaiter::GetResult()
+IL_0085:  leave.s    IL_009e
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_0087:  stloc.3
+IL_0088:  ldarg.0
+IL_0089:  ldc.i4.s   -2
+IL_008b:  stfld      int32 AwaitTernary/'<Method>d__0'::'<>1__state'
+IL_0090:  ldarg.0
+IL_0091:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AwaitTernary/'<Method>d__0'::'<>t__builder'
+IL_0096:  ldloc.3
+IL_0097:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_009c:  leave.s    IL_00b1
+}  // end handler
+IL_009e:  ldarg.0
+IL_009f:  ldc.i4.s   -2
+IL_00a1:  stfld      int32 AwaitTernary/'<Method>d__0'::'<>1__state'
+IL_00a6:  ldarg.0
+IL_00a7:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AwaitTernary/'<Method>d__0'::'<>t__builder'
+IL_00ac:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_00b1:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.param [1]
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AwaitTernary/'<Method>d__0'::'<>t__builder'
+IL_0006:  ldarg.1
+IL_0007:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine)
+IL_000c:  ret
+}
+}
+.method public hidebysig instance class [System.Runtime]System.Threading.Tasks.Task
+Method(string 'value') cil managed
+{
+3C 4D 65 74 68 6F 64 3E 64 5F 5F 30 00 00 )       // <Method>d__0..
+.maxstack  2
+.locals init (valuetype AwaitTernary/'<Method>d__0' V_0)
+IL_0000:  ldloca.s   V_0
+IL_0002:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AwaitTernary/'<Method>d__0'::'<>t__builder'
+IL_000c:  ldloca.s   V_0
+IL_000e:  ldarg.1
+IL_000f:  stfld      string AwaitTernary/'<Method>d__0'::'value'
+IL_0014:  ldloca.s   V_0
+IL_0016:  ldc.i4.m1
+IL_0017:  stfld      int32 AwaitTernary/'<Method>d__0'::'<>1__state'
+IL_001c:  ldloca.s   V_0
+IL_001e:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AwaitTernary/'<Method>d__0'::'<>t__builder'
+IL_0023:  ldloca.s   V_0
+IL_0025:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<valuetype AwaitTernary/'<Method>d__0'>(!!0&)
+IL_002a:  ldloca.s   V_0
+IL_002c:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder AwaitTernary/'<Method>d__0'::'<>t__builder'
+IL_0031:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_0036:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  ret
+}
+}

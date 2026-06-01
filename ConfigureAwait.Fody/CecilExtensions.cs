@@ -1,15 +1,4 @@
-﻿using Fody;
-using Mono.Cecil;
-using Mono.Cecil.Cil;
-
-enum AsyncStateMachineKind
-{
-    None,
-    StateMachine,
-    CompilerService
-}
-
-static class CecilExtensions
+﻿static class CecilExtensions
 {
     // Not yet defined in Cecil, remove later when update is available.
     const MethodImplAttributes MethodImplAttributes_Async = (MethodImplAttributes)0x2000;
@@ -22,7 +11,7 @@ static class CecilExtensions
         }
 
         return type.Interfaces
-            .Any(item => item.InterfaceType.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
+            .Any(_ => _.InterfaceType.FullName == "System.Runtime.CompilerServices.IAsyncStateMachine");
     }
 
     public static MethodDefinition Method(this TypeDefinition type, MethodReference reference)
@@ -49,13 +38,28 @@ static class CecilExtensions
         }
     }
 
+    // Async iterators (async IAsyncEnumerable<T> with yield) are lowered to a state machine
+    // just like normal async methods, but the generated method carries
+    // AsyncIteratorStateMachineAttribute rather than AsyncStateMachineAttribute.
+    static bool IsAsyncStateMachineAttribute(this CustomAttribute attribute)
+    {
+        var fullName = attribute.AttributeType.FullName;
+        return fullName is
+            "System.Runtime.CompilerServices.AsyncStateMachineAttribute" or
+            "System.Runtime.CompilerServices.AsyncIteratorStateMachineAttribute";
+    }
+
     public static AsyncStateMachineKind GetAsyncStateMachineKind(this MethodDefinition method)
     {
-        if (method.CustomAttributes.Any(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute"))
+        if (method.CustomAttributes.Any(IsAsyncStateMachineAttribute))
+        {
             return AsyncStateMachineKind.StateMachine;
+        }
 
         if (method.ImplAttributes.HasFlag(MethodImplAttributes_Async))
+        {
             return AsyncStateMachineKind.CompilerService;
+        }
 
         return AsyncStateMachineKind.None;
     }
@@ -63,7 +67,7 @@ static class CecilExtensions
     public static TypeDefinition GetAsyncStateMachineType(this ICustomAttributeProvider provider)
     {
         var attribute = provider.CustomAttributes
-            .FirstOrDefault(a => a.AttributeType.FullName == "System.Runtime.CompilerServices.AsyncStateMachineAttribute");
+            .FirstOrDefault(IsAsyncStateMachineAttribute);
 
         return (TypeDefinition)attribute?.ConstructorArguments[0].Value;
     }
