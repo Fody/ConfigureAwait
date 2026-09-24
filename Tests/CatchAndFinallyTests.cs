@@ -1,6 +1,6 @@
 public partial class ModuleWeaverTests
 {
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Catch1()
     {
         var test = testResult.GetInstance("CatchAndFinally");
@@ -8,7 +8,7 @@ public partial class ModuleWeaverTests
         await test.Catch1();
     }
 
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Catch2()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
@@ -27,10 +27,10 @@ public partial class ModuleWeaverTests
 
         await task;
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
     }
 
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Catch3()
     {
         var test = testResult.GetInstance("CatchAndFinally");
@@ -38,15 +38,15 @@ public partial class ModuleWeaverTests
         await test.Catch3();
     }
 
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Finally1()
     {
         var test = testResult.GetInstance("CatchAndFinally");
 
-        await Assert.ThrowsAsync<NotImplementedException>(() => (Task)test.Finally1());
+        await Assert.That(async () => await (Task)test.Finally1()).Throws<NotImplementedException>();
     }
 
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Finally2()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
@@ -63,21 +63,21 @@ public partial class ModuleWeaverTests
             SynchronizationContext.SetSynchronizationContext(null);
         }
 
-        await Assert.ThrowsAsync<NotImplementedException>(() => task);
+        await Assert.That(async () => await task).Throws<NotImplementedException>();
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
     }
 
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Finally3()
     {
         var test = testResult.GetInstance("CatchAndFinally");
 
-        await Assert.ThrowsAsync<NotImplementedException>(() => (Task)test.Finally3());
+        await Assert.That(async () => await (Task)test.Finally3()).Throws<NotImplementedException>();
     }
 
 #if NET
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Catch1_WithValueTask()
     {
         var test = testResult.GetInstance("CatchAndFinally");
@@ -85,7 +85,7 @@ public partial class ModuleWeaverTests
         await test.Catch1_WithValueTask();
     }
 
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Catch2_WithValueTask()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
@@ -104,10 +104,10 @@ public partial class ModuleWeaverTests
 
         await task;
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
     }
 
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Catch3_WithValueTask()
     {
         var test = testResult.GetInstance("CatchAndFinally");
@@ -115,15 +115,15 @@ public partial class ModuleWeaverTests
         await test.Catch3_WithValueTask();
     }
 
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Finally1_WithValueTask()
     {
         var test = testResult.GetInstance("CatchAndFinally");
 
-        await Assert.ThrowsAsync<NotImplementedException>(() => (Task)test.Finally1_WithValueTask());
+        await Assert.That(async () => await (Task)test.Finally1_WithValueTask()).Throws<NotImplementedException>();
     }
 
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Finally2_WithValueTask()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
@@ -140,17 +140,17 @@ public partial class ModuleWeaverTests
             SynchronizationContext.SetSynchronizationContext(null);
         }
 
-        await Assert.ThrowsAsync<NotImplementedException>(() => task);
+        await Assert.That(async () => await task).Throws<NotImplementedException>();
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
     }
 
-    [Fact]
+    [Test]
     public async Task CatchAndFinally_Finally3_WithValueTask()
     {
         var test = testResult.GetInstance("CatchAndFinally");
 
-        await Assert.ThrowsAsync<NotImplementedException>(() => (Task)test.Finally3_WithValueTask());
+        await Assert.That(async () => await (Task)test.Finally3_WithValueTask()).Throws<NotImplementedException>();
     }
 #endif
 }

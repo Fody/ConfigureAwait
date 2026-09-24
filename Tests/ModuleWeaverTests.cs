@@ -1,6 +1,8 @@
 using Fody;
 using TestResult = Fody.TestResult;
 
+// the tests share the static weaver result and set the synchronization context
+[NotInParallel]
 public partial class ModuleWeaverTests
 {
     static TestResult testResult;

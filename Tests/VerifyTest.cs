@@ -1,56 +1,57 @@
-﻿using Fody;
+using VerifyTUnit;
+using Fody;
 #pragma warning disable CS0618
 
 public partial class ModuleWeaverTests
 {
-    [Fact]
-    public Task DecompileExample()
+    [Test]
+    public async Task DecompileExample()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "Example");
-        return Verify(decompile, GetSettings());
+        await Verifier.Verify(decompile, GetSettings());
     }
 
-    [Fact]
-    public Task DecompileIssue1()
+    [Test]
+    public async Task DecompileIssue1()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "Issue1");
-        return Verify(decompile, GetSettings());
+        await Verifier.Verify(decompile, GetSettings());
     }
 
-    [Fact]
-    public Task DecompileGenericClass()
+    [Test]
+    public async Task DecompileGenericClass()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "GenericClass`1");
-        return Verify(decompile, GetSettings());
+        await Verifier.Verify(decompile, GetSettings());
     }
 
-    [Fact]
-    public Task DecompileGenericMethod()
+    [Test]
+    public async Task DecompileGenericMethod()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "GenericMethod");
-        return Verify(decompile, GetSettings());
+        await Verifier.Verify(decompile, GetSettings());
     }
 
-    [Fact]
-    public Task DecompileCatchAndFinally()
+    [Test]
+    public async Task DecompileCatchAndFinally()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "CatchAndFinally");
-        return Verify(decompile, GetSettings());
+        await Verifier.Verify(decompile, GetSettings());
     }
 
-    [Fact]
-    public Task DecompileAwaitTernary()
+    [Test]
+    public async Task DecompileAwaitTernary()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "AwaitTernary");
-        return Verify(decompile, GetSettings());
+        await Verifier.Verify(decompile, GetSettings());
     }
 
 #if NET
-    [Fact]
-    public Task DecompileAsyncEnumerable()
+    [Test]
+    public async Task DecompileAsyncEnumerable()
     {
         var decompile = Ildasm.Decompile(testResult.AssemblyPath, "AsyncEnumerable");
-        return Verify(decompile, GetSettings());
+        await Verifier.Verify(decompile, GetSettings());
     }
 #endif
 

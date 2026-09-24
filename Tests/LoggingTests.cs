@@ -1,14 +1,15 @@
-﻿public partial class ModuleWeaverTests
+using VerifyTUnit;
+public partial class ModuleWeaverTests
 {
-    [Fact]
-    public Task InfoMessages()
+    [Test]
+    public async Task InfoMessages()
     {
-        return Verify(testResult.Messages.OrderBy(s => s).Select(x=>x.Text));
+        await Verifier.Verify(testResult.Messages.OrderBy(s => s).Select(x=>x.Text));
     }
 
-    [Fact]
-    public Task ErrorMessages()
+    [Test]
+    public async Task ErrorMessages()
     {
-        return Verify(testResult.Errors.OrderBy(s => s).Select(_ => _.Text));
+        await Verifier.Verify(testResult.Errors.OrderBy(s => s).Select(_ => _.Text));
     }
 }

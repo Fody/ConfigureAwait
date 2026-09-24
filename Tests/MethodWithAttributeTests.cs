@@ -1,30 +1,30 @@
 public partial class ModuleWeaverTests
 {
-    [Fact]
+    [Test]
     public async Task MethodWithAttribute_AsyncMethod()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("MethodWithAttribute");
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
 
         await test.AsyncMethod(context);
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
     }
 
 #if NET
-    [Fact]
+    [Test]
     public async Task MethodWithAttribute_AsyncMethod_WithValueTask()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("MethodWithAttribute");
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
 
         await test.AsyncMethod_WithValueTask(context);
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
     }
 #endif
 }

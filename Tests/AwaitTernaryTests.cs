@@ -11,8 +11,8 @@ public partial class ModuleWeaverTests
     // it and awaits a raw, unconfigured task. That corrupt IL is what throws a
     // NullReferenceException in Task.AddTaskContinuationComplex at runtime.
     // https://github.com/Fody/ConfigureAwait/issues/537
-    [Fact]
-    public void AwaitTernary_BothBranchesAreConfigured()
+    [Test]
+    public async Task AwaitTernary_BothBranchesAreConfigured()
     {
         using var module = ModuleDefinition.ReadModule(testResult.AssemblyPath);
 
@@ -39,8 +39,8 @@ public partial class ModuleWeaverTests
                     _.Operand is Instruction[] targets && targets.Any(sinks.Contains)));
         }
 
-        Assert.NotEmpty(awaitSinks);
-        Assert.Empty(branchesSkippingConfigureAwait);
+        await Assert.That(awaitSinks).IsNotEmpty();
+        await Assert.That(branchesSkippingConfigureAwait).IsEmpty();
     }
 
     static bool IsAwaitSink(Instruction instruction) =>

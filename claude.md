@@ -11,10 +11,8 @@ The weaver runs against an already-compiled assembly via Mono.Cecil; it does not
 ## Commands
 
 - Build: `dotnet build`
-- Test: `dotnet test` (build first, or it builds implicitly)
-- Single test class: `dotnet test --filter "FullyQualifiedName~ClassWithAttributeTests"`
-- Single test: `dotnet test --filter "FullyQualifiedName~ModuleWeaverTests.EnsureNoErrorsAndNoMessages"`
-- CI build (AppVeyor) is `dotnet build --configuration Release` then `dotnet test --configuration Release --no-build --no-restore`; NuGets are emitted to `nugets/`.
+- Test: `./runTests.ps1` (build first; TUnit test projects are executables, so `dotnet test` finds no tests)
+- CI build (AppVeyor) is `dotnet build --configuration Release` then `./runTests.ps1`; NuGets are emitted to `nugets/`.
 
 `global.json` pins a .NET 11 preview SDK (`allowPrerelease`, `rollForward: latestFeature`). The repo targets the latest SDK on purpose because it supports .NET 11 runtime-async (see below); an older SDK will not build the `net11.0` targets.
 
@@ -23,7 +21,7 @@ The weaver runs against an already-compiled assembly via Mono.Cecil; it does not
 - **`ConfigureAwait`** — the marker-attribute package shipped to consumers. Contains only `Fody.ConfigureAwaitAttribute`. Multi-targets `net452;netstandard2.0;netstandard2.1`, strong-named (`key.snk`). This is the package users reference.
 - **`ConfigureAwait.Fody`** — the weaver itself (`ModuleWeaver`). `netstandard2.0`, references `FodyHelpers`. All the real logic lives here.
 - **`AssemblyToProcess`** — test fixture assembly the weaver is run against. `DisableFody=true` so it is *not* woven during its own build. Targets `net472;net10.0;net11.0`; the `net11.0` target turns on runtime-async (`EnablePreviewFeatures`, `Features=runtime-async=on`, `NET11_0` define) to exercise the new code path.
-- **`Tests`** — xUnit v3 + [Verify](https://github.com/VerifyTests/Verify) snapshot tests. Targets `net472;net10.0;net11.0`.
+- **`Tests`** — TUnit + [Verify](https://github.com/VerifyTests/Verify) snapshot tests. Targets `net472;net10.0;net11.0`.
 
 `Directory.Build.props` applies repo-wide: `TreatWarningsAsErrors`, `ImplicitUsings`, `LangVersion=latest`, and the package `Version`.
 

@@ -6,6 +6,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Using Remove="System.Net.Http" />
-    <PackageReference Include="FodyHelpers" Version="6.9.3" />
+    <PackageReference Include="FodyHelpers" />
   </ItemGroup>
 </Project>

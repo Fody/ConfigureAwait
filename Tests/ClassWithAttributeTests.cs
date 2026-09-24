@@ -1,112 +1,112 @@
 public partial class ModuleWeaverTests
 {
-    [Fact]
+    [Test]
     public async Task ClassWithAttribute_AsyncMethod()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("ClassWithAttribute");
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
 
         await test.AsyncMethod(context);
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
     }
 
-    [Fact]
+    [Test]
     public async Task ClassWithAttribute_AsyncMethodWithReturn()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("ClassWithAttribute");
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
 
         var result = await test.AsyncMethodWithReturn(context);
 
-        Assert.False(context.Flag);
-        Assert.Equal(10, result);
+        await Assert.That((bool)context.Flag).IsFalse();
+        await Assert.That((int)result).IsEqualTo(10);
     }
 
-    [Fact]
+    [Test]
     public async Task ClassWithAttribute_AsyncGenericMethod()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("ClassWithAttribute");
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
 
         await test.AsyncGenericMethod(context);
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
     }
 
-    [Fact]
+    [Test]
     public async Task ClassWithAttribute_AsyncGenericMethodWithReturn()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("ClassWithAttribute");
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
 
         var result = await test.AsyncGenericMethodWithReturn(context);
 
-        Assert.False(context.Flag);
-        Assert.Equal(10, result);
+        await Assert.That((bool)context.Flag).IsFalse();
+        await Assert.That((int)result).IsEqualTo(10);
     }
 
 #if NET
-    [Fact]
+    [Test]
     public async Task ClassWithAttribute_AsyncMethod_WithValueTask()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("ClassWithAttribute");
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
 
         await test.AsyncMethod_WithValueTask(context);
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
     }
 
-    [Fact]
+    [Test]
     public async Task ClassWithAttribute_AsyncMethodWithReturn_WithValueTask()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("ClassWithAttribute");
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
 
         var result = await test.AsyncMethodWithReturn_WithValueTask(context);
 
-        Assert.False(context.Flag);
-        Assert.Equal(10, result);
+        await Assert.That((bool)context.Flag).IsFalse();
+        await Assert.That((int)result).IsEqualTo(10);
     }
 
-    [Fact]
+    [Test]
     public async Task ClassWithAttribute_AsyncGenericMethod_WithValueTask()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("ClassWithAttribute");
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
 
         await test.AsyncGenericMethod_WithValueTask(context);
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
     }
 
-    [Fact]
+    [Test]
     public async Task ClassWithAttribute_AsyncGenericMethodWithReturn_WithValueTask()
     {
         var context = testResult.GetInstance("FlagSynchronizationContext");
         var test = testResult.GetInstance("ClassWithAttribute");
 
-        Assert.False(context.Flag);
+        await Assert.That((bool)context.Flag).IsFalse();
 
         var result = await test.AsyncGenericMethodWithReturn_WithValueTask(context);
 
-        Assert.False(context.Flag);
-        Assert.Equal(10, result);
+        await Assert.That((bool)context.Flag).IsFalse();
+        await Assert.That((int)result).IsEqualTo(10);
     }
 #endif
 }

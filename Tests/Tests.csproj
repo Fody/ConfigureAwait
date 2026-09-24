@@ -9,14 +9,13 @@
     <DefineConstants>$(DefineConstants);NET11_0</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
     <Using Remove="System.Net.Http" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="FodyHelpers" Version="6.9.3" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
-    <PackageReference Include="xunit.v3" Version="3.2.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" PrivateAssets="all" />
-    <PackageReference Include="Verify.XunitV3" Version="31.18.0" />
+    <PackageReference Include="Microsoft.CSharp" />
+    <PackageReference Include="FodyHelpers" />
+    <PackageReference Include="TUnit.Core" />
+    <PackageReference Include="TUnit.Assertions" />
+    <PackageReference Include="TUnit.Engine" />
+    <PackageReference Include="Verify.TUnit" />
     <ProjectReference Include="..\ConfigureAwait.Fody\ConfigureAwait.Fody.csproj" />
     <ProjectReference Include="..\ConfigureAwait\ConfigureAwait.csproj" />
     <ProjectReference Include="..\AssemblyToProcess\AssemblyToProcess.csproj" />
