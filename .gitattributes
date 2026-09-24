@@ -20,3 +20,9 @@
 *.ico binary
 *.snk binary
 *.pdb binary
+
+# Verify requires LF in verified files, whatever the checkout platform
+*.verified.txt text eol=lf working-tree-encoding=UTF-8
+*.verified.xml text eol=lf working-tree-encoding=UTF-8
+*.verified.json text eol=lf working-tree-encoding=UTF-8
+*.verified.sql text eol=lf working-tree-encoding=UTF-8
