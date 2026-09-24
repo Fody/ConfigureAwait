@@ -12,7 +12,7 @@ The weaver runs against an already-compiled assembly via Mono.Cecil; it does not
 
 - Build: `dotnet build`
 - Test: `./runTests.ps1` (build first; TUnit test projects are executables, so `dotnet test` finds no tests)
-- CI build (AppVeyor) is `dotnet build --configuration Release` then `./runTests.ps1`; NuGets are emitted to `nugets/`.
+- CI build (GitHub Actions, `.github/workflows/build.yml`) is `dotnet build --configuration Release` then `./runTests.ps1`; NuGets are emitted to `nugets/` and published on a tag via trusted publishing.
 
 `global.json` pins a .NET 11 preview SDK (`allowPrerelease`, `rollForward: latestFeature`). The repo targets the latest SDK on purpose because it supports .NET 11 runtime-async (see below); an older SDK will not build the `net11.0` targets.
 
