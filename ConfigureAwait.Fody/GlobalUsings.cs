@@ -1,5 +1,3 @@
-// Global using directives
-
 global using System.Xml;
 global using Fody;
 global using Mono.Cecil;
